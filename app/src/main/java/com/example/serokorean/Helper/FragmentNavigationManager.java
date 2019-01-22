@@ -30,11 +30,14 @@ public class FragmentNavigationManager implements NavigationManager {
         mFragmentManager = mainPage.getSupportFragmentManager();
     }
 
+//    @Override
+//    public void showFragment(String title) {
+//        showFragment(FragmentContent.newInstance(title), false);
+//    }
+
     @Override
-    public void showFragment(String title) {
-
-        showFragment(FragmentContent.newInstance(title), false);
-
+    public void showFragment(String chapter, String level) {
+        showFragment(FragmentContent.newInstance(chapter, level), false);
     }
 
     private void showFragment(FragmentContent fragmentContent, boolean b) {

@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import com.example.serokorean.R;
@@ -16,16 +17,30 @@ import com.example.serokorean.R;
 
 public class FragmentContent extends Fragment {
 
-    private static final String KEY_TITLE = "Content";
+    private static final String KEY_TITLE = "Level";
+    //private static final String KEY_TITLE = "file:///android_asset/chapter";
+    //private String URL = "file:///android_asset/chapter";
+    private WebView webView;
 
     public FragmentContent() {
         // Required empty public constructor
     }
 
-    public static FragmentContent newInstance(String param1) {
+//    public static FragmentContent newInstance(String param1) {
+//        FragmentContent fragment = new FragmentContent();
+//        Bundle args = new Bundle();
+//        //args.putString(KEY_TITLE, param1);
+//        args.putString(KEY_TITLE, param1 + ".html");
+//        fragment.setArguments(args);
+//
+//        return fragment;
+//    }
+
+    public static FragmentContent newInstance(String chapter, String level) {
         FragmentContent fragment = new FragmentContent();
         Bundle args = new Bundle();
-        args.putString(KEY_TITLE, param1);
+        //args.putString(KEY_TITLE, param1);
+        args.putString(KEY_TITLE, level + " " + chapter + ".html");
         fragment.setArguments(args);
 
         return fragment;
@@ -46,8 +61,14 @@ public class FragmentContent extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        webView = view.findViewById(R.id.title);
         String title = getArguments().getString(KEY_TITLE);
-        ((TextView) view.findViewById(R.id.title)).setText(title);
+        //((TextView) view.findViewById(R.id.title)).setText(title);
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("file:///android_asset/");
+        stringBuilder.append(title);
+        String URL = stringBuilder.toString();
+        webView.loadUrl(URL);
     }
 }

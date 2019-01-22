@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 
@@ -39,13 +40,21 @@ public class MainPage extends AppCompatActivity {
     private List<String> title;
     private List<String> childitem;
 
+    //private WebView webView;
+    private boolean isItemClicked = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
+        //webView = findViewById(R.id.webView);
+
         //init view
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+        //loadHTMLPage();
+
         mActivityTitle = getTitle().toString();
         expandableListView = (ExpandableListView) findViewById(R.id.navList);
         navigationManager = FragmentNavigationManager.getmInstance(this);
@@ -61,13 +70,21 @@ public class MainPage extends AppCompatActivity {
         setUpDrawer();
 
         if(savedInstanceState == null){
-            selectFirstItemAsDefault();
+            //selectFirstItemAsDefault();
+            //loadHTMLPage();
         }
 
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 //        getSupportActionBar().setHomeButtonEnabled(true);
 //        getSupportActionBar().setTitle("SeroKorean");
     }
+
+//    private void loadHTMLPage() {
+//        if(!isItemClicked){
+//            webView.loadUrl("file:///android_asset/index.html");
+//            webView.getSettings().setJavaScriptEnabled(true);
+//        }
+//    }
 
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
@@ -81,13 +98,13 @@ public class MainPage extends AppCompatActivity {
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
-    private void selectFirstItemAsDefault() {
-        if(navigationManager != null){
-            String firstItem = lstTitle.get(0);
-            navigationManager.showFragment(firstItem);
-           // getSupportActionBar().setTitle(firstItem);
-        }
-    }
+//    private void selectFirstItemAsDefault() {
+//        if(navigationManager != null){
+//            String firstItem = lstTitle.get(0);
+//            navigationManager.showFragment(firstItem);
+//           // getSupportActionBar().setTitle(firstItem);
+//        }
+//    }
 
     private void setUpDrawer() {
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close){
@@ -137,7 +154,8 @@ public class MainPage extends AppCompatActivity {
                 String selectedItem = ((List) (lstChild.get(lstTitle.get(groupPosition)))).get(childPosition).toString();
                 //getSupportActionBar().setTitle(selectedItem);
 
-                navigationManager.showFragment(selectedItem);
+                //navigationManager.showFragment(selectedItem);
+                navigationManager.showFragment(selectedItem, lstTitle.get(groupPosition));
 
 //                if(items[childPosition].equals(lstTitle.get(groupPosition))){
 //                    navigationManager.showFragment(selectedItem);
@@ -145,7 +163,7 @@ public class MainPage extends AppCompatActivity {
 //                else{
 //                    throw new IllegalArgumentException("Not supported fragment");
 //                }
-
+                isItemClicked = true;
                 mDrawerLayout.closeDrawer(GravityCompat.START);
                 return false;
             }
@@ -154,8 +172,8 @@ public class MainPage extends AppCompatActivity {
 
     private void genData() {
 
-        title = Arrays.asList("Chapter 1", "Chapter 2", "Chapter 3", "Chapter 4");
-        childitem = Arrays.asList("Content 1", "Content 2", "Content 3", "Content 4");
+        title = Arrays.asList("Level 1", "Level 2", "Level 3", "Level 4");
+        childitem = Arrays.asList("Chapter 1", "Chapter 2", "Chapter 3", "Chapter 4");
 
         lstChild = new TreeMap<>();
         lstChild.put(title.get(0), childitem);
@@ -169,7 +187,7 @@ public class MainPage extends AppCompatActivity {
 
     private void initItems() {
 
-        items = new String[] {"Chapter 1", "Chapter 2", "Chapter 3", "Chapter 4"};
+        items = new String[] {"Level 1", "Level 2", "Level 3", "Level 4"};
 
     }
 

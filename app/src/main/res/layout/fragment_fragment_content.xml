@@ -6,26 +6,35 @@
     android:orientation="vertical"
     tools:context=".Fragments.FragmentContent">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="300dp">
+    <!--<WebView-->
+        <!--android:id="@+id/webViewFragment"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
 
-        <ImageView
-            android:src="@drawable/ic_laptop_chromebook_black_24dp"
-            android:id="@+id/icon"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+    <!--<FrameLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="300dp">-->
 
-    </FrameLayout>
+        <!--<ImageView-->
+            <!--android:src="@drawable/ic_laptop_chromebook_black_24dp"-->
+            <!--android:id="@+id/icon"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent" />-->
 
-    <TextView
+    <!--</FrameLayout>-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/title"-->
+        <!--android:gravity="center"-->
+        <!--android:padding="10dp"-->
+        <!--android:text="Content"-->
+        <!--android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+
+    <WebView
         android:id="@+id/title"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="Content"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-        android:textColor="@android:color/black"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 </LinearLayout>
