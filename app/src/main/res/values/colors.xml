@@ -2,8 +2,8 @@
 <resources>
     <color name="colorPrimary">#05c3f9</color>
     <color name="colorPrimaryDark">#0691b8</color>
-    <color name="colorAccent">#D81B60</color>
-    <color name="white">#ffffff</color>
+    <color name="colorAccent">#2B2E30</color>
+    <color name="white">#7EFFFFFF</color>
     <color name="dividerColor">#80CBC4</color>
     <color name="list_item_title">#AAAAAA</color>
     <color name="list_group_title">#808080</color>

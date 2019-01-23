@@ -1,47 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/main_header_selector"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
     >
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:weightSum="1"
+    <ImageView
+        android:id="@+id/avatar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp">
-
-        <ImageView
-            android:id="@+id/avatar"
-            android:src="@drawable/koreangirl"
-            android:layout_width="70dp"
-            android:layout_height="70dp" />
-
-        <TextView
-            android:id="@+id/balance"
-            android:gravity="right|end"
-            android:layout_weight="1"
-            android:paddingTop="10dp"
-            android:textSize="16dp"
-            android:textColor="@android:color/black"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            />
-        <!--android:text="Navigation Test"-->
-
-    </LinearLayout>
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:cropToPadding="false"
+        android:src="@drawable/shrine"
+        tools:scaleType="center"/>
 
     <TextView
         android:id="@+id/name"
-        android:paddingLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
-        android:gravity="left|start"
-        android:text="Table of contents"
+        android:background="@color/white"
+        android:paddingLeft="10dp"
+        android:text="Table of Contents"
+        android:textColor="@color/colorAccent"
         android:textSize="16dp"
-        android:textColor="@android:color/black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+        android:textStyle="bold"
+        app:fontFamily="@font/painting_with_chocolate"/>
+</RelativeLayout>
