@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.TextView;
 
@@ -69,6 +70,8 @@ public class FragmentContent extends Fragment {
         stringBuilder.append("file:///android_asset/");
         stringBuilder.append(title);
         String URL = stringBuilder.toString();
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
         webView.loadUrl(URL);
     }
 }
