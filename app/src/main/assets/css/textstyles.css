@@ -105,6 +105,37 @@ div.cardtext {
   transform: translateX(-50%);
 }
 
+/*! CSS 2x2 - 3x3 grids for vocab/pronunciation */
+.grid-container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-color: orange;
+  border-radius: 3px;
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.grid-item {
+  background-color: white;
+  border: 1px solid #f2f2f2;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  text-indent: 0em;
+  border-collapse: collapse;
+  line-height: 0.01;
+  text-indent: 0em;
+}
+
+
+
+
+
 /* POPUP IMAGES - Centering images in the page, triggered with class="center" on image properties. */
 .center {
   display: block;
