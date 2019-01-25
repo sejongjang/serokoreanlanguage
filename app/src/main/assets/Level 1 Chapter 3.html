@@ -1,36 +1,46 @@
+<!DOCTYPE html>
 <html>
 
-    <header>
+    <head>
+        <meta charset="utf-8">
+        <title>L1 - Chapter 1 - Page 1</title>
 
-    </header>
+        <!-- Link to Stylesheet -->
+        <link href="css/textstyles.css" rel="stylesheet">
+
+        <!-- Link to Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+
+    </head>
+
     <body>
-        <h3>Chapter 3 - Reading Korean Part 3—Compounds and Sound</h3>
-        Changes (한글 발음 및 쌍자음)
-
-        Great job so far! We’re now onto our third and final chapter about 한글 (We can finally write Hangul in Korean now!).
-
-        This chapter will go over what many consider to be the most difficult bits of Korean pronunciation, but I know you’ll handle it just fine. Also there’s less to tackle this chapter, and we’ll start picking up some more vocabulary we need to start building our own sentences. How exciting!
-
-        ㄲ + 와 First up to bat this chapter we have a double ㄱ. The double ㄱ is written as ㄲ. What might be the difference between regular 기역 and double 기역? It’s not that you say 기역 twice in a row really quickly, like you might imagine.
-
-        Instead what we have here is something that is uniquely Korean—a tensed consonant. These consonants are a little bit stronger than the regular ones. Give it a listen.
-
-        가 까, 굴 꿀, 거 꺼.
-
-        You can feel it right? There’s something to these tensed consonants that isn’t there in non-tensed ones. There are two problems you’ll encounter here, however. First, on the listening front you may be able to hear the difference when it’s clearly enunciated for you like this, but Koreans talk fast. You have to be able to distinguish tensation in regular conversation, which is much more difficult.
-
-        Secondly, when it comes to pronouncing these tensed consonants, foreigners tend to just say the original consonant but louder. Please take this to heart now, because it can save you from embarrassment later. Tensed consonants are not necessarily louder than their regular counterparts. But if they’re not louder, what’s different about them?
-
-        Listen again, and I’ll explain how to make a perfect double “ㄱ” sound.
-
-        가 까, 굴 꿀, 거 꺼.
-
-        Essentially there are two distinguishing factors between regular consonants and tensed ones. You’ll be able to pick up on hearing the difference fairly quickly, but it took me years of time and tons of practice to figure out exactly how to pronounce these tensed consonants in a way that made it so Koreans knew which letter I was saying. It turns out there’s two fairly easy guidelines which will ensure that Koreans can tell whether you mean 굴 or 꿀. You, lucky reader, get this information without having to figure it out for yourself the hard way.
-
-        The first thing is that tensed consonants start a little higher than normal. While Korean gratefully has no system of tones like Thai or Chinese do, one thing about these
-
-        double consonants is that they do have a sort of falling tone to them. Again, listen carefully and try to replicate.
-
-        The other thing about tensed consonants is that they have a different timing to them than regular letters do. It’s almost as if you take an ever so tiny pause right before you say the letter. This adds tension. It’s like pulling back just a little bit harder on a rubber band before launching it at your unsuspecting target. Since this tension builds up a little bit longer, the release is a little bit more dramatic. Again, this doesn’t really mean louder, just different.
+        <div class="mtextcon">
+            <div class="mstandardpara">
+                <p>Introducing our first two letters: ㄱ and ㅏ. Put them together and we get 가.
+                <!-- Text box -->
+                <div class="card">
+                    <div class="cardtext">
+                        <h1><audio id="audio" src="audio/ga.mp3" autostart="false" ></audio><a onclick="PlaySound()">가</a></h1>
+                        <script>
+                                function PlaySound() {
+                                      var sound = document.getElementById("audio");
+                                      sound.play()
+                                  }
+                        </script>
+                    </div>
+                </div>
+                <p>가 is one of thousands of possible character-block combinations in Hangul. (Just like Chinese has thousands of possible characters)</p>
+                <p>As far as pronunciation goes, the ㄱ sound is closest to the English letter G  (as in “go”), but like many consonants in Korean it has a sort of split personality that can at times make it sound more like a K. <b>Overall, Korean sounds tend to be throatier and more back in your mouth than English sounds.</b> Note here also that Korean the "ㄱ" sound is slightly stronger than the English "G" sound you may be used to.</p>
+                <p>We’ve created a series of charts to help those visual learners out there wrap your heads around this. This really illustrates well how Korean letters stack up against English ones. You can see that ㄱ is more of a G sound than it is K sound.</p>
+                <!-- Non-expandable image -->
+                <div id="boxshadow">
+                    <img src="img/g-k.jpg" alt="ㄱ" height="100px">
+                </div>
+                <p>We also have a mnemonic device for each letter. In the case of ㄱ it’s helpful to remember that is has the same basic shape of a lower-case g. Just imagine someone started writing g then got cut off.</p>
+                <p>The "ㅏ" sound is a no-brainer, it being the same as the English “Ah” sound (as in “auto”). This is the only vowel sound we’ll be learning until next chapter as we learn all the main consonants.</p>
+                <p>I like to remember this letter as someone with their mouth open and their tongue sticking out. They are saying “ahh” as a doctor prepares to check their throat.</p>
+            </div>
+        </div>
     </body>
 </html>
