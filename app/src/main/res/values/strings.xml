@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">serokorean</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="open">Open</string>
-    <string name="close">Close</string>
+    <string name="desc0">chapter 1</string>
+    <string name="desc1">chapter 1</string>
+    <string name="desc2">chapter 1</string>
+    <string name="desc3">chapter 1</string>
+    <string name="desc4">chapter 1</string>
+    <string name="desc5">chapter 1</string>
 </resources>
