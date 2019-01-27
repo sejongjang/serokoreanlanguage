@@ -1,5 +1,58 @@
+<!DOCTYPE html>
 <html>
+
+<head>
+    <meta charset="utf-8">
+    <title>L1 - Chapter 1 - Page 3</title>
+
+    <!-- Link to Stylesheet -->
+    <link href="../../css/textstyles.css" rel="stylesheet">
+
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+
+</head>
+
 <body>
-<h3>Chapter 1 Page 3</h3>
+    <div class="mtextcon">
+        <div class="mstandardpara">
+            <p>Introducing our first two letters: ㄱ and ㅏ. Put them together and we get 가.</p>
+            <!-- Text box -->
+            <div class="card">
+                <div class="cardtext">
+                    <h1><audio id="audio" src="../../audio/가.mp3" autostart="false"></audio><a onclick="PlaySound()">가</a></h1>
+                    <script>
+                        function PlaySound() {
+                            var sound = document.getElementById("audio");
+                            sound.play()
+                        }
+                    </script>
+                </div>
+            </div>
+            <p>가 is one of thousands of possible character-block combinations in Hangul. (Just like Chinese has
+                thousands of possible characters)</p>
+            <p>As far as pronunciation goes, the ㄱ sound is closest to the English letter G (as in “go”), but like
+                many consonants in Korean it has a sort of split personality that can at times make it sound more
+                like a K. <b>Overall, Korean sounds tend to be throatier and more back in your mouth than English
+                sounds.</b> Note here also that Korean the "ㄱ" sound is slightly stronger than the English "G"
+                sound you may be used to.</p>
+            <p>We’ve created a series of charts to help those visual learners out there wrap your heads around
+                this. This really illustrates well how Korean letters stack up against English ones. You can see
+                that ㄱ is more of a G sound than it is K sound.</p>
+            <!-- Non-expandable image -->
+            <div id="boxshadow">
+                <img src="../../img/g-k.jpg" alt="ㄱ" height="100px">
+            </div>
+            <p>We also have a mnemonic device for each letter. In the case of ㄱ it’s helpful to remember that is
+                has the same basic shape of a lower-case g. Just imagine someone started writing g then got cut
+                off.</p>
+            <p>The "ㅏ" sound is a no-brainer, it being the same as the English “Ah” sound (as in “auto”). This is
+                the only vowel sound we’ll be learning until next chapter as we learn all the main consonants.</p>
+            <p>I like to remember this letter as someone with their mouth open and their tongue sticking out. They
+                are saying “ahh” as a doctor prepares to check their throat.</p>
+        </div>
+    </div>
 </body>
+
 </html>
