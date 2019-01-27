@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#05c3f9</color>
+    <color name="colorPrimaryDark">#0691b8</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="white">#ffffff</color>
+    <color name="dividerColor">#80CBC4</color>
+    <color name="list_item_title">#AAAAAA</color>
+    <color name="list_group_title">#808080</color>
+
+    <color name="beginnerone">#fce794</color>
+    <color name="beginnertwo">#c9ffff</color>
+    <color name="intermediateone">#009b9b</color>
+    <color name="intermediatetwo">#0691b8</color>
+    <color name="advanced">#D81B60</color>
+
+
+
+</resources>
