@@ -1,7 +1,6 @@
 package com.example.serokorean.temp;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,7 +18,7 @@ import java.util.ArrayList;
 
 public class ChapterPages extends AppCompatActivity implements GestureDetector.OnGestureListener {
 
-    private TextView textView;
+//    private TextView textView;
     private int numberOfPages = 0;
     private int currentPage = 0;
     private int currentChapterNum = 0;
@@ -31,11 +30,9 @@ public class ChapterPages extends AppCompatActivity implements GestureDetector.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        MyWebView webview = new MyWebView(this);
-//        setContentView(webview);
         setContentView(R.layout.activity_chapter_pages);
 
-        textView = findViewById(R.id.chapterpage);
+//        textView = findViewById(R.id.chapterpage);
 
         Bundle bundle = getIntent().getExtras();
 
@@ -43,7 +40,7 @@ public class ChapterPages extends AppCompatActivity implements GestureDetector.O
         String newString = "";
 
         if(bundle == null){
-            textView.setText("bundle error");
+//            textView.setText("bundle error");
         }
         else{
             numberOfPages = bundle.getInt("pages");
@@ -52,7 +49,7 @@ public class ChapterPages extends AppCompatActivity implements GestureDetector.O
             stringBuilder.append(" number of pages:");
             stringBuilder.append(Integer.toString(bundle.getInt("pages")));
             newString = stringBuilder.toString();
-            textView.setText(newString);
+//            textView.setText(newString);
         }
 
         //add all html pages into the array
@@ -94,7 +91,7 @@ public class ChapterPages extends AppCompatActivity implements GestureDetector.O
                     if (diffX > 0) {
 
                         if(currentPage > 0){
-                            Toast.makeText(ChapterPages.this, "left", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(ChapterPages.this, "left", Toast.LENGTH_SHORT).show();
                             --currentPage;
                             webView.loadUrl(htmlFiles.get(currentPage));
                         }
@@ -105,7 +102,7 @@ public class ChapterPages extends AppCompatActivity implements GestureDetector.O
 
                     } else {
                         if(currentPage < numberOfPages-1){
-                            Toast.makeText(ChapterPages.this, "right", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(ChapterPages.this, "right", Toast.LENGTH_SHORT).show();
                             ++currentPage;
                             webView.loadUrl(htmlFiles.get(currentPage));
                         }
@@ -148,6 +145,7 @@ public class ChapterPages extends AppCompatActivity implements GestureDetector.O
                                 }
 
                                 startActivity(intent);
+                                finish();
                             }
 //                            currentPage = 0;
 //                            webView.loadUrl(htmlFiles.get(currentPage));
