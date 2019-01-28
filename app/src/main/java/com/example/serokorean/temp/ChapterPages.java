@@ -23,9 +23,11 @@ public class ChapterPages extends AppCompatActivity implements GestureDetector.O
     private int currentPage = 0;
     private int currentChapterNum = 0;
     private String currentChapter = "";
+    private String previousChapter = "";
     private WebView webView;
     private GestureDetector gestureDetector;
     private ArrayList<String> htmlFiles = new ArrayList<>();
+    private int isPrevious = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,7 @@ public class ChapterPages extends AppCompatActivity implements GestureDetector.O
         else{
             numberOfPages = bundle.getInt("pages");
             currentChapter = bundle.getString("chapter");
+            isPrevious = bundle.getInt("previous");
             stringBuilder.append(bundle.getString("chapter"));
             stringBuilder.append(" number of pages:");
             stringBuilder.append(Integer.toString(bundle.getInt("pages")));
@@ -52,6 +55,12 @@ public class ChapterPages extends AppCompatActivity implements GestureDetector.O
             currentChapterNum = Integer.valueOf(currentChapter.charAt(8) - '0');
             newString = stringBuilder.toString();
 //            textView.setText(newString);
+
+//            StringBuilder previous = new StringBuilder();
+//            previous.append("file:///android_asset/level 1/");
+//            previous.append("chapter ");
+//            if(currentChapterNum>0) previous.append(Integer.toString(currentChapterNum-1));
+//            else previous.append(Integer.toString(currentChapterNum));
         }
 
         //add all html pages into the array
@@ -69,7 +78,13 @@ public class ChapterPages extends AppCompatActivity implements GestureDetector.O
         webView.getSettings().setJavaScriptEnabled(true);
 //        webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
 //        webView.getSettings().setBuiltInZoomControls(true);
-        webView.loadUrl(htmlFiles.get(0));
+        if(isPrevious == 1) {
+            currentPage = htmlFiles.size() - 1;
+            webView.loadUrl(htmlFiles.get(htmlFiles.size() - 1));
+        }
+        else {
+            webView.loadUrl(htmlFiles.get(0));
+        }
 
         gestureDetector = new GestureDetector(this);
 
@@ -98,10 +113,49 @@ public class ChapterPages extends AppCompatActivity implements GestureDetector.O
                             --currentPage;
                             webView.loadUrl(htmlFiles.get(currentPage));
                         }
-//                        else{
-//                            currentPage = numberOfPages-1;
-//                            webView.loadUrl(htmlFiles.get(currentPage));
-//                        }
+                        else{
+                            if(currentChapterNum > 0){
+                                --currentChapterNum;
+                                Intent intent = new Intent(this, ChapterPages.class);
+
+                                switch (Integer.toString(currentChapterNum)){
+                                    case "0": intent.putExtra("chapter", "chapter 0"); intent.putExtra("pages", 6); intent.putExtra("previous", 1); break;
+                                    case "1": intent.putExtra("chapter", "chapter 1"); intent.putExtra("pages", 10); intent.putExtra("previous", 1); break;
+                                    case "2": intent.putExtra("chapter", "chapter 2"); intent.putExtra("pages", 11); intent.putExtra("previous", 1); break;
+                                    case "3": intent.putExtra("chapter", "chapter 3"); intent.putExtra("pages", 12); intent.putExtra("previous", 1); break;
+                                    case "4": intent.putExtra("chapter", "chapter 4"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "5": intent.putExtra("chapter", "chapter 5"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "6": intent.putExtra("chapter", "chapter 6"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "7": intent.putExtra("chapter", "chapter 7"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "8": intent.putExtra("chapter", "chapter 8"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "9": intent.putExtra("chapter", "chapter 9"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "10": intent.putExtra("chapter", "chapter 10"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "11": intent.putExtra("chapter", "chapter 11"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "12": intent.putExtra("chapter", "chapter 12"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "13": intent.putExtra("chapter", "chapter 13"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "14": intent.putExtra("chapter", "chapter 14"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "15": intent.putExtra("chapter", "chapter 15"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "16": intent.putExtra("chapter", "chapter 16"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "17": intent.putExtra("chapter", "chapter 17"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "18": intent.putExtra("chapter", "chapter 18"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "19": intent.putExtra("chapter", "chapter 19"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "20": intent.putExtra("chapter", "chapter 20"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "21": intent.putExtra("chapter", "chapter 21"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "22": intent.putExtra("chapter", "chapter 22"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "23": intent.putExtra("chapter", "chapter 23"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "24": intent.putExtra("chapter", "chapter 24"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "25": intent.putExtra("chapter", "chapter 25"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "26": intent.putExtra("chapter", "chapter 26"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "27": intent.putExtra("chapter", "chapter 27"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "28": intent.putExtra("chapter", "chapter 28"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "29": intent.putExtra("chapter", "chapter 29"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                    case "30": intent.putExtra("chapter", "chapter 30"); intent.putExtra("pages", 13); intent.putExtra("previous", 1); break;
+                                }
+
+                                startActivity(intent);
+                                finish();
+                            }
+                        }
 
                     } else {
                         if(currentPage < numberOfPages-1){
