@@ -105,6 +105,18 @@ div.cardtext {
   transform: translateX(-50%);
 }
 
+/*! CSS for chapter ender flower */
+.flower {
+  padding: 10px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-indent: 0em;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 /*! CSS 2x2 - 3x3 grids for vocab/pronunciation */
 .grid-container {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
