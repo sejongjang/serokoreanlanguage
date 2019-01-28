@@ -153,6 +153,7 @@ public class ChapterPages extends AppCompatActivity implements GestureDetector.O
                                 }
 
                                 startActivity(intent);
+                                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                                 finish();
                             }
                         }
@@ -203,6 +204,7 @@ public class ChapterPages extends AppCompatActivity implements GestureDetector.O
                                 }
 
                                 startActivity(intent);
+                                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                                 finish();
                             }
 //                            currentPage = 0;
