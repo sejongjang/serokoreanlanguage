@@ -7,7 +7,10 @@ import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +18,8 @@ import com.example.serokorean.R;
 import com.example.serokorean.level.BeginnerOne;
 
 import java.util.ArrayList;
+
+import static android.support.v4.view.ViewCompat.animate;
 
 public class ChapterPages extends AppCompatActivity implements GestureDetector.OnGestureListener {
 
@@ -94,6 +99,7 @@ public class ChapterPages extends AppCompatActivity implements GestureDetector.O
                 return gestureDetector.onTouchEvent(event);
             }
         });
+
     }
 
     @Override
@@ -111,6 +117,8 @@ public class ChapterPages extends AppCompatActivity implements GestureDetector.O
                         if(currentPage > 0){
 //                            Toast.makeText(ChapterPages.this, "left", Toast.LENGTH_SHORT).show();
                             --currentPage;
+                            Animation slideLeftAnimation = AnimationUtils.loadAnimation(getBaseContext(), R.anim.slide_in_left);
+                            webView.startAnimation(slideLeftAnimation);
                             webView.loadUrl(htmlFiles.get(currentPage));
                         }
                         else{
@@ -162,6 +170,8 @@ public class ChapterPages extends AppCompatActivity implements GestureDetector.O
                         if(currentPage < numberOfPages-1){
 //                            Toast.makeText(ChapterPages.this, "right", Toast.LENGTH_SHORT).show();
                             ++currentPage;
+                            Animation slideRightAnimation = AnimationUtils.loadAnimation(getBaseContext(), R.anim.slide_in_right);
+                            webView.startAnimation(slideRightAnimation);
                             webView.loadUrl(htmlFiles.get(currentPage));
                         }
                         else{
