@@ -68,6 +68,7 @@ public class ChapterPages extends AppCompatActivity implements GestureDetector.O
 
         webView = findViewById(R.id.webview);
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setMediaPlaybackRequiresUserGesture(false);
 //        webView.getSettings().setBuiltInZoomControls(true);
         webView.loadUrl(htmlFiles.get(0));
 
