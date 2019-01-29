@@ -27,9 +27,10 @@
                 to separate words. Now imagine if instead of organizing letters this way, we put them into square
                 blocks. Each block would be pronounced as one syllable, and spaces between words would be maintained.
                 What would the result be like? Well...</p>
+                
             <!-- Trigger the Modal -->
             <img id="myImg" src="../../img/hanglish.png" alt="How English would look if it were organized like Hangul."
-                style="width:100%;max-width:600px">
+                class="modalimg">
 
             <!-- The Modal -->
             <div id="myModal" class="modal">
@@ -46,20 +47,19 @@
             <p>Now compare that with the same phrase in Korean.</p>
 
             <!-- Trigger the Modal -->
-            <img id="myImg" src="../../img/hanglish2.jpg" alt="The above phrase written in Korean."
-                style="width:100%;max-width:600px">
+            <img id="myImg2" src="../../img/hanglish2.jpg" alt="The above phrase written in Korean." class="modalimg">
 
             <!-- The Modal -->
-            <div id="myModal" class="modal">
+            <div id="myModal2" class="modal">
 
                 <!-- The Close Button -->
                 <span class="close">&times;</span>
 
                 <!-- Modal Content (The Image) -->
-                <img class="modal-content" id="img01">
+                <img class="modal-content" id="img02">
 
                 <!-- Modal Caption (Image Text) -->
-                <div id="caption"></div>
+                <div id="caption2"></div>
             </div>
 
 
@@ -75,8 +75,7 @@
                     position in the block.</b> Given that these letters are meant to change shape, their design lends
                 itself to the task.</p>
             <p>Now let’s get started learning the actual letters and their pronunciation, but remember, <b>at least one
-                    consonant a
-                    nd one vowel must be combined to make a valid block.</b> Next chapter I’ll also be
+                    consonant and one vowel must be combined to make a valid block.</b> Next chapter I’ll also be
                 showing you how multiple consonants and multiple vowels all combine. For this chapter however, we’ll
                 stick to one vowel sound while I teach you the consonants.</p>
         </div>
@@ -91,6 +90,29 @@
         var modalImg = document.getElementById("img01");
         var captionText = document.getElementById("caption");
         img.ontouchstart = function () {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.ontouchstart = function () {
+            modal.style.display = "none";
+        }
+    </script>
+
+    <script>
+        // Get the modal
+        var modal2 = document.getElementById('myModal2');
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img2 = document.getElementById('myImg2');
+        var modalImg2 = document.getElementById("img02");
+        var captionText2 = document.getElementById("caption2");
+        img2.ontouchstart = function () {
             modal.style.display = "block";
             modalImg.src = this.src;
             captionText.innerHTML = this.alt;

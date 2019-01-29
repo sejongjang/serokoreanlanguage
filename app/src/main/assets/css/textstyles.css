@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'Painting With Chocolate';
-  src:  url('../fonts/Painting_With_Chocolate.ttf') format('truetype');
+  src: url('../fonts/Painting_With_Chocolate.ttf') format('truetype');
 }
 
 html {
@@ -55,6 +55,7 @@ div.mtextcon p {
   font-family: 'Painting With Chocolate', sans-serif;
   text-align: center;
 }
+
 .msubheader {
   font-size: 6vw;
   font-weight: bold;
@@ -155,7 +156,20 @@ div.cardtext {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-} 
+}
+
+.modalimg {
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-style: solid;
+  border-width: 2px;
+  border-color: orange;
+  border-radius: 3px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
 /* Style the Image Used to Trigger the Modal */
 #myImg {
@@ -164,21 +178,32 @@ div.cardtext {
   transition: 0.3s;
 }
 
-#myImg:hover {opacity: 0.7;}
+#myImg:hover {
+  opacity: 0.7;
+}
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
 }
 
 /* Modal Content (Image) */
@@ -202,14 +227,20 @@ div.cardtext {
 }
 
 /* Add Animation - Zoom in the Modal */
-.modal-content, #caption { 
+.modal-content,
+#caption {
   animation-name: zoom;
   animation-duration: 0.6s;
 }
 
 @keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
+  from {
+    transform: scale(0)
+  }
+
+  to {
+    transform: scale(1)
+  }
 }
 
 /* The Close Button */
@@ -231,7 +262,7 @@ div.cardtext {
 }
 
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 700px) {
   .modal-content {
     width: 100%;
   }
@@ -273,8 +304,13 @@ div.cardtext {
 }
 
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
 }
 
 .authorcard {
