@@ -30,14 +30,16 @@
                     </script>
                 </div>
             </div>
-            <p>Next we have ㅅ. This letter acts like the English “S” sound or the the English “Sh” sound, depending on
+            <p>Next we have ㅅ. This letter acts very much like the English “S” sound or the the English “Sh” sound,
+                depending on
                 what vowels it
                 combines with. 사 gives us a normal “S” sound, but we’ll talk more about when ㅅ makes an “Sh” sound in
                 the next chapter when we talk about Korean vowels. </p>
             <p>ㅅ is also notable because there are no other Korean letters that make a similar or potentially
-                confusable sound so we'll forego including a comparison chart with this one. Just know that ㅅ = s or
-                sh.</p>
-            <p>Additionally, as you'll see below, ㅅ is another t-stop letter. That mean that when it's in the badchim position it makes the same sound as ㄷ.</p>
+                confusable sound so we'll forego including a comparison chart with this one. Just know that <b>ㅅ =
+                    s/sh.</b></p>
+            <p>Additionally, as you'll see below, ㅅ is another t-stop letter. That mean that when it's in the badchim
+                position it makes the same sound as ㄷ.</p>
             <!-- Letter Practice Grid -->
             <div class="grid-container">
                 <div class="grid-item">
@@ -113,7 +115,7 @@
                     </script>
                 </div>
                 <div class="grid-item">
-                    <h3><audio id="audio11" src="../../audio/ralla.mp3" autostart="false"></audio><a onclick="PlaySound11()">갓</a></h3>
+                    <h3><audio id="audio11" src="../../audio/ralla.mp3" autostart="false"></audio><a onclick="PlaySound11()">값</a></h3>
                     <script>
                         function PlaySound11() {
                             var sound11 = document.getElementById("audio11");
@@ -123,15 +125,37 @@
                 </div>
             </div>
             <p>Just your luck, <b>ㅅ can be found in three different double badchim—ㅄ, ㄳ, and ㄽ.</b> The good news is
-                that ㄳ is rarely used and as for ㄽ, it's almost guaranteed that you'll never see it. We'll teach you
+                that ㄳ is rarely used and as for ㄽ, it's almost guaranteed that you'll never see it (Thus it was not
+                included above). We'll teach you
                 how pronounce these badchim after we learn an important next letter.</p>
-            <p>*Author's Note* The logo for Sero Korean is based on the ㅅ symbol. The symbol for ㅅ is similar to the
-                Chinese character for person—人. Furthermore ㅅ is the first letter in the word "사람" in Korean, meaning
-                "person". We drew inspiration from this because we wanted to create a program that was easy for <i>people</i>
-                to use. Additionally, "Sero" (새로) is a Korean word meaning "newly" or "again" so we hope this <i>new</i>
-                approach to
-                learning in a <i>personable</i> way works as well for you as we believe it will.</p>
-        </div>
+            <div id="myAuthornote" class="authornote">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <p style="  padding-right: 10px;
+                padding-left: 15px;">The logo for Sero Korean is based
+                    on the ㅅ symbol. The symbol for ㅅ is similar to the
+                    Chinese character for person—人. Furthermore ㅅ is the first letter in the word "사람" in Korean,
+                    meaning
+                    "person". We drew inspiration from this because we wanted to create a program that was easy for <i>people</i>
+                    to use. Additionally, Sero(새로) is a Korean word meaning "newly" or "again" so we hope this <i>new</i>
+                    approach to
+                    learning in a <i>personable</i> way works as well for you as we believe it will.</p>
+            </div>
+            <span style="font-size:30px;cursor:pointer;position:absolute;right:0;" onclick="openNav()">
+                <div class="authorcard"><div class="authorarrow"><img src="../../img/leftarrow.png" alt="left" height="30px" class="image"></div>
+                Author's
+                Note
+        </div></span>
+
+        <script>
+            function openNav() {
+                document.getElementById("myAuthornote").style.width = "250px";
+            }
+
+            function closeNav() {
+                document.getElementById("myAuthornote").style.width = "0";
+            }
+        </script>
+    </div>
     </div>
 </body>
 
