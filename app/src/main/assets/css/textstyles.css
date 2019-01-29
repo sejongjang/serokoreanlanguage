@@ -36,6 +36,14 @@ div.mtextcon p {
   font-weight: 300;
   line-height: 1.3;
   text-indent: 2em;
+  -webkit-user-select: none;
+  /* Safari 3.1+ */
+  -moz-user-select: none;
+  /* Firefox 2+ */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Standard syntax */
 }
 
 .mheadpara {
@@ -46,6 +54,14 @@ div.mtextcon p {
   line-height: 1.3;
   text-indent: 2em;
   margin: 10px;
+  -webkit-user-select: none;
+  /* Safari 3.1+ */
+  -moz-user-select: none;
+  /* Firefox 2+ */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Standard syntax */
 }
 
 .mheader {
@@ -69,6 +85,7 @@ div.card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
   display: inline-block;
+  border-radius: 3px;
   box-sizing: border-box;
   position: relative;
   left: 50%;
@@ -246,12 +263,12 @@ div.cardtext {
 /* The Close Button */
 .close {
   position: absolute;
-  top: 15px;
-  right: 35px;
+  width: 100%;
+  height: 100%;
   color: #f1f1f1;
   font-size: 40px;
   font-weight: bold;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 .close:hover,
@@ -275,20 +292,29 @@ div.cardtext {
   z-index: 1;
   top: 0;
   right: 0;
-  background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
-
+  font-size: 20px;
+  background-color: #302e2f;
+  color: white;
+  text-shadow: 1px 4px 6px #000, 0 0 0 #def, 1px 4px 6px #000;
 }
 
 .authornote a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
+
+  color: white;
   display: block;
   transition: 0.3s;
+  -webkit-user-select: none;
+  /* Safari 3.1+ */
+  -moz-user-select: none;
+  /* Firefox 2+ */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Standard syntax */
 }
 
 .authornote a:hover {
@@ -297,10 +323,14 @@ div.cardtext {
 
 .authornote .closebtn {
   position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+  width: 100%;
+  height: 100%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 @media screen and (max-height: 450px) {
@@ -322,35 +352,53 @@ div.cardtext {
   border-bottom-left-radius: 5px;
 }
 
+img {
+  vertical-align: middle;
+}
+
+span {
+  -webkit-user-select: none;
+  /* Safari 3.1+ */
+  -moz-user-select: none;
+  /* Firefox 2+ */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Standard syntax */
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
 .authorarrow {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   position: absolute;
   left: 0;
   background-color: red;
   border-style: solid;
   border-width: 2px;
   border-color: red;
-  display: inline-block;
-  height: 100%;
+  height: 92.7%;
   text-indent: 0em;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  display: inline-block;
 }
 
-.authorcard text {
+.authorcardtext {
   max-height: 100px;
   color: #2b2e30;
-  background-color: azure;
-  padding-top: 10px;
-  padding-right: 20px;
-  padding-bottom: 10px;
-  padding-left: 20px;
+  background-color: white;
+  padding: 10px;
   font-size: 25px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: orange;
-  border-radius: 3px;
-  line-height: 0.01;
-  text-indent: 0em;
+  border-top: 2px solid red;
+  border-bottom: 2px solid red;
   margin: auto;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -webkit-user-select: none;
+  /* Safari 3.1+ */
+  -moz-user-select: none;
+  /* Firefox 2+ */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Standard syntax */
 }
