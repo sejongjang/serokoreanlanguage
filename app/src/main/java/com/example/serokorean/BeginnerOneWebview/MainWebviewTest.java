@@ -89,11 +89,6 @@ public class MainWebviewTest extends AppCompatActivity implements ParentRequestI
             String url="";
             ArrayList<String> htmlFiles = new ArrayList<>();
 
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.append("file:///android_asset/level 1/chapter ");
-            stringBuilder.append(Integer.toString(currentChapterNum));
-            stringBuilder.append("/");
-
             position = arguments.getInt(ARG_SECTION_NUMBER);
             currentChapterNum = arguments.getInt(CURRENT_CHAPTER);
             numberOfPages = arguments.getInt(NUMBER_OF_PAGES);
@@ -102,6 +97,11 @@ public class MainWebviewTest extends AppCompatActivity implements ParentRequestI
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             CustomWebView webView = rootView.findViewById(R.id.webView);
             webView.setFragment(this);
+
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append("file:///android_asset/level 1/chapter ");
+            stringBuilder.append(Integer.toString(currentChapterNum));
+            stringBuilder.append("/");
 
             for(int i=0; i<numberOfPages; ++i){
                 htmlFiles.add(stringBuilder.toString() + Integer.toString(i) + ".html");
