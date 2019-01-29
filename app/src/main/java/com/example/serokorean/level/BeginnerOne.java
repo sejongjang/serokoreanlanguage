@@ -6,15 +6,15 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.GridLayout;
-import android.widget.Toast;
 
 import com.example.serokorean.R;
-import com.example.serokorean.temp.ChapterPages;
+import com.example.serokorean.BeginnerOneWebview.MainWebviewTest;
 
 public class BeginnerOne extends AppCompatActivity {
 
 
     GridLayout mainGrid;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,8 @@ public class BeginnerOne extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 //                    Toast.makeText(BeginnerOne.this, "Clicked Button" + finalI, Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(BeginnerOne.this, ChapterPages.class);
+                    Intent intent = new Intent(BeginnerOne.this, MainWebviewTest.class); //ChapterPages.class
+//                    Intent intent = new Intent(BeginnerOne.this, ChapterPages.class); //ChapterPages.class
 
                     switch (chapter){
                         case "0": intent.putExtra("chapter", "chapter 0"); intent.putExtra("pages", 6); break;

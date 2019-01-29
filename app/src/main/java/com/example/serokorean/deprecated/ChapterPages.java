@@ -1,4 +1,4 @@
-package com.example.serokorean.temp;
+package com.example.serokorean.deprecated;
 
 
 import android.content.Intent;
@@ -10,16 +10,11 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.serokorean.R;
-import com.example.serokorean.level.BeginnerOne;
 
 import java.util.ArrayList;
 
-import static android.support.v4.view.ViewCompat.animate;
 
 public class ChapterPages extends AppCompatActivity implements GestureDetector.OnGestureListener {
 
@@ -42,7 +37,6 @@ public class ChapterPages extends AppCompatActivity implements GestureDetector.O
 //        textView = findViewById(R.id.chapterpage);
 
         Bundle bundle = getIntent().getExtras();
-
         StringBuilder stringBuilder = new StringBuilder();
         String newString = "";
 
@@ -99,7 +93,6 @@ public class ChapterPages extends AppCompatActivity implements GestureDetector.O
                 return gestureDetector.onTouchEvent(event);
             }
         });
-
     }
 
     @Override
@@ -116,9 +109,8 @@ public class ChapterPages extends AppCompatActivity implements GestureDetector.O
 
                         if(currentPage > 0){
 //                            Toast.makeText(ChapterPages.this, "left", Toast.LENGTH_SHORT).show();
-                            --currentPage;
                             Animation slideLeftAnimation = AnimationUtils.loadAnimation(getBaseContext(), R.anim.slide_in_left);
-                            webView.startAnimation(slideLeftAnimation);
+                            --currentPage;
                             webView.loadUrl(htmlFiles.get(currentPage));
                         }
                         else{
@@ -168,10 +160,11 @@ public class ChapterPages extends AppCompatActivity implements GestureDetector.O
 
                     } else {
                         if(currentPage < numberOfPages-1){
+                            webView.setTransitionGroup(true);
 //                            Toast.makeText(ChapterPages.this, "right", Toast.LENGTH_SHORT).show();
-                            ++currentPage;
                             Animation slideRightAnimation = AnimationUtils.loadAnimation(getBaseContext(), R.anim.slide_in_right);
                             webView.startAnimation(slideRightAnimation);
+                            ++currentPage;
                             webView.loadUrl(htmlFiles.get(currentPage));
                         }
                         else{
