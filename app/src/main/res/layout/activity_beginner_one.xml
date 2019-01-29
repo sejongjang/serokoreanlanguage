@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:background="@drawable/sticker"
+        android:background="@drawable/background3"
         android:weightSum="10"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -20,14 +20,63 @@
         android:layout_width="match_parent"
         android:layout_height="0dp">
 
-        <TextView
-            android:id="@+id/textGrid"
-            android:text="Beginner One"
-            android:textSize="34sp"
-            android:textColor="@android:color/black"
-            android:layout_centerInParent="true"
+        <android.support.v7.widget.CardView
+            android:id="@+id/intro"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            android:layout_centerHorizontal="true"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_margin="16dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@mipmap/ic_koreanflag"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Introduction"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <!--<ImageButton-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:background="@android:color/white"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_marginBottom="30dp"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:id="@+id/imagebutton"-->
+            <!--android:src="@mipmap/ic_koreangirl"-->
+            <!--android:onClick="onClick"-->
+            <!--tools:ignore="OnClick"-->
+            <!--android:radius="8dp"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/textGrid"-->
+            <!--android:text="Beginner One"-->
+            <!--android:textSize="34sp"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
 
     </RelativeLayout>
 
@@ -39,11 +88,11 @@
         android:alignmentMode="alignMargins"
         android:columnOrderPreserved="false"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:padding="14dp">
 
         <android.support.v7.widget.CardView
-            android:id="@+id/chapterone"
+            android:id="@+id/chapter1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -62,13 +111,49 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@mipmap/ic_study"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:text="Chapter 1"
+                    android:text="chapter1"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_margin="16dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@mipmap/ic_study"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Chapter 2"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18dp"
@@ -98,13 +183,13 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@mipmap/ic_study"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:text="Chapter 1"
+                    android:text="Chapter 3"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18dp"
@@ -134,13 +219,13 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@mipmap/ic_study"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:text="Chapter 1"
+                    android:text="Chapter 4"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18dp"
@@ -170,13 +255,13 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@mipmap/ic_study"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:text="Chapter 1"
+                    android:text="Chapter 5"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18dp"
@@ -206,13 +291,13 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@mipmap/ic_study"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:text="Chapter 1"
+                    android:text="Chapter 6"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18dp"
@@ -242,13 +327,13 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@mipmap/ic_study"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:text="Chapter 1"
+                    android:text="Chapter 7"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18dp"
@@ -278,13 +363,13 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@mipmap/ic_launcher"
+                    android:src="@mipmap/ic_study"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:text="Chapter 1"
+                    android:text="Chapter 8"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18dp"
@@ -295,44 +380,6 @@
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp">
-
-            <LinearLayout
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:src="@mipmap/ic_launcher"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:text="Chapter 1"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
-
-        </android.support.v7.widget.CardView>
-
-
 
     </GridLayout>
 
