@@ -27,6 +27,14 @@ body {
   /* Standard syntax */
 }
 
+ul {
+  margin: 20px 0;
+  margin-left: 20px;
+  text-indent: 0em;
+  padding-left: 20px;
+  line-height: 150%;
+}
+
 div.mtextcon {
   border-radius: 10px;
   -moz-border-radius: 10px;
