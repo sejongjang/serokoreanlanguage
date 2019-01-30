@@ -13,10 +13,8 @@ import com.example.serokorean.BeginnerOneWebview.MainWebviewTest;
 
 public class BeginnerOne extends AppCompatActivity {
 
-
     GridLayout mainGrid;
     CardView intro;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +55,7 @@ public class BeginnerOne extends AppCompatActivity {
 //                    Intent intent = new Intent(BeginnerOne.this, ChapterPages.class); //ChapterPages.class
 
                     switch (chapter){
-                        case "0": intent.putExtra("chapter", "chapter 1"); intent.putExtra("pages", 10); break;
+                        case "0": intent.putExtra("chapter", "chapter 1"); intent.putExtra("pages", 17); break;
                         case "1": intent.putExtra("chapter", "chapter 2"); intent.putExtra("pages", 4); break;
                         case "2": intent.putExtra("chapter", "chapter 3"); intent.putExtra("pages", 12); break;
                         case "3": intent.putExtra("chapter", "chapter 4"); intent.putExtra("pages", 13); break;
