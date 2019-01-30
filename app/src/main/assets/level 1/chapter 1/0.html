@@ -31,7 +31,7 @@
                 King Sejong, Koreans were completely reliant on borrowed Chinese characters. Chinese writing had been
                 adapted, albeit messily, to work with Korean.</p>
             <p>I know what you’re wondering. <i>Why, if they already had a writing system, did King Sejong up and
-                decide to invent a new one?</i> First of all, if you’ve ever tried to learn Chinese characters
+                    decide to invent a new one?</i> First of all, if you’ve ever tried to learn Chinese characters
                 you’ll understand that it’s a non-trivial task (to put it lightly). Basically, you have to remember
                 thousands of unique characters, many with more than ten strokes. Even natives spend years learning how
                 to read and write fluently. This was also true in Korea, where only the upper class could afford the
@@ -51,10 +51,37 @@
                 politically, economically, and especially culturally in the modern world. More and more people are
                 learning about Korea and how’s it’s unique from its bigger and traditionally more influential
                 neighbors, China and Japan.</p>
-            <p><i>*AUTHOR NOTE* We hope you don’t mind these little historical tidbits. We firmly believe that history
-                and culture are so closely intertwined with languages that you can’t really gain a good
-                understanding of one without the others. We promise all this information will be useful later on.
-                So now we can really get to the meat and potatoes of Hangul. </i></p>
+            <div id="myAuthornote" class="authornote" onclick="closeNav()">
+                <p style="padding-right:10px;padding-left:15px;text-indent:0em;"> We hope you don’t mind these
+                        little historical tidbits. We firmly believe that history
+                        and culture are so closely intertwined with languages that you can’t really gain a good
+                        understanding of one without the others. We promise all this information will be useful later
+                        on.
+                        So, now we can really get to the meat and potatoes of Hangul.
+            </div>
+            <br>
+            <span style="font-size:30px;cursor:pointer;position:absolute;right:0;" onclick="openNav()">
+
+                <div class="authorcard">
+                    <div class="authorarrow"><img src="../../img/leftarrow.png" alt="left" height="40px"></div>
+                    <div class="authorcardtext">
+                        Author's Note
+                    </div>
+                </div>
+            </span>
+            <br>
+            <br>
+            <br>
+            <script>
+                function openNav() {
+                    document.getElementById("myAuthornote").style.width = "250px";
+                }
+
+                function closeNav() {
+                    document.getElementById("myAuthornote").style.width = "0";
+                }
+            </script>
+
         </div>
     </div>
 </body>

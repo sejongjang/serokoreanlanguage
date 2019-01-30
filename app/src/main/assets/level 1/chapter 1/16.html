@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Lv1_Ch1_Pg17</title>
+
+    <!-- Link to Stylesheet -->
+    <link href="../../css/textstyles.css" rel="stylesheet">
+
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="mtextcon">
+        <div class="mstandardpara">
+            <p>Alright! You made it through all the main letters in Korean. Not too bad right? On the last page of
+                every chapter we will have an extremely consice review/wrapup section. This is to help you pass the
+                quiz(s) at the end of each chapter. By deafult you must pass the quiz before moving on to the next
+                level, however this feature can be toggled off in the settings.</p>
+            <p>As for what you learned this chapter, I’m sure you’re beginning to
+                see the patterns and how the letters in Hangul build on each other. If you can’t remember a letter,
+                make your
+                mouth into the shape it prescribes. <b>Remember that Hangul letters actually look like their sound!</b>
+                You may be skeptical, but we promise it works and it will help you remember the letters. Next chapter
+                we’ll
+                be talking about the vowel sounds, which are fairly straightforward. Pass off the Hangul consonants
+                quiz below and you can continue on your way to fluency!</p>
+            <br>
+            <div class="flower">
+                <img src="../../img/blueflowercartoon.png" alt="flower" height="100px">
+            </div>
+            <div id="myAuthornote" class="authornote" onclick="closeNav()">
+                <p style="padding-right:10px;padding-left:15px;text-indent:0em;">One other thing you’ll notice is that
+                    there are a few consonants from English which are conspicuously missing from Korean. We mentioned
+                    that there is no "th" sound in Korean, but if you’ve been
+                    keeping score at home you’ll have realized that "F”, “TH” “V”, and “Z” are all nowhere to be found.
+                    (Rough approximations of “Q” and “X” can technically be reproduced in Korean. R and L are also
+                    debatably present.)</p>
+                <p><b>These missing sounds simply don’t exist in Hangul.</b> Instead you’ve got a new sort of sound in
+                    ㄹ and some more fun new sounds we’ll be talking about in the next two chapters. Be careful not to
+                    mix in English sounds that aren’t a part of the Korean language. You'll find this especially
+                    difficult when it comes to "Konglish", or English vocabulary imported into the Korean language.
+                    Words like
+                    “fitness” and “theme’ are scrubbed clean of sounds absent in Korean and come out as what can best
+                    be described as creative
+                    approximation of the original English word. This presents a challenge because you essentially have
+                    to learn a new system of pronunciation for words you already know, and Koreans love to drop some
+                    English words into their
+                    sentences to add a little bit of... <i>panache</i> to their dialogue (see what I did there).</p>
+            </div>
+            <span style="font-size:30px;cursor:pointer;position:absolute;right:0;" onclick="openNav()">
+
+                <div class="authorcard">
+                    <div class="authorarrow"><img src="../../img/leftarrow.png" alt="left" height="40px"></div>
+                    <div class="authorcardtext">
+                        Author's Note
+                    </div>
+                </div>
+            </span>
+            <br>
+            <br>
+            <br>
+            <script>
+                function openNav() {
+                    document.getElementById("myAuthornote").style.width = "250px";
+                }
+
+                function closeNav() {
+                    document.getElementById("myAuthornote").style.width = "0";
+                }
+            </script>
+            <!-- *ADD QUIZ* -->
+            <p>*QUIZ*</p>
+        </div>
+    </div>
+</body>
+
+</html>
