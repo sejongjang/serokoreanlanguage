@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(adapter);
         viewPager.setPadding(50, 0 ,50 ,0);
+//        int marginPx = getResources().getDimensionPixelSize(R.dimen.page_margin);
+//        viewPager.setPageMargin(marginPx);
 
         Integer[] colors_temp = {
                 getResources().getColor(R.color.beginnerone),
@@ -50,9 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 if((position < (adapter.getCount()) - 1) && position < (colors.length - 1)){
                     viewPager.setBackgroundColor(
                             (Integer) argbEvaluator.evaluate(
-                                    positionOffset,
-                                    colors[position],
-                                    colors[position + 1]
+                                    positionOffset, colors[position], colors[position + 1]
                             )
                     );
                 }else{
