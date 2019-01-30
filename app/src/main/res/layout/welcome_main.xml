@@ -27,7 +27,7 @@
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="새로 한국어\nSeroKorean"
+            android:text="새로 한국어\nSero Korean"
             android:textSize="33sp"
             android:textStyle="bold"
             android:textColor="@color/white"/>
