@@ -4,10 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.GridLayout;
-import android.widget.ImageButton;
 
 import com.example.serokorean.R;
 import com.example.serokorean.BeginnerOneWebview.MainWebviewTest;

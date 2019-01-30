@@ -10,7 +10,6 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:background="@drawable/background3"
         android:weightSum="10"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -18,13 +17,13 @@
     <RelativeLayout
         android:layout_weight="4"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="wrap_content">
 
         <android.support.v7.widget.CardView
             android:id="@+id/intro"
             android:layout_marginTop="15dp"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp">
@@ -89,16 +88,16 @@
         android:columnOrderPreserved="false"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp">
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
 
         <android.support.v7.widget.CardView
             android:id="@+id/chapter1"
             android:layout_width="wrap_content"
-            android:maxWidth="200dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_margin="16dp"
+            android:layout_margin="20dp"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp">
 
@@ -125,15 +124,13 @@
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
-
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
             android:layout_width="wrap_content"
-            android:maxWidth="200dp"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_margin="16dp"
+            android:layout_margin="20dp"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp">
 
@@ -167,9 +164,7 @@
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_margin="20dp"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp">
 
@@ -203,9 +198,7 @@
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_margin="20dp"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp">
 
@@ -239,9 +232,7 @@
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_margin="20dp"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp">
 
@@ -253,7 +244,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@mipmap/ic_study"
+                    android:src="@mipmap/ic_elephanticon"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -275,9 +266,7 @@
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_margin="20dp"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp">
 
@@ -289,7 +278,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@mipmap/ic_study"
+                    android:src="@mipmap/ic_fishicon"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -311,9 +300,7 @@
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_margin="20dp"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp">
 
@@ -325,7 +312,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@mipmap/ic_study"
+                    android:src="@mipmap/ic_octopusicon"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -347,9 +334,7 @@
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_margin="20dp"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp">
 
@@ -361,13 +346,81 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@mipmap/ic_study"
+                    android:src="@mipmap/ic_pigicon"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
                 <TextView
                     android:text="Chapter 8"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="20dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_margin="16dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@mipmap/ic_sheepicon"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Chapter 9"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="20dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp">
+
+            <LinearLayout
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_margin="16dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@mipmap/ic_oxicon"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Chapter 10"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18dp"

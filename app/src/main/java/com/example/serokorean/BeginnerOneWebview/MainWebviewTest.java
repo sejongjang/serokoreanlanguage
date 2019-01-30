@@ -1,10 +1,13 @@
 package com.example.serokorean.BeginnerOneWebview;
 
+import android.provider.SyncStateContract;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -122,7 +125,9 @@ public class MainWebviewTest extends AppCompatActivity implements ParentRequestI
             settings.setDisplayZoomControls(false);
             settings.setLoadWithOverviewMode(true);
             settings.setUseWideViewPort(false);
+
             webView.loadUrl(url);
+
             return rootView;
         }
 
