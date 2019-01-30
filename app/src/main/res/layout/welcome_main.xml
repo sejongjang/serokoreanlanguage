@@ -9,7 +9,8 @@
     tools:context=".Welcome">
 
     <LinearLayout
-        android:gravity="center"
+        android:gravity="bottom"
+        android:layout_marginBottom="60dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -23,14 +24,13 @@
         <!--/>-->
         <TextView
             android:id="@+id/tv"
-            android:layout_marginTop="450dp"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="새로 한국어\nSeroKorean"
             android:textSize="33sp"
             android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:textColor="@android:color/white"/>
 
     </LinearLayout>
 

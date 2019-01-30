@@ -17,7 +17,9 @@
     <RelativeLayout
         android:layout_weight="4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp">
 
         <android.support.v7.widget.CardView
             android:id="@+id/intro"
@@ -105,7 +107,7 @@
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
@@ -115,11 +117,12 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:text="chapter1"
+                    android:text="chapter 1"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="20dp"
                     android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -138,7 +141,7 @@
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
@@ -153,6 +156,7 @@
                     android:textColor="@android:color/black"
                     android:textSize="18dp"
                     android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -172,7 +176,7 @@
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
@@ -187,6 +191,7 @@
                     android:textColor="@android:color/black"
                     android:textSize="18dp"
                     android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -206,7 +211,7 @@
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
@@ -221,6 +226,7 @@
                     android:textColor="@android:color/black"
                     android:textSize="18dp"
                     android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -240,7 +246,7 @@
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
@@ -255,6 +261,7 @@
                     android:textColor="@android:color/black"
                     android:textSize="18dp"
                     android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -274,7 +281,7 @@
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
@@ -289,6 +296,7 @@
                     android:textColor="@android:color/black"
                     android:textSize="18dp"
                     android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -308,7 +316,7 @@
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
@@ -323,7 +331,8 @@
                     android:textColor="@android:color/black"
                     android:textSize="18dp"
                     android:textStyle="bold"
-                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
@@ -342,7 +351,7 @@
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
@@ -352,11 +361,12 @@
                     android:layout_height="wrap_content" />
 
                 <TextView
-                    android:text="Chapter 8"
+                    android:text="Chapter 8 "
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18dp"
                     android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -376,7 +386,7 @@
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
@@ -391,6 +401,7 @@
                     android:textColor="@android:color/black"
                     android:textSize="18dp"
                     android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -410,7 +421,7 @@
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageView
@@ -423,8 +434,9 @@
                     android:text="Chapter 10"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="18dp"
+                    android:textSize="15dp"
                     android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
