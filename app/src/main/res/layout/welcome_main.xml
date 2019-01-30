@@ -23,14 +23,18 @@
         <!--/>-->
         <TextView
             android:id="@+id/tv"
-            android:layout_marginTop="450dp"
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="450dp"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="-2"
+            android:shadowDy="2"
+            android:shadowRadius="0.01"
             android:text="새로 한국어\nSero Korean"
+            android:textColor="@color/white"
             android:textSize="33sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 
