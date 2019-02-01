@@ -1,6 +1,7 @@
 package com.example.serokorean;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.animation.Animation;
@@ -17,6 +18,10 @@ public class Welcome extends AppCompatActivity {
 
         tv = findViewById(R.id.tv);
         //iv = findViewById(R.id.iv);
+
+        Typeface customFont = Typeface.createFromAsset(getAssets(), "fonts/makgeolli.ttf");
+
+        tv.setTypeface(customFont);
 
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.loading);
         tv.startAnimation(animation);

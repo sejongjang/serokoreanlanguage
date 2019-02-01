@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/seoul3"
+    android:background="@color/aqua"
     android:id="@+id/mainActivityLayout"
     tools:context=".Welcome">
 
     <LinearLayout
-        android:gravity="bottom"
-        android:layout_marginBottom="60dp"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -22,18 +21,19 @@
         <!--android:layout_gravity="center"-->
         <!--android:src="@drawable/koreangirl" -->
         <!--/>-->
+
         <TextView
             android:id="@+id/tv"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="450dp"
             android:shadowColor="@android:color/black"
             android:shadowDx="-2"
             android:shadowDy="2"
             android:shadowRadius="0.01"
             android:text="새로 한국어\nSero Korean"
-            android:textSize="33sp"
+            android:textAlignment="center"
+            android:textSize="50sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"/>
 
