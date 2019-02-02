@@ -55,7 +55,7 @@ public class BeginnerOne extends AppCompatActivity {
 
                     switch (chapter){
                         case "0": intent.putExtra("chapter", "chapter 1"); intent.putExtra("pages", 17); break;
-                        case "1": intent.putExtra("chapter", "chapter 2"); intent.putExtra("pages", 4); break;
+                        case "1": intent.putExtra("chapter", "chapter 2"); intent.putExtra("pages", 9); break;
                         case "2": intent.putExtra("chapter", "chapter 3"); intent.putExtra("pages", 12); break;
                         case "3": intent.putExtra("chapter", "chapter 4"); intent.putExtra("pages", 13); break;
                         case "4": intent.putExtra("chapter", "chapter 5"); intent.putExtra("pages", 13); break;
