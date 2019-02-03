@@ -11,13 +11,14 @@
     <!-- Link to Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
 
 </head>
 
 <body>
     <div class="mtextcon">
         <div class="mheader">Chapter 4</div><br>
-        <div class="msubheader">한류—The Korean Wave</div><br>
+        <div class="msubheader">The Korean Wave</div><br>
         <div class="mheadpara">
             <p><i>Along with our adventures learning Korean grammar, pronunciation, spelling, and what-have-you, we’ll
                     also be taking some breathers here and there to help you refresh your mind and give you time to
@@ -28,16 +29,18 @@
                     but also thinking like a Korean in no time.</i></p>
         </div>
         <div class="mstandardpara">
+            <p></p>
             <!--Vocab Introduction Grid-->
             <div class="vocab-container">
                 <div class="vocab-item">
                     <h3><audio id="audio8" src="../../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound8()">한국</a></h3>
                     <script>
-                        function PlaySound8() {
-                            var sound8 = document.getElementById("audio8");
-                            sound8.play()
-                        }
+                        var button = $("button");
+                        button.text(button.data("text-swap"));
                     </script>
+                </div>
+                <div class="vocab-item">
+                    <h3>Korea</h3>
                 </div>
                 <div class="vocab-item">
                     <h3><audio id="audio9" src="../../audio/hallyu.mp3" autostart="false"></audio><a onclick="PlaySound9()">한류</a></h3>
@@ -49,6 +52,9 @@
                     </script>
                 </div>
                 <div class="vocab-item">
+                    <h3>Korean Wave</h3>
+                </div>
+                <div class="vocab-item">
                     <h3><audio id="audio9" src="../../audio/seoul.mp3" autostart="false"></audio><a onclick="PlaySound9()">서울</a></h3>
                     <script>
                         function PlaySound9() {
@@ -56,6 +62,9 @@
                             sound9.play()
                         }
                     </script>
+                </div>
+                <div class="vocab-item">
+                    <h3>Seoul</h3>
                 </div>
                 <div class="vocab-item">
                     <h3><audio id="audio9" src="../../audio/deurama.mp3" autostart="false"></audio><a onclick="PlaySound9()">드라마</a></h3>
@@ -67,6 +76,9 @@
                     </script>
                 </div>
                 <div class="vocab-item">
+                    <h3>drama (TV series)</h3>
+                </div>
+                <div class="vocab-item">
                     <h3><audio id="audio9" src="../../audio/norae.mp3" autostart="false"></audio><a onclick="PlaySound9()">노래</a></h3>
                     <script>
                         function PlaySound9() {
@@ -75,14 +87,17 @@
                         }
                     </script>
                 </div>
+                <div class="vocab-item">
+                    <h3>song</h3>
+                </div>
             </div>
-            <p><i>For our first little segment I’ve elected to talk about one of the main reasons this app
-                    exists
-                    and
-                    the reason many people become interested in learning Korean. That reason is 한류(韓流),
-                    known
-                    in
-                    English as “The Korean Wave”.</p>
+            <p>For our first little segment I’ve elected to talk about one of the main reasons this app
+                exists
+                and
+                the reason many people become interested in learning Korean. That reason is 한류(韓流),
+                known
+                in
+                English as “The Korean Wave”.</p>
             <p>What is the Korean Wave? Put simply, it’s a revolution in the entertainment industry that is
                 taking
                 the
