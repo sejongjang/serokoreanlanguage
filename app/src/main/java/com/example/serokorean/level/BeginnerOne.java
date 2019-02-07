@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.GridLayout;
-
 import com.example.serokorean.R;
 import com.example.serokorean.BeginnerOneWebview.MainWebviewTest;
 
@@ -85,11 +84,12 @@ public class BeginnerOne extends AppCompatActivity {
                         case "28": intent.putExtra("chapter", "chapter 29"); intent.putExtra("pages", 13); break;
                         case "29": intent.putExtra("chapter", "chapter 30"); intent.putExtra("pages", 13); break;
                     }
-
                     startActivity(intent);
                 }
             });
 
         }
     }
+
+
 }

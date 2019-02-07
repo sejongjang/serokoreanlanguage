@@ -59,11 +59,11 @@ public class MainActivityCardAdapter extends PagerAdapter {
                 String title = models.get(position).getTitle();
 
                 switch(title){
-                    case "Beginner 1":
+                    case "Hangul":
                         Intent beginnerOneActivity = new Intent(container.getContext(), BeginnerOne.class);
                         container.getContext().startActivity(beginnerOneActivity);
                         break;
-                    case "Beginner 2":
+                    case "Grammar":
                         Intent beginnerTwoActivity = new Intent(container.getContext(), BeginnerOne.class);
                         container.getContext().startActivity(beginnerTwoActivity);
                         break;

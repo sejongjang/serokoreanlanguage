@@ -22,11 +22,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         models = new ArrayList<>();
-        models.add(new MainActivityModel(R.drawable.beginnerone, "Beginner 1", "Learning very basic"));
-        models.add(new MainActivityModel(R.drawable.beginnertwo, "Beginner 2", "Learning basic vocab and grammar"));
+        models.add(new MainActivityModel(R.drawable.beginnerone, "Hangul", "Remember every great things has a beginning"));
+        models.add(new MainActivityModel(R.drawable.beginnertwo, "Grammar", "Good thing about learning language,\nyou don't need to be perfect!"));
         models.add(new MainActivityModel(R.drawable.intermediateone, "Intermediate 1", "Usage of vocab and grammar"));
-        models.add(new MainActivityModel(R.drawable.namecard, "Intermediate 2", "Make sentences and speak based off of basic"));
-        models.add(new MainActivityModel(R.drawable.sticker, "Advanced", "Advanced sentences and usages"));
+        models.add(new MainActivityModel(R.drawable.castle, "Intermediate 2", "Make sentences and speak based off of basic"));
+        models.add(new MainActivityModel(R.drawable.southkorea, "Advanced", "Advanced sentences and usages"));
 
         adapter = new MainActivityCardAdapter(models, this);
 
@@ -39,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
         Integer[] colors_temp = {
                 getResources().getColor(R.color.beginnerone),
                 getResources().getColor(R.color.beginnertwo),
-                getResources().getColor(R.color.intermediateone),
-                getResources().getColor(R.color.intermediatetwo),
-                getResources().getColor(R.color.advanced),
+                getResources().getColor(R.color.black),
+                getResources().getColor(R.color.nicewhite),
+                getResources().getColor(R.color.aqua),
         };
 
         colors = colors_temp;

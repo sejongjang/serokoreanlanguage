@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BeginnerOneWebview.MainWebviewTest"></activity>
+        <activity android:name=".BeginnerOneWebview.MainWebviewTest" />
         <activity android:name=".deprecated.ChapterPages" />
         <activity android:name=".level.BeginnerOne" />
         <activity android:name=".MainActivity" />

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -25,6 +30,7 @@
         <android.support.v7.widget.CardView
             android:id="@+id/intro"
             android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -50,35 +56,12 @@
                     android:text="Introduction"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="20dp"
-                    android:fontFamily="sans-serif"
-                    android:textStyle="bold" />
+                    android:textSize="17dp"
+                    android:fontFamily="sans-serif" />
 
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
-
-        <!--<ImageButton-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:background="@android:color/white"-->
-            <!--android:layout_alignParentBottom="true"-->
-            <!--android:layout_marginBottom="30dp"-->
-            <!--android:layout_centerHorizontal="true"-->
-            <!--android:id="@+id/imagebutton"-->
-            <!--android:src="@mipmap/ic_koreangirl"-->
-            <!--android:onClick="onClick"-->
-            <!--tools:ignore="OnClick"-->
-            <!--android:radius="8dp"/>-->
-
-        <!--<TextView-->
-            <!--android:id="@+id/textGrid"-->
-            <!--android:text="Beginner One"-->
-            <!--android:textSize="34sp"-->
-            <!--android:textColor="@android:color/black"-->
-            <!--android:layout_centerInParent="true"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content" />-->
 
     </RelativeLayout>
 
@@ -89,14 +72,17 @@
         android:rowCount="4"
         android:orientation="horizontal"
         android:gravity="center"
+        android:layout_gravity="center"
         android:columnOrderPreserved="false"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp">
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="50dp">
 
         <android.support.v7.widget.CardView
             android:id="@+id/chapter1"
+            android:layout_gravity="fill"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -122,8 +108,7 @@
                     android:text="chapter 1"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="20dp"
-                    android:textStyle="bold"
+                    android:textSize="15dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -131,6 +116,7 @@
             </LinearLayout>
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
+            android:layout_gravity="fill"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -156,8 +142,7 @@
                     android:text="Chapter 2"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
+                    android:textSize="15dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -166,6 +151,7 @@
 
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
+            android:layout_gravity="fill"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -191,8 +177,7 @@
                     android:text="Chapter 3"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
+                    android:textSize="15dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -201,6 +186,7 @@
 
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
+            android:layout_gravity="fill"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -226,8 +212,7 @@
                     android:text="Chapter 4"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
+                    android:textSize="15dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -236,6 +221,7 @@
 
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
+            android:layout_gravity="fill"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -261,8 +247,7 @@
                     android:text="Chapter 5"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
+                    android:textSize="15dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -271,6 +256,7 @@
 
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
+            android:layout_gravity="fill"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -296,8 +282,7 @@
                     android:text="Chapter 6"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
+                    android:textSize="15dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -306,6 +291,7 @@
 
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
+            android:layout_gravity="fill"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -331,16 +317,16 @@
                     android:text="Chapter 7"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
+                    android:textSize="15dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
+            android:layout_gravity="fill"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -366,8 +352,7 @@
                     android:text="Chapter 8 "
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
+                    android:textSize="15dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -376,6 +361,7 @@
 
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
+            android:layout_gravity="fill"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -401,8 +387,7 @@
                     android:text="Chapter 9"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="18dp"
-                    android:textStyle="bold"
+                    android:textSize="15dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -411,6 +396,7 @@
 
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
+            android:layout_gravity="fill"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_columnWeight="1"
@@ -437,7 +423,6 @@
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="15dp"
-                    android:textStyle="bold"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -450,3 +435,17 @@
 
     </LinearLayout>
 </ScrollView>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
+
+</android.support.constraint.ConstraintLayout >
