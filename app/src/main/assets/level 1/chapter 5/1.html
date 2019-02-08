@@ -43,6 +43,26 @@
                 예요. While 예 is technically a vowel in Korean, like the English letter “Y”, it’s sort of a double agent
                 and here is acting as a consonant. Easy enough right? This way of pronouncing things will become very
                 natural over time. Let's try some real examples.</p>
+
+            <!-- Small Grid -->
+            <div class="grid-container">
+                <div class="grid-item">
+                    <h4><audio id="audio8" src="../../audio/shinbalieyo.mp3" autostart="false"></audio><a onclick="PlaySound8()">신발이에요</a></h4>
+                    <script>
+                        function PlaySound8() {
+                            var sound8 = document.getElementById("audio8");
+                            sound8.play()
+                        }
+                    </script>
+                </div>
+                <div class="grid-item">
+                    <h4 id="reveal1">Click for meaning.</h4>
+                </div>
+            </div>
+            <script>
+                var meaning1 = document.getElementById("reveal1");
+                meaning1.innerHTML = meaning1.innerHTML.replace( /Click for meaning./g, "These are shoes.";
+            </script>
         </div>
     </div>
 </body>
