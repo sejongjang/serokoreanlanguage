@@ -29,11 +29,11 @@
                         }
                     </script>
                 </div>
-                <div class="sentence-translated-item" onclick="replace()">
+                <div class="sentence-translated-item" onclick="replace1()">
                     <h4 id="replace1">(tap for translation)</h4>
                 </div>
                 <script>
-                    function replace() {
+                    function replace1() {
                         var str = document.getElementById("replace1").innerHTML;
                         var res = str.replace("(tap for translation)", "This is a chair.");
                         document.getElementById("replace1").innerHTML = res;
@@ -83,6 +83,62 @@
                 say “this is <i>that</i> chair”. We’ll learn how to do this naturally as we continue to wade deeper
                 into the
                 language. Now some more examples.</p>
+
+            <!-- Example Sentence Grid -->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio id="audio1" src="../../audio/euijayeyo.mp3" autostart="false"></audio><a onclick="PlaySound1()">집이에요.</a></h4>
+                    <script>
+                        function PlaySound1() {
+                            var sound1 = document.getElementById("audio1");
+                            sound1.play()
+                        }
+                    </script>
+                </div>
+                <div class="sentence-translated-item" onclick="replace3()">
+                    <h4 id="replace3">(tap for translation)</h4>
+                </div>
+                <script>
+                    function replace3() {
+                        var str = document.getElementById("replace3").innerHTML;
+                        var res = str.replace("(tap for translation)", "It’s a house.");
+                        document.getElementById("replace3").innerHTML = res;
+                    }
+                </script>
+            </div>
+            <br>
+            <!-- Example Sentence Grid -->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio id="audio2" src="../../audio/euijayeyo.mp3" autostart="false"></audio><a onclick="PlaySound2()">집
+                            아니에요.</a></h4>
+                    <script>
+                        function PlaySound2() {
+                            var sound2 = document.getElementById("audio2");
+                            sound2.play()
+                        }
+                    </script>
+                </div>
+                <div class="sentence-translated-item" onclick="replace4()">
+                    <h4 id="replace4">(tap for translation)</h4>
+                </div>
+                <script>
+                    function replace4() {
+                        var str = document.getElementById("replace4").innerHTML;
+                        var res = str.replace("(tap for translation)", "It's not a house.");
+                        document.getElementById("replace4").innerHTML = res;
+                    }
+                </script>
+            </div>
+            <p>Wait 집 아니에요? <i>What is going on here?!</i> Remeber we introduced the negative version of the verb "to
+                be" as "아니다". If you conjugate 아니다 to polite spoken-form it becomes 아니에요.
+                Earlier you also learned that the verb 이다 attaches onto the noun you are declaring, but <b>이다 is the
+                    only verb that attaches like this.</b> 이다 has two versions when conjugated
+                because it attaches to the end of words and thus follows the vowel-consonant agreement rule.</p>
+            <p>아니다 on the other hand acts like
+                any other verb and should have a between it and the word it is negating. Since 아니다 doesn't attach to
+                the end of nouns it doesn't need to follow our vowel-consonant agreement rule. </p>
+
         </div>
     </div>
 </body>

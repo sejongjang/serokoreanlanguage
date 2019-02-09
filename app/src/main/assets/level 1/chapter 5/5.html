@@ -2,8 +2,8 @@
 <html>
 
 <head>
-    <meta charset="utf-8">-
-    <title>Lv1_Ch3_Pg6</title>
+    <meta charset="utf-8">
+    <title>Lv1_Ch3_Pg7</title>
 
     <!-- Link to Stylesheet -->
     <link href="../../css/textstyles.css" rel="stylesheet">
@@ -17,125 +17,64 @@
 <body>
     <div class="mtextcon">
         <div class="mstandardpara">
-
-            <p>Before wrapping up this chapter there are a few "special cases", or unexpected sounds, we need to talk about. Mostly these have
-                to do with carry-over sounds. We've actually alaredy talked about some of these. Those are shown below.</p>
-                <ul><b>
-                        <li>Despite making other sounds on top, the letters make a t-stop sound in the 받침 position are ㄷ, ㅅ, ㅈ, ㅊ, ㅌ, and also ㅆ.</li>
-                        <li>ㄴ-ㄹ carry-over sounds like a ㄹ-ㄹ carry-over.</li>
-                        <li>ㅎ has the special ability to make non-aspirated consonants sound aspirated.</li>
-                    </b></ul>
-
-            <p>These are some of the unexpected behaviors we've gone over but there are a few more we need let let you know about. We'll start with the m-stop sound.</p>
-            <!-- Small Grid -->
-            <div class="grid-container">
-                <div class="grid-item">
-                    <h3><audio id="audio8" src="../../audio/ja.mp3" autostart="false"></audio><a onclick="PlaySound8()">굽는</a></h3>
-                    <script>
-                        function PlaySound8() {
-                            var sound8 = document.getElementById("audio8");
-                            sound8.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/jja.mp3" autostart="false"></audio><a onclick="PlaySound9()">갚는</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
-                </div>
+            <p>Hurray, you're finally done learning 한글! And you didn't just learn it, you killed it!</p>
+            <p>Now that we have learned how to read Korean we will be able to start digging into Korean grammar. First
+                though, we'll take a little break next chapter to talk about the Korean wave. This will also be a
+                chance for you to start picking up some vocabulary.</p>
+            <p>Go ahead and review below and take the chapter 3 quiz!</p>
+            <ul><b>
+                    <li>Adding a line onto vowels that have one protruding line adds a "Y" sound in front of the vowel
+                        (아-야, 어-여, 오-요, 우-유, 애-얘, and 에-예).</li>
+                    <li>으 and 이 don't have y-vowel versions.</li>
+                    <li>The compound vowels in 한글(Hangul) are 와, 워, 외, 위, 의, 왜, and 웨.</li>
+                    <li>외, 왜, and 웨 all sound the same.</li>
+                    <li>에 and 애 sound very similar, and so does 의 when it is acting as a possesive marker.</li>
+                    <li>At the beginning (or middle) of a word 의 is pronounced as "으-이", and at the end of a word it
+                        just makes an "이" sound.</li>
+                    <li>Badchim spelled out in Korean is 받침, and Hangul is 한글.</li>
+                </b></ul>
+            <div id="myAuthornote" class="authornote" onclick="closeNav()">
+                <p style="padding-right:10px;padding-left:15px;text-indent:0em;">Bonus: You’ve heard the English
+                    pangram (sentence that has every letter in the alphabet) “The quick brown fox jumps over the lazy
+                    dog.” It turns out Korean also has an entertaining pangram, including all the single consonants and
+                    vowels (only a couple of compounds are included): 키스의 고유 조건은 입술끼리 만나야 되고 특별한 요령은 필요치 않다.
+                    (For a kiss to happen your lips must meet and you don’t need any special skills.)
             </div>
+            <span style="font-size:30px;cursor:pointer;position:absolute;right:0;" onclick="openNav()">
+                <div class="authorcard">
+                    <div class="culturenotearrow"><img src="../../img/leftarrow.png" alt="left" height="40px"></div>
+                    <div class="culturenotetext">
+                        Linguistic Fun
+                    </div>
+                </div>
+            </span>
+            <br>
+            <br>
+            <br>
+            <script>
+                function openNav() {
+                    document.getElementById("myAuthornote").style.width = "250px";
+                }
 
-            <p>It turns out that the letter ㅂ and ㅍ, which are derived from ㅁ, act like ㅁ does before ceratain letters when they are in the 받침 posistion.</p>
-            <!-- 같이, 임모/앗사, 국물, -->
-            <!-- Letter Practice Grid -->
-            <div class="grid-container">
-                <div class="grid-item">
-                    <h3><audio id="audio8" src="../../audio/ra.mp3" autostart="false"></audio><a onclick="PlaySound8()">자다</a></h3>
-                    <script>
-                        function PlaySound8() {
-                            var sound8 = document.getElementById("audio8");
-                            sound8.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/rak.mp3" autostart="false"></audio><a onclick="PlaySound9()">짜다</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio7" src="../../audio/rara.mp3" autostart="false"></audio><a onclick="PlaySound7()">장</a></h3>
-                    <script>
-                        function PlaySound7() {
-                            var sound7 = document.getElementById("audio7");
-                            sound7.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/ral.mp3" autostart="false"></audio><a onclick="PlaySound9()">짱</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/dal.mp3" autostart="false"></audio><a onclick="PlaySound9()">절어</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/nal.mp3" autostart="false"></audio><a onclick="PlaySound9()">쩔어</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio10" src="../../audio/dalla.mp3" autostart="false"></audio><a onclick="PlaySound10()">질</a></h3>
-                    <script>
-                        function PlaySound10() {
-                            var sound10 = document.getElementById("audio10");
-                            sound10.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio2" src="../../audio/galla.mp3" autostart="false"></audio><a onclick="PlaySound2()">칠</a></h3>
-                    <script>
-                        function PlaySound2() {
-                            var sound2 = document.getElementById("audio2");
-                            sound2.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio11" src="../../audio/ralla.mp3" autostart="false"></audio><a onclick="PlaySound11()">찔</a></h3>
-                    <script>
-                        function PlaySound11() {
-                            var sound11 = document.getElementById("audio11");
-                            sound11.play()
-                        }
-                    </script>
-                </div>
+                function closeNav() {
+                    document.getElementById("myAuthornote").style.width = "0";
+                }
+            </script>
+            <!-- *ADD QUIZ* -->
+            <p>*QUIZ*</p>
+
+            <div class="flower">
+                <img src="../../img/blueflowercartoon.png" alt="flower" height="100px">
             </div>
-            <p>The "ㅉ" sound has some nice zing to it so it's more easily distinguishable, like ㄸ.</p>
+            <script>
+                function openNav() {
+                    document.getElementById("myAuthornote").style.width = "250px";
+                }
+
+                function closeNav() {
+                    document.getElementById("myAuthornote").style.width = "0";
+                }
+            </script>
         </div>
     </div>
 </body>

@@ -176,11 +176,22 @@ div.cardtext {
   border-width: 2px;
   border-color: orange;
   grid-template-columns: auto auto;
+  grid-template-rows: 20px auto;
   border-radius: 3px;
   display: inline-grid;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.vocab-top-item {
+  border: 1px solid #f2f2f2;
+  padding: 0px;
+  font-size: 15px;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: center;
+  border-collapse: collapse;
+  text-indent: 0em;
 }
 
 .vocab-item {

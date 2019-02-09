@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">-
-    <title>Lv1_Ch5_Pg4</title>
+    <title>Lv1_Ch5_Pg5</title>
 
     <!-- Link to Stylesheet -->
     <link href="../../css/textstyles.css" rel="stylesheet">
@@ -17,10 +17,49 @@
 <body>
     <div class="mtextcon">
         <div class="mstandardpara">
+            <p>Let's talk about the words for "yes" and "no" as well.</p>
+            <!--Vocab Introduction Grid-->
+            <div class="vocab-container">
+                    <div class="vocab-top-item">
+                            <i>Word</i>
+                        </div>
+                        <div class="vocab-top-item">
+                            <i>Meaning</i>
+                        </div>
+                <div class="vocab-item">
+                    <h3><audio id="audio8" src="../../audio/ne.mp3" autostart="false"></audio><a onclick="PlaySound8()">네</a></h3>
+                    <script>
+                        var button = $("button");
+                        button.text(button.data("text-swap"));
+                    </script>
+                </div>
+                <div class="vocab-item">
+                    <h3>yes</h3>
+                </div>
+                <div class="vocab-item">
+                    <h3><audio id="audio9" src="../../audio/aniyo.mp3" autostart="false"></audio><a onclick="PlaySound9()">아니요</a></h3>
+                    <script>
+                        function PlaySound9() {
+                            var sound9 = document.getElementById("audio9");
+                            sound9.play()
+                        }
+                    </script>
+                </div>
+                <div class="vocab-item">
+                    <h3>no</h3>
+                </div>
+            </div>
+            <p>When asked a yes-or-no question, 네 means "yes" and 아니요 means “no”. We're bringing this up now because
+                아니요 should
+                not be confused with 아니에요. 아니에요 is used for saying "A does not equal B". 아니요 is used the same way as
+                the English word "no" is to express disagreement. <b>아니에요 should only ever come at the end of the clause/sentence, whereas 아니요 usually comes at the beginning.</b></p>
+                <p>Now we'll look at some examples of how these words our used, but first let us introduce you to our two characters
+                that we will be getting to know in Sero Korean Level 1, 박재영 (Jaeyoung Park) and 애슐리 웨스턴 (Ashley Weston). Let's look at some simple
+                dialogue between our two characters. (Note that in Korean the family name comes before the given name)</p>
             <!-- Example Sentence Grid -->
             <div class="sentence-container">
                 <div class="sentence-main-item">
-                    <h4><audio id="audio1" src="../../audio/euijayeyo.mp3" autostart="false"></audio><a onclick="PlaySound1()">집이에요.</a></h4>
+                    <h4><audio id="audio1" src="../../audio/euijayeyo.mp3" autostart="false"></audio><a onclick="PlaySound1()">.</a></h4>
                     <script>
                         function PlaySound1() {
                             var sound1 = document.getElementById("audio1");
@@ -63,12 +102,6 @@
                     }
                 </script>
             </div>
-            <p>Wait 집 아니에요? <i>What is going on here?!</i> The negative version of 예요/이에요 is 아니에요. It actually derives from a different verb "아니다", meaning to "be not".
-                Earlier you learned that the verb 이다 attaches onto the noun you are declaring, but <b>이다 is the only verb that attaches like this.</b> 아니다 acts like
-                any other verb and should have a space before it. Since 아니다 doesn't attach to the end of nouns it doesn't need to follow our vowel-consonant agreement rule.</p>
-                <p>Another interesting thing here is how 아니다 conjugates. In polite form, it conjuagtes to "아니에요" as you saw above. In Korean it's normal to see 
-                vowels show up next to each other a lot. What makes things sound rough is having a lot of
-                consonants together. So remember C+이에요 and V+예요, and C/V+아니에요.</p>
         </div>
     </div>
 </body>
