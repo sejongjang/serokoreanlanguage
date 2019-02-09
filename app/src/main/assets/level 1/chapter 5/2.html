@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">-
-    <title>Lv1_Ch3_Pg3</title>
+    <title>Lv1_Ch5_Pg3</title>
 
     <!-- Link to Stylesheet -->
     <link href="../../css/textstyles.css" rel="stylesheet">
@@ -17,11 +17,11 @@
 <body>
     <div class="mtextcon">
         <div class="mstandardpara">
-            <p>Next up we the tensed verion of ㅂ, ㅃ.</p>
-            <!-- Small Grid -->
-            <div class="grid-container">
-                <div class="grid-item">
-                    <h3><audio id="audio8" src="../../audio/ba.mp3" autostart="false"></audio><a onclick="PlaySound8()">바</a></h3>
+
+            <!-- Example Sentence Grid -->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio id="audio8" src="../../audio/euijayeyo.mp3" autostart="false"></audio><a onclick="PlaySound8()">의자예요.</a></h4>
                     <script>
                         function PlaySound8() {
                             var sound8 = document.getElementById("audio8");
@@ -29,87 +29,35 @@
                         }
                     </script>
                 </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/bba.mp3" autostart="false"></audio><a onclick="PlaySound9()">빠</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
+                <div class="sentence-translated-item" onclick="replace()">
+                    <h4 id="replace1">(tap for translation)</h4>
                 </div>
+                <script>
+                    function replace() {
+                        var str = document.getElementById("replace1").innerHTML;
+                        var res = str.replace("(tap for translation)", "This is a chair.");
+                        document.getElementById("replace1").innerHTML = res;
+                    }
+                </script>
             </div>
+            <p>In this example we have another word that snuck into the English version of our sentence but isn’t in
+                the Korean one. “A” is an article. In English there are exactly three articles, “a”, “an”, and “the”.
+                These words have something to do with specifying quantity and singling things out. It’s not really
+                important however, because <b>Korean has no articles</b>. Yep let that sink in. Now before you start
+                protesting that you won’t know if there’s one chair or millions of chairs, or if the is just <i>a</i>
+                chair or
+                <i>the</i> chair, slow down and let me explain.</p>
+            <p>The truth is that you aren’t losing anything too critical by not having articles in Korean. There is a
+                way to delineate plurality, though it’s usage is more flexible. In English if we have more than one
+                chair we absolutely must say “chairs”. Korean is different. Without knowing the context of the above
+                sentence it would not be inaccurate to translate it as, “These are chairs”. If you must be clear that
+                you are dealing with more than one “thing” you can add the postfix “들” onto the end of any noun. Please
+                note than 들 is most commonly used when referring to people but, again, can be used with any nouns.</p>
 
-            <p>ㅃ can be difficult to distinguish from ㅂ and ㅍ despite it following the regular pattern for
-                double consonants. Listen very carefully to these words below.</p>
-
-            <!-- Letter Practice Grid -->
-            <div class="grid-container">
-                <div class="grid-item">
-                    <h3><audio id="audio8" src="../../audio/ra.mp3" autostart="false"></audio><a onclick="PlaySound8()">아바</a></h3>
-                    <script>
-                        function PlaySound8() {
-                            var sound8 = document.getElementById("audio8");
-                            sound8.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/rak.mp3" autostart="false"></audio><a onclick="PlaySound9()">아파</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio7" src="../../audio/rara.mp3" autostart="false"></audio><a onclick="PlaySound7()">아빠</a></h3>
-                    <script>
-                        function PlaySound7() {
-                            var sound7 = document.getElementById("audio7");
-                            sound7.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/ral.mp3" autostart="false"></audio><a onclick="PlaySound9()">오바</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/dal.mp3" autostart="false"></audio><a onclick="PlaySound9()">오파</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/nal.mp3" autostart="false"></audio><a onclick="PlaySound9()">오빠</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio10" src="../../audio/dalla.mp3" autostart="false"></audio><a onclick="PlaySound10()">반대</a></h3>
-                    <script>
-                        function PlaySound10() {
-                            var sound10 = document.getElementById("audio10");
-                            sound10.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio2" src="../../audio/galla.mp3" autostart="false"></audio><a onclick="PlaySound2()">판대</a></h3>
+            <!-- Example Sentence Grid -->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio id="audio2" src="../../audio/euijayeyo.mp3" autostart="false"></audio><a onclick="PlaySound2()">개들이에요.</a></h4>
                     <script>
                         function PlaySound2() {
                             var sound2 = document.getElementById("audio2");
@@ -117,21 +65,24 @@
                         }
                     </script>
                 </div>
-                <div class="grid-item">
-                    <h3><audio id="audio11" src="../../audio/ralla.mp3" autostart="false"></audio><a onclick="PlaySound11()">빤대</a></h3>
-                    <script>
-                        function PlaySound11() {
-                            var sound11 = document.getElementById("audio11");
-                            sound11.play()
-                        }
-                    </script>
+                <div class="sentence-translated-item" onclick="replace2()">
+                    <h4 id="replace2">(tap for translation)</h4>
                 </div>
+                <script>
+                    function replace2() {
+                        var str = document.getElementById("replace2").innerHTML;
+                        var res = str.replace("(tap for translation)", "They are dogs.");
+                        document.getElementById("replace2").innerHTML = res;
+                    }
+                </script>
             </div>
-            <p>In the first column, we can hear that ㅂ is like the plain English “B” sound, but the second two are
-                trickier. With ㅍ you give that little burst of air and flex of the stomach (like the English letter P). But with ㅃ your mouth starts
-                small (tensed) then it suddenly opens wide to give it a strong “B”. Making sure you get this down now
-                will help your speaking and listening later.</p>
-                <p>Let's talk about the last two tensed consonants now.</p>
+
+            <p>Korean also has a way of specifying if this is “a chair” or “the chair”. You know,
+                <i>the one</i>. They do this with demonstrative words, so instead of saying “this is <i>the</i> chair”,
+                they would
+                say “this is <i>that</i> chair”. We’ll learn how to do this naturally as we continue to wade deeper
+                into the
+                language. Now some more examples.</p>
         </div>
     </div>
 </body>

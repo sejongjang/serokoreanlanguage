@@ -163,7 +163,6 @@ div.cardtext {
   padding: 20px;
   font-size: 30px;
   text-align: center;
-  text-indent: 0em;
   border-collapse: collapse;
   line-height: 0.01;
   text-indent: 0em;
@@ -191,11 +190,46 @@ div.cardtext {
   font-size: 20px;
   font-family: 'Noto Sans KR', sans-serif;
   text-align: left;
-  text-indent: 0em;
   border-collapse: collapse;
   line-height: 0.01;
   text-indent: 0em;
   min-width: 100px;
+}
+
+/*! CSS 1 column grids for example sentences */
+.sentence-container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-color: orange;
+  border-radius: 3px;
+  width: 90%;
+  grid-gap: 5px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sentence-main-item {
+  background-color: white;
+  padding-left: 20px;
+  font-size: 30px;
+  text-align: left;
+  border-collapse: collapse;
+  line-height: 0.01;
+  text-indent: 0em;
+}
+
+.sentence-translated-item {
+  background-color: white;
+  padding-left: 20px;
+  font-size:0.9em;
+  opacity:0.9;
+  text-align: left;
+  border-collapse: collapse;
+  line-height: 0.01;
+  text-indent: 0em;
 }
 
 /* POPUP IMAGES - Centering images in the page, triggered with class="center" on image properties. */

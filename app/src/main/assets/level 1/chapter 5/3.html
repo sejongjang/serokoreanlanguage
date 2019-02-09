@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">-
-    <title>Lv1_Ch3_Pg4</title>
+    <title>Lv1_Ch5_Pg4</title>
 
     <!-- Link to Stylesheet -->
     <link href="../../css/textstyles.css" rel="stylesheet">
@@ -17,108 +17,34 @@
 <body>
     <div class="mtextcon">
         <div class="mstandardpara">
-
-            <p>Our next letter is ㅆ, the tensed version of ㅅ.</p>
-
-            <!-- Small Grid -->
-            <div class="grid-container">
-                <div class="grid-item">
-                    <h3><audio id="audio8" src="../../audio/sa.mp3" autostart="false"></audio><a onclick="PlaySound8()">사</a></h3>
+            <!-- Example Sentence Grid -->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio id="audio1" src="../../audio/euijayeyo.mp3" autostart="false"></audio><a onclick="PlaySound1()">집이에요.</a></h4>
                     <script>
-                        function PlaySound8() {
-                            var sound8 = document.getElementById("audio8");
-                            sound8.play()
+                        function PlaySound1() {
+                            var sound1 = document.getElementById("audio1");
+                            sound1.play()
                         }
                     </script>
                 </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/ssa.mp3" autostart="false"></audio><a onclick="PlaySound9()">싸</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
+                <div class="sentence-translated-item" onclick="replace()">
+                    <h4 id="replace1">(tap for translation)</h4>
                 </div>
+                <script>
+                    function replace() {
+                        var str = document.getElementById("replace1").innerHTML;
+                        var res = str.replace("(tap for translation)", "It’s a house.");
+                        document.getElementById("replace1").innerHTML = res;
+                    }
+                </script>
             </div>
-
-            <p>ㅆ is unique for a couple of reasons. First of all this is the only consonant that has a tensed version
-                but no aspirated version. Secondly ㅆ is unique because it is probably the most difficult double
-                consonant pronunciation. At first listen it's <i>very</i> similar to regular
-                ㅅ. It's more than likely the ㅆ is the tensed consonant you'll struggle with the most. On the other
-                hand, those two principles that I talked about early should be the most effective here. ㅆ follows the
-                rules of having delay and starting higher perfectly. It’s just hard to hear
-                the difference between ㅆ and ㅅ because they are softer sounds overall. The famous example that Koreans
-                like to torture foreigners with is
-                살 and 쌀. Listen and practice.</p>
-
-            <!-- Letter Practice Grid -->
-            <div class="grid-container">
-                <div class="grid-item">
-                    <h3><audio id="audio8" src="../../audio/ra.mp3" autostart="false"></audio><a onclick="PlaySound8()">살</a></h3>
-                    <script>
-                        function PlaySound8() {
-                            var sound8 = document.getElementById("audio8");
-                            sound8.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/rak.mp3" autostart="false"></audio><a onclick="PlaySound9()">쌀</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio7" src="../../audio/rara.mp3" autostart="false"></audio><a onclick="PlaySound7()">수</a></h3>
-                    <script>
-                        function PlaySound7() {
-                            var sound7 = document.getElementById("audio7");
-                            sound7.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/ral.mp3" autostart="false"></audio><a onclick="PlaySound9()">쑤</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/dal.mp3" autostart="false"></audio><a onclick="PlaySound9()">사서</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/nal.mp3" autostart="false"></audio><a onclick="PlaySound9()">싸서</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio10" src="../../audio/dalla.mp3" autostart="false"></audio><a onclick="PlaySound10()">갓어</a></h3>
-                    <script>
-                        function PlaySound10() {
-                            var sound10 = document.getElementById("audio10");
-                            sound10.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio2" src="../../audio/galla.mp3" autostart="false"></audio><a onclick="PlaySound2()">갔어</a></h3>
+            <br>
+            <!-- Example Sentence Grid -->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio id="audio2" src="../../audio/euijayeyo.mp3" autostart="false"></audio><a onclick="PlaySound2()">집
+                            아니에요.</a></h4>
                     <script>
                         function PlaySound2() {
                             var sound2 = document.getElementById("audio2");
@@ -126,23 +52,23 @@
                         }
                     </script>
                 </div>
-                <div class="grid-item">
-                    <h3><audio id="audio11" src="../../audio/ralla.mp3" autostart="false"></audio><a onclick="PlaySound11()">닸다</a></h3>
-                    <script>
-                        function PlaySound11() {
-                            var sound11 = document.getElementById("audio11");
-                            sound11.play()
-                        }
-                    </script>
+                <div class="sentence-translated-item" onclick="replace2()">
+                    <h4 id="replace2">(tap for translation)</h4>
                 </div>
+                <script>
+                    function replace2() {
+                        var str = document.getElementById("replace2").innerHTML;
+                        var res = str.replace("(tap for translation)", "It's not a house.");
+                        document.getElementById("replace2").innerHTML = res;
+                    }
+                </script>
             </div>
-
-            <p>When a tensed consonant carries over to the next block it does retain it's tensed sound as you saw above
-                with 갔어. It's exactly the same sound as "가써". ㅆ also makes the same t-stop sound in the 받침 position
-                when it is immediately followed by another non-ㅇ consonant.</p>
-            <p>There's no other approach to ㅆ than just practice, practice, practice. Find Korean friends and ask them
-                to help you pronounce 살 and 쌀.</p>
-
+            <p>Wait 집 아니에요? <i>What is going on here?!</i> The negative version of 예요/이에요 is 아니에요. It actually derives from a different verb "아니다", meaning to "be not".
+                Earlier you learned that the verb 이다 attaches onto the noun you are declaring, but <b>이다 is the only verb that attaches like this.</b> 아니다 acts like
+                any other verb and should have a space before it. Since 아니다 doesn't attach to the end of nouns it doesn't need to follow our vowel-consonant agreement rule.</p>
+                <p>Another interesting thing here is how 아니다 conjugates. In polite form, it conjuagtes to "아니에요" as you saw above. In Korean it's normal to see 
+                vowels show up next to each other a lot. What makes things sound rough is having a lot of
+                consonants together. So remember C+이에요 and V+예요, and C/V+아니에요.</p>
         </div>
     </div>
 </body>
