@@ -20,18 +20,20 @@
             <p>Let's talk about the words for "yes" and "no" as well.</p>
             <!--Vocab Introduction Grid-->
             <div class="vocab-container">
-                    <div class="vocab-top-item">
-                            <i>Word</i>
-                        </div>
-                        <div class="vocab-top-item">
-                            <i>Meaning</i>
-                        </div>
+                <div class="vocab-top-item">
+                    <i>Word</i>
+                </div>
+                <div class="vocab-top-item">
+                    <i>Meaning</i>
+                </div>
                 <div class="vocab-item">
                     <h3><audio id="audio8" src="../../audio/ne.mp3" autostart="false"></audio><a onclick="PlaySound8()">네</a></h3>
                     <script>
-                        var button = $("button");
-                        button.text(button.data("text-swap"));
-                    </script>
+                            function PlaySound9() {
+                                var sound9 = document.getElementById("audio9");
+                                sound9.play()
+                            }
+                        </script>
                 </div>
                 <div class="vocab-item">
                     <h3>yes</h3>
@@ -48,18 +50,48 @@
                 <div class="vocab-item">
                     <h3>no</h3>
                 </div>
+                <div class="vocab-item">
+                    <h3><audio id="audio9" src="../../audio/jeo.mp3" autostart="false"></audio><a onclick="PlaySound9()">저</a></h3>
+                    <script>
+                        function PlaySound9() {
+                            var sound9 = document.getElementById("audio9");
+                            sound9.play()
+                        }
+                    </script>
+                </div>
+                <div class="vocab-item">
+                    <h3>me (humble)</h3>
+                </div>
+                <div class="vocab-item">
+                    <h3><audio id="audio9" src="../../audio/ssi.mp3" autostart="false"></audio><a onclick="PlaySound9()">~씨</a></h3>
+                    <script>
+                        function PlaySound9() {
+                            var sound9 = document.getElementById("audio9");
+                            sound9.play()
+                        }
+                    </script>
+                </div>
+                <div class="vocab-item">
+                    <h3>Mr./Ms. (postfix)</h3>
+                </div>
             </div>
             <p>When asked a yes-or-no question, 네 means "yes" and 아니요 means “no”. We're bringing this up now because
                 아니요 should
                 not be confused with 아니에요. 아니에요 is used for saying "A does not equal B". 아니요 is used the same way as
-                the English word "no" is to express disagreement. <b>아니에요 should only ever come at the end of the clause/sentence, whereas 아니요 usually comes at the beginning.</b></p>
-                <p>Now we'll look at some examples of how these words our used, but first let us introduce you to our two characters
-                that we will be getting to know in Sero Korean Level 1, 박재영 (Jaeyoung Park) and 애슐리 웨스턴 (Ashley Weston). Let's look at some simple
-                dialogue between our two characters. (Note that in Korean the family name comes before the given name)</p>
+                the English word "no" is to express disagreement. <b>아니에요 should only ever come at the end of the
+                    clause/sentence, whereas 아니요 usually comes at the beginning.</b></p>
+            <p>Now we'll look at some examples of how these words our used, but first let us introduce you to our two
+                characters that we will be getting to know in Sero Korean Level 1, 박재영 (Jaeyoung Park) and 애슐리 웨스턴
+                (Ashley
+                Weston). Be aware that in Korean the family name comes first and the given name comes second. Let's
+                look at some simple
+                phone-dialogue between our two characters. </p>
             <!-- Example Sentence Grid -->
             <div class="sentence-container">
                 <div class="sentence-main-item">
-                    <h4><audio id="audio1" src="../../audio/euijayeyo.mp3" autostart="false"></audio><a onclick="PlaySound1()">.</a></h4>
+                    <h4><audio id="audio1" src="../../audio/jaeyoungssiyeyo.mp3" autostart="false"></audio><a onclick="PlaySound1()">재영씨예요?</a>
+
+                    </h4>
                     <script>
                         function PlaySound1() {
                             var sound1 = document.getElementById("audio1");
@@ -67,23 +99,26 @@
                         }
                     </script>
                 </div>
+                <div class="sentence-picture-item">
+                    <img src="../../img/ashley.jpg" alt="ashley">
+                </div>
                 <div class="sentence-translated-item" onclick="replace()">
                     <h4 id="replace1">(tap for translation)</h4>
                 </div>
                 <script>
                     function replace() {
                         var str = document.getElementById("replace1").innerHTML;
-                        var res = str.replace("(tap for translation)", "It’s a house.");
+                        var res = str.replace("(tap for translation)", "Is this (Mr.) Jaeyoung?");
                         document.getElementById("replace1").innerHTML = res;
                     }
                 </script>
             </div>
             <br>
-            <!-- Example Sentence Grid -->
+            <!-- Example Sentence Grid (2) -->
             <div class="sentence-container">
                 <div class="sentence-main-item">
-                    <h4><audio id="audio2" src="../../audio/euijayeyo.mp3" autostart="false"></audio><a onclick="PlaySound2()">집
-                            아니에요.</a></h4>
+                    <h4><audio id="audio2" src="../../audio/nejeoyeyo.mp3" autostart="false"></audio><a onclick="PlaySound2()">네,
+                            저예요.</a></h4>
                     <script>
                         function PlaySound2() {
                             var sound2 = document.getElementById("audio2");
@@ -97,8 +132,42 @@
                 <script>
                     function replace2() {
                         var str = document.getElementById("replace2").innerHTML;
-                        var res = str.replace("(tap for translation)", "It's not a house.");
+                        var res = str.replace("(tap for translation)", "Yes, I am.");
                         document.getElementById("replace2").innerHTML = res;
+                    }
+                </script>
+            </div>
+            <p>씨 is a postfix that attaches onto the end of names. In English it is rare for us to use the titles
+                Mr./Ms. with first names, but this is perfectly normal in Korean. Furthermore the title 씨 can also be
+                attached to full names (박재영씨) or just family names (박씨). When used together with a full name, 씨 sounds
+                a little bit
+                intimidating, as if you are calling someone out. When attached to family names, 씨 is often
+                used to refer to people in a general sense, as in "all people with the name Park". Hence, in business
+                or other
+                professional environments <b>you should normally refer to people as their given name + 씨.</b> Let's
+                look at one more
+                example sentence before we wrap this chapter up.</p>
+
+            <!-- Example Sentence Grid (3) -->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio id="audio3" src="../../audio/nejeoyeyo.mp3" autostart="false"></audio><a onclick="PlaySound3()">네,
+                            저예요.</a></h4>
+                    <script>
+                        function PlaySound3() {
+                            var sound3 = document.getElementById("audio3");
+                            sound3.play()
+                        }
+                    </script>
+                </div>
+                <div class="sentence-translated-item" onclick="replace3()">
+                    <h4 id="replace3">(tap for translation)</h4>
+                </div>
+                <script>
+                    function replace3() {
+                        var str = document.getElementById("replace3").innerHTML;
+                        var res = str.replace("(tap for translation)", "Yes, this is I.");
+                        document.getElementById("replace3").innerHTML = res;
                     }
                 </script>
             </div>

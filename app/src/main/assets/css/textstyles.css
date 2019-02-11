@@ -67,7 +67,7 @@ div.mtextcon p {
 }
 
 .mheader {
-  font-size: 8vw;
+  font-size: calc(16px + 4vw);
   color: #2b2e30;
   font-family: 'Painting With Chocolate', sans-serif;
   text-align: center;
@@ -75,7 +75,7 @@ div.mtextcon p {
 }
 
 .msubheader {
-  font-size: 6vw;
+  font-size: calc(16px + 2vw);
   color: #2b2e30;
   font-family: 'Painting With Chocolate', sans-serif;
   text-align: center;
@@ -216,6 +216,7 @@ div.cardtext {
   border-color: orange;
   border-radius: 3px;
   width: 90%;
+  grid-template-columns: auto calc(16px + 6vw);
   grid-gap: 5px;
   position: relative;
   left: 50%;
@@ -230,6 +231,17 @@ div.cardtext {
   border-collapse: collapse;
   line-height: 0.01;
   text-indent: 0em;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.sentence-picture-item {
+  float: right;
+  margin:0 20px 0 0;
+  padding-right: 20px;
+  grid-column: 2;
+  grid-row: 1/2;
+  max-height: 50px;
 }
 
 .sentence-translated-item {
@@ -241,6 +253,8 @@ div.cardtext {
   border-collapse: collapse;
   line-height: 0.01;
   text-indent: 0em;
+  grid-column: 1;
+  grid-row: 2;
 }
 
 /* POPUP IMAGES - Centering images in the page, triggered with class="center" on image properties. */
