@@ -39,6 +39,8 @@ div.mtextcon {
   border-radius: 10px;
   -moz-border-radius: 10px;
   padding: 7%;
+  max-width: 1000px;
+  margin: 0px;
 }
 
 div.mtextcon p {
@@ -52,7 +54,6 @@ div.mtextcon p {
   font-weight: 300;
   line-height: 1.3;
   text-indent: 2em;
-  max-width: 1000px;
 }
 
 .mheadpara {
@@ -63,7 +64,6 @@ div.mtextcon p {
   line-height: 1.3;
   text-indent: 2em;
   margin: 10px;
-  max-width: 1000px;
 }
 
 .mheader {
@@ -215,12 +215,15 @@ div.cardtext {
   border-width: 2px;
   border-color: #FFBB00;
   border-radius: 3px;
-  width: 90%;
+  width: 90vw;
+  max-width: 900px;
   grid-template-columns: auto calc(16px + 6vw);
+  grid-template-rows: auto auto;
   grid-gap: 5px;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+  margin: 0px;
 }
 
 .sentence-main-item {
@@ -235,13 +238,21 @@ div.cardtext {
   grid-row: 1;
 }
 
+.sentence-picture-holder {
+  width: 90%;
+  height: 100%;
+}
+
 .sentence-picture-item {
-  float: right;
-  margin:0 20px 0 0;
-  padding-right: 20px;
+  position: absolute;
+  top: 49.95%;
+  left: 57.5vw;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
+  height: calc(50px + 4vw);
+  max-height: 100px;
   grid-column: 2;
-  grid-row: 1/2;
-  max-height: 50px;
+  grid-row: 1 / -1;
 }
 
 .sentence-translated-item {
