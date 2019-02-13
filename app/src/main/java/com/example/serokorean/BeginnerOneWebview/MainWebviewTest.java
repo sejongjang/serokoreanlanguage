@@ -59,6 +59,8 @@ public class MainWebviewTest extends AppCompatActivity implements ParentRequestI
 //            currentChapterNum = Integer.valueOf(currentChapter.charAt(8) - '0');
         }
 
+
+
         // Create the adapter that will return a fragment for each. primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), mViewPager, this);
 

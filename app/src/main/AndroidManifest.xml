@@ -11,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".bottomNavigation.FAQ"></activity>
+        <activity android:name=".bottomNavigation.Search" />
+        <activity android:name=".bottomNavigation.Settings" />
         <activity android:name=".BeginnerOneWebview.MainWebviewTest" />
         <activity android:name=".deprecated.ChapterPages" />
         <activity android:name=".level.BeginnerOne" />

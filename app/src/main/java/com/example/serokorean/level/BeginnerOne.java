@@ -1,18 +1,26 @@
 package com.example.serokorean.level;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.GridLayout;
 import com.example.serokorean.R;
 import com.example.serokorean.BeginnerOneWebview.MainWebviewTest;
+import com.example.serokorean.bottomNavigation.FAQ;
+import com.example.serokorean.bottomNavigation.Search;
+import com.example.serokorean.bottomNavigation.Settings;
 
-public class BeginnerOne extends AppCompatActivity {
+public class BeginnerOne extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
 
     GridLayout mainGrid;
     CardView intro;
+    private int bottomMenuId;
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +41,63 @@ public class BeginnerOne extends AppCompatActivity {
             }
         });
 
+        bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+        bottomNavigationView.getMenu().findItem(R.id.settings).setChecked(false);
+
+        //(new BottomNavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+//
+//                switch(menuItem.getItemId()){
+//                    case R.id.settings:
+//                        Intent settingsIntent = new Intent(BeginnerOne.this, Settings.class);
+//                        startActivity(settingsIntent);
+//                        break;
+//                    case R.id.search:
+//                        Intent searchIntent = new Intent(BeginnerOne.this, Search.class);
+//                        startActivity(searchIntent);
+//                        break;
+//                    case R.id.FAQ:
+//                        Intent FAQIntent = new Intent(BeginnerOne.this, FAQ.class);
+//                        startActivity(FAQIntent);
+//                        break;
+//                }
+//                return true;
+//            }
+//        });
+
         mainGrid = findViewById(R.id.mainGrid);
         setSingleEvent(mainGrid);
+    }
+
+    
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item){
+        bottomMenuId = item.getItemId();
+
+        for (int i = 0; i < bottomNavigationView.getMenu().size(); i++) {
+            MenuItem menuItem = bottomNavigationView.getMenu().getItem(i);
+            boolean isChecked = menuItem.getItemId() == item.getItemId();
+            menuItem.setChecked(isChecked);
+        }
+
+        switch(item.getItemId()){
+            case R.id.settings:
+                Intent settingsIntent = new Intent(BeginnerOne.this, Settings.class);
+                startActivity(settingsIntent);
+                break;
+            case R.id.search:
+                Intent searchIntent = new Intent(BeginnerOne.this, Search.class);
+                startActivity(searchIntent);
+                break;
+            case R.id.FAQ:
+                Intent FAQIntent = new Intent(BeginnerOne.this, FAQ.class);
+                startActivity(FAQIntent);
+                break;
+        }
+        return true;
     }
 
     private void setSingleEvent(GridLayout mainGrid){
