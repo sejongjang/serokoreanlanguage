@@ -105,7 +105,7 @@ div.cardtext {
   font-size: 25px;
   border-style: solid;
   border-width: 2px;
-  border-color: orange;
+  border-color: #FFBB00;
   border-radius: 3px;
   line-height: 0.01;
   text-indent: 0em;
@@ -119,7 +119,7 @@ div.cardtext {
   background: white;
   border-style: solid;
   border-width: 2px;
-  border-color: orange;
+  border-color: #FFBB00;
   border-radius: 3px;
   display: inline-block;
   margin-left: auto;
@@ -148,7 +148,7 @@ div.cardtext {
   background-color: white;
   border-style: solid;
   border-width: 2px;
-  border-color: orange;
+  border-color: #FFBB00;
   border-radius: 3px;
   display: inline-grid;
   grid-template-columns: auto auto auto;
@@ -174,7 +174,7 @@ div.cardtext {
   background-color: white;
   border-style: solid;
   border-width: 2px;
-  border-color: orange;
+  border-color: #FFBB00;
   grid-template-columns: auto auto;
   grid-template-rows: 20px auto;
   border-radius: 3px;
@@ -213,7 +213,7 @@ div.cardtext {
   background-color: white;
   border-style: solid;
   border-width: 2px;
-  border-color: orange;
+  border-color: #FFBB00;
   border-radius: 3px;
   width: 90%;
   grid-template-columns: auto calc(16px + 6vw);
@@ -271,7 +271,7 @@ div.cardtext {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-style: solid;
   border-width: 2px;
-  border-color: orange;
+  border-color: #FFBB00;
   border-radius: 3px;
   position: relative;
   left: 50%;
@@ -464,10 +464,10 @@ span {
 .authorarrow {
   position: absolute;
   left: 0;
-  background-color: red;
+  background-color: #FB6542;
   border-style: solid;
   border-width: 2px;
-  border-color: red;
+  border-color: #FB6542;
   height: 92.7%;
   text-indent: 0em;
   border-top-left-radius: 5px;
@@ -481,8 +481,8 @@ span {
   background-color: white;
   padding: 10px;
   font-size: 25px;
-  border-top: 2px solid red;
-  border-bottom: 2px solid red;
+  border-top: 2px solid #FB6542;
+  border-bottom: 2px solid #FB6542;
   margin: auto;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -499,10 +499,10 @@ span {
 .culturenotearrow {
   position: absolute;
   left: 0;
-  background-color: blue;
+  background-color: #375E97;
   border-style: solid;
   border-width: 2px;
-  border-color: blue;
+  border-color: #375E97;
   height: 92.7%;
   text-indent: 0em;
   border-top-left-radius: 5px;
@@ -516,8 +516,8 @@ span {
   background-color: white;
   padding: 10px;
   font-size: 25px;
-  border-top: 2px solid blue;
-  border-bottom: 2px solid blue;
+  border-top: 2px solid #375E97;
+  border-bottom: 2px solid #375E97;
   margin: auto;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
