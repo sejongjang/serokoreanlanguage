@@ -35,7 +35,8 @@ public class MainWebviewTest extends AppCompatActivity implements ParentRequestI
         setContentView(R.layout.activity_main_webview_test);
 
         Bundle bundle = getIntent().getExtras();
-        StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder stringBuilderPageNum = new StringBuilder();
+        StringBuilder stringBuilderChapNum = new StringBuilder();
 
         if(bundle == null){
 //            textView.setText("bundle error");
@@ -44,10 +45,18 @@ public class MainWebviewTest extends AppCompatActivity implements ParentRequestI
             numberOfPages = bundle.getInt("pages");
             currentChapter = bundle.getString("chapter");
             isPrevious = bundle.getInt("previous");
-            stringBuilder.append(bundle.getString("chapter"));
-            stringBuilder.append(" number of pages:");
-            stringBuilder.append(Integer.toString(bundle.getInt("pages")));
-            currentChapterNum = Integer.valueOf(currentChapter.charAt(8) - '0');
+            stringBuilderPageNum.append(bundle.getString("chapter"));
+            stringBuilderPageNum.append(" number of pages:");
+            stringBuilderPageNum.append(Integer.toString(bundle.getInt("pages")));
+
+            if(currentChapter.length()<=9){
+                stringBuilderChapNum.append(currentChapter.substring(8,9));
+            }
+            else{
+                stringBuilderChapNum.append(currentChapter.substring(8,10));
+            }
+            currentChapterNum = Integer.parseInt(stringBuilderChapNum.toString());
+//            currentChapterNum = Integer.valueOf(currentChapter.charAt(8) - '0');
         }
 
         // Create the adapter that will return a fragment for each. primary sections of the activity.
