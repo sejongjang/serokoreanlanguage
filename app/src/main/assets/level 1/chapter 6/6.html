@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Lv1_Ch6_Pg7</title>
+
+    <!-- Link to Stylesheet -->
+    <link href="../../css/textstyles.css" rel="stylesheet">
+
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="mtextcon">
+        <div class="mstandardpara">
+
+            <!-- Example Sentence Grid -->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio id="audio8" src="../../audio/yeoboseyo.mp3" autostart="false"></audio><a onclick="PlaySound8()">오랜만이에요</a></h4>
+                    <script>
+                        function PlaySound8() {
+                            var sound8 = document.getElementById("audio8");
+                            sound8.play()
+                        }
+                    </script>
+                </div>
+                <div class="sentence-translated-item" onclick="replace1()">
+                    <h4 id="replace1">(tap for translation)</h4>
+                </div>
+                <script>
+                    function replace1() {
+                        var str = document.getElementById("replace1").innerHTML;
+                        var res = str.replace("(tap for translation)", "Long time no see.");
+                        document.getElementById("replace1").innerHTML = res;
+                    }
+                </script>
+            </div>
+            <p>This is a phrase meaning “It’s been a while!”. As you’d expect it’s used when you haven’t seen someone
+                you are close with in a long time. 오래 is a word meaning “a long time” and works as a noun or an adverb.
+                오랜 and 오랫 are alternative versions of the same word that are used when 오래 is combined with other words.
+                만 in this case means “following a period” or “after a time”. It can also be used after specific time
+                measurements like “4년만에” which means “after four years”.</p>
+        </div>
+    </div>
+</body>
+
+</html>
