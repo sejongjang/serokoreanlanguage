@@ -217,7 +217,7 @@ div.cardtext {
   border-radius: 3px;
   width: 90%;
   max-width: 800px;
-  min-height: 110px;
+  min-height: calc(80px + 1.5vw);
   display: grid;
   grid-template-columns: minmax(auto, 800px) calc(23px + 4vmin);
   grid-template-rows: auto auto;
@@ -420,6 +420,7 @@ div.cardtext {
   padding-right: 10px;
   padding-left: 15px;
   text-indent: 0em;
+  width: 225px;
 }
 
 .authornote a {
@@ -436,6 +437,12 @@ div.cardtext {
   /* IE 10+ */
   user-select: none;
   /* Standard syntax */
+}
+
+.authornote img {
+  border-radius: 3px;
+  display:block;
+  margin:auto;
 }
 
 .authornote a:hover {
@@ -472,8 +479,6 @@ div.cardtext {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-
-
 
 .authornote span {
   font-size: 30px;
@@ -516,60 +521,4 @@ div.cardtext {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-}
-
-.authorcardtext {
-  max-height: 100px;
-  color: #2b2e30;
-  background-color: white;
-  padding: 10px;
-  font-size: 25px;
-  border-top: 2px solid #375E97;
-  border-bottom: 2px solid #375E97;
-  margin: auto;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  -webkit-user-select: none;
-  /* Safari 3.1+ */
-  -moz-user-select: none;
-  /* Firefox 2+ */
-  -ms-user-select: none;
-  /* IE 10+ */
-  user-select: none;
-  /* Standard syntax */
-}
-
-.culturenotearrow {
-  position: absolute;
-  left: 0;
-  background-color: #375E97;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #375E97;
-  height: 92.7%;
-  text-indent: 0;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  display: inline-block;
-}
-
-.culturenotetext {
-  max-height: 100px;
-  color: #2b2e30;
-  background-color: white;
-  padding: 10px;
-  font-size: 25px;
-  border-top: 2px solid #375E97;
-  border-bottom: 2px solid #375E97;
-  margin: auto;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  -webkit-user-select: none;
-  /* Safari 3.1+ */
-  -moz-user-select: none;
-  /* Firefox 2+ */
-  -ms-user-select: none;
-  /* IE 10+ */
-  user-select: none;
-  /* Standard syntax */
 }

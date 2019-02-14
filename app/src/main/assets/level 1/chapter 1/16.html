@@ -28,14 +28,16 @@
                 You may be skeptical, but we promise it works and it will help you remember the letters. Next chapter
                 we’ll
                 be talking about the vowel sounds, which are fairly straightforward.</p>
+
+            <!-- Author Note-->
             <div id="myAuthornote" class="authornote" onclick="closeNav()">
-                <p style="padding-right:10px;padding-left:15px;text-indent:0em;">One other thing you’ll notice is that
+                <p>One other thing you’ll notice is that
                     there are a few consonants from English which are conspicuously missing from Korean. We mentioned
                     that there is no "th" sound in Korean, but if you’ve been
                     keeping score at home you’ll have realized that "F”, “TH” “V”, and “Z” are all nowhere to be found.
                     (Rough approximations of “Q” and “X” can technically be reproduced in Korean. R and L are also
                     debatably present.)</p>
-                <p style="padding-right:10px;padding-left:15px;text-indent:0em;"><b>These missing sounds simply don’t
+                <p><b>These missing sounds simply don’t
                         exist in Hangul.</b> Instead you’ve got a new sort of sound in
                     ㄹ and some more fun new sounds we’ll be talking about in the next two chapters. Be careful not to
                     mix in English sounds that aren’t a part of the Korean language. You'll find this especially
@@ -43,32 +45,38 @@
                     Words like
                     “fitness” and “theme’ are scrubbed clean of sounds absent in Korean and come out as what can best
                     be described as creative
-                    approximation of the original English word. This presents a challenge because you essentially have
+                    approximation of the original English word.</p>
+                    <p>This presents a challenge because you essentially have
                     to learn a new system of pronunciation for words you already know, and Koreans love to drop some
                     English words into their
                     sentences to add a little bit of... <i>panache</i> to their dialogue (see what I did there).</p>
             </div>
-            <span style="font-size:30px;cursor:pointer;position:absolute;right:0;" onclick="openNav()">
+            <span onclick="openNav()">
                 <div class="authorcard">
-                    <div class="authorarrow"><img src="../../img/leftarrow.png" alt="left" height="40px"></div>
-                    <div class="authorcardtext">
-                        Author's Note
-                    </div>
+                    <div class="authorarrow"><img src="../../img/leftarrow.png" alt="left"></div>
                 </div>
             </span>
-            <br>
-            <br>
-            <br>
-            <p> Review these points below and then pass off the Hangul consonants
+            <script>
+                function openNav() {
+                    document.getElementById("myAuthornote").style.width = "250px";
+                }
+
+                function closeNav() {
+                    document.getElementById("myAuthornote").style.width = "0";
+                }
+            </script>
+
+            <p style = "margin-right:15px"> Review these points below and then pass off the Hangul consonants
                 quiz you can continue on your way to fluency!</p>
             <ul><b>
-                <li>Hangul is made of blocks of letters, and each "block" should be pronounced as one syllable.</li>
-                <li>In each block, the Hangul letters should be written as if you are trying to fill up an imaginary square.</li>
-                <li>Letters on the bottom of blocks are called “badchim” (받침)</li>
-                <li>The t-stop badchim letter are ㄷ, ㅅ, ㅈ, ㅊ, and ㅌ </li>
-                <li>Compound badchim are ㄺ, ㄳ, ㄻ, ㄽ, ㅄ, ㄶ, ㄵ, ㄼ, ㅀ, ㄾ (ㄿ and ㄽ are rare).</li>
-                <li>Korean sounds tend to be more throaty (with the exception of aspirated consonants).</li>
-            </b></ul>
+                    <li>Hangul is made of blocks of letters, and each "block" should be pronounced as one syllable.</li>
+                    <li>In each block, the Hangul letters should be written as if you are trying to fill up an
+                        imaginary square.</li>
+                    <li>Letters on the bottom of blocks are called “badchim” (받침)</li>
+                    <li>The t-stop badchim letter are ㄷ, ㅅ, ㅈ, ㅊ, and ㅌ </li>
+                    <li>Compound badchim are ㄺ, ㄳ, ㄻ, ㄽ, ㅄ, ㄶ, ㄵ, ㄼ, ㅀ, ㄾ (ㄿ and ㄽ are rare).</li>
+                    <li>Korean sounds tend to be more throaty (with the exception of aspirated consonants).</li>
+                </b></ul>
             <!-- *ADD QUIZ* -->
             <p>*QUIZ*</p>
             <div class="flower">
