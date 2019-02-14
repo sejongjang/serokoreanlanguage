@@ -219,7 +219,7 @@ div.cardtext {
   max-width: 800px;
   min-height: 110px;
   display: grid;
-  grid-template-columns: minmax(auto, 800px) calc(10px + 4vw);
+  grid-template-columns: minmax(auto, 800px) calc(10px + 4.6vmin);
   grid-template-rows: auto auto;
   position: relative;
   left: 50%;

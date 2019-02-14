@@ -74,6 +74,18 @@
                 <div class="vocab-item">
                     <h3>Mr./Ms. (postfix)</h3>
                 </div>
+                <div class="vocab-item">
+                        <h3><audio id="audio9" src="../../audio/munje.mp3" autostart="false"></audio><a onclick="PlaySound9()">문제</a></h3>
+                        <script>
+                            function PlaySound9() {
+                                var sound9 = document.getElementById("audio9");
+                                sound9.play()
+                            }
+                        </script>
+                    </div>
+                    <div class="vocab-item">
+                        <h3>problem</h3>
+                    </div>
             </div>
             <p>When asked a yes-or-no question, 네 means "yes" and 아니요 means “no”. We're bringing this up now because
                 아니요 should
@@ -144,20 +156,19 @@
 
             <p>씨 is a postfix that attaches onto the end of names. In English it is rare for us to use the titles
                 Mr./Ms. with first names, but this is perfectly normal in Korean. Furthermore the title 씨 can also be
-                attached to full names (박재영씨) or just family names (박씨). When used together with a full name, 씨 sounds
+                attached to full names (박재영씨) or just family names (박씨). When used together with a full name 씨 sounds
                 a little bit
                 intimidating, as if you are calling someone out. When attached to family names, 씨 is often
                 used to refer to people in a general sense, as in "all people with the name Park". Hence, in business
                 or other
                 professional environments <b>you should normally refer to people as their given name + 씨.</b> Let's
                 look at one more
-                example sentence before we wrap this chapter up.</p>
+                example sentence before we start wrapping this chapter up.</p>
 
             <!-- Example Sentence Grid (3) -->
             <div class="sentence-container">
                 <div class="sentence-main-item">
-                    <h4><audio id="audio3" src="../../audio/nejeoyeyo.mp3" autostart="false"></audio><a onclick="PlaySound3()">네,
-                            저예요.</a></h4>
+                    <h4><audio id="audio3" src="../../audio/nejeoyeyo.mp3" autostart="false"></audio><a onclick="PlaySound3()">네? 문제예요?</a></h4>
                     <script>
                         function PlaySound3() {
                             var sound3 = document.getElementById("audio3");
@@ -171,11 +182,12 @@
                 <script>
                     function replace3() {
                         var str = document.getElementById("replace3").innerHTML;
-                        var res = str.replace("(tap for translation)", "Yes, this is I.");
+                        var res = str.replace("(tap for translation)", "What? A problem?");
                         document.getElementById("replace3").innerHTML = res;
                     }
                 </script>
             </div>
+            <p>Take note that 네 can also be used in a disbelieving or questioning way like the English word "what".</p>
         </div>
     </div>
 </body>
