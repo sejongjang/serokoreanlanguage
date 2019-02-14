@@ -1,9 +1,11 @@
-package com.example.serokorean;
+package com.example.serokorean.main;
 
 import android.animation.ArgbEvaluator;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.serokorean.R;
 
 import java.util.ArrayList;
 import java.util.List;

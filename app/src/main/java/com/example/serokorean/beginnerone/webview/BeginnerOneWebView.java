@@ -1,14 +1,19 @@
-package com.example.serokorean.BeginnerOneWebview;
+package com.example.serokorean.beginnerone.webview;
 
 
+import android.os.Build;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebViewClient;
@@ -29,8 +34,22 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
     private ArrayList<String> htmlFiles = new ArrayList<>();
     private int isPrevious = 0;
 
+    public void FullScreencall() {
+        if(Build.VERSION.SDK_INT < 19){
+            View v = this.getWindow().getDecorView();
+            v.setSystemUiVisibility(View.GONE);
+        } else {
+            //for higher api versions.
+            View decorView = getWindow().getDecorView();
+            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+            decorView.setSystemUiVisibility(uiOptions);
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        FullScreencall();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_webview_test);
 
@@ -69,6 +88,7 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mViewPager.setOffscreenPageLimit(2);
     }
+
 
     @Override
     public void setViewPagerStatus(Boolean b) { mViewPager.setPagingEnabled(b); }
@@ -135,7 +155,6 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
             settings.setUseWideViewPort(false);
 
             webView.loadUrl(url);
-
             return rootView;
         }
 

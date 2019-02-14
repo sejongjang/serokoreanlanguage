@@ -1,4 +1,4 @@
-package com.example.serokorean;
+package com.example.serokorean.main;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,7 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.serokorean.level.BeginnerOne;
+import com.example.serokorean.R;
+import com.example.serokorean.beginnerone.BeginnerOne;
 
 import java.util.List;
 

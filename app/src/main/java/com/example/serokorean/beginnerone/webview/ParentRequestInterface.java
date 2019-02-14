@@ -1,4 +1,4 @@
-package com.example.serokorean.BeginnerOneWebview;
+package com.example.serokorean.beginnerone.webview;
 
 public interface ParentRequestInterface {
     void setViewPagerStatus(Boolean b);

@@ -1,4 +1,4 @@
-package com.example.serokorean;
+package com.example.serokorean.main;
 
 public class MainActivityModel {
     private int image;

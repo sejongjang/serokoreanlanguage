@@ -1,4 +1,4 @@
-package com.example.serokorean.BeginnerOneWebview;
+package com.example.serokorean.beginnerone.webview;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

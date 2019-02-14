@@ -1,16 +1,11 @@
-package com.example.serokorean.level;
+package com.example.serokorean.beginnerone;
 
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.GridLayout;
 import com.example.serokorean.R;
-import com.example.serokorean.BeginnerOneWebview.BeginnerOneWebView;
 import com.example.serokorean.bottomNavigation.FAQ;
 import com.example.serokorean.bottomNavigation.Home;
 import com.example.serokorean.bottomNavigation.Search;
@@ -18,9 +13,6 @@ import com.example.serokorean.bottomNavigation.Settings;
 
 public class BeginnerOne extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
 
-//    GridLayout mainGrid;
-//    CardView intro;
-//    private int bottomMenuId;
     private BottomNavigationView bottomNavigationView;
 
     Search search = new Search();
@@ -32,37 +24,25 @@ public class BeginnerOne extends AppCompatActivity implements BottomNavigationVi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beginner_one);
-//        intro = findViewById(R.id.intro);
-//        intro.setOnClickListener(new View.OnClickListener()   {
-//            public void onClick(View v)  {
-//                try {
-//                    Intent intent = new Intent(BeginnerOne.this, BeginnerOneWebView.class);
-//                    intent.putExtra("chapter", "chapter 0");
-//                    intent.putExtra("pages", 5);
-//                    startActivity(intent);
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        });
+
         bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
-        bottomNavigationView.setSelectedItemId(R.id.home);
-//        bottomNavigationView.getMenu().findItem(R.id.settings).setChecked(false);
 
-//        mainGrid = findViewById(R.id.mainGrid);
-//        setSingleEvent(mainGrid);
+        //set default fragment only when the activity begins
+        if(savedInstanceState == null){
+            bottomNavigationView.setSelectedItemId(R.id.home);
+        }
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item){
-//        bottomMenuId = item.getItemId();
-//
-//        for (int i = 0; i < bottomNavigationView.getMenu().size(); i++) {
-//            MenuItem menuItem = bottomNavigationView.getMenu().getItem(i);
-//            boolean isChecked = menuItem.getItemId() == item.getItemId();
-//            menuItem.setChecked(isChecked);
-//        }
+
+        for (int i = 0; i < bottomNavigationView.getMenu().size(); i++) {
+            MenuItem menuItem = bottomNavigationView.getMenu().getItem(i);
+            boolean isChecked = menuItem.getItemId() == item.getItemId();
+            menuItem.setChecked(isChecked);
+        }
+
         switch(item.getItemId()){
             case R.id.home:
                 getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left).replace(R.id.BeginnerOneContainer, home).commit();

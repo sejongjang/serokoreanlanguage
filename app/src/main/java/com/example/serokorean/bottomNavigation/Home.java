@@ -1,10 +1,7 @@
 package com.example.serokorean.bottomNavigation;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
@@ -12,9 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
 
-import com.example.serokorean.BeginnerOneWebview.BeginnerOneWebView;
+import com.example.serokorean.beginnerone.webview.BeginnerOneWebView;
 import com.example.serokorean.R;
-import com.example.serokorean.level.BeginnerOne;
 
 public class Home extends Fragment {
 

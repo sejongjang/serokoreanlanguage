@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/aqua"
     android:id="@+id/mainActivityLayout"
-    tools:context=".Welcome">
+    tools:context=".main.Welcome">
 
     <LinearLayout
         android:gravity="center"
