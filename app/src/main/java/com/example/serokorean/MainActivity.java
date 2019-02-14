@@ -22,11 +22,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         models = new ArrayList<>();
-        models.add(new MainActivityModel(R.drawable.beginnerone, "Hangul", "Remember every great things has a beginning"));
-        models.add(new MainActivityModel(R.drawable.beginnertwo, "Grammar", "Good thing about learning language,\nyou don't need to be perfect!"));
-        models.add(new MainActivityModel(R.drawable.intermediateone, "Intermediate 1", "Usage of vocab and grammar"));
-        models.add(new MainActivityModel(R.drawable.castle, "Intermediate 2", "Make sentences and speak based off of basic"));
-        models.add(new MainActivityModel(R.drawable.southkorea, "Advanced", "Advanced sentences and usages"));
+        models.add(new MainActivityModel(R.drawable.beginnerone, "Level 1 (Brand New Learner)", "Remember every great thing starts somewhere."));
+        models.add(new MainActivityModel(R.drawable.beginnertwo, "Level 2 (Beginner)", "The good thing about learning languages \nis you don't need to be perfect!"));
+        models.add(new MainActivityModel(R.drawable.intermediateone, "Level 3 (Lower Intermediate)", "Time to start impressing the natives!"));
+        models.add(new MainActivityModel(R.drawable.castle, "Level 4 (Upper Intermediate)", "Learn how to sound intelligent."));
+        models.add(new MainActivityModel(R.drawable.southkorea, "Level 5 (Advanced)", "Become Korean."));
 
         adapter = new MainActivityCardAdapter(models, this);
 
