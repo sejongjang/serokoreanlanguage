@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.serokorean.BeginnerOneWebview.MainWebviewTest$PlaceholderFragment">
+    tools:context="com.example.serokorean.BeginnerOneWebview.BeginnerOneWebView$PlaceholderFragment">
 
     <com.example.serokorean.BeginnerOneWebview.CustomWebView
         android:id="@+id/webView"

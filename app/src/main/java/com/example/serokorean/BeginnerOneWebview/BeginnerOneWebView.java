@@ -17,7 +17,7 @@ import com.example.serokorean.R;
 
 import java.util.ArrayList;
 
-public class MainWebviewTest extends AppCompatActivity implements ParentRequestInterface{
+public class BeginnerOneWebView extends AppCompatActivity implements ParentRequestInterface{
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private CustomViewPager mViewPager;
@@ -81,9 +81,9 @@ public class MainWebviewTest extends AppCompatActivity implements ParentRequestI
         private int position;
         private int currentChapterNum;
         private int numberOfPages;
-        MainWebviewTest activity;
+        BeginnerOneWebView activity;
         CustomViewPager viewpager;
-        MainWebviewTest parentActivity;
+        BeginnerOneWebView parentActivity;
 
         public static PlaceholderFragment newInstance(int position , int chapterNum, int numberOfPages) {
             PlaceholderFragment fragment = new PlaceholderFragment();
@@ -104,7 +104,7 @@ public class MainWebviewTest extends AppCompatActivity implements ParentRequestI
             position = arguments.getInt(ARG_SECTION_NUMBER);
             currentChapterNum = arguments.getInt(CURRENT_CHAPTER);
             numberOfPages = arguments.getInt(NUMBER_OF_PAGES);
-            parentActivity = (MainWebviewTest) getActivity();
+            parentActivity = (BeginnerOneWebView) getActivity();
 
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             CustomWebView webView = rootView.findViewById(R.id.webView);
@@ -142,7 +142,7 @@ public class MainWebviewTest extends AppCompatActivity implements ParentRequestI
         public void setViewPager(boolean b) {
             parentActivity.setViewPagerStatus(b);
         }
-        public void setActivity(MainWebviewTest activity) {
+        public void setActivity(BeginnerOneWebView activity) {
             this.activity = activity;
         }
         public void setPager(CustomViewPager viewpager) {
@@ -154,9 +154,9 @@ public class MainWebviewTest extends AppCompatActivity implements ParentRequestI
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         CustomViewPager viewPager;
-        MainWebviewTest activity;
+        BeginnerOneWebView activity;
 
-        public SectionsPagerAdapter(FragmentManager fm, CustomViewPager viewPager, MainWebviewTest activity) {
+        public SectionsPagerAdapter(FragmentManager fm, CustomViewPager viewPager, BeginnerOneWebView activity) {
             super(fm);
             this.viewPager=viewPager;
             this.activity=activity;
