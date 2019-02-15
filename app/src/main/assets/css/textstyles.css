@@ -158,10 +158,11 @@ div.cardtext {
 }
 
 .grid-item {
+  color: #2b2e30;
   background-color: white;
   border: 1px solid #f2f2f2;
   padding: 20px;
-  font-size: 30px;
+  font-size: calc(15px + 2vmin);
   text-align: center;
   border-collapse: collapse;
   line-height: 0.01;
