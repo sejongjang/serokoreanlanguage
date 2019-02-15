@@ -63,16 +63,16 @@ public class BeginnerOne extends AppCompatActivity implements BottomNavigationVi
 
         switch(item.getItemId()){
             case R.id.home:
-                getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left).replace(R.id.BeginnerOneContainer, home).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, home).commit(); //.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left)
                 return true;
             case R.id.settings:
-                getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left).replace(R.id.BeginnerOneContainer, settings).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, settings).commit();
                 return true;
             case R.id.search:
-                getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left).replace(R.id.BeginnerOneContainer, search).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, search).commit();
                 return true;
             case R.id.FAQ:
-                getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left).replace(R.id.BeginnerOneContainer, faq).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, faq).commit();
                 return true;
         }
         return true;
