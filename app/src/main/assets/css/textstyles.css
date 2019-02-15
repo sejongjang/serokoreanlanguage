@@ -158,10 +158,11 @@ div.cardtext {
 }
 
 .grid-item {
+  color: #2b2e30;
   background-color: white;
   border: 1px solid #f2f2f2;
   padding: 20px;
-  font-size: 30px;
+  font-size: calc(15px + 2vmin);
   text-align: center;
   border-collapse: collapse;
   line-height: 0.01;
@@ -217,9 +218,9 @@ div.cardtext {
   border-radius: 3px;
   width: 90%;
   max-width: 800px;
-  min-height: 110px;
+  min-height: calc(80px + 1.5vw);
   display: grid;
-  grid-template-columns: minmax(auto, 800px) calc(10px + 4vw);
+  grid-template-columns: minmax(auto, 800px) calc(23px + 4vmin);
   grid-template-rows: auto auto;
   position: relative;
   left: 50%;
@@ -416,10 +417,16 @@ div.cardtext {
   text-shadow: 1px 4px 6px #000, 0 0 0 #def, 1px 4px 6px #000;
 }
 
+.authornote p {
+  padding-right: 10px;
+  padding-left: 15px;
+  text-indent: 0em;
+  width: 225px;
+}
+
 .authornote a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-
   color: white;
   display: block;
   transition: 0.3s;
@@ -431,6 +438,12 @@ div.cardtext {
   /* IE 10+ */
   user-select: none;
   /* Standard syntax */
+}
+
+.authornote img {
+  border-radius: 3px;
+  display:block;
+  margin:auto;
 }
 
 .authornote a:hover {
@@ -468,11 +481,11 @@ div.cardtext {
   border-bottom-left-radius: 5px;
 }
 
-img {
-  vertical-align: middle;
-}
-
-span {
+.authornote span {
+  font-size: 30px;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
   -webkit-user-select: none;
   /* Safari 3.1+ */
   -moz-user-select: none;
@@ -486,64 +499,13 @@ span {
 
 .authorarrow {
   position: absolute;
-  left: 0;
-  background-color: #FB6542;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #FB6542;
-  height: 92.7%;
-  text-indent: 0;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  display: inline-block;
-}
-
-.authorcardtext {
-  max-height: 100px;
-  color: #2b2e30;
-  background-color: white;
-  padding: 10px;
-  font-size: 25px;
-  border-top: 2px solid #FB6542;
-  border-bottom: 2px solid #FB6542;
-  margin: auto;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  -webkit-user-select: none;
-  /* Safari 3.1+ */
-  -moz-user-select: none;
-  /* Firefox 2+ */
-  -ms-user-select: none;
-  /* IE 10+ */
-  user-select: none;
-  /* Standard syntax */
-}
-
-.culturenotearrow {
-  position: absolute;
-  left: 0;
+  right: 0;
   background-color: #375E97;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #375E97;
-  height: 92.7%;
+  height: 80%;
   text-indent: 0;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  display: inline-block;
-}
-
-.culturenotetext {
-  max-height: 100px;
-  color: #2b2e30;
-  background-color: white;
-  padding: 10px;
-  font-size: 25px;
-  border-top: 2px solid #375E97;
-  border-bottom: 2px solid #375E97;
-  margin: auto;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  max-height: 80px;
   -webkit-user-select: none;
   /* Safari 3.1+ */
   -moz-user-select: none;
@@ -552,4 +514,12 @@ span {
   /* IE 10+ */
   user-select: none;
   /* Standard syntax */
+}
+
+.authorarrow img {
+  vertical-align: middle;
+  height: 40px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }

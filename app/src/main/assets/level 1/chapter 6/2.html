@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Lv1_Ch6_Pg3</title>
+
+    <!-- Link to Stylesheet -->
+    <link href="../../css/textstyles.css" rel="stylesheet">
+
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="mtextcon">
+        <div class="mstandardpara">
+
+            <!-- Example Sentence Grid -->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio id="audio8" src="../../audio/jaljinaeseyo.mp3" autostart="false"></audio><a onclick="PlaySound8()">잘
+                            지내세요?</a></h4>
+                    <script>
+                        function PlaySound8() {
+                            var sound8 = document.getElementById("audio8");
+                            sound8.play()
+                        }
+                    </script>
+                </div>
+                <div class="sentence-translated-item" onclick="replace1()">
+                    <h4 id="replace1">(tap for translation)</h4>
+                </div>
+                <script>
+                    function replace1() {
+                        var str = document.getElementById("replace1").innerHTML;
+                        var res = str.replace("(tap for translation)", "How are you doing (getting along).");
+                        document.getElementById("replace1").innerHTML = res;
+                    }
+                </script>
+            </div>
+            
+            <p>This next expression is an interesting one. It has a lot of variations, but 잘 지내세요 is a neutral and
+                polite way to ask. "잘" is a word you’ll become intimately familiar with. It is an adverb and means good/well, skillfully, or
+                frequently. Needless to say, this is a very <i>well</i>-used word in Korean.</p>
+            <p>"지내세요" comes from the verb 지내다. This word means essentially “to pass”. It can be used literally like
+                “to pass by the building” or figuratively like “to pass time”. This expression actually translates very
+                nicely to the British way of asking—"Are you getting along well?"</p>
+            <p>One quick note before the next phrase—we know it’s painful to go into detail about every new word we
+                teach, but Korean has such different roots and usage that at least initially we don’t want you
+                making assumptions about the words you learn. We told you 지내다 means to pass, but that doesn’t mean you
+                can use it to say “pass the ball”, or “pass a kidney stone”. There are different verbs that cover those
+                situations. So for now take what you learn in the context you learn it.</p>
+            <p>That’s not to say you shouldn’t experiment making new sentences with the words we teach you. Just consider this as a
+                forewarning that Korean words are not exact equivalents of what they translate to in English.
+                That’s why translation is such messy business, and why it’s always better to understand things in the
+                original language.</p>
+        </div>
+    </div>
+</body>
+
+</html>

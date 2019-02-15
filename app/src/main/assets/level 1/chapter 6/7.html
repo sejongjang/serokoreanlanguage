@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Lv1_Ch6_Pg8</title>
+
+    <!-- Link to Stylesheet -->
+    <link href="../../css/textstyles.css" rel="stylesheet">
+
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="mtextcon">
+        <div class="mstandardpara">
+
+            <!-- Example Sentence Grid -->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio id="audio8" src="../../audio/ireumimoyeyo.mp3" autostart="false"></audio><a onclick="PlaySound8()">이름이
+                            뭐예요?</a></h4>
+                    <script>
+                        function PlaySound8() {
+                            var sound8 = document.getElementById("audio8");
+                            sound8.play()
+                        }
+                    </script>
+                </div>
+                <div class="sentence-translated-item" onclick="replace1()">
+                    <h4 id="replace1">(tap for translation)</h4>
+                </div>
+                <script>
+                    function replace1() {
+                        var str = document.getElementById("replace1").innerHTML;
+                        var res = str.replace("(tap for translation)", "What's your name?");
+                        document.getElementById("replace1").innerHTML = res;
+                    }
+                </script>
+            </div>
+            <br>
+            <!-- Example Sentence Grid 2-->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio id="audio8" src="../../audio/yeoboseyo.mp3" autostart="false"></audio><a onclick="PlaySound8()">성함이
+                            어떻게 되세요?</a></h4>
+                    <script>
+                        function PlaySound8() {
+                            var sound8 = document.getElementById("audio8");
+                            sound8.play()
+                        }
+                    </script>
+                </div>
+                <div class="sentence-translated-item" onclick="replace2()">
+                    <h4 id="replace2">(tap for translation)</h4>
+                </div>
+                <script>
+                    function replace2() {
+                        var str = document.getElementById("replace2").innerHTML;
+                        var res = str.replace("(tap for translation)", "What is your name? (honorific)");
+                        document.getElementById("replace2").innerHTML = res;
+                    }
+                </script>
+            </div>
+            <p>Here’s a great example of another challenging aspect of Korean. Korean is a language where word choice
+                goes beyond just expressing the correct nuance, you also have to
+                think more about humity, honorofication, and formality when you make sentences.
+                So in Korean there are essentially two polite ways of asking for someone’s name.</p>
+            <p>Let's talk about the phrases now. 이름 is a broad word that is typically used for names of people and
+                animals. 뭐예요 is a polite what of asking "what is".</p>
+            <p>"성함이 어떻게 되세요?" is another phrase that also means “What is your name?” however this is an honorific way
+                of saying it. If you
+                think someone is older or socially higher than you I’d recommend saying “성함이 어떻게 되세요?” 성함 is an
+                honorific word for 이름. I’m sorry to tell you this, but there are a significant number of nouns in
+                Korean that have regular and honorific versions, even though they mean the same thing.</p>
+            <p>If we translate 성함이 어떻게 되세요 to English we get something like “how does (your) honorable name become?” This is a baffling way to
+                ask something in English but we can still figure out what's going on based on this translation. Asking "how it becomes" is an indirect and thus
+                more polite way of asking "what it is". In Korean this way of asking is very common and not really so royal-court sounding as it is in English.</p>
+        </div>
+    </div>
+</body>
+
+</html>
