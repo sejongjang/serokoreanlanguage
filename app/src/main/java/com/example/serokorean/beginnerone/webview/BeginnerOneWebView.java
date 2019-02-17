@@ -148,6 +148,19 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
             webView.setScrollContainer(false);
             webView.setVerticalScrollBarEnabled(false);
             webView.setHorizontalScrollBarEnabled(false);
+            
+            //implement night view
+//            webView.setBackgroundColor(); //night mode
+//            webView = rootView.findViewById(R.id.webView);
+//            String rawHTML = "<HTML>"+
+//                    "<head>"+"<style  type=\"text/css\">"+
+//                    "body,h1{color: #000000;"+
+//                    "background-color: #ffffff;}"+
+//                    "</style></head>"+
+//                    "<body><h1>Hello Android </h1></body>"+
+//                    "</HTML>";
+//            webView.loadData(rawHTML, "text/html; charset=UTF-8",null);
+
             settings.setBuiltInZoomControls(true);
             settings.setSupportZoom(true);
             settings.setDisplayZoomControls(false);

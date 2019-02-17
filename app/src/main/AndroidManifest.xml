@@ -14,7 +14,7 @@
         <activity android:name=".beginnerone.webview.BeginnerOneWebView"/>
         <activity android:name=".deprecated.ChapterPages" />
         <activity android:name=".beginnerone.BeginnerOne"/>
-        <activity android:name=".main.MainActivity" />
+        <activity android:name=".main.MainActivity"/>
         <activity android:name=".main.Welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,5 +1,6 @@
 package com.example.serokorean.beginnerone;
 
+import android.graphics.Color;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -40,7 +41,9 @@ public class BeginnerOne extends AppCompatActivity implements BottomNavigationVi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FullScreencall();
+//        FullScreencall();
+        getWindow().setStatusBarColor(Color.parseColor("#c0000000"));
+        getWindow().setNavigationBarColor(Color.parseColor("#c0000000"));
         setContentView(R.layout.activity_beginner_one);
 
         bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation);

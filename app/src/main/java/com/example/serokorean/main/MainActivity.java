@@ -1,6 +1,7 @@
 package com.example.serokorean.main;
 
 import android.animation.ArgbEvaluator;
+import android.graphics.Color;
 import android.os.Build;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -37,7 +38,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FullScreencall();
+//        FullScreencall();
+        getWindow().setStatusBarColor(Color.parseColor("#c0000000"));
+        getWindow().setNavigationBarColor(Color.parseColor("#c0000000"));
         setContentView(R.layout.activity_main);
 
         models = new ArrayList<>();
