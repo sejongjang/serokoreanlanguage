@@ -9,7 +9,9 @@ function closeNav() {
 }
 
 //play audio
-function PlaySound() {
-    var sound = audio.getAttribue("src");
-    sound.play();
+function PlaySound(item) {
+
+    var sound = item.getElementByClassName("audio");
+    console.log(sound);
+
 }
