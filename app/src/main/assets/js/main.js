@@ -8,8 +8,18 @@ function closeNav() {
     document.getElementById("myAuthornote").style.width = "0";
 }
 
-//play audio
+//play audio function 1
 function PlaySound() {
-    var sound = audio.getAttribue("src");
-    sound.play();
-}
+    var sound = document.getElementsByClassName("audio")[1];
+    sound.play()
+    console.log (sound);
+    }
+
+//play audio function 2 (jquery)
+//$('.audio').click(function (e) {
+    //e.preventDefault;
+    //var button = $(this);
+    //var audio = button.parent().find('audio')[0];
+    //audio.play();
+    //console.log (audio);
+//});
