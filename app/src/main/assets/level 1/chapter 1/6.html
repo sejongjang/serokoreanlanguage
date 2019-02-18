@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 
+    <!-- Link to Javascript -->
+    <script src="../../js/main.js" type="text/javascript"></script>
+
 </head>
 
 <body>
@@ -21,13 +24,7 @@
             <!-- Audio text box -->
             <div class="card">
                 <div class="cardtext">
-                    <h1><audio id="audio10" src="../../audio/ma.mp3" autostart="false"></audio><a onclick="PlaySound10()">마</a></h1>
-                    <script>
-                        function PlaySound10() {
-                            var sound10 = document.getElementById("audio10");
-                            sound10.play()
-                        }
-                    </script>
+                    <h1><audio src="../../audio/ma.mp3" autostart="false"></audio><a onclick="PlaySound(this)">마</a></h1>
                 </div>
             </div>
             <p>Breathe a sigh of relief because this next letter is drop-dead simple. It’s ㅁ and it makes an “M” sound.
@@ -40,88 +37,34 @@
             <p>Do the practice readings below a try and lets get moving!</p>
             <!-- Letter Practice Grid -->
             <div class="grid-container">
-                <div class="grid-item">
-                    <h3><audio id="audio8" src="../../audio/ra.mp3" autostart="false"></audio><a onclick="PlaySound8()">갊</a></h3>
-                    <script>
-                        function PlaySound8() {
-                            var sound8 = document.getElementById("audio8");
-                            sound8.play()
-                        }
-                    </script>
+                    <div class="grid-item">
+                        <h3><audio src="../../audio/gam.mp3" autostart="false"></audio><a onclick="PlaySound(this)">갊</a></h3>
+                    </div>
+                    <div class="grid-item">
+                        <h3><audio src="../../audio/mat.mp3" autostart="false"></audio><a onclick="PlaySound(this)">맏</a></h3>
+                    </div>
+                    <div class="grid-item">
+                        <h3><audio src="../../audio/mamma.mp3" autostart="false"></audio><a onclick="PlaySound(this)">맘마</a></h3>
+                    </div>
+                    <div class="grid-item">
+                        <h3><audio src="../../audio/ballam.mp3" autostart="false"></audio><a onclick="PlaySound(this)">발람</a></h3>
+                    </div>
+                    <div class="grid-item">
+                        <h3><audio src="../../audio/dam.mp3" autostart="false"></audio><a onclick="PlaySound(this)">담</a></h3>
+                    </div>
+                    <div class="grid-item">
+                        <h3><audio src="../../audio/mal.mp3" autostart="false"></audio><a onclick="PlaySound(this)">말</a></h3>
+                    </div>
+                    <div class="grid-item">
+                        <h3><audio src="../../audio/mam.mp3" autostart="false"></audio><a onclick="PlaySound(this)">맘</a></h3>
+                    </div>
+                    <div class="grid-item">
+                        <h3><audio src="../../audio/nanma.mp3" autostart="false"></audio><a onclick="PlaySound(this)">난마</a></h3>
+                    </div>
+                    <div class="grid-item">
+                        <h3><audio src="../../audio/mak.mp3" autostart="false"></audio><a onclick="PlaySound(this)">막</a></h3>
+                    </div>
                 </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/rak.mp3" autostart="false"></audio><a onclick="PlaySound9()">맏</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio7" src="../../audio/rara.mp3" autostart="false"></audio><a onclick="PlaySound7()">맘마</a></h3>
-                    <script>
-                        function PlaySound7() {
-                            var sound7 = document.getElementById("audio7");
-                            sound7.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/ral.mp3" autostart="false"></audio><a onclick="PlaySound9()"></a>발람</h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/dal.mp3" autostart="false"></audio><a onclick="PlaySound9()">담</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/nal.mp3" autostart="false"></audio><a onclick="PlaySound9()">말</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio10" src="../../audio/dalla.mp3" autostart="false"></audio><a onclick="PlaySound10()">맘</a></h3>
-                    <script>
-                        function PlaySound10() {
-                            var sound10 = document.getElementById("audio10");
-                            sound10.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio2" src="../../audio/galla.mp3" autostart="false"></audio><a onclick="PlaySound2()">난마</a></h3>
-                    <script>
-                        function PlaySound2() {
-                            var sound2 = document.getElementById("audio2");
-                            sound2.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio11" src="../../audio/ralla.mp3" autostart="false"></audio><a onclick="PlaySound11()">막</a></h3>
-                    <script>
-                        function PlaySound11() {
-                            var sound11 = document.getElementById("audio11");
-                            sound11.play()
-                        }
-                    </script>
-                </div>
-            </div>
             <p><i>Oh no not again!</i> Yes again. Our second double-badchim is "ㄻ". This ㄻ combination is note too common so
                 you won't have to worry much about it. Just keep in mind that normally the ㄹ is silent (like ㄺ). There
                 is, however, one exception that we'll explain coming up.</p>

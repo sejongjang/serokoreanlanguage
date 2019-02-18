@@ -12,117 +12,63 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 
+    <!-- Link to Javascript -->
+    <script src="../../js/main.js" type="text/javascript"></script>
+
 </head>
 
 <body>
     <div class="mtextcon">
         <div class="mstandardpara">
             <p></p>
+
             <!-- Audio text box -->
             <div class="card">
                 <div class="cardtext">
-                    <h1><audio id="audio10" src="../../audio/ma.mp3" autostart="false"></audio><a onclick="PlaySound10()">바</a></h1>
-                    <script>
-                        function PlaySound10() {
-                            var sound10 = document.getElementById("audio10");
-                            sound10.play()
-                        }
-                    </script>
+                    <h1><audio src="../../audio/ba.mp3" autostart="false"></audio><a onclick="PlaySound(this)">바</a></h1>
                 </div>
             </div>
             <p>Moving right along now we’ve got ㅁ’s brother ㅂ. This one corresponds to the English “B” sound. This one
                 also has more pop to it than the heavier English “B” sound. That’s why ㅂ can sometimes sound like a “P”
-                to the westerner’s ear. Once again, we’ve prepared a beautiful combined chart to help you visualize
+                to the Westerner’s ear. Once again, we’ve prepared a beautiful combined chart to help you visualize
                 this.</p>
+
             <!-- Non-expandable image -->
             <div class="boxshadow">
                 <img src="../../img/m-b-p.jpg" alt="m-b-p" height="100px">
             </div>
             <p>Take special note of how ㅂ is pronounced as a badchim. It's like a b-stop sound.</p>
+
             <!-- Letter Practice Grid -->
             <div class="grid-container">
-                <div class="grid-item">
-                    <h3><audio id="audio8" src="../../audio/ra.mp3" autostart="false"></audio><a onclick="PlaySound8()">밥</a></h3>
-                    <script>
-                        function PlaySound8() {
-                            var sound8 = document.getElementById("audio8");
-                            sound8.play()
-                        }
-                    </script>
+                    <div class="grid-item">
+                        <h3><audio src="../../audio/bap.mp3" autostart="false"></audio><a onclick="PlaySound(this)">밥</a></h3>
+                    </div>
+                    <div class="grid-item">
+                        <h3><audio src="../../audio/balla.mp3" autostart="false"></audio><a onclick="PlaySound(this)">반라</a></h3>
+                    </div>
+                    <div class="grid-item">
+                        <h3><audio src="../../audio/ba.mp3" autostart="false"></audio><a onclick="PlaySound(this)">바</a></h3>
+                    </div>
+                    <div class="grid-item">
+                        <h3><audio src="../../audio/gapda.mp3" autostart="false"></audio><a onclick="PlaySound(this)">갑다</a></h3>
+                    </div>
+                    <div class="grid-item">
+                        <h3><audio src="../../audio/dap.mp3" autostart="false"></audio><a onclick="PlaySound(this)">답</a></h3>
+                    </div>
+                    <div class="grid-item">
+                        <h3><audio src="../../audio/bap.mp3" autostart="false"></audio><a onclick="PlaySound(this)">밟</a></h3>
+                    </div>
+                    <div class="grid-item">
+                        <h3><audio src="../../audio/nap.mp3" autostart="false"></audio><a onclick="PlaySound(this)">납</a></h3>
+                    </div>
+                    <div class="grid-item">
+                        <h3><audio src="../../audio/rabba.mp3" autostart="false"></audio><a onclick="PlaySound(this)">랍바</a></h3>
+                    </div>
+                    <div class="grid-item">
+                        <h3><audio src="../../audio/bal.mp3" autostart="false"></audio><a onclick="PlaySound(this)">발</a></h3>
+                    </div>
                 </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/rak.mp3" autostart="false"></audio><a onclick="PlaySound9()">반라</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio7" src="../../audio/rara.mp3" autostart="false"></audio><a onclick="PlaySound7()">바</a></h3>
-                    <script>
-                        function PlaySound7() {
-                            var sound7 = document.getElementById("audio7");
-                            sound7.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/ral.mp3" autostart="false"></audio><a onclick="PlaySound9()">갑다</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/dal.mp3" autostart="false"></audio><a onclick="PlaySound9()">답</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/nal.mp3" autostart="false"></audio><a onclick="PlaySound9()">밟</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio10" src="../../audio/dalla.mp3" autostart="false"></audio><a onclick="PlaySound10()">납</a></h3>
-                    <script>
-                        function PlaySound10() {
-                            var sound10 = document.getElementById("audio10");
-                            sound10.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio2" src="../../audio/galla.mp3" autostart="false"></audio><a onclick="PlaySound2()">랍바</a></h3>
-                    <script>
-                        function PlaySound2() {
-                            var sound2 = document.getElementById("audio2");
-                            sound2.play()
-                        }
-                    </script>
-                </div>
-                <div class="grid-item">
-                    <h3><audio id="audio11" src="../../audio/ralla.mp3" autostart="false"></audio><a onclick="PlaySound11()">발</a></h3>
-                    <script>
-                        function PlaySound11() {
-                            var sound11 = document.getElementById("audio11");
-                            sound11.play()
-                        }
-                    </script>
-                </div>
-            </div>
             <p>Here it is again! Our third double-badchim is "ㄼ". This one definitely behaves differently from ㄺ or ㄻ.
                 With ㄼ we typically get a ㄹ-badchim sound coupled with the ㅂ sound, as you discovered in the above
                 examples.</p>
