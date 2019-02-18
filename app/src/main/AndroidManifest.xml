@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.serokorean"
+    package="com.hangul.serokorean"
     tools:ignore="ImpliedTouchscreenHardware,MissingLeanbackLauncher,MissingLeanbackSupport">
 
     <application
@@ -11,12 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme2">
-        <activity android:name=".Search.Search"></activity>
-        <activity android:name=".beginnerone.webview.BeginnerOneWebView" />
-        <activity android:name=".deprecated.ChapterPages" />
-        <activity android:name=".beginnerone.BeginnerOne" />
-        <activity android:name=".main.MainActivity" />
-        <activity android:name=".main.Welcome">
+        <activity android:name="com.hangul.serokorean.koreanlearning.hangul.serokorean.Search.Search"></activity>
+        <activity android:name="com.hangul.serokorean.koreanlearning.hangul.serokorean.beginnerone.webview.BeginnerOneWebView" />
+        <activity android:name="com.hangul.serokorean.koreanlearning.hangul.serokorean.deprecated.ChapterPages" />
+        <activity android:name="com.hangul.serokorean.koreanlearning.hangul.serokorean.beginnerone.BeginnerOne" />
+        <activity android:name="com.hangul.serokorean.koreanlearning.hangul.serokorean.main.MainActivity" />
+        <activity android:name="com.hangul.serokorean.koreanlearning.hangul.serokorean.main.Welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

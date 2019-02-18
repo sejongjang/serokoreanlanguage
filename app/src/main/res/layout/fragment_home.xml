@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".bottomNavigation.Home">
+    tools:context="koreanlearning.hangul.serokorean.bottomNavigation.Home">
 
     <ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/sky"
-        tools:context=".beginnerone.BeginnerOne">
+        tools:context="koreanlearning.hangul.serokorean.beginnerone.BeginnerOne">
 
         <LinearLayout
             android:orientation="vertical"

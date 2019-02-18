@@ -6,9 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/main_content"
-    tools:context=".beginnerone.webview.BeginnerOneWebView">
+    tools:context="koreanlearning.hangul.serokorean.beginnerone.webview.BeginnerOneWebView">
 
-    <com.example.serokorean.beginnerone.webview.CustomViewPager
+    <koreanlearning.hangul.serokorean.beginnerone.webview.CustomViewPager
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
