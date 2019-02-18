@@ -410,7 +410,7 @@ div.cardtext {
   top: 0;
   right: 0;
   overflow-x: hidden;
-  transition: 0.5s;
+  transition: 0.3s;
   font-size: 20px;
   background-color: #302e2f;
   color: white;
