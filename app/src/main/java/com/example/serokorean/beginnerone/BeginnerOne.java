@@ -11,12 +11,9 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.example.serokorean.R;
-import com.example.serokorean.bottomNavigation.BookMark;
 import com.example.serokorean.bottomNavigation.FAQ;
 import com.example.serokorean.bottomNavigation.Home;
 import com.example.serokorean.bottomNavigation.More;
-import com.example.serokorean.bottomNavigation.Search;
-import com.example.serokorean.bottomNavigation.Settings;
 import com.example.serokorean.bottomNavigation.Vocab;
 
 public class BeginnerOne extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
