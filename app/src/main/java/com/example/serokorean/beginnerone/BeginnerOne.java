@@ -11,19 +11,26 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.example.serokorean.R;
+import com.example.serokorean.bottomNavigation.BookMark;
 import com.example.serokorean.bottomNavigation.FAQ;
 import com.example.serokorean.bottomNavigation.Home;
+import com.example.serokorean.bottomNavigation.More;
 import com.example.serokorean.bottomNavigation.Search;
 import com.example.serokorean.bottomNavigation.Settings;
+import com.example.serokorean.bottomNavigation.Vocab;
 
 public class BeginnerOne extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
 
     private BottomNavigationView bottomNavigationView;
 
-    Search search = new Search();
-    Settings settings = new Settings();
-    FAQ faq = new FAQ();
+//    Search search = new Search();
+//    Settings settings = new Settings();
+//    BookMark bookmark = new BookMark();
+
     Home home = new Home();
+    Vocab vocab = new Vocab();
+    FAQ faq = new FAQ();
+    More more = new More();
 
     public void FullScreencall() {
         if(Build.VERSION.SDK_INT < 19){
@@ -68,15 +75,25 @@ public class BeginnerOne extends AppCompatActivity implements BottomNavigationVi
             case R.id.home:
                 getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, home).commit(); //.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left)
                 return true;
-            case R.id.settings:
-                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, settings).commit();
-                return true;
-            case R.id.search:
-                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, search).commit();
+            case R.id.vocab:
+                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, vocab).commit();
                 return true;
             case R.id.FAQ:
                 getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, faq).commit();
                 return true;
+            case R.id.more:
+                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, more).commit();
+                return true;
+//            case R.id.search:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, search).commit();
+//                return true;
+//            case R.id.bookmark:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, bookmark).commit();
+//                return true;
+//            case R.id.settings:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, settings).commit();
+//                return true;
+
         }
         return true;
     }
