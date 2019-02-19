@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import koreanlearning.hangul.serokorean.R;
+import com.hangul.serokorean.R;
 
 
 public class Settings extends Fragment {

@@ -4,7 +4,7 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import koreanlearning.hangul.serokorean.R;
+import com.hangul.serokorean.R;
 
 public class Search extends AppCompatActivity {
 

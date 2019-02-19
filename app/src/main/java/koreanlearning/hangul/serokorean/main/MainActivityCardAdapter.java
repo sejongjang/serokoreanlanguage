@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import koreanlearning.hangul.serokorean.R;
+import com.hangul.serokorean.R;
 import koreanlearning.hangul.serokorean.beginnerone.BeginnerOne;
 
 import java.util.List;

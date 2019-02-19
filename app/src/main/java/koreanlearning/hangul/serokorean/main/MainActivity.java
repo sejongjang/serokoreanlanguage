@@ -13,7 +13,7 @@ import android.view.WindowManager;
 import java.util.ArrayList;
 import java.util.List;
 
-import koreanlearning.hangul.serokorean.R;
+import com.hangul.serokorean.R;
 
 public class MainActivity extends AppCompatActivity {
 

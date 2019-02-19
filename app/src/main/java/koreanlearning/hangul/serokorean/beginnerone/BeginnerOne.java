@@ -10,7 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 
-import koreanlearning.hangul.serokorean.R;
+import com.hangul.serokorean.R;
 import koreanlearning.hangul.serokorean.bottomNavigation.FAQ;
 import koreanlearning.hangul.serokorean.bottomNavigation.Home;
 import koreanlearning.hangul.serokorean.bottomNavigation.More;

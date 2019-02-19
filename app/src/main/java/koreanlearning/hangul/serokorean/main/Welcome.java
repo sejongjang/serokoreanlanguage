@@ -11,7 +11,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
-import koreanlearning.hangul.serokorean.R;
+import com.hangul.serokorean.R;
 
 public class Welcome extends AppCompatActivity {
     private TextView tv;

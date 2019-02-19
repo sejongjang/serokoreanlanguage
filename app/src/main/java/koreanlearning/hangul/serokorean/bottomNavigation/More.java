@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import koreanlearning.hangul.serokorean.R;
+import com.hangul.serokorean.R;
 import koreanlearning.hangul.serokorean.Search.Search;
 
 public class More extends Fragment {

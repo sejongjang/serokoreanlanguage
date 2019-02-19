@@ -16,9 +16,11 @@ import android.webkit.WebSettings;
 import android.webkit.WebViewClient;
 
 
+import com.hangul.serokorean.R;
+
 import java.util.ArrayList;
 
-import koreanlearning.hangul.serokorean.R;
+
 
 public class BeginnerOneWebView extends AppCompatActivity implements ParentRequestInterface{
 

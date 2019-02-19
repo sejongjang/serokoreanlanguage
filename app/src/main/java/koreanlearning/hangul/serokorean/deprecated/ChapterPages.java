@@ -13,7 +13,7 @@ import android.webkit.WebView;
 
 import java.util.ArrayList;
 
-import koreanlearning.hangul.serokorean.R;
+import com.hangul.serokorean.R;
 
 
 public class ChapterPages extends AppCompatActivity implements GestureDetector.OnGestureListener {

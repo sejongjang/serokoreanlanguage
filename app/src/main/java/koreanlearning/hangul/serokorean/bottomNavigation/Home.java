@@ -11,7 +11,8 @@ import android.view.ViewGroup;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
-import koreanlearning.hangul.serokorean.R;
+import com.hangul.serokorean.R;
+
 import koreanlearning.hangul.serokorean.beginnerone.webview.BeginnerOneWebView;
 
 public class Home extends Fragment {
