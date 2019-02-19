@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 
+    <!-- Link to Javascript -->
+    <script src="../../js/main.js" type="text/javascript"></script>
+
 </head>
 
 <body>
@@ -21,14 +24,8 @@
             <!-- Example Sentence Grid -->
             <div class="sentence-container">
                 <div class="sentence-main-item">
-                    <h4><audio id="audio8" src="../../audio/yeoboseyo.mp3" autostart="false"></audio><a
-                            onclick="PlaySound8()">여보세요?</a></h4>
-                    <script>
-                        function PlaySound8() {
-                            var sound8 = document.getElementById("audio8");
-                            sound8.play()
-                        }
-                    </script>
+                    <h4><audio src="../../audio/yeoboseyo.mp3" autostart="false"></audio><a
+                            onclick="PlaySound(this)">여보세요?</a></h4>
                 </div>
                 <div class="sentence-translated-item" onclick="replace1()">
                     <h4 id="replace1">(tap for translation)</h4>

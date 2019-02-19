@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 
+    <!-- Link to Javascript -->
+    <script src="../../js/main.js" type="text/javascript"></script>
+
 </head>
 
 <body>
@@ -21,13 +24,7 @@
             <!-- Example Sentence-->
             <div class="sentence-container">
                 <div class="sentence-main-item">
-                    <h4><audio id="audio8" src="../../audio/annyeonghaseyo.mp3" autostart="false"></audio><a onclick="PlaySound8()">안녕하세요?</a></h4>
-                    <script>
-                        function PlaySound8() {
-                            var sound8 = document.getElementById("audio8");
-                            sound8.play()
-                        }
-                    </script>
+                    <h4><audio src="../../audio/annyeonghaseyo.mp3" autostart="false"></audio><a onclick="PlaySound(this)">안녕하세요?</a></h4>
                 </div>
                 <div class="sentence-translated-item" onclick="replace()">
                     <h4 id="replace1">(tap for translation)</h4>
@@ -46,10 +43,13 @@
                 you at peace?”—hence the question mark. It’s become such a common expression of greeting, however, that
                 it’s often not spoken with a questioning tone of voice. It’s like how you ask “How are you?” in English
                 without expecting any particular answer. It’s just the thing to say. Koreans are likely
-                to respond to a greeting of “안녕하세요?” by asking you the same, “네 안녕하세요?”—“Yes (I am at peace), and you?”.</p>
+                to respond to a greeting of “안녕하세요?” by asking you the same, “네 안녕하세요?”—“Yes (I am at peace), and
+                you?”.</p>
+
             <!-- Author Note-->
             <div id="myAuthornote" class="authornote" onclick="closeNav()">
-                <p><b><i>매튜 선생</i></b><br>As an amusing side note I was once strolling the back streets of Korea on a bright
+                <p><b><i>매튜 선생</i></b><br>As an amusing side note I was once strolling the back streets of Korea on a
+                    bright
                     sunny
                     morning and I greeted a stranger with a friendly “안녕하세요?". To my chagrin he didn’t respond in the
                     usual cheery way that Koreans do. Instead he said with his head down, “안녕하지 못해요”—“I can’t be at
@@ -62,17 +62,9 @@
                     <div class="authorarrow"><img src="../../img/leftarrow.png" alt="left"></div>
                 </div>
             </span>
-            <script>
-                function openNav() {
-                    document.getElementById("myAuthornote").style.width = "250px";
-                }
 
-                function closeNav() {
-                    document.getElementById("myAuthornote").style.width = "0";
-                }
-            </script>
-
-            <p style="margin-right: 15px">Anyway, take careful note of the pronunciation here. As common expressions often are, this word is
+            <p style="margin-right: 15px">Anyway, take careful note of the pronunciation here. As common expressions
+                often are, this word is
                 spoken in a very slurred manner. “안녕하세요” actually comes off as something closer to “안냐세여". Honestly
                 just one word can be enough for Koreans to tell you are good at Korean, and if you nail the
                 pronunciation of this one you are likely to be showered with praise.</p>
