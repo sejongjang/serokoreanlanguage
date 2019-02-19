@@ -11,6 +11,9 @@
     <!-- Link to Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    
+    <!-- Link to Javascript -->
+    <script src="../../js/main.js" type="text/javascript"></script>
 
 </head>
 
@@ -29,13 +32,7 @@
             <!-- Audio text box -->
             <div class="card">
                 <div class="cardtext">
-                    <h1><audio id="audio10" src="../../audio/ya.mp3" autostart="false"></audio><a onclick="PlaySound10()">야</a></h1>
-                    <script>
-                        function PlaySound10() {
-                            var sound10 = document.getElementById("audio10");
-                            sound10.play()
-                        }
-                    </script>
+                    <h1><audio src="../../audio/ya.mp3" autostart="false"></audio><a onclick="PlaySound(this)">야</a></h1>
                 </div>
             </div>
             <p>Our first new vowel is 야 (<i>We’ll be combining our vowels with ㅇ when we just want to hear the vowel
@@ -50,22 +47,10 @@
             <!-- Small Grid -->
             <div class="grid-container">
                 <div class="grid-item">
-                    <h3><audio id="audio8" src="../../audio/gya.mp3" autostart="false"></audio><a onclick="PlaySound8()">갸</a></h3>
-                    <script>
-                        function PlaySound8() {
-                            var sound8 = document.getElementById("audio8");
-                            sound8.play()
-                        }
-                    </script>
+                    <h3><audio src="../../audio/gya.mp3" autostart="false"></audio><a onclick="PlaySound(this)">갸</a></h3>
                 </div>
                 <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/nya.mp3" autostart="false"></audio><a onclick="PlaySound9()">냐</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
+                    <h3><audio src="../../audio/nya.mp3" autostart="false"></audio><a onclick="PlaySound(this)">냐</a></h3>
                 </div>
             </div>
             <p>These sorts of combinations sound positively foreign to English speakers but are completely normal in
@@ -80,91 +65,39 @@
                 that have simply never been used. This no doubt has something to do with Hangul being created long
                 after the spoken-language was already well established. King Sejong actually made a system that was
                 more powerful and flexible than the language itself needed. Pretty impressive.</p>
-            <p>This practice below should be a no-brainer:</p>
+            <p>This practice below should be a no-brainer.</p>
+            
             <!-- Letter Practice Grid -->
             <div class="grid-container">
                 <div class="grid-item">
-                    <h3><audio id="audio8" src="../../audio/ra.mp3" autostart="false"></audio><a onclick="PlaySound8()">아야</a></h3>
-                    <script>
-                        function PlaySound8() {
-                            var sound8 = document.getElementById("audio8");
-                            sound8.play()
-                        }
-                    </script>
+                    <h3><audio src="../../audio/aya.mp3" autostart="false"></audio><a onclick="PlaySound(this)">아야</a></h3>
                 </div>
                 <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/rak.mp3" autostart="false"></audio><a onclick="PlaySound9()">마냐</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
+                    <h3><audio src="../../audio/manya.mp3" autostart="false"></audio><a onclick="PlaySound(this)">마냐</a></h3>
                 </div>
                 <div class="grid-item">
-                    <h3><audio id="audio7" src="../../audio/rara.mp3" autostart="false"></audio><a onclick="PlaySound7()">갸아</a></h3>
-                    <script>
-                        function PlaySound7() {
-                            var sound7 = document.getElementById("audio7");
-                            sound7.play()
-                        }
-                    </script>
+                    <h3><audio src="../../audio/gyaa.mp3" autostart="false"></audio><a onclick="PlaySound(this)">갸아</a></h3>
                 </div>
                 <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/ral.mp3" autostart="false"></audio><a onclick="PlaySound9()">얍</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
+                    <h3><audio src="../../audio/yap.mp3" autostart="false"></audio><a onclick="PlaySound(this)">얍</a></h3>
                 </div>
                 <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/dal.mp3" autostart="false"></audio><a onclick="PlaySound9()">란야</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
+                    <h3><audio src="../../audio/ranya.mp3" autostart="false"></audio><a onclick="PlaySound(this)">란야</a></h3>
                 </div>
                 <div class="grid-item">
-                    <h3><audio id="audio9" src="../../audio/nal.mp3" autostart="false"></audio><a onclick="PlaySound9()">샷</a></h3>
-                    <script>
-                        function PlaySound9() {
-                            var sound9 = document.getElementById("audio9");
-                            sound9.play()
-                        }
-                    </script>
+                    <h3><audio src="../../audio/shyat.mp3" autostart="false"></audio><a onclick="PlaySound(this)">샷</a></h3>
                 </div>
                 <div class="grid-item">
-                    <h3><audio id="audio10" src="../../audio/dalla.mp3" autostart="false"></audio><a onclick="PlaySound10()">냡</a></h3>
-                    <script>
-                        function PlaySound10() {
-                            var sound10 = document.getElementById("audio10");
-                            sound10.play()
-                        }
-                    </script>
+                    <h3><audio src="../../audio/nyap.mp3" autostart="false"></audio><a onclick="PlaySound(this)">냡</a></h3>
                 </div>
                 <div class="grid-item">
-                    <h3><audio id="audio2" src="../../audio/galla.mp3" autostart="false"></audio><a onclick="PlaySound2()">랴</a></h3>
-                    <script>
-                        function PlaySound2() {
-                            var sound2 = document.getElementById("audio2");
-                            sound2.play()
-                        }
-                    </script>
+                    <h3><audio src="../../audio/rya.mp3" autostart="false"></audio><a onclick="PlaySound(this)">랴</a></h3>
                 </div>
                 <div class="grid-item">
-                    <h3><audio id="audio11" src="../../audio/ralla.mp3" autostart="false"></audio><a onclick="PlaySound11()">닷야</a></h3>
-                    <script>
-                        function PlaySound11() {
-                            var sound11 = document.getElementById("audio11");
-                            sound11.play()
-                        }
-                    </script>
+                    <h3><audio src="../../audio/dashya.mp3" autostart="false"></audio><a onclick="PlaySound(this)">닷야</a></h3>
                 </div>
             </div>
+
             <p>We should note that there are some consonant combinations that never combine with 야. For example, you
                 will never see ㄴ/ㄹ and ㄹ/ㄹ carry-over sound combined with 야 (like 달랴 or 난랴—seriously these are weird).</p>
             <p>Also, recall that we taught you ㅅ makes an "s" or "sh" sound. As you saw above, ㅅ combined with 야 gives
@@ -173,7 +106,6 @@
                 double-line y-vowels like 야 with their regular counterparts, since just adding a "Y" sound is a piece of cake.</p>
 
         </div>
-    </div>
     </div>
 </body>
 
