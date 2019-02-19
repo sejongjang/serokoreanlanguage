@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Lv1_Ch7_Pg3</title>
+
+    <!-- Link to Stylesheet -->
+    <link href="../../css/textstyles.css" rel="stylesheet">
+
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+
+    <!-- Link to Javascript -->
+    <script src="../../js/main.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+    <div class="mtextcon">
+        <div class="mstandardpara">
+
+            <!--Vocab Introduction Grid-->
+            <div class="vocab-container">
+                <div class="vocab-top-item">
+                    <i>Word</i>
+                </div>
+                <div class="vocab-top-item">
+                    <i>Meaning</i>
+                </div>
+                <div class="vocab-item">
+                    <h3><audio src="../../audio/i-ga.mp3" autostart="false"></audio><a onclick="PlaySound(this)">이/가</a></h3>
+                </div>
+                <div class="vocab-item">
+                    <h3>subject marker</h3>
+                </div>
+                <div class="vocab-item">
+                    <h3><audio src="../../audio/mul.mp3" autostart="false"></audio><a onclick="PlaySound(this)">물</a></h3>
+                </div>
+                <div class="vocab-item">
+                    <h3>water</h3>
+                </div>
+                <div class="vocab-item">
+                    <h3><audio src="../../audio/bul.mp3" autostart="false"></audio><a onclick="PlaySound(this)">불</a></h3>
+                </div>
+                <div class="vocab-item">
+                    <h3>fire</h3>
+                </div>
+                <div class="vocab-item">
+                    <h3><audio src="../../audio/cha.mp3" autostart="false"></audio><a onclick="PlaySound(this)">차</a></h3>
+                </div>
+                <div class="vocab-item">
+                    <h3>car</h3>
+                </div>
+            </div>
+
+            <p>이/가 is an important particle that will allow us to use the
+                existence verbs 있다 and 없다. Remember our little consonant-vowel agreement rule? Well it turns out that
+                grammatical markers (particles) in Korean typically follow this rule. 이/가 marks the subject of the
+                sentence (amazing right). That means we can use this particle to tell
+                us whether we have dogs chasing cats or cats chasing dogs. Very useful.</p>
+            <p>Let's see what this looks like with our existence verbs.</p>
+
+            <!-- Example Sentence Grid -->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio src="../../audio/muri-isseoyo.mp3" autostart="false"></audio><a onclick="PlaySound(this)">물<b>이</b>
+                            있어요</a></h4>
+                </div>
+                <div class="sentence-translated-item" onclick="replace1()">
+                    <h4 id="replace1">(tap for translation)</h4>
+                </div>
+                <script>
+                    function replace1() {
+                        var str = document.getElementById("replace1").innerHTML;
+                        var res = str.replace("(tap for translation)", "There is water.");
+                        document.getElementById("replace1").innerHTML = res;
+                    }
+                </script>
+            </div>
+            <br>
+            <!-- Example Sentence Grid 2-->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio src="../../audio/muri-eopsseoyo.mp3" autostart="false"></audio><a onclick="PlaySound(this)">물<b>이</b>
+                            없어요</a></h4>
+                </div>
+                <div class="sentence-translated-item" onclick="replace2()">
+                    <h4 id="replace2">(tap for translation)</h4>
+                </div>
+                <script>
+                    function replace2() {
+                        var str = document.getElementById("replace2").innerHTML;
+                        var res = str.replace("(tap for translation)", "There is not water.");
+                        document.getElementById("replace2").innerHTML = res;
+                    }
+                </script>
+            </div>
+            <br>
+            <!-- Example Sentence Grid 3-->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio src="../../audio/muri-isseoyo.mp3" autostart="false"></audio><a onclick="PlaySound(this)">차<b>가</b>
+                            있어요</a></h4>
+                </div>
+                <div class="sentence-translated-item" onclick="replace3()">
+                    <h4 id="replace3">(tap for translation)</h4>
+                </div>
+                <script>
+                    function replace3() {
+                        var str = document.getElementById("replace3").innerHTML;
+                        var res = str.replace("(tap for translation)", "There is a car.");
+                        document.getElementById("replace3").innerHTML = res;
+                    }
+                </script>
+            </div>
+            <br>
+            <!-- Example Sentence Grid 4-->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio src="../../audio/muri-eopsseoyo.mp3" autostart="false"></audio><a onclick="PlaySound(this)">차<b>가</b>
+                            없어요</a></h4>
+                </div>
+                <div class="sentence-translated-item" onclick="replace4()">
+                    <h4 id="replace4">(tap for translation)</h4>
+                </div>
+                <script>
+                    function replace4() {
+                        var str = document.getElementById("replace4").innerHTML;
+                        var res = str.replace("(tap for translation)", "There is not a car.");
+                        document.getElementById("replace4").innerHTML = res;
+                    }
+                </script>
+            </div>
+
+            <p>You’ll notice a couple of things here, being the astute learner that you are. The first is that 이 is
+                used if the word has a 받침. If the word ends in a vowel then you use 가.</p>
+
+            <!-- Author's Note -->
+            <div id="myAuthornote" class="authornote" onclick="closeNav()">
+                <p>매튜 선생 <br> This consonant-vowel agreement rule was tricky
+                    for me when I learned Korean because I understood in my head that particles usually have to follow the
+                    consonant-vowel pattern, but it can be harder to make your tongue do the right thing. Sometimes you
+                    will catch yourself saying “물가 없어요,” and that’s okay. Koreans are likely to brush it off with a smile
+                    and compliment you on how smart you are to be able to learn Korean.</p>
+            </div>
+            <span onclick="openNav()">
+                <div class="authorcard">
+                    <div class="authorarrow"><img src="../../img/leftarrow.png" alt="left"></div>
+                </div>
+            </span>
+
+            <p style="margin-right:15px">Historically Korea has received relatively minimal attention internationally,
+                however since the
+                invention of Hangul it’s gained tremendous prestige and Korea is playing an ever more important role
+                politically, economically, and especially culturally in the modern world. More and more people are
+                learning about Korea and how’s it’s unique from its bigger and traditionally more influential
+                neighbors, China and Japan.</p>
+            <p>That’s not to say you shouldn’t experiment making new sentences with the words we teach you. Just
+                consider this as a
+                forewarning that Korean words are not exact equivalents of what they translate to in English.
+                That’s why translation is such messy business, and why it’s always better to understand things in the
+                original language.</p>
+        </div>
+    </div>
+</body>
+
+</html>

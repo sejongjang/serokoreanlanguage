@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Lv1_Ch6_Pg9</title>
+
+    <!-- Link to Stylesheet -->
+    <link href="../../css/textstyles.css" rel="stylesheet">
+
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    
+    <!-- Link to Javascript -->
+    <script src="../../js/main.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+    <div class="mtextcon">
+        <div class="mstandardpara">
+
+            <!-- Example Sentence Grid -->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio src="../../audio/gamsahamnida.mp3" autostart="false"></audio><a onclick="PlaySound(this)">감사합니다</a></h4>
+                </div>
+                <div class="sentence-translated-item" onclick="replace1()">
+                    <h4 id="replace1">(tap for translation)</h4>
+                </div>
+                <script>
+                    function replace1() {
+                        var str = document.getElementById("replace1").innerHTML;
+                        var res = str.replace("(tap for translation)", "Thank you (polite)");
+                        document.getElementById("replace1").innerHTML = res;
+                    }
+                </script>
+            </div>
+            <br>
+            <!-- Example Sentence Grid 2-->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio src="../../audio/gomawoyo.mp3" autostart="false"></audio><a onclick="PlaySound(this)">고마워요</a></h4>
+                </div>
+                <div class="sentence-translated-item" onclick="replace2()">
+                    <h4 id="replace2">(tap for translation)</h4>
+                </div>
+                <script>
+                    function replace2() {
+                        var str = document.getElementById("replace2").innerHTML;
+                        var res = str.replace("(tap for translation)", "Thank you (polite and intimate)");
+                        document.getElementById("replace2").innerHTML = res;
+                    }
+                </script>
+            </div>
+            <p>Naturally since there is two ways to ask for someone's name there must be two ways to say thank you. 감사합니다 sounds a little bit more stiff or formal.
+                This is what you say to your teacher, your boss at work, or even your coworker. It's well used in professional environments and between people who don't know
+                each other well.</p>
+                <p>고마워요 sounds a little more... familiar. Perhaps you get along closely with one of your classmates, coworkers, or associates. In that case 고마워요 sounds
+                    nice and friendly. It is also still polite, so there's technically nothing wrong with using it to strangers. When you get a chance to go to Korea or meet 
+                Korean friends try and get a feel for when they use these two words and you'll know what we mean.</p>
+        </div>
+    </div>
+</body>
+
+</html>
