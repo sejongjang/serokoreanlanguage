@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<<<<<<< HEAD
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+=======
+    <color name="colorPrimary">#05c3f9</color>
+    <color name="colorPrimaryDark">#0691b8</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="white">#ffffff</color>
+    <color name="dividerColor">#80CBC4</color>
+    <color name="list_item_title">#AAAAAA</color>
+    <color name="list_group_title">#808080</color>
+
+    <color name="beginnerone">#fce794</color>
+    <color name="beginnertwo">#c9ffff</color>
+    <color name="intermediateone">#009b9b</color>
+    <color name="intermediatetwo">#0691b8</color>
+    <color name="advanced">#D81B60</color>
+    <color name="aqua">#7FDBFF</color>
+    <color name="lime">#01FF70</color>
+    <color name="black">#111111</color>
+    <color name="nicewhite">#f6f1ed</color>
+    <color name="nicelightblue">#c2dde6</color>
+    <color name="sky">#F3FAFE</color>
+
+
+>>>>>>> 241fe5d63bf821cee75086cd15ad5423fceb3985
 </resources>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Lv1_Ch6_Pg5</title>
+
+    <!-- Link to Stylesheet -->
+    <link href="../../css/textstyles.css" rel="stylesheet">
+
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="mtextcon">
+        <div class="mstandardpara">
+
+            <!-- Example Sentence Grid -->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio id="audio8" src="../../audio/jal-butakduerimnida.mp3" autostart="false"></audio><a
+                            onclick="PlaySound8()">잘 부탁드립니다</a></h4>
+                    <script>
+                        function PlaySound8() {
+                            var sound8 = document.getElementById("audio8");
+                            sound8.play()
+                        }
+                    </script>
+                </div>
+                <div class="sentence-translated-item" onclick="replace1()">
+                    <h4 id="replace1">(tap for translation)</h4>
+                </div>
+                <script>
+                    function replace1() {
+                        var str = document.getElementById("replace1").innerHTML;
+                        var res = str.replace("(tap for translation)", "I look forward working with you.");
+                        document.getElementById("replace1").innerHTML = res;
+                    }
+                </script>
+            </div>
+            <p>Our next phrase is quite similar to the last one and is used frequently when you meet someone for the
+                first time. It’s unusual however because it's hard to come up with an equivalent phrase in English. Any
+                literal
+                translation of this phrase is awkward. This expression might also be rendered as, “I
+                hope we can work well together,” or “I look forward to getting to know you," or "Please take care of
+                me".</p>
+            <p>What’s going on here? Well we have the word 잘 that we learne earlier (in this case meaning good), and we also have 부탁드립니다. 드립니다 is the formal
+                and humble verb meaning “offer” and 부탁 is a noun meaning “a request”. With that in mind the best
+                literal translation I can up with is “(I) offer (a) good request (to you).”</p>
+            <p>This is definitely a head-scratcher from the English speaker’s perspective, but it makes perfect sense
+                in Korean. Not only can it be used when you first meet someone but can also be used at other times too.
+                Say you are assigned to work in a group with someone, or you are asking a lawyer for legal help.
+                Anytime you see yourself likely to work together, need help from, or desire to get along well with the
+                person you’re talking to, you can use this phrase. So, to our dear readers... <i>“잘 부탁드립니다".</i></p>
+        </div>
+    </div>
+</body>
+
+</html>

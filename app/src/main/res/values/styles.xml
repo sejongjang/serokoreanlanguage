@@ -1,11 +1,25 @@
 <resources>
 
     <!-- Base application theme. -->
+<<<<<<< HEAD
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+=======
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+>>>>>>> 241fe5d63bf821cee75086cd15ad5423fceb3985
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+<<<<<<< HEAD
+=======
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/aqua</item>
+        <item name="colorPrimaryDark">@color/aqua</item>
+        <item name="colorAccent">@color/aqua</item>
+    </style>
+
+>>>>>>> 241fe5d63bf821cee75086cd15ad5423fceb3985
 </resources>

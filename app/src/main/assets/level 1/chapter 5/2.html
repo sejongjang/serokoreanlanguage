@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Lv1_Ch5_Pg3</title>
+
+    <!-- Link to Stylesheet -->
+    <link href="../../css/textstyles.css" rel="stylesheet">
+
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="mtextcon">
+        <div class="mstandardpara">
+
+            <!-- Example Sentence Grid -->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio src="../../audio/euijayeyo.mp3" autostart="false"></audio><a onclick="PlaySound(this)">의자예요.</a></h4>
+                </div>
+                <div class="sentence-translated-item" onclick="replace1()">
+                    <h4 id="replace1">(tap for translation)</h4>
+                </div>
+                <script>
+                    function replace1() {
+                        var str = document.getElementById("replace1").innerHTML;
+                        var res = str.replace("(tap for translation)", "This is a chair.");
+                        document.getElementById("replace1").innerHTML = res;
+                    }
+                </script>
+            </div>
+            <p>In this example we have another word that snuck into the English version of our sentence but isn’t in
+                the Korean one. “A” is an article. In English there are exactly three articles, “a”, “an”, and “the”.
+                These words have something to do with specifying quantity and singling things out. It’s not really
+                important however, because <b>Korean has no articles</b>. Yep let that sink in. Now before you start
+                protesting that you won’t know if there’s one chair or millions of chairs, or if the is just <i>a</i>
+                chair or
+                <i>the</i> chair, slow down and let me explain.</p>
+            <p>The truth is that you aren’t losing anything too critical by not having articles in Korean. There is a
+                way to delineate plurality, though it’s usage is more flexible. In English if we have more than one
+                chair we absolutely must say “chairs”. Korean is different. Without knowing the context of the above
+                sentence it would not be inaccurate to translate it as, “These are chairs”. If you must be clear that
+                you are dealing with more than one “thing” you can add the postfix “들” onto the end of any noun. Please
+                note than 들 is most commonly used when referring to people but, again, can be used with any nouns.</p>
+
+            <!-- Example Sentence Grid -->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio src="../../audio/euijayeyo.mp3" autostart="false"></audio><a onclick="PlaySound(this)">개들이에요.</a></h4>
+                </div>
+                <div class="sentence-translated-item" onclick="replace2()">
+                    <h4 id="replace2">(tap for translation)</h4>
+                </div>
+                <script>
+                    function replace2() {
+                        var str = document.getElementById("replace2").innerHTML;
+                        var res = str.replace("(tap for translation)", "They are dogs.");
+                        document.getElementById("replace2").innerHTML = res;
+                    }
+                </script>
+            </div>
+
+            <p>Korean also has a way of specifying if this is “a chair” or “the chair”. You know,
+                <i>the one</i>. They do this with demonstrative words, so instead of saying “this is <i>the</i> chair”,
+                they would
+                say “this is <i>that</i> chair”. We’ll learn how to do this naturally as we continue to wade deeper
+                into the
+                language. Now some more examples.</p>
+
+            <!-- Example Sentence Grid -->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio src="../../audio/euijayeyo.mp3" autostart="false"></audio><a onclick="PlaySound(this)">집이에요.</a></h4>
+                </div>
+                <div class="sentence-translated-item" onclick="replace3()">
+                    <h4 id="replace3">(tap for translation)</h4>
+                </div>
+                <script>
+                    function replace3() {
+                        var str = document.getElementById("replace3").innerHTML;
+                        var res = str.replace("(tap for translation)", "It’s a house.");
+                        document.getElementById("replace3").innerHTML = res;
+                    }
+                </script>
+            </div>
+            <br>
+            <!-- Example Sentence Grid -->
+            <div class="sentence-container">
+                <div class="sentence-main-item">
+                    <h4><audio src="../../audio/euijayeyo.mp3" autostart="false"></audio><a onclick="PlaySound(this)">집
+                            아니에요.</a></h4>
+                </div>
+                <div class="sentence-translated-item" onclick="replace4()">
+                    <h4 id="replace4">(tap for translation)</h4>
+                </div>
+                <script>
+                    function replace4() {
+                        var str = document.getElementById("replace4").innerHTML;
+                        var res = str.replace("(tap for translation)", "It's not a house.");
+                        document.getElementById("replace4").innerHTML = res;
+                    }
+                </script>
+            </div>
+            <p>Wait 집 아니에요? <i>What is going on here?!</i> Remeber we introduced the negative version of the verb "to
+                be" as "아니다". If you conjugate 아니다 to polite spoken-form it becomes 아니에요.
+                Earlier you also learned that the verb 이다 attaches onto the noun you are declaring, but <b>이다 is the
+                    only verb that attaches like this.</b> 이다 has two versions when conjugated
+                because it attaches to the end of words and thus follows the vowel-consonant agreement rule.</p>
+            <p>아니다 on the other hand acts like
+                any other verb and should have a between it and the word it is negating. Since 아니다 doesn't attach to
+                the end of nouns it doesn't need to follow our vowel-consonant agreement rule. </p>
+
+        </div>
+    </div>
+</body>
+
+</html>

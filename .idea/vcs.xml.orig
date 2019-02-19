@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+<<<<<<< HEAD
+    <mapping directory="$PROJECT_DIR$/serokoreanlanguage" vcs="Git" />
+=======
+>>>>>>> 241fe5d63bf821cee75086cd15ad5423fceb3985
+  </component>
+</project>

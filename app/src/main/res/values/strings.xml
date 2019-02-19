@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">SeroKorean</string>
+    <string name="desc0">Intro</string>
+    <string name="desc1">chapter 1</string>
+    <string name="desc2">chapter 2</string>
+    <string name="desc3">chapter 3</string>
+    <string name="desc4">chapter 4</string>
+    <string name="desc5">chapter 5</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="settings">Settings</string>
+    <string name="search">Search</string>
+    <string name="FAQ">FAQ</string>
+    <string name="home">Home</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="vocab">Vocab</string>
+    <string name="more">More</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
