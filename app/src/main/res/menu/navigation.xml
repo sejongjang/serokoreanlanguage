@@ -3,38 +3,38 @@
 
     <item
         android:id="@+id/home"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/ic_home"
         android:title="@string/home" />
 
     <item
         android:id="@+id/vocab"
-        android:icon="@drawable/ic_vocab_black_24dp"
+        android:icon="@drawable/ic_book"
         android:title="@string/vocab" />
 
     <item
         android:id="@+id/FAQ"
-        android:icon="@drawable/ic_grade_black_24dp"
+        android:icon="@drawable/ic_question"
         android:title="@string/FAQ" />
 
     <item
         android:id="@+id/more"
-        android:icon="@drawable/ic_more_horiz_black_24dp"
+        android:icon="@drawable/ic_more"
         android:title="@string/more" />
 
 
     <!--<item-->
-        <!--android:id="@+id/search"-->
-        <!--android:icon="@drawable/ic_search_black_24dp"-->
-        <!--android:title="@string/search" />-->
+    <!--android:id="@+id/search"-->
+    <!--android:icon="@drawable/ic_search_black_24dp"-->
+    <!--android:title="@string/search" />-->
 
     <!--<item-->
-        <!--android:id="@+id/bookmark"-->
-        <!--android:icon="@drawable/ic_book_black_24dp"-->
-        <!--android:title="@string/bookmark" />-->
+    <!--android:id="@+id/bookmark"-->
+    <!--android:icon="@drawable/ic_book_black_24dp"-->
+    <!--android:title="@string/bookmark" />-->
 
     <!--<item-->
-        <!--android:id="@+id/settings"-->
-        <!--android:icon="@drawable/ic_settings_black_24dp"-->
-        <!--android:title="@string/settings" />-->
+    <!--android:id="@+id/settings"-->
+    <!--android:icon="@drawable/ic_settings_black_24dp"-->
+    <!--android:title="@string/settings" />-->
 
 </menu>

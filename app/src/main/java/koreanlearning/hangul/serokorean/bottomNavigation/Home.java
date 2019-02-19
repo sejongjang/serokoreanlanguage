@@ -1,6 +1,7 @@
 package koreanlearning.hangul.serokorean.bottomNavigation;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
@@ -8,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
+import android.widget.TextView;
 
 import koreanlearning.hangul.serokorean.R;
 import koreanlearning.hangul.serokorean.beginnerone.webview.BeginnerOneWebView;
@@ -40,11 +42,50 @@ public class Home extends Fragment {
             }
         });
 
+        Typeface customFont = Typeface.createFromAsset(getActivity().getAssets(), "fonts/makgeolli.ttf");
+        changeFont(view, customFont);
+
         mainGrid = view.findViewById(R.id.mainGrid);
         setSingleEvent(mainGrid);
 
         // Inflate the layout for this fragment
         return view;
+    }
+
+    private void changeFont(View view, Typeface customFont){
+        TextView tv;
+        tv = view.findViewById(R.id.introduction);
+        tv.setTypeface(customFont);
+
+        tv = view.findViewById(R.id.chapterone);
+        tv.setTypeface(customFont);
+
+        tv = view.findViewById(R.id.chaptertwo);
+        tv.setTypeface(customFont);
+
+        tv = view.findViewById(R.id.chapterthree);
+        tv.setTypeface(customFont);
+
+        tv = view.findViewById(R.id.chapterfour);
+        tv.setTypeface(customFont);
+
+        tv = view.findViewById(R.id.chapterfive);
+        tv.setTypeface(customFont);
+
+        tv = view.findViewById(R.id.chaptersix);
+        tv.setTypeface(customFont);
+
+        tv = view.findViewById(R.id.chapterseven);
+        tv.setTypeface(customFont);
+
+        tv = view.findViewById(R.id.chaptereight);
+        tv.setTypeface(customFont);
+
+        tv = view.findViewById(R.id.chapternine);
+        tv.setTypeface(customFont);
+
+        tv = view.findViewById(R.id.chapterten);
+        tv.setTypeface(customFont);
     }
 
     private void setSingleEvent(GridLayout mainGrid){

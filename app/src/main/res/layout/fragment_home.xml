@@ -12,7 +12,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/sky"
+        android:background="@color/white"
         tools:context="koreanlearning.hangul.serokorean.beginnerone.BeginnerOne">
 
         <LinearLayout
@@ -52,6 +52,7 @@
                             android:src="@mipmap/ic_koreanflag" />
 
                         <TextView
+                            android:id="@+id/introduction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Introduction"
@@ -106,6 +107,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
+                            android:id="@+id/chapterone"
                             android:text="chapter 1"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -140,6 +142,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
+                            android:id="@+id/chaptertwo"
                             android:text="Chapter 2"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -175,6 +178,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
+                            android:id="@+id/chapterthree"
                             android:text="Chapter 3"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -210,6 +214,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
+                            android:id="@+id/chapterfour"
                             android:text="Chapter 4"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -245,6 +250,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
+                            android:id="@+id/chapterfive"
                             android:text="Chapter 5"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -280,6 +286,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
+                            android:id="@+id/chaptersix"
                             android:text="Chapter 6"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -315,6 +322,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
+                            android:id="@+id/chapterseven"
                             android:text="Chapter 7"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -350,6 +358,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
+                            android:id="@+id/chaptereight"
                             android:text="Chapter 8 "
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -385,6 +394,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
+                            android:id="@+id/chapternine"
                             android:text="Chapter 9"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -420,6 +430,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
+                            android:id="@+id/chapterten"
                             android:text="Chapter 10"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"

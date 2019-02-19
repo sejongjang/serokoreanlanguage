@@ -3,14 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/beginnerone"
-    tools:context="koreanlearning.hangul.serokorean.bottomNavigation.Settings">
+    android:background="@color/white"
+    tools:context="koreanlearning.hangul.serokorean.bottomNavigation.FAQ">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <Toolbar
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="settings"
-        android:gravity="center"/>
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:text=""
+            android:textSize="22dp"
+            android:textStyle="bold"/>
+    </Toolbar>
 
 </FrameLayout>
