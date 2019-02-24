@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 
+    <!-- Link to Javascript -->
+    <script src="../../js/main.js" type="text/javascript"></script>
+
 </head>
 
 <body>
@@ -27,38 +30,37 @@
                 to separate words. Now imagine if instead of organizing letters this way, we put them into square
                 blocks. Each block would be pronounced as one syllable, and spaces between words would be maintained.
                 What would the result be like? Well...</p>
-                
-            <!-- Trigger the Modal -->
-            <img id="myImg" src="../../img/hanglish.png" alt="How English would look if it were organized like Hangul."
-                class="modalimg">
 
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
+            <!-- Modal Image -->
+            <a href="#openModal"><img src="../../img/hanglish.png" alt="hanglish" class="modalimg"></a>
 
-                <!-- The Close Button -->
-                <span class="close"></span>
-
-                <!-- Modal Content (The Image) -->
-                <img class="modal-content" id="img01">
-
-                <!-- Modal Caption (Image Text) -->
-                <div id="caption"></div>
+            <div class="modalDialog">
+                <a href="#close" title="Close" class="close">
+                    <div>
+                        <img src="../../img/hanglish.png" alt="hanglish">
+                        <p>How English would look if it were organized like Hangul.</p>
+                    </div>
+                </a>
             </div>
+            <!-- Modal Image -->
+            <a href="#openModal"><img src="../../img/hanglish.png" alt="hanglish" class="modalimg"></a>
+
+            <div id="openModal" class="modalDialog">
+                <a href="#close" title="Close" class="close">
+                    <div>
+                        <img src="../../img/hanglish.png" alt="hanglish">
+                        <p>How English would look if it were organized like Hangul.</p>
+                    </div>
+                </a>
+            </div>
+
             <p>Now compare that with the same phrase in Korean.</p>
 
-            <!-- Trigger the Modal -->
+            <!-- Modal Image 2 -->
             <img id="myImg2" src="../../img/hanglish2.jpg" alt="The above phrase written in Korean." class="modalimg">
-
-            <!-- The Modal -->
             <div id="myModal2" class="modal">
-
-                <!-- The Close Button -->
                 <span class="close"></span>
-
-                <!-- Modal Content (The Image) -->
                 <img class="modal-content" id="img02">
-
-                <!-- Modal Caption (Image Text) -->
                 <div id="caption2"></div>
             </div>
 
@@ -80,52 +82,6 @@
                 stick to one vowel sound while I teach you the consonants.</p>
         </div>
     </div>
-
-    <script>
-        // Get the modal
-        var modal = document.getElementById('myModal');
-
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById('myImg');
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
-        img.ontouchstart = function () {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
-        }
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.ontouchstart = function () {
-            modal.style.display = "none";
-        }
-    </script>
-
-    <script>
-        // Get the modal
-        var modal2 = document.getElementById('myModal2');
-
-        // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img2 = document.getElementById('myImg2');
-        var modalImg2 = document.getElementById("img02");
-        var captionText2 = document.getElementById("caption2");
-        img2.ontouchstart = function () {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
-        }
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks on <span> (x), close the modal
-        span.ontouchstart = function () {
-            modal.style.display = "none";
-        }
-    </script>
 
 </body>
 
