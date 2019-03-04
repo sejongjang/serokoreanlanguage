@@ -111,9 +111,9 @@ public class Home extends Fragment {
                         case "3": intent.putExtra("chapter", "chapter 4"); intent.putExtra("pages", 4); break;
                         case "4": intent.putExtra("chapter", "chapter 5"); intent.putExtra("pages", 6); break;
                         case "5": intent.putExtra("chapter", "chapter 6"); intent.putExtra("pages", 11); break;
-                        case "6": intent.putExtra("chapter", "chapter 7"); intent.putExtra("pages", 13); break;
-                        case "7": intent.putExtra("chapter", "chapter 8"); intent.putExtra("pages", 13); break;
-                        case "8": intent.putExtra("chapter", "chapter 9"); intent.putExtra("pages", 13); break;
+                        case "6": intent.putExtra("chapter", "chapter 7"); intent.putExtra("pages", 6); break;
+                        case "7": intent.putExtra("chapter", "chapter 8"); intent.putExtra("pages", 4); break;
+                        case "8": intent.putExtra("chapter", "chapter 9"); intent.putExtra("pages", 4); break;
                         case "9": intent.putExtra("chapter", "chapter 10"); intent.putExtra("pages", 13); break;
                         case "10": intent.putExtra("chapter", "chapter 11"); intent.putExtra("pages", 13); break;
                         case "11": intent.putExtra("chapter", "chapter 12"); intent.putExtra("pages", 13); break;
