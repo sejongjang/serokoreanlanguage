@@ -24,8 +24,8 @@ import java.util.ArrayList;
 
 public class BeginnerOneWebView extends AppCompatActivity implements ParentRequestInterface{
 
-    private SectionsPagerAdapter mSectionsPagerAdapter;
-    private CustomViewPager mViewPager;
+    private SectionsPagerAdapter sectionsPagerAdapter;
+    private CustomViewPager customViewPager;
 
     private int numberOfPages = 0;
     private int currentPage = 0;
@@ -53,45 +53,48 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_webview_test);
 
+        //bundle gets passed in parameters when chapters' onClick from the Home
         Bundle bundle = getIntent().getExtras();
         StringBuilder stringBuilderPageNum = new StringBuilder();
         StringBuilder stringBuilderChapNum = new StringBuilder();
 
+        //check bundle to see if it's null
         if(bundle == null){
 //            textView.setText("bundle error");
         }
+        //if not, stores the parameters are passed in
         else{
+            //bundle is like a Map, matches key and stores the value
             numberOfPages = bundle.getInt("pages");
             currentChapter = bundle.getString("chapter");
-            isPrevious = bundle.getInt("previous");
+//            isPrevious = bundle.getInt("previous");
             stringBuilderPageNum.append(bundle.getString("chapter"));
             stringBuilderPageNum.append(" number of pages:");
             stringBuilderPageNum.append(Integer.toString(bundle.getInt("pages")));
 
+            //check the length of the string, and gets the number as a substring, 0-9
             if(currentChapter.length()<=9){
                 stringBuilderChapNum.append(currentChapter.substring(8,9));
             }
+            //number greater than 9
             else{
                 stringBuilderChapNum.append(currentChapter.substring(8,10));
             }
             currentChapterNum = Integer.parseInt(stringBuilderChapNum.toString());
-//            currentChapterNum = Integer.valueOf(currentChapter.charAt(8) - '0');
         }
 
-
-
         // Create the adapter that will return a fragment for each. primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), mViewPager, this);
+        sectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), customViewPager, this);
 
         // Set up the ViewPager with the sections adapter.
-        mViewPager = (CustomViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
-        mViewPager.setOffscreenPageLimit(2);
+        customViewPager = (CustomViewPager) findViewById(R.id.container);
+        customViewPager.setAdapter(sectionsPagerAdapter);
+        customViewPager.setOffscreenPageLimit(2);
     }
 
 
     @Override
-    public void setViewPagerStatus(Boolean b) { mViewPager.setPagingEnabled(b); }
+    public void setViewPagerStatus(Boolean b) { customViewPager.setPagingEnabled(b); }
 
     public static class PlaceholderFragment extends Fragment{
 
@@ -148,18 +151,6 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
             webView.setScrollContainer(false);
             webView.setVerticalScrollBarEnabled(false);
             webView.setHorizontalScrollBarEnabled(false);
-            
-            //implement night view
-//            webView.setBackgroundColor(); //night mode
-//            webView = rootView.findViewById(R.id.webView);
-//            String rawHTML = "<HTML>"+
-//                    "<head>"+"<style  type=\"text/css\">"+
-//                    "body,h1{color: #000000;"+
-//                    "background-color: #ffffff;}"+
-//                    "</style></head>"+
-//                    "<body><h1>Hello Android </h1></body>"+
-//                    "</HTML>";
-//            webView.loadData(rawHTML, "text/html; charset=UTF-8",null);
 
             settings.setBuiltInZoomControls(true);
             settings.setSupportZoom(true);
@@ -206,15 +197,5 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
 
         @Override
         public int getCount() { return numberOfPages; }
-
-//        @Override
-//        public CharSequence getPageTitle(int position) {
-//            switch (position) {
-//                case 0: return "SECTION 1";
-//                case 1: return "SECTION 2";
-//                case 2: return "SECTION 3";
-//            }
-//            return null;
-//        }
     }
 }

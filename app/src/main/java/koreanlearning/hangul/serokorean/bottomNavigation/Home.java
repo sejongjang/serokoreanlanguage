@@ -100,9 +100,7 @@ public class Home extends Fragment {
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                    Toast.makeText(BeginnerOne.this, "Clicked Button" + finalI, Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getActivity(), BeginnerOneWebView.class); //ChapterPages.class
-//                    Intent intent = new Intent(BeginnerOne.this, ChapterPages.class); //ChapterPages.class
+                    Intent intent = new Intent(getActivity(), BeginnerOneWebView.class);
 
                     switch (chapter){
                         case "0": intent.putExtra("chapter", "chapter 1"); intent.putExtra("pages", 17); break;

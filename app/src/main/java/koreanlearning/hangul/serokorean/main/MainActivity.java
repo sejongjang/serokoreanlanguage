@@ -2,12 +2,9 @@ package koreanlearning.hangul.serokorean.main;
 
 import android.animation.ArgbEvaluator;
 import android.graphics.Color;
-import android.os.Build;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.view.WindowManager;
 
 
 import java.util.ArrayList;
@@ -17,44 +14,40 @@ import com.hangul.serokorean.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    //viewPager for the horizontal scroll
     ViewPager viewPager;
-    MainActivityCardAdapter adapter;
-    List<MainActivityModel> models;
+    LevelCardsAdapter levelCardsViewPagerAdapter;
+    List<LevelCardModel> levelCards;
     Integer[] colors = null;
     ArgbEvaluator argbEvaluator = new ArgbEvaluator();
-
-    public void FullScreencall() {
-        if(Build.VERSION.SDK_INT < 19){
-            View v = this.getWindow().getDecorView();
-            v.setSystemUiVisibility(View.GONE);
-        } else {
-            //for higher api versions.
-            View decorView = getWindow().getDecorView();
-            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
-            decorView.setSystemUiVisibility(uiOptions);
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        }
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        FullScreencall();
+
+        //change top status bar and bottom naviation bar color change
         getWindow().setStatusBarColor(Color.parseColor("#c0000000"));
         getWindow().setNavigationBarColor(Color.parseColor("#c0000000"));
+
+        //setContentView matches the Java file and Xml file
+        //view pager is declared in activity_main
         setContentView(R.layout.activity_main);
 
-        models = new ArrayList<>();
-        models.add(new MainActivityModel(R.drawable.beginnerone, "Level 1 (Brand New Learner)", "Remember every great thing starts somewhere."));
-        models.add(new MainActivityModel(R.drawable.beginnertwo, "Level 2 (Beginner)", "The good thing about learning languages \nis you don't need to be perfect!"));
-        models.add(new MainActivityModel(R.drawable.intermediateone, "Level 3 (Lower Intermediate)", "Time to start impressing the natives!"));
-        models.add(new MainActivityModel(R.drawable.castle, "Level 4 (Upper Intermediate)", "Learn how to sound intelligent."));
-        models.add(new MainActivityModel(R.drawable.southkorea, "Level 5 (Advanced)", "Become Korean."));
+        //save five different level cards in the Model class
+        levelCards = new ArrayList<>();
+        levelCards.add(new LevelCardModel(R.drawable.beginnerone, "Level 1 (Brand New Learner)", "Remember every great thing starts somewhere."));
+        levelCards.add(new LevelCardModel(R.drawable.beginnertwo, "Level 2 (Beginner)", "The good thing about learning languages \nis you don't need to be perfect!"));
+        levelCards.add(new LevelCardModel(R.drawable.intermediateone, "Level 3 (Lower Intermediate)", "Time to start impressing the natives!"));
+        levelCards.add(new LevelCardModel(R.drawable.castle, "Level 4 (Upper Intermediate)", "Learn how to sound intelligent."));
+        levelCards.add(new LevelCardModel(R.drawable.southkorea, "Level 5 (Advanced)", "Become Korean."));
 
-        adapter = new MainActivityCardAdapter(models, this);
+        //view pager adapter holds the view for the view pager in main activity
+        //pass levelCards model which contains 5 different level and this activities context
+        levelCardsViewPagerAdapter = new LevelCardsAdapter(levelCards, this);
 
+        //view pager's view is passed through pagerAdapter
         viewPager = findViewById(R.id.viewPager);
-        viewPager.setAdapter(adapter);
+        viewPager.setAdapter(levelCardsViewPagerAdapter);
         viewPager.setPadding(50, 0 ,50 ,0);
 //        int marginPx = getResources().getDimensionPixelSize(R.dimen.page_margin);
 //        viewPager.setPageMargin(marginPx);
@@ -69,12 +62,13 @@ public class MainActivity extends AppCompatActivity {
 
         colors = colors_temp;
 
-        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        //setOnPageChangeListener is being deprecated
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            //This method will be invoked when the current page is scrolled => instantiateItem in the levelCardsViewPagerAdapter
             @Override
             public void onPageScrolled(int position, float positionOffset, int positonOffsetPixels) {
-                if((position < (adapter.getCount()) - 1) && position < (colors.length - 1)){
-                    viewPager.setBackgroundColor(
-                            (Integer) argbEvaluator.evaluate(
+                if((position < (levelCardsViewPagerAdapter.getCount()) - 1) && position < (colors.length - 1)){
+                    viewPager.setBackgroundColor((Integer) argbEvaluator.evaluate(
                                     positionOffset, colors[position], colors[position + 1]
                             )
                     );

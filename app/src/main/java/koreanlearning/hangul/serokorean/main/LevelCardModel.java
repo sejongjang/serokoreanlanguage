@@ -1,11 +1,11 @@
 package koreanlearning.hangul.serokorean.main;
 
-public class MainActivityModel {
+public class LevelCardModel {
     private int image;
     private String title;
     private String desc;
 
-    public MainActivityModel(int image, String title, String desc) {
+    public LevelCardModel(int image, String title, String desc) {
         this.image = image;
         this.title = title;
         this.desc = desc;

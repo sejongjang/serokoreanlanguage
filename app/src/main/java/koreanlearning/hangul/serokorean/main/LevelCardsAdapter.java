@@ -16,20 +16,21 @@ import koreanlearning.hangul.serokorean.beginnerone.BeginnerOne;
 
 import java.util.List;
 
-public class MainActivityCardAdapter extends PagerAdapter {
+public class LevelCardsAdapter extends PagerAdapter {
 
-    private List<MainActivityModel> models;
+    private List<LevelCardModel> levelCards;
     private LayoutInflater layoutInflater;
     private Context context;
 
-    public MainActivityCardAdapter(List<MainActivityModel> models, Context context) {
-        this.models = models;
+    //create instance of the Adapter with the levelCards and mainActivity's context
+    public LevelCardsAdapter(List<LevelCardModel> levelCards, Context context) {
+        this.levelCards = levelCards;
         this.context = context;
     }
 
     @Override
     public int getCount() {
-        return models.size();
+        return levelCards.size();
     }
 
     @Override
@@ -37,21 +38,25 @@ public class MainActivityCardAdapter extends PagerAdapter {
         return view.equals(o);
     }
 
+    //instantiateItem is called when the viewPager calls the getItem, onPageScrolled
     @NonNull
     @Override
     public Object instantiateItem(@NonNull final ViewGroup container, final int position) {
+        //set up layout inflater with the context from the main activity
+        //define inflater -> inflate -> view
         layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.item, container, false);
         ImageView imageView;
         TextView title, desc;
 
+        //define cardView's image, title and description
         imageView = view.findViewById(R.id.image);
         title = view.findViewById(R.id.title);
         desc = view.findViewById(R.id.desc);
 
-        imageView.setImageResource(models.get(position).getImage());
-        title.setText(models.get(position).getTitle());
-        desc.setText(models.get(position).getDesc());
+        imageView.setImageResource(levelCards.get(position).getImage());
+        title.setText(levelCards.get(position).getTitle());
+        desc.setText(levelCards.get(position).getDesc());
 
         Typeface customFont = Typeface.createFromAsset(view.getContext().getAssets(), "fonts/flowerroad.ttf");
         title.setTypeface(customFont);
@@ -59,10 +64,11 @@ public class MainActivityCardAdapter extends PagerAdapter {
 
         container.addView(view, 0);
 
+        //viewPager onClick action => change activity to level activity
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String title = models.get(position).getTitle();
+                String title = levelCards.get(position).getTitle();
 
                 switch(title){
                     case "Level 1 (Brand New Learner)":

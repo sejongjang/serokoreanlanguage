@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.hangul.serokorean.R;
-import koreanlearning.hangul.serokorean.Search.Search;
+import koreanlearning.hangul.serokorean.search.Search;
 
 public class More extends Fragment {
 
