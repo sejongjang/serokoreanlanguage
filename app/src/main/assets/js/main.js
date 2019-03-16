@@ -19,3 +19,75 @@ function translation(h4) {
     const newText = h4.previousElementSibling.textContent;
     h4.innerHTML = newText
 }
+
+//function to change to first option in comparison grid
+function columnOne() {
+    var myClassesOne = document.querySelectorAll('.comparison-item'),
+        i = 0,
+        l = myClassesOne.length;
+    for (i; i < l; i++) {
+        myClassesOne[i].style.display = 'unset';
+    }
+
+    var myClassesTwo = document.querySelectorAll('.comparison-item-two'),
+        i = 0,
+        l = myClassesTwo.length;
+    for (i; i < l; i++) {
+        myClassesTwo[i].style.display = 'none';
+    }
+
+    var myClassesThree = document.querySelectorAll('.comparison-item-three'),
+        i = 0,
+        l = myClassesThree.length;
+    for (i; i < l; i++) {
+        myClassesThree[i].style.display = 'none';
+    }
+}
+
+//function to change to second option in comparison grid
+function columnTwo() {
+    var myClassesOne = document.querySelectorAll('.comparison-item'),
+        i = 0,
+        l = myClassesOne.length;
+    for (i; i < l; i++) {
+        myClassesOne[i].style.display = 'none';
+    }
+
+    var myClassesTwo = document.querySelectorAll('.comparison-item-two'),
+        i = 0,
+        l = myClassesTwo.length;
+    for (i; i < l; i++) {
+        myClassesTwo[i].style.display = 'unset';
+    }
+
+    var myClassesThree = document.querySelectorAll('.comparison-item-three'),
+        i = 0,
+        l = myClassesThree.length;
+    for (i; i < l; i++) {
+        myClassesThree[i].style.display = 'none';
+    }
+}
+
+//function to change to third option in comparison grid
+function columnThree() {
+    var myClassesOne = document.querySelectorAll('.comparison-item'),
+        i = 0,
+        l = myClassesOne.length;
+    for (i; i < l; i++) {
+        myClassesOne[i].style.display = 'none';
+    }
+
+    var myClassesTwo = document.querySelectorAll('.comparison-item-two'),
+        i = 0,
+        l = myClassesTwo.length;
+    for (i; i < l; i++) {
+        myClassesTwo[i].style.display = 'none';
+    }
+
+    var myClassesThree = document.querySelectorAll('.comparison-item-three'),
+        i = 0,
+        l = myClassesThree.length;
+    for (i; i < l; i++) {
+        myClassesThree[i].style.display = 'unset';
+    }
+}

@@ -28,7 +28,7 @@ html {
     flex-direction: row;
   }
 
-  .page-container.notification-opened > .notification-arrow {
+  .page-container.notification-opened>.notification-arrow {
     margin-right: 20px;
   }
 }
@@ -230,6 +230,171 @@ div.cardtext {
   min-width: 100px;
 }
 
+/*! CSS grid comparison chart */
+.switcher {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 768px) {
+  .switcher {
+    display: none;
+  }
+}
+
+.comparison-container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #FFBB00;
+  grid-template-columns: auto;
+  grid-template-rows: 20px auto;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 768px) {
+  .comparison-container {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    width: 80%;
+  }
+}
+
+
+.comparison-top-item {
+  border: 1px solid #f2f2f2;
+  padding: 0;
+  font-size: 15px;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: center;
+  border-collapse: collapse;
+  text-indent: 0;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .comparison-top-item {
+    border: 1px solid #f2f2f2;
+    padding: 0;
+    font-size: 15px;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: center;
+    border-collapse: collapse;
+    text-indent: 0;
+    display: unset;
+  }
+}
+
+.comparison-item {
+  background-color: white;
+  border: 1px solid #f2f2f2;
+  padding: 1px;
+  font-size: 20px;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: left;
+  border-collapse: collapse;
+  line-height: 0.01;
+  text-indent: 0;
+  min-width: 100px;
+}
+
+.comparison-item-two {
+  background-color: white;
+  border: 1px solid #f2f2f2;
+  padding: 1px;
+  font-size: 20px;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: left;
+  border-collapse: collapse;
+  line-height: 0.01;
+  text-indent: 0;
+  min-width: 100px;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .comparison-item-two {
+    background-color: white;
+    border: 1px solid #f2f2f2;
+    padding: 1px;
+    font-size: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: left;
+    border-collapse: collapse;
+    line-height: 0.01;
+    text-indent: 0;
+    min-width: 100px;
+    display: unset;
+  }
+}
+
+.comparison-item-three {
+  background-color: white;
+  border: 1px solid #f2f2f2;
+  padding: 1px;
+  font-size: 20px;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: left;
+  border-collapse: collapse;
+  line-height: 0.01;
+  text-indent: 0;
+  min-width: 100px;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .comparison-item-three {
+    background-color: white;
+    border: 1px solid #f2f2f2;
+    padding: 1px;
+    font-size: 20px;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: left;
+    border-collapse: collapse;
+    line-height: 0.01;
+    text-indent: 0;
+    min-width: 100px;
+    display: unset;
+  }
+}
+
+
+
+/*! CSS 2x2 - 3x3 grids for vocab/pronunciation */
+.grid-container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #FFBB00;
+  border-radius: 3px;
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.grid-item {
+  color: #2b2e30;
+  background-color: white;
+  border: 1px solid #f2f2f2;
+  padding: 20px;
+  font-size: calc(15px + 2vmin);
+  text-align: center;
+  border-collapse: collapse;
+  line-height: 0.01;
+  text-indent: 0;
+}
+
 /*! CSS grids for example sentences */
 .sentence-container {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -311,9 +476,9 @@ div.cardtext {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
   z-index: 99999;
-  opacity:0;
+  opacity: 0;
   -webkit-transition: opacity 400ms ease-in;
   -moz-transition: opacity 400ms ease-in;
   transition: opacity 400ms ease-in;
@@ -321,16 +486,17 @@ div.cardtext {
 }
 
 .modalDialog:target {
-  opacity:1;
+  opacity: 1;
   pointer-events: auto;
 }
 
-.modalDialog > div {
+.modalDialog>div {
   position: relative;
   margin: 10% auto;
   padding: 5px 20px 13px 20px;
   border-radius: 10px;
 }
+
 .modalimg {
   max-width: 20vw;
   max-height: 70%;
@@ -363,10 +529,10 @@ div.cardtext {
   font-size: calc(15px + 1vw);
   position: absolute;
   top: 5%;
-  left: 0; 
-  right: 0; 
-  margin-left: auto; 
-  margin-right: auto; 
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   width: 90%;
   text-indent: 0px;
   text-align: center;
@@ -438,8 +604,8 @@ div.cardtext {
 
 .authornote img {
   border-radius: 3px;
-  display:block;
-  margin:auto;
+  display: block;
+  margin: auto;
 }
 
 .authornote a:hover {
