@@ -34,7 +34,7 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
     private ArrayList<String> htmlFiles = new ArrayList<>();
     private int isPrevious = 0;
 
-    public void FullScreencall() {
+    public void fullScreencall() {
         if(Build.VERSION.SDK_INT < 19){
             View v = this.getWindow().getDecorView();
             v.setSystemUiVisibility(View.GONE);
@@ -49,7 +49,7 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        FullScreencall();
+        fullScreencall();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_webview_test);
 
