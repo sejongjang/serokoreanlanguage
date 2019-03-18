@@ -147,11 +147,11 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
             WebSettings settings = webView.getSettings();
             webView.setWebChromeClient(new WebChromeClient());
             webView.setWebViewClient(new WebViewClient());
-            settings.setJavaScriptEnabled(true);
             webView.setScrollContainer(false);
             webView.setVerticalScrollBarEnabled(false);
             webView.setHorizontalScrollBarEnabled(false);
 
+            settings.setJavaScriptEnabled(true);
             settings.setBuiltInZoomControls(true);
             settings.setSupportZoom(true);
             settings.setDisplayZoomControls(false);
