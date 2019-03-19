@@ -40,4 +40,5 @@ dependencies {
     implementation files('/Users/saejongjang/AndroidStudioProjects/SeroServer/server/jars/gson-2.6.2.jar')
     implementation files('/Users/saejongjang/AndroidStudioProjects/SeroServer/server/jars/json-20160212.jar')
     implementation files('/Users/saejongjang/AndroidStudioProjects/SeroServer/server/jars/sqlite-jdbc-3.7.2.jar')
+    implementation files('Users/saejongjang/AndroidStudioProjects/SeroServer/server/jars/sqlite-jdbc-3.7.2.jar')
 }
