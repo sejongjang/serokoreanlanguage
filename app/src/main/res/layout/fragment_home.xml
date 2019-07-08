@@ -135,7 +135,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/lv1_chp21"
+                            android:src="@mipmap/lv1_chp2"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -171,7 +171,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_caticon"
+                            android:src="@mipmap/lv1_chp3"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -207,7 +207,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_dogicon"
+                            android:src="@mipmap/lv1_chp4"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -244,10 +244,10 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_elephanticon"
-                            android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@mipmap/lv1_chp5" />
 
                         <TextView
                             android:id="@+id/chapterfive"
@@ -281,7 +281,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_fishicon"
+                            android:src="@mipmap/lv1_chp6"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -318,7 +318,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_octopusicon"
+                            android:src="@mipmap/lv1_chp7"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
