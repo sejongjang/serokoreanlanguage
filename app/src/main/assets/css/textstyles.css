@@ -453,15 +453,16 @@ div.cardtext {
   margin-top: 10px;
   margin-bottom: 15px;
   align-self: flex-end;
+  cursor: pointer;
 }
 
 .sentence-picture-item {
   position: absolute;
   top: 49.95%;
-  padding-right: 5px;
+  padding-right: calc(75px - 2vh);
   transform: translate(-50%, -50%);
   border-radius: 3px;
-  max-height: 100px;
+  max-height: 95px;
   height: calc(30px + 6vw);
   grid-column: 2;
   grid-row: 1;
