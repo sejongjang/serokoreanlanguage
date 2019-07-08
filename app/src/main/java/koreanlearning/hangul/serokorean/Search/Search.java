@@ -1,5 +1,4 @@
-package koreanlearning.hangul.serokorean.search;
-
+package koreanlearning.hangul.serokorean.Search;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

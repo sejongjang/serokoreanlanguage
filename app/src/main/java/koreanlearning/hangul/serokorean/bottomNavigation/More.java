@@ -17,7 +17,7 @@ import com.hangul.serokorean.R;
 import koreanlearning.hangul.serokorean.bottomNavigation.user.LoginFragment;
 import koreanlearning.hangul.serokorean.bottomNavigation.user.Model;
 import koreanlearning.hangul.serokorean.bottomNavigation.user.ProfileFragment;
-import koreanlearning.hangul.serokorean.search.Search;
+import koreanlearning.hangul.serokorean.Search.Search;
 
 public class More extends Fragment {
 
