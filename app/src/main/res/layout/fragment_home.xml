@@ -355,7 +355,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_pigicon"
+                            android:src="@mipmap/lv1_chp8"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -392,7 +392,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_sheepicon"
+                            android:src="@mipmap/lv1_chp9"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -429,7 +429,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_oxicon"
+                            android:src="@mipmap/lv1_chp10"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -465,7 +465,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_oxicon"
+                            android:src="@mipmap/lv1_chp11"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -500,7 +500,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_oxicon"
+                            android:src="@mipmap/chp12_fore"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -535,7 +535,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_oxicon"
+                            android:src="@mipmap/lv1_chp13"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -570,7 +570,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_oxicon"
+                            android:src="@mipmap/lv1_chp14"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -605,7 +605,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_oxicon"
+                            android:src="@mipmap/lv1_chp15"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -640,7 +640,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_oxicon"
+                            android:src="@mipmap/lv1_chp16"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -675,7 +675,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_oxicon"
+                            android:src="@mipmap/lv1_chp17"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -710,7 +710,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_oxicon"
+                            android:src="@mipmap/lv1_chp18"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -745,7 +745,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_oxicon"
+                            android:src="@mipmap/lv1_chp19"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -780,7 +780,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_oxicon"
+                            android:src="@mipmap/lv1_chp20"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -815,7 +815,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_oxicon"
+                            android:src="@mipmap/lv1_chp21"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -850,7 +850,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_oxicon"
+                            android:src="@mipmap/lv1_chp22"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -885,7 +885,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_oxicon"
+                            android:src="@mipmap/lv1_chp23"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -955,7 +955,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_oxicon"
+                            android:src="@mipmap/lv1_chp25"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -990,7 +990,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_oxicon"
+                            android:src="@mipmap/lv1_chp26"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -1025,7 +1025,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_oxicon"
+                            android:src="@mipmap/lv1_chp27"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -1060,7 +1060,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_oxicon"
+                            android:src="@mipmap/lv1_chp28"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -1095,7 +1095,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_oxicon"
+                            android:src="@mipmap/lv1_chp29"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -1130,7 +1130,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/ic_oxicon"
+                            android:src="@mipmap/lv1_chp30"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
