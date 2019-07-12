@@ -403,9 +403,10 @@ div.cardtext {
   border-width: 2px;
   border-color: #FFBB00;
   border-radius: 3px;
+  background-size: cover;
   width: 90%;
   max-width: 800px;
-  min-height: calc(80px + 1.5vw);
+  min-height: 108px;
   display: grid;
   grid-template-columns: minmax(auto, 800px) calc(23px + 4vmin);
   grid-template-rows: auto auto;
@@ -458,15 +459,8 @@ div.cardtext {
 
 .sentence-picture-item {
   position: absolute;
-  top: 49.95%;
-  padding-right: calc(75px - 2vh);
-  transform: translate(-50%, -50%);
-  border-radius: 3px;
-  max-height: 95px;
-  height: calc(30px + 6vw);
-  grid-column: 2;
-  grid-row: 1;
-  z-index: 1;
+  top: 4px;
+  right: 4px; 
 }
 
 
