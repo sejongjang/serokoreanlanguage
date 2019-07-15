@@ -404,11 +404,10 @@ div.cardtext {
   border-color: #FFBB00;
   border-radius: 3px;
   background-size: cover;
-  width: 90%;
-  max-width: 800px;
-  min-height: 108px;
+  max-width: 90vw;
+  min-height: 78px;
   display: grid;
-  grid-template-columns: minmax(auto, 800px) calc(23px + 4vmin);
+  grid-template-columns: minmax(auto, 65vw) calc(23px + 4vmin);
   grid-template-rows: auto auto;
   position: relative;
   left: 50%;
@@ -428,7 +427,7 @@ div.cardtext {
 
 .sentence-main-item {
   padding-left: 1.8vw;
-  font-size: calc(5px + 1.3em);
+  font-size: calc(5px + 1em);
   line-height: 1.3;
   text-indent: 0;
   grid-column: 1;
@@ -443,7 +442,7 @@ div.cardtext {
 
 .sentence-translated-item {
   padding-left: 1.8vw;
-  font-size: 0.9em;
+  font-size: 0.8em;
   opacity: 0.9;
   border-collapse: collapse;
   line-height: 1.3;
@@ -458,9 +457,82 @@ div.cardtext {
 }
 
 .sentence-picture-item {
+  grid-column: 2;
+  grid-row-start: 1;
+  grid-row-end: span 2;
   position: absolute;
-  top: 4px;
-  right: 4px; 
+  max-width: 60px;
+  display: flex;
+  align-items: center;
+  right: 4px;
+  top: 50%;
+  margin-top: -50%;
+}
+
+.sentence-picture-item img {
+  vertical-align: middle;
+  text-align: center;
+}
+
+
+@media only screen and (min-width: 600px) {
+  .sentence-container {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #FFBB00;
+    border-radius: 3px;
+    background-size: cover;
+    width: 90%;
+    max-width: 800px;
+    min-height: 98px;
+    display: grid;
+    grid-template-columns: minmax(auto, 800px) calc(23px + 4vmin);
+    grid-template-rows: auto auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+  }
+
+  .sentence-main-item {
+    padding-left: 1.8vw;
+    font-size: calc(5px + 1.1em);
+    line-height: 1.3;
+    text-indent: 0;
+    grid-column: 1;
+    grid-row: 1;
+    width: 85%;
+    max-width: 700px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    word-break: keep-all;
+  }
+  
+  .sentence-translated-item {
+    padding-left: 1.8vw;
+    font-size: 0.9em;
+    opacity: 0.9;
+    border-collapse: collapse;
+    line-height: 1.3;
+    text-indent: 0;
+    grid-column: 1;
+    grid-row: 2;
+    max-width: 800px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+
+  .sentence-picture-item {
+    position: absolute;
+    max-width: 90px;
+    top: 4px;
+    right: 4px;
+  }
 }
 
 
@@ -506,12 +578,19 @@ div.cardtext {
   cursor: pointer;
   transition: 0.3s;
   text-indent: 0px;
+  color: #FFBB00;
+  font-size: 20px;
+  font-style: italic;
+  object-fit: contain;
 }
 
 .close {
   height: 100%;
   width: 100%;
   transition: 0.5s;
+  overscroll-behavior: contain;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
 }
 
 .close div {
@@ -522,28 +601,28 @@ div.cardtext {
 .close p {
   color: white;
   font-size: calc(15px + 1vw);
-  position: absolute;
-  top: 5%;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
+  display: block;
   width: 90%;
   text-indent: 0px;
   text-align: center;
+  height: auto;
+  padding: 2vh;
 }
 
 .close img {
-  max-width: 90%;
-  max-height: 80%;
+  max-width: 80vw;
+  max-height: 75vh;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 9px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 15%;
+  margin: 0 auto;
   cursor: pointer;
   transition: 0.3s;
+  color: #FFBB00;
+  font-size: 20px;
+  display: block;
+  object-fit: contain;
+  top: 5vh;
 }
 
 .modalimg:hover {
@@ -552,8 +631,7 @@ div.cardtext {
 
 @media only screen and (min-width: 600px) {
   .modalimg {
-    max-width: 20vw;
-    max-height: 70%;
+    max-width: 40vw;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-style: solid;
     border-width: 2px;
@@ -565,6 +643,21 @@ div.cardtext {
     cursor: pointer;
     transition: 0.3s;
     text-indent: 0px;
+  }
+
+  .close img {
+    max-width: 80vw;
+    max-height: 80vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 9px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #FFBB00;
+    font-size: 20px;
+    display: block;
+    object-fit: contain;
+    top: 5vh;
   }
 }
 
