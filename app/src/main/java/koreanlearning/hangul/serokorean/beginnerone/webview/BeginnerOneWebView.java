@@ -12,7 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 
@@ -130,7 +132,7 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
             parentActivity = (BeginnerOneWebView) getActivity();
 
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            CustomWebView webView = rootView.findViewById(R.id.webView);
+            final CustomWebView webView = rootView.findViewById(R.id.webView);
             webView.setFragment(this);
 
             StringBuilder stringBuilder = new StringBuilder();

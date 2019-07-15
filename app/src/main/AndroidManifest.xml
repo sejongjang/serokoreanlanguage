@@ -4,6 +4,7 @@
     package="com.hangul.serokorean"
     tools:ignore="ImpliedTouchscreenHardware,MissingLeanbackLauncher,MissingLeanbackSupport">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_penguin"
@@ -12,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme2">
 
-        <activity android:name="koreanlearning.hangul.serokorean.search.Search"></activity>
+        <activity android:name="koreanlearning.hangul.serokorean.Search.Search"></activity>
         <activity android:name="koreanlearning.hangul.serokorean.beginnerone.webview.BeginnerOneWebView" />
         <activity android:name="koreanlearning.hangul.serokorean.deprecated.ChapterPages" />
         <activity android:name="koreanlearning.hangul.serokorean.beginnerone.BeginnerOne" />
