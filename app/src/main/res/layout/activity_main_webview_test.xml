@@ -9,6 +9,7 @@
     tools:context="koreanlearning.hangul.serokorean.beginnerone.webview.BeginnerOneWebView">
 
     <koreanlearning.hangul.serokorean.beginnerone.webview.CustomViewPager
+
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
