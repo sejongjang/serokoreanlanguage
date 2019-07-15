@@ -1,6 +1,8 @@
 package koreanlearning.hangul.serokorean.beginnerone.webview;
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,17 +13,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 
 import com.hangul.serokorean.R;
 
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 
+import koreanlearning.hangul.serokorean.beginnerone.BeginnerOne;
+import koreanlearning.hangul.serokorean.main.MainActivity;
 
 
 public class BeginnerOneWebView extends AppCompatActivity implements ParentRequestInterface{
@@ -124,6 +131,7 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             Bundle arguments = getArguments();
             String url="";
+            String lastPage="";
             ArrayList<String> htmlFiles = new ArrayList<>();
 
             position = arguments.getInt(ARG_SECTION_NUMBER);
@@ -144,7 +152,8 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
                 htmlFiles.add(stringBuilder.toString() + Integer.toString(i) + ".html");
             }
 
-            url= htmlFiles.get(position);
+            url = htmlFiles.get(position);
+            lastPage = htmlFiles.get(numberOfPages-1);
 
             WebSettings settings = webView.getSettings();
             webView.setWebChromeClient(new WebChromeClient());
@@ -152,6 +161,7 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
             webView.setScrollContainer(false);
             webView.setVerticalScrollBarEnabled(false);
             webView.setHorizontalScrollBarEnabled(false);
+            webView.addJavascriptInterface(new WebAppInterface(getContext()), "Android");
 
             settings.setJavaScriptEnabled(true);
             settings.setBuiltInZoomControls(true);
@@ -174,6 +184,21 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
             this.viewpager = viewpager;
         }
         public PlaceholderFragment() { }
+
+        public class WebAppInterface {
+            Context mContext;
+
+            /** Instantiate the interface and set the context */
+            WebAppInterface(Context c) {
+                mContext = c;
+            }
+
+            /** Show a toast from the web page */
+            @JavascriptInterface
+            public void showToast(String toast) {
+                Toast.makeText(mContext, toast, Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
