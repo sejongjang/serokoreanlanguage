@@ -500,7 +500,7 @@
                         android:layout_height="wrap_content">
 
                         <ImageView
-                            android:src="@mipmap/chp12_fore"
+                            android:src="@mipmap/lv1_chp12"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -690,6 +690,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
+
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
                 <android.support.v7.widget.CardView

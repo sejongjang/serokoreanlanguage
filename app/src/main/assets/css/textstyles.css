@@ -199,7 +199,7 @@ div.cardtext {
   border-width: 2px;
   border-color: #FFBB00;
   grid-template-columns: auto auto;
-  grid-template-rows: 20px auto;
+  grid-template-rows: auto auto;
   border-radius: 3px;
   display: inline-grid;
   position: relative;
@@ -218,16 +218,17 @@ div.cardtext {
 }
 
 .vocab-item {
+  display: flex;
   background-color: white;
   border: 1px solid #f2f2f2;
   padding: 1px;
-  font-size: 20px;
   font-family: 'Noto Sans KR', sans-serif;
   text-align: left;
   border-collapse: collapse;
-  line-height: 0.01;
   text-indent: 0;
   min-width: 100px;
+  max-height: 60px;
+  align-items: center;
 }
 
 /*! CSS grid comparison chart */
@@ -426,52 +427,47 @@ div.cardtext {
 }
 
 .sentence-main-item {
+  -webkit-tap-highlight-color: transparent;
   padding-left: 1.8vw;
   font-size: calc(5px + 1em);
   line-height: 1.3;
   text-indent: 0;
   grid-column: 1;
   grid-row: 1;
-  width: 85%;
   max-width: 700px;
   margin-top: 10px;
   display: flex;
   align-items: center;
-  word-break: keep-all;
 }
 
 .sentence-translated-item {
+  -webkit-tap-highlight-color: transparent;
   padding-left: 1.8vw;
   font-size: 0.8em;
   opacity: 0.9;
   border-collapse: collapse;
   line-height: 1.3;
   text-indent: 0;
-  grid-column: 1;
+  grid-column: 1/-1;
   grid-row: 2;
-  max-width: 800px;
-  margin-top: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   align-self: flex-end;
   cursor: pointer;
 }
 
-.sentence-picture-item {
-  grid-column: 2;
-  grid-row-start: 1;
-  grid-row-end: span 2;
-  position: absolute;
-  max-width: 60px;
+.sentence-image-container {
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  right: 4px;
-  top: 50%;
-  margin-top: -50%;
 }
 
-.sentence-picture-item img {
-  vertical-align: middle;
-  text-align: center;
+.sentence-picture-item {
+  position: absolute;
+  right: 0px;
+  width: calc(20px + 6vw);
+  max-width: 60px;
+  margin: 5px;
 }
 
 
@@ -503,14 +499,13 @@ div.cardtext {
     text-indent: 0;
     grid-column: 1;
     grid-row: 1;
-    width: 85%;
+    width: 90%;
     max-width: 700px;
     margin-top: 10px;
     display: flex;
     align-items: center;
-    word-break: keep-all;
   }
-  
+
   .sentence-translated-item {
     padding-left: 1.8vw;
     font-size: 0.9em;
@@ -529,9 +524,11 @@ div.cardtext {
 
   .sentence-picture-item {
     position: absolute;
+    width: 90px;
     max-width: 90px;
     top: 4px;
-    right: 4px;
+    right: 0px;
+    margin-top: 0%;
   }
 }
 
@@ -793,14 +790,14 @@ div.cardtext {
 }
 
 .quiz {
-         background-color: #1c87c9;
-         border: none;
-         color: white;
-         padding: 20px 34px;
-         text-align: center;
-         text-decoration: none;
-         display: inline-block;
-         font-size: 20px;
-         margin: 4px 2px;
-         cursor: pointer;
-         }
+  background-color: #1c87c9;
+  border: none;
+  color: white;
+  padding: 20px 34px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
