@@ -2,7 +2,6 @@ package koreanlearning.hangul.serokorean.beginnerone.webview;
 
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,20 +14,14 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
-import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
-import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 
 import com.hangul.serokorean.R;
-
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 
-import koreanlearning.hangul.serokorean.beginnerone.BeginnerOne;
-import koreanlearning.hangul.serokorean.main.MainActivity;
 
 
 public class BeginnerOneWebView extends AppCompatActivity implements ParentRequestInterface{

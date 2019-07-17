@@ -1,14 +1,11 @@
 package koreanlearning.hangul.serokorean.beginnerone;
 
 import android.graphics.Color;
-import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.WindowManager;
 
 import com.hangul.serokorean.R;
 import koreanlearning.hangul.serokorean.bottomNavigation.FAQ;

@@ -20,6 +20,16 @@ public class Home extends Fragment {
     private GridLayout mainGrid;
     private CardView intro;
     private final int CHAPTERS = 30;
+    private final int CHAPTER_ONE_NUM_OF_PAGE = 17;
+    private final int CHAPTER_TWO_NUM_OF_PAGE = 9;
+    private final int CHAPTER_THREE_NUM_OF_PAGE = 7;
+    private final int CHAPTER_FOUR_NUM_OF_PAGE = 4;
+    private final int CHAPTER_FIVE_NUM_OF_PAGE = 6;
+    private final int CHAPTER_SIX_NUM_OF_PAGE = 11;
+    private final int CHAPTER_SEVEN_NUM_OF_PAGE = 6;
+    private final int CHAPTER_EIGHT_NUM_OF_PAGE = 4;
+    private final int CHAPTER_NINE_NUM_OF_PAGE = 7;
+    private final int CHAPTER_TEN_NUM_OF_PAGE = 7;
 
     public Home() {
         // Required empty public constructor
@@ -48,10 +58,31 @@ public class Home extends Fragment {
         changeFont(view, customFont);
 
         mainGrid = view.findViewById(R.id.mainGrid);
-        setSingleEvent(mainGrid);
+        setChaptersGrid(mainGrid);
 
         // Inflate the layout for this fragment
         return view;
+    }
+
+    private void setChaptersGrid(GridLayout mainGrid){
+
+        for (int i=0; i<mainGrid.getChildCount(); i++){
+            final CardView cardView = (CardView) mainGrid.getChildAt(i);
+            final String chapter = Integer.toString(i+1);
+
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity(), BeginnerOneWebView.class);
+
+                    int numberOfPages = detectTheNumberOfPages(chapter);
+                    intent.putExtra("chapter", "chapter " + chapter);
+                    intent.putExtra("pages", numberOfPages);
+                    startActivity(intent);
+                }
+            });
+
+        }
     }
 
     private void changeFont(View view, Typeface customFont) {
@@ -70,55 +101,39 @@ public class Home extends Fragment {
         }
     }
 
-    private void setSingleEvent(GridLayout mainGrid){
-
-        for (int i=0; i<mainGrid.getChildCount(); i++){
-            final CardView cardView = (CardView) mainGrid.getChildAt(i);
-            final int finalI = i;
-            final String chapter = Integer.toString(i);
-            int pages = 0;
-
-            cardView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(getActivity(), BeginnerOneWebView.class);
-
-                    switch (chapter){
-                        case "0": intent.putExtra("chapter", "chapter 1"); intent.putExtra("pages", 17); break;
-                        case "1": intent.putExtra("chapter", "chapter 2"); intent.putExtra("pages", 9); break;
-                        case "2": intent.putExtra("chapter", "chapter 3"); intent.putExtra("pages", 7); break;
-                        case "3": intent.putExtra("chapter", "chapter 4"); intent.putExtra("pages", 4); break;
-                        case "4": intent.putExtra("chapter", "chapter 5"); intent.putExtra("pages", 6); break;
-                        case "5": intent.putExtra("chapter", "chapter 6"); intent.putExtra("pages", 11); break;
-                        case "6": intent.putExtra("chapter", "chapter 7"); intent.putExtra("pages", 6); break;
-                        case "7": intent.putExtra("chapter", "chapter 8"); intent.putExtra("pages", 4); break;
-                        case "8": intent.putExtra("chapter", "chapter 9"); intent.putExtra("pages", 7); break;
-                        case "9": intent.putExtra("chapter", "chapter 10"); intent.putExtra("pages", 7); break;
-                        case "10": intent.putExtra("chapter", "chapter 11"); intent.putExtra("pages", 100); break;
-                        case "11": intent.putExtra("chapter", "chapter 12"); intent.putExtra("pages", 13); break;
-                        case "12": intent.putExtra("chapter", "chapter 13"); intent.putExtra("pages", 13); break;
-                        case "13": intent.putExtra("chapter", "chapter 14"); intent.putExtra("pages", 13); break;
-                        case "14": intent.putExtra("chapter", "chapter 15"); intent.putExtra("pages", 13); break;
-                        case "15": intent.putExtra("chapter", "chapter 16"); intent.putExtra("pages", 13); break;
-                        case "16": intent.putExtra("chapter", "chapter 17"); intent.putExtra("pages", 13); break;
-                        case "17": intent.putExtra("chapter", "chapter 18"); intent.putExtra("pages", 13); break;
-                        case "18": intent.putExtra("chapter", "chapter 19"); intent.putExtra("pages", 13); break;
-                        case "19": intent.putExtra("chapter", "chapter 20"); intent.putExtra("pages", 13); break;
-                        case "20": intent.putExtra("chapter", "chapter 21"); intent.putExtra("pages", 13); break;
-                        case "21": intent.putExtra("chapter", "chapter 22"); intent.putExtra("pages", 13); break;
-                        case "22": intent.putExtra("chapter", "chapter 23"); intent.putExtra("pages", 13); break;
-                        case "23": intent.putExtra("chapter", "chapter 24"); intent.putExtra("pages", 13); break;
-                        case "24": intent.putExtra("chapter", "chapter 25"); intent.putExtra("pages", 13); break;
-                        case "25": intent.putExtra("chapter", "chapter 26"); intent.putExtra("pages", 13); break;
-                        case "26": intent.putExtra("chapter", "chapter 27"); intent.putExtra("pages", 13); break;
-                        case "27": intent.putExtra("chapter", "chapter 28"); intent.putExtra("pages", 13); break;
-                        case "28": intent.putExtra("chapter", "chapter 29"); intent.putExtra("pages", 13); break;
-                        case "29": intent.putExtra("chapter", "chapter 30"); intent.putExtra("pages", 13); break;
-                    }
-                    startActivity(intent);
-                }
-            });
-
+    private int detectTheNumberOfPages(String chapter){
+        switch (chapter){
+            case "1": return CHAPTER_ONE_NUM_OF_PAGE;
+            case "2": return CHAPTER_TWO_NUM_OF_PAGE;
+            case "3": return CHAPTER_THREE_NUM_OF_PAGE;
+            case "4": return CHAPTER_FOUR_NUM_OF_PAGE;
+            case "5": return CHAPTER_FIVE_NUM_OF_PAGE;
+            case "6": return CHAPTER_SIX_NUM_OF_PAGE;
+            case "7": return CHAPTER_SEVEN_NUM_OF_PAGE;
+            case "8": return CHAPTER_EIGHT_NUM_OF_PAGE;
+            case "9": return CHAPTER_NINE_NUM_OF_PAGE;
+            case "10": return CHAPTER_TEN_NUM_OF_PAGE;
+            case "11": return 20;
+            case "12": return 20;
+            case "13": return 20;
+            case "14": return 20;
+            case "15": return 20;
+            case "16": return 20;
+            case "17": return 20;
+            case "18": return 20;
+            case "19": return 20;
+            case "20": return 20;
+            case "21": return 20;
+            case "22": return 20;
+            case "23": return 20;
+            case "24": return 20;
+            case "25": return 20;
+            case "26": return 20;
+            case "27": return 20;
+            case "28": return 20;
+            case "29": return 20;
+            case "30": return 20;
         }
+        return 0;
     }
 }
