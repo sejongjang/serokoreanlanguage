@@ -2,6 +2,7 @@ package koreanlearning.hangul.serokorean.beginnerone.webview;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,7 +15,9 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
@@ -22,6 +25,7 @@ import android.widget.Toast;
 import com.hangul.serokorean.R;
 import java.util.ArrayList;
 
+import koreanlearning.hangul.serokorean.beginnerone.quiz.ChapterOneQuiz;
 
 
 public class BeginnerOneWebView extends AppCompatActivity implements ParentRequestInterface{
@@ -106,9 +110,9 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
         private int position;
         private int currentChapterNum;
         private int numberOfPages;
-        BeginnerOneWebView activity;
-        CustomViewPager viewpager;
-        BeginnerOneWebView parentActivity;
+        private BeginnerOneWebView activity;
+        private CustomViewPager viewpager;
+        private BeginnerOneWebView parentActivity;
 
         public static PlaceholderFragment newInstance(int position , int chapterNum, int numberOfPages) {
             PlaceholderFragment fragment = new PlaceholderFragment();
@@ -150,11 +154,22 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
 
             WebSettings settings = webView.getSettings();
             webView.setWebChromeClient(new WebChromeClient());
-            webView.setWebViewClient(new WebViewClient());
+//            webView.setWebViewClient(new WebViewClient());
             webView.setScrollContainer(false);
             webView.setVerticalScrollBarEnabled(false);
             webView.setHorizontalScrollBarEnabled(false);
-            webView.addJavascriptInterface(new WebAppInterface(getContext()), "Android");
+            webView.setWebViewClient(new WebViewClient(){
+                @Override
+                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                    String url = request.getUrl().toString();
+                    if(url.contains("chapteronequiz")){
+                        Intent intent = new Intent(getActivity(), ChapterOneQuiz.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                    }
+                    return true;
+                }
+            });
 
             settings.setJavaScriptEnabled(true);
             settings.setBuiltInZoomControls(true);
