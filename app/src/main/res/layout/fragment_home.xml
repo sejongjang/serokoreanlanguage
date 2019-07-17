@@ -105,7 +105,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterone"
+                            android:id="@+id/ch1"
                             android:text="@string/chapterOne"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -141,7 +141,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chaptertwo"
+                            android:id="@+id/ch2"
                             android:text="@string/chapterTwo"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -177,7 +177,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterthree"
+                            android:id="@+id/ch3"
                             android:text="@string/chapterThree"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -213,7 +213,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterfour"
+                            android:id="@+id/ch4"
                             android:text="@string/chapterFour"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -250,7 +250,7 @@
                             android:src="@mipmap/lv1_chp5" />
 
                         <TextView
-                            android:id="@+id/chapterfive"
+                            android:id="@+id/ch5"
                             android:text="@string/chapterFive"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -287,7 +287,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chaptersix"
+                            android:id="@+id/ch6"
                             android:text="@string/chapterSix"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -324,7 +324,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterseven"
+                            android:id="@+id/ch7"
                             android:text="@string/chapterSeven"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -361,7 +361,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chaptereight"
+                            android:id="@+id/ch8"
                             android:text="@string/chapterEight"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -398,7 +398,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapternine"
+                            android:id="@+id/ch9"
                             android:text="@string/chapterNine"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -435,7 +435,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterten"
+                            android:id="@+id/ch10"
                             android:text="@string/chapterTen"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -471,7 +471,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterEleven"
+                            android:id="@+id/ch11"
                             android:text="@string/chapterEleven"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -506,7 +506,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterTwelve"
+                            android:id="@+id/ch12"
                             android:text="@string/chapterTwelve"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -541,7 +541,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterThirteen"
+                            android:id="@+id/ch13"
                             android:text="@string/chapterThirteen"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -576,7 +576,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterFourteen"
+                            android:id="@+id/ch14"
                             android:text="@string/chapterFourteen"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -611,7 +611,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterFifteen"
+                            android:id="@+id/ch15"
                             android:text="@string/chapterFifteen"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -646,7 +646,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterSixteen"
+                            android:id="@+id/ch16"
                             android:text="@string/chapterSixteen"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -681,7 +681,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterSeventeen"
+                            android:id="@+id/ch17"
                             android:text="@string/chapterSeventeen"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -717,7 +717,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterEighteen"
+                            android:id="@+id/ch18"
                             android:text="@string/chapterEighteen"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -752,7 +752,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterNineteen"
+                            android:id="@+id/ch19"
                             android:text="@string/chapterNineteen"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -787,7 +787,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterTwenty"
+                            android:id="@+id/ch20"
                             android:text="@string/chapterTwenty"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -822,7 +822,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterTwentyOne"
+                            android:id="@+id/ch21"
                             android:text="@string/chapterTwentyOne"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -857,7 +857,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterTwentyTwo"
+                            android:id="@+id/ch22"
                             android:text="@string/chapterTwentyTwo"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -892,7 +892,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterTwentyThree"
+                            android:id="@+id/ch23"
                             android:text="@string/chapterTwentyThree"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -927,7 +927,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterTwentyFour"
+                            android:id="@+id/ch24"
                             android:text="@string/chapterTwentyFour"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -962,7 +962,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterTwentyFive"
+                            android:id="@+id/ch25"
                             android:text="@string/chapterTwentyFive"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -997,7 +997,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterTwentySix"
+                            android:id="@+id/ch26"
                             android:text="@string/chapterTwentySix"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -1032,7 +1032,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterTwentySeven"
+                            android:id="@+id/ch27"
                             android:text="@string/chapterTwentySeven"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -1067,7 +1067,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterTwentyEight"
+                            android:id="@+id/ch28"
                             android:text="@string/chapterTwentyEight"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -1102,7 +1102,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterTwentyNine"
+                            android:id="@+id/ch29"
                             android:text="@string/chapterTwentyNine"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"
@@ -1137,7 +1137,7 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/chapterThirty"
+                            android:id="@+id/ch30"
                             android:text="@string/chapterThirty"
                             android:textAlignment="center"
                             android:textColor="@android:color/black"

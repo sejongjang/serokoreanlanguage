@@ -17,8 +17,9 @@ import koreanlearning.hangul.serokorean.beginnerone.webview.BeginnerOneWebView;
 
 public class Home extends Fragment {
 
-    GridLayout mainGrid;
-    CardView intro;
+    private GridLayout mainGrid;
+    private CardView intro;
+    private final int CHAPTERS = 30;
 
     public Home() {
         // Required empty public constructor
@@ -53,40 +54,20 @@ public class Home extends Fragment {
         return view;
     }
 
-    private void changeFont(View view, Typeface customFont){
+    private void changeFont(View view, Typeface customFont) {
         TextView tv;
         tv = view.findViewById(R.id.introduction);
         tv.setTypeface(customFont);
 
-        tv = view.findViewById(R.id.chapterone);
-        tv.setTypeface(customFont);
-
-        tv = view.findViewById(R.id.chaptertwo);
-        tv.setTypeface(customFont);
-
-        tv = view.findViewById(R.id.chapterthree);
-        tv.setTypeface(customFont);
-
-        tv = view.findViewById(R.id.chapterfour);
-        tv.setTypeface(customFont);
-
-        tv = view.findViewById(R.id.chapterfive);
-        tv.setTypeface(customFont);
-
-        tv = view.findViewById(R.id.chaptersix);
-        tv.setTypeface(customFont);
-
-        tv = view.findViewById(R.id.chapterseven);
-        tv.setTypeface(customFont);
-
-        tv = view.findViewById(R.id.chaptereight);
-        tv.setTypeface(customFont);
-
-        tv = view.findViewById(R.id.chapternine);
-        tv.setTypeface(customFont);
-
-        tv = view.findViewById(R.id.chapterten);
-        tv.setTypeface(customFont);
+        for(int i=1; i<=CHAPTERS; ++i){
+            try {
+                int id = R.id.class.getField("ch" + i).getInt(0);
+                tv = view.findViewById(id);
+                tv.setTypeface(customFont);
+            } catch (IllegalAccessException | NoSuchFieldException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private void setSingleEvent(GridLayout mainGrid){
