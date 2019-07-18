@@ -397,6 +397,12 @@ div.cardtext {
 }
 
 /*! CSS grids for example sentences */
+.example-header {
+  text-align:center;
+  text-indent: 0px;
+  padding-top: 10px;
+}
+
 .sentence-container {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: white;
