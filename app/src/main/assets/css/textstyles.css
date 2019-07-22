@@ -69,6 +69,12 @@ div.mtextcon p {
   margin: 0.2;
 }
 
+@media only screen and (min-width: 600px) {
+  div.mtextcon {
+    padding-top: 40px;
+    padding-left: 7%;
+  }  
+}
 .mstandardpara {
   font-size: 19px;
   color: #3b3f42;
