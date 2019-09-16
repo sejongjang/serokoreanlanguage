@@ -834,3 +834,13 @@ div.cardtext {
   margin: 4px 2px;
   cursor: pointer;
 }
+
+.center_context {
+  text-align: center;
+  text-indent: 0px;
+}
+
+.small_font {
+  font-size: 15px;
+
+}
