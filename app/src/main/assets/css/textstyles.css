@@ -22,9 +22,10 @@ html {
   box-sizing: border-box;
 }
 
-/* width */
+/* Scroll Bar 
+width */
 ::-webkit-scrollbar {
-  width: 9px;
+  width: 4px;
 }
 
 /* Track */
