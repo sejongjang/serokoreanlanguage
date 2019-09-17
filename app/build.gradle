@@ -7,8 +7,8 @@ android {
 
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 3
-        versionName "Alpha v4.1"
+        versionCode 4
+        versionName "Alpha v5"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
