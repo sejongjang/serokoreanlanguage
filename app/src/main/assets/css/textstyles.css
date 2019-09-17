@@ -842,5 +842,8 @@ div.cardtext {
 
 .small_font {
   font-size: 15px;
+}
 
+.large_font {
+  font-size: 40px;
 }
