@@ -389,6 +389,7 @@ div.cardtext {
   text-indent: 0;
   min-width: 100px;
 }
+
 @media (min-width: 768px) {
   .comparison-item {
     background-color: white;
@@ -402,12 +403,14 @@ div.cardtext {
     text-indent: 0;
     min-width: 100px;
     display: unset;
-  } 
+  }
+}
+
 .comparison-item-two {
   background-color: white;
   border: 1px solid #f2f2f2;
   padding: 1px;
-  font-size: calc(10px + 1vw);
+  font-size: calc(9px + 1.1vw);
   font-family: 'Noto Sans KR', sans-serif;
   text-align: left;
   border-collapse: collapse;
