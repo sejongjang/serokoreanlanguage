@@ -78,36 +78,6 @@ ul {
   line-height: 150%;
 }
 
-button {
-  width: 130px;
-  height: 40px;
-  background: linear-gradient(to bottom, white 0%, #FFBB00 100%);
-  /* W3C */
-  border: 1px solid #f2f2f2;
-  border-radius: 5px;
-  position: relative;
-  border-bottom: 4px solid #FFBB00;
-  color: #3b3f42;
-  font-weight: 600;
-  font-family: 'Open Sans', sans-serif;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
-  font-size: 15px;
-  text-align: left;
-  text-indent: 5px;
-  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, .2);
-  cursor: pointer;
-
-  /* Just for presentation */
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 20px;
-}
-
-button:active {
-  box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, .2);
-  top: 1px;
-}
-
 div.mtextcon {
   border-radius: 10px;
   -moz-border-radius: 10px;
@@ -201,7 +171,7 @@ div.cardtext {
   border-width: 2px;
   border-color: #FFBB00;
   border-radius: 3px;
-  display: inline-block;
+  display: inline-block;  
   margin-left: auto;
   margin-right: auto;
   text-indent: 0;
@@ -290,15 +260,30 @@ div.cardtext {
 }
 
 /*! CSS grid comparison chart */
-.switcher {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+.btn-group .button {
+  background-color: white; /* Green */
+  border: 1px solid #FFBB00;
+  color: #2b2e30;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  cursor: pointer;
+  float: left;
+}
+
+.btn-group .button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+.btn-group .button:hover {
+  background-color: #ffdd7f;
 }
 
 @media (min-width: 768px) {
   .switcher {
-    display: none;
+    display: none!important;
   }
 }
 
@@ -488,11 +473,67 @@ div.cardtext {
   background-color: white;
   border: 1px solid #f2f2f2;
   padding: 20px;
-  font-size: calc(15px + 2vmin);
+  font-size: calc(15px + 2vw);
   text-align: center;
   border-collapse: collapse;
   line-height: 0.01;
   text-indent: 0;
+}
+
+/*! 3x3 grids for bigger things */
+.grid-container-long {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #FFBB00;
+  border-radius: 3px;
+  display: inline-grid;
+  grid-template-columns: auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 768px) {
+  .grid-container-long {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #FFBB00;
+    border-radius: 3px;
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.grid-item-long {
+  color: #2b2e30;
+  background-color: white;
+  border: 1px solid #f2f2f2;
+  padding: 20px;
+  font-size: calc(10px + 2vw);
+  text-align: center;
+  border-collapse: collapse;
+  line-height: 0.01;
+  text-indent: 0;
+}
+
+@media (min-width: 768px) {
+  .grid-item-long {
+    color: #2b2e30;
+    background-color: white;
+    border: 1px solid #f2f2f2;
+    padding: 20px;
+    font-size: 24px;
+    text-align: center;
+    border-collapse: collapse;
+    line-height: 0.01;
+    text-indent: 0;
+  }
 }
 
 /*! CSS grids for example sentences */
