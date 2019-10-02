@@ -45,6 +45,26 @@
     <string name="chapterTwentyNine">Demonstratives</string>
     <string name="chapterThirty">Wrap Up</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_chapter_two_quiz">ChapterTwoQuiz</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+
+    <string name="chapter_one_quiz">Chapter One Quiz</string>
+    <string name="chapter_two_quiz">Chapter Two Quiz</string>
+    <string name="chapter_three_quiz">Chapter Three Quiz</string>
+    <string name="chapter_four_quiz">Chapter Four Quiz</string>
+    <string name="chapter_Five_quiz">Chapter Five Quiz</string>
+    <string name="title_activity_question">QuestionActivity</string>
 </resources>
