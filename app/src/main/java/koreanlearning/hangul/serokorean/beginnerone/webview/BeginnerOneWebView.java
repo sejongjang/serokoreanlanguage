@@ -25,7 +25,7 @@ import android.widget.Toast;
 import com.hangul.serokorean.R;
 import java.util.ArrayList;
 
-import koreanlearning.hangul.serokorean.beginnerone.quiz.ChapterOneQuiz;
+import koreanlearning.hangul.serokorean.beginnerone.quiz.QuizCategories;
 
 
 public class BeginnerOneWebView extends AppCompatActivity implements ParentRequestInterface{
@@ -154,7 +154,6 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
 
             WebSettings settings = webView.getSettings();
             webView.setWebChromeClient(new WebChromeClient());
-//            webView.setWebViewClient(new WebViewClient());
             webView.setScrollContainer(false);
             webView.setVerticalScrollBarEnabled(false);
             webView.setHorizontalScrollBarEnabled(false);
@@ -163,7 +162,7 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
                 public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                     String url = request.getUrl().toString();
                     if(url.contains("chapteronequiz")){
-                        Intent intent = new Intent(getActivity(), ChapterOneQuiz.class);
+                        Intent intent = new Intent(getActivity(), QuizCategories.class); //ChapterOneQuiz.class
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                     }

@@ -13,7 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme2">
-        <activity android:name="koreanlearning.hangul.serokorean.beginnerone.quiz.ChapterOneQuiz"/>
+        <activity
+            android:name="koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity"
+            android:label="@string/title_activity_question"
+            android:theme="@style/AppTheme2.NoActionBar"></activity>
+        <activity android:name="koreanlearning.hangul.serokorean.beginnerone.quiz.QuizCategories" />
         <activity android:name="koreanlearning.hangul.serokorean.search.Search" />
         <activity android:name="koreanlearning.hangul.serokorean.beginnerone.webview.BeginnerOneWebView" />
         <activity android:name="koreanlearning.hangul.serokorean.beginnerone.BeginnerOne" />
