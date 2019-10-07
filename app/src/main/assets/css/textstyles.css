@@ -85,7 +85,7 @@ ul {
 div.mtextcon {
   border-radius: 10px;
   -moz-border-radius: 10px;
-  padding: 7%;
+  padding: 4%;
   max-width: 1000px;
   margin: 0;
 }
@@ -101,6 +101,7 @@ div.mtextcon p {
   }
 }
 
+.stextcon {
   background-color: #252526 !important;
   padding-top: 2vh;
   padding-left: 3%;
@@ -896,6 +897,7 @@ div.cardtext {
 .authornote {
   height: 100%;
   width: 0;
+  height: calc(100vh - 2px);
   position: fixed;
   z-index: 1;
   top: 0;
@@ -903,9 +905,10 @@ div.cardtext {
   overflow-x: hidden;
   transition: 0.3s;
   font-size: 20px;
-  background-color: #302e2f;
-  color: white;
-  text-shadow: 1px 4px 6px #000, 0 0 0 #def, 1px 4px 6px #000;
+  background: #333333;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  box-shadow: inset 0px 0px 0px 1px #f19f4d;
 }
 
 .authornote p {
@@ -991,12 +994,13 @@ div.cardtext {
 .authorarrow {
   position: absolute;
   right: 0;
-  background-color: #375E97;
+  background-color: #f19f4d;
   height: 80%;
   text-indent: 0;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   max-height: 80px;
+  transition: 0.3s;
   -webkit-user-select: none;
   /* Safari 3.1+ */
   -moz-user-select: none;
@@ -1008,11 +1012,11 @@ div.cardtext {
 }
 
 .authorarrow img {
-  vertical-align: middle;
   height: 40px;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  transition: transform 0.3s linear;
 }
 
 .quiz {
