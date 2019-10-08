@@ -55,8 +55,7 @@ width */
 }
 
 body {
-  background: #fefefe;
-  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  background: #1e1e1e;
   margin: 0;
   padding: 0;
   min-height: 100%;
@@ -70,6 +69,12 @@ body {
   /* Standard syntax */
 }
 
+@media (min-width: 768px) {
+  body {
+    background: #121212;
+  }
+}
+
 ul {
   margin: 20px 0;
   margin-left: 20px;
@@ -81,7 +86,7 @@ ul {
 div.mtextcon {
   border-radius: 10px;
   -moz-border-radius: 10px;
-  padding: 7%;
+  padding: 4%;
   max-width: 1000px;
   margin: 0;
 }
@@ -97,10 +102,19 @@ div.mtextcon p {
   }
 }
 
+.stextcon {
+  background-color: #252526 !important;
+  padding-top: 2vh;
+  padding-left: 3%;
+  padding-right: 3%;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .mstandardpara {
   font-size: 19px;
-  color: #3b3f42;
-  font-family: 'Merriweather', serif;
+  color: #e2e2e2;
+  font-family: 'Nanum Gothic', sans-serif;
   font-weight: 300;
   line-height: 1.3;
   text-indent: 2em;
@@ -108,25 +122,32 @@ div.mtextcon p {
 
 .mheadpara {
   font-size: 19px;
-  color: #977d60 !important;
-  font-family: 'Merriweather', serif;
-  font-weight: 300;
+  color: #e2e2e2 !important;
+  font-family: 'Noto Sans KR', sans-serif;
   line-height: 1.3;
   text-indent: 2em;
-  margin: 10px;
+  background: #333333;
+  border: 1px solid #f19f4d;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .mheader {
-  font-size: calc(16px + 4vw);
-  color: #2b2e30;
+  font-size: calc(16px + 6vw);
+  color: #d9d9d9;
   font-family: 'Painting With Chocolate', sans-serif;
   text-align: center;
-  max-width: 1000px;
+}
+
+@media (min-width: 768px) {
+  .mheader {
+    font-size: calc(16px + 4vw);
+  }
 }
 
 .msubheader {
   font-size: calc(16px + 2vw);
-  color: #2b2e30;
+  color: #d9d9d9;
   font-family: 'Painting With Chocolate', sans-serif;
   text-align: center;
   max-width: 1000px;
@@ -152,10 +173,10 @@ div.cardtext {
   padding-right: 20px;
   padding-bottom: 10px;
   padding-left: 20px;
-  font-size: 25px;
+  font-size: calc(15px + 2vmin);
   border-style: solid;
   border-width: 2px;
-  border-color: #FFBB00;
+  border-color: #f19f4d;
   border-radius: 3px;
   line-height: 0.01;
   text-indent: 0;
@@ -169,7 +190,7 @@ div.cardtext {
   background: white;
   border-style: solid;
   border-width: 2px;
-  border-color: #FFBB00;
+  border-color: #f19f4d;
   border-radius: 3px;
   display: inline-block;
   margin-left: auto;
@@ -198,7 +219,7 @@ div.cardtext {
   background-color: white;
   border-style: solid;
   border-width: 2px;
-  border-color: #FFBB00;
+  border-color: #f19f4d;
   border-radius: 3px;
   display: inline-grid;
   grid-template-columns: auto auto auto;
@@ -225,10 +246,10 @@ div.cardtext {
   background-color: white;
   border-style: solid;
   border-width: 2px;
-  border-color: #FFBB00;
+  border-color: #f19f4d;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
-  border-radius: 3px;
+  border-radius: 5px;
   display: inline-grid;
   position: relative;
   left: 50%;
@@ -240,10 +261,10 @@ div.cardtext {
   background-color: white;
   border-style: solid;
   border-width: 2px;
-  border-color: #FFBB00;
+  border-color: #f19f4d;
   grid-template-columns: auto;
   grid-template-rows: auto auto;
-  border-radius: 3px;
+  border-radius: 15px;
   display: inline-grid;
   position: relative;
   left: 50%;
@@ -251,7 +272,9 @@ div.cardtext {
 }
 
 .vocab-top-item {
+  color: #1e1e1e;
   border: 1px solid #f2f2f2;
+  border-radius: 15px;
   padding: 0;
   font-size: 15px;
   font-family: 'Noto Sans KR', sans-serif;
@@ -262,6 +285,7 @@ div.cardtext {
 
 .vocab-item {
   display: flex;
+  color: #1e1e1e;
   background-color: white;
   border: 1px solid #f2f2f2;
   padding: 1px;
@@ -283,14 +307,14 @@ div.cardtext {
   text-indent: 0;
   min-width: 100px;
   align-items: center;
-  line-height: 0; 
+  line-height: 0;
 }
 
 /*! CSS grid comparison chart */
 .btn-group .button {
   background-color: white;
   /* Green */
-  border: 1px solid #FFBB00;
+  border: 1px solid #f19f4d;
   color: #2b2e30;
   padding: 15px 15px;
   text-align: center;
@@ -321,7 +345,7 @@ div.cardtext {
   background-color: white;
   border-style: solid;
   border-width: 2px;
-  border-color: #FFBB00;
+  border-color: #f19f4d;
   grid-template-columns: auto;
   grid-template-rows: 20px auto;
   border-radius: 3px;
@@ -346,7 +370,7 @@ div.cardtext {
   background-color: white;
   border-style: solid;
   border-width: 2px;
-  border-color: #FFBB00;
+  border-color: #f19f4d;
   grid-template-columns: auto;
   grid-template-rows: 20px auto;
   border-radius: 3px;
@@ -488,7 +512,7 @@ div.cardtext {
   background-color: white;
   border-style: solid;
   border-width: 2px;
-  border-color: #FFBB00;
+  border-color: #f19f4d;
   border-radius: 3px;
   display: inline-grid;
   grid-template-columns: auto auto auto;
@@ -515,7 +539,7 @@ div.cardtext {
   background-color: white;
   border-style: solid;
   border-width: 2px;
-  border-color: #FFBB00;
+  border-color: #f19f4d;
   border-radius: 3px;
   display: inline-grid;
   grid-template-columns: auto;
@@ -530,7 +554,7 @@ div.cardtext {
     background-color: white;
     border-style: solid;
     border-width: 2px;
-    border-color: #FFBB00;
+    border-color: #f19f4d;
     border-radius: 3px;
     display: inline-grid;
     grid-template-columns: auto auto auto;
@@ -579,7 +603,7 @@ div.cardtext {
   background-color: white;
   border-style: solid;
   border-width: 2px;
-  border-color: #FFBB00;
+  border-color: #f19f4d;
   border-radius: 3px;
   background-size: cover;
   max-width: 90%;
@@ -605,11 +629,12 @@ div.cardtext {
 }
 
 .sentence-container {
+  color: #2b2e30;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: white;
   border-style: solid;
   border-width: 2px;
-  border-color: #FFBB00;
+  border-color: #f19f4d;
   border-radius: 3px;
   background-size: cover;
   max-width: 90vw;
@@ -684,7 +709,7 @@ div.cardtext {
     background-color: white;
     border-style: solid;
     border-width: 2px;
-    border-color: #FFBB00;
+    border-color: #f19f4d;
     border-radius: 3px;
     background-size: cover;
     width: 90%;
@@ -774,7 +799,7 @@ div.cardtext {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-style: solid;
   border-width: 2px;
-  border-color: #FFBB00;
+  border-color: #f19f4d;
   border-radius: 3px;
   position: relative;
   left: 50%;
@@ -782,7 +807,7 @@ div.cardtext {
   cursor: pointer;
   transition: 0.3s;
   text-indent: 0px;
-  color: #FFBB00;
+  color: #f19f4d;
   font-size: 20px;
   font-style: italic;
   object-fit: contain;
@@ -822,7 +847,7 @@ div.cardtext {
   margin: 0 auto;
   cursor: pointer;
   transition: 0.3s;
-  color: #FFBB00;
+  color: #f19f4d;
   font-size: 20px;
   display: block;
   object-fit: contain;
@@ -839,7 +864,7 @@ div.cardtext {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-style: solid;
     border-width: 2px;
-    border-color: #FFBB00;
+    border-color: #f19f4d;
     border-radius: 3px;
     position: relative;
     left: 50%;
@@ -857,7 +882,7 @@ div.cardtext {
     margin: 0 auto;
     cursor: pointer;
     transition: 0.3s;
-    color: #FFBB00;
+    color: #f19f4d;
     font-size: 20px;
     display: block;
     object-fit: contain;
@@ -877,6 +902,7 @@ div.cardtext {
 .authornote {
   height: 100%;
   width: 0;
+  height: calc(100vh - 2px);
   position: fixed;
   z-index: 1;
   top: 0;
@@ -884,9 +910,10 @@ div.cardtext {
   overflow-x: hidden;
   transition: 0.3s;
   font-size: 20px;
-  background-color: #302e2f;
-  color: white;
-  text-shadow: 1px 4px 6px #000, 0 0 0 #def, 1px 4px 6px #000;
+  background: #333333;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  box-shadow: inset 0px 0px 0px 1px #f19f4d;
 }
 
 .authornote p {
@@ -972,12 +999,13 @@ div.cardtext {
 .authorarrow {
   position: absolute;
   right: 0;
-  background-color: #375E97;
+  background-color: #f19f4d;
   height: 80%;
   text-indent: 0;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   max-height: 80px;
+  transition: 0.3s;
   -webkit-user-select: none;
   /* Safari 3.1+ */
   -moz-user-select: none;
@@ -989,11 +1017,11 @@ div.cardtext {
 }
 
 .authorarrow img {
-  vertical-align: middle;
   height: 40px;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  transition: transform 0.3s linear;
 }
 
 .quiz {
