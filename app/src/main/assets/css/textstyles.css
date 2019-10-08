@@ -107,6 +107,7 @@ div.mtextcon p {
   padding-top: 2vh;
   padding-left: 3%;
   padding-right: 3%;
+  padding-bottom: 10px;
   border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -134,7 +135,7 @@ div.mtextcon p {
 
 .mheader {
   font-size: calc(16px + 6vw);
-  color: #d9d9d9;
+  color: #e2e2e2;
   font-family: 'Painting With Chocolate', sans-serif;
   text-align: center;
 }
@@ -147,7 +148,7 @@ div.mtextcon p {
 
 .msubheader {
   font-size: calc(16px + 2vw);
-  color: #d9d9d9;
+  color: #e2e2e2;
   font-family: 'Painting With Chocolate', sans-serif;
   text-align: center;
   max-width: 1000px;
