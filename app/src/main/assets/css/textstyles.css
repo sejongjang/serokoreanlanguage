@@ -249,7 +249,7 @@ div.cardtext {
   border-color: #f19f4d;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
-  border-radius: 15px;
+  border-radius: 5px;
   display: inline-grid;
   position: relative;
   left: 50%;
@@ -629,6 +629,7 @@ div.cardtext {
 }
 
 .sentence-container {
+  color: #2b2e30;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: white;
   border-style: solid;
