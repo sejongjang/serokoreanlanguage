@@ -1,11 +1,17 @@
 //open author note
 function openNav() {
     document.getElementById("myAuthornote").style.width = "250px";
+    document.getElementById("myArrowBox").style.right = "250px";
+    document.getElementById("myArrow").style.transform = "scaleX(-1) translateY(-50%)";
+    document.getElementById("opener").setAttribute("onClick", "closeNav()");
 }
 
 //close author note
 function closeNav() {
     document.getElementById("myAuthornote").style.width = "0";
+    document.getElementById("myArrowBox").style.right = "0px";
+    document.getElementById("myArrow").style.transform = "scaleX(1) translateY(-50%)";
+    document.getElementById("opener").setAttribute("onClick", "openNav()");
 }
 
 //play audio function
