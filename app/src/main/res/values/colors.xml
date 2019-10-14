@@ -3,6 +3,7 @@
 
     <color name="white">#ffffff</color>
     <color name="dividerColor">#80CBC4</color>
+
     <color name="list_item_title">#AAAAAA</color>
     <color name="list_group_title">#808080</color>
 
@@ -18,5 +19,9 @@
     <color name="nicelightblue">#c2dde6</color>
     <color name="sky">#F3FAFE</color>
 
+    <color name="darkTheme">#1e1e1e</color>
+    <color name="darkThemeLight">#252526</color>
+    <color name="darkThemeLight2">#383838</color>
+    <color name="darkThemeText">#e2e2e2</color>
 
 </resources>
