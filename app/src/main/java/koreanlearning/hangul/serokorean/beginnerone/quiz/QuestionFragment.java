@@ -1,9 +1,7 @@
 package koreanlearning.hangul.serokorean.beginnerone.quiz;
 
-import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
@@ -20,11 +18,9 @@ import android.widget.Toast;
 
 import com.hangul.serokorean.R;
 
-import javax.security.auth.callback.Callback;
-
 import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.CurrentQuestion;
 import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.Question;
-import koreanlearning.hangul.serokorean.beginnerone.quiz.common.Common;
+import koreanlearning.hangul.serokorean.beginnerone.quiz.common.QuizCommon;
 import koreanlearning.hangul.serokorean.beginnerone.quiz.quizInterface.IQuestion;
 
 public class QuestionFragment extends Fragment implements IQuestion {
@@ -65,7 +61,7 @@ public class QuestionFragment extends Fragment implements IQuestion {
 
         //get question
         questionIndex = getArguments().getInt("index", -1);
-        question = Common.questionList.get(questionIndex);
+        question = QuizCommon.questionList.get(questionIndex);
 
         if(question != null){
 
@@ -91,10 +87,10 @@ public class QuestionFragment extends Fragment implements IQuestion {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if(isChecked){
-                        Common.selected_values.add(ckbA.getText().toString());
+                        QuizCommon.selected_values.add(ckbA.getText().toString());
                     }
                     else{
-                        Common.selected_values.remove(ckbA.getText().toString());
+                        QuizCommon.selected_values.remove(ckbA.getText().toString());
                     }
                 }
             });
@@ -105,10 +101,10 @@ public class QuestionFragment extends Fragment implements IQuestion {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if(isChecked){
-                        Common.selected_values.add(ckbB.getText().toString());
+                        QuizCommon.selected_values.add(ckbB.getText().toString());
                     }
                     else{
-                        Common.selected_values.remove(ckbB.getText().toString());
+                        QuizCommon.selected_values.remove(ckbB.getText().toString());
                     }
                 }
             });
@@ -119,10 +115,10 @@ public class QuestionFragment extends Fragment implements IQuestion {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if(isChecked){
-                        Common.selected_values.add(ckbC.getText().toString());
+                        QuizCommon.selected_values.add(ckbC.getText().toString());
                     }
                     else{
-                        Common.selected_values.remove(ckbC.getText().toString());
+                        QuizCommon.selected_values.remove(ckbC.getText().toString());
                     }
                 }
             });
@@ -133,10 +129,10 @@ public class QuestionFragment extends Fragment implements IQuestion {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if(isChecked){
-                        Common.selected_values.add(ckbD.getText().toString());
+                        QuizCommon.selected_values.add(ckbD.getText().toString());
                     }
                     else{
-                        Common.selected_values.remove(ckbD.getText().toString());
+                        QuizCommon.selected_values.remove(ckbD.getText().toString());
                     }
                 }
             });
@@ -149,14 +145,14 @@ public class QuestionFragment extends Fragment implements IQuestion {
     @Override
     public CurrentQuestion getSelectedAnswer() {
         // it will return state of answer (right or wrong)
-        CurrentQuestion currentQuestion = new CurrentQuestion(questionIndex, Common.ANSWER_TYPE.NO_ANSWER);
+        CurrentQuestion currentQuestion = new CurrentQuestion(questionIndex, QuizCommon.ANSWER_TYPE.NO_ANSWER);
         StringBuilder result = new StringBuilder();
-        if(Common.selected_values.size() > 1){
+        if(QuizCommon.selected_values.size() > 1){
             // multiple choices' answer will be array
             // ex. arr[0] = A. New York
             // ex. arr[1] = B. Paris
 
-            Object[] arrayAnswer = Common.selected_values.toArray();
+            Object[] arrayAnswer = QuizCommon.selected_values.toArray();
             for(int i=0; i<arrayAnswer.length; ++i){
                 if(i < arrayAnswer.length -1){
                     // Take first letter of the answer
@@ -168,8 +164,8 @@ public class QuestionFragment extends Fragment implements IQuestion {
                 }
             }
         }
-        else if(Common.selected_values.size() == 1){
-            Object[] arrayAnswer = Common.selected_values.toArray();
+        else if(QuizCommon.selected_values.size() == 1){
+            Object[] arrayAnswer = QuizCommon.selected_values.toArray();
             result.append((String)arrayAnswer[0]).substring(0,1);
         }
 
@@ -177,21 +173,21 @@ public class QuestionFragment extends Fragment implements IQuestion {
             // compare correctAnswer with user answer
             if(!TextUtils.isEmpty(result)){
                 if(result.toString().equals(question.getCorrectAnswer())){
-                    currentQuestion.setType(Common.ANSWER_TYPE.RIGHT_ANSWER);
+                    currentQuestion.setType(QuizCommon.ANSWER_TYPE.RIGHT_ANSWER);
                 }
                 else{
-                    currentQuestion.setType(Common.ANSWER_TYPE.WRONG_ANSWER);
+                    currentQuestion.setType(QuizCommon.ANSWER_TYPE.WRONG_ANSWER);
                 }
             }
             else{
-                currentQuestion.setType(Common.ANSWER_TYPE.NO_ANSWER);
+                currentQuestion.setType(QuizCommon.ANSWER_TYPE.NO_ANSWER);
             }
         }
         else{
             Toast.makeText(getContext(), "Cannot get quiz", Toast.LENGTH_SHORT).show();
         }
         // always clear selected_value when it's done
-        Common.selected_values.clear();
+        QuizCommon.selected_values.clear();
 
         return currentQuestion;
     }

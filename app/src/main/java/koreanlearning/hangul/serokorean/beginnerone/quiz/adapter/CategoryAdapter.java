@@ -11,13 +11,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.hangul.serokorean.R;
-
 import java.util.List;
 
 import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.Category;
 import koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity;
 import koreanlearning.hangul.serokorean.beginnerone.quiz.QuizCategories;
-import koreanlearning.hangul.serokorean.beginnerone.quiz.common.Common;
+import koreanlearning.hangul.serokorean.beginnerone.quiz.common.QuizCommon;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyViewHolder> {
     Context context;
@@ -58,7 +57,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
             card_category.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
-                    Common.selectedCategory = categories.get(getAdapterPosition()); //assign current category position
+                    QuizCommon.selectedCategory = categories.get(getAdapterPosition()); //assign current category position
                     Intent selectedCategory = new Intent(context, QuestionActivity.class);
                     context.startActivity(selectedCategory);
                 }

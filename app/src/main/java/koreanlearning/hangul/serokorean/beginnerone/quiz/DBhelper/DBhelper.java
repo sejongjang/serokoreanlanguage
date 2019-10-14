@@ -14,7 +14,7 @@ import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.Question;
 
 public class DBhelper extends SQLiteAssetHelper {
 
-    private static final String DB_NAME = "samplequiz2.db";
+    private static final String DB_NAME = "korean.serolanguage.com/databases/samplequiz2.db";
     private static final int DB_VER = 1;
 
     private static DBhelper instance;
@@ -31,6 +31,7 @@ public class DBhelper extends SQLiteAssetHelper {
     }
 
     public List<Category> getAllCategories(){
+
         SQLiteDatabase db = instance.getWritableDatabase();
         Cursor cursor = db.rawQuery("Select * From Category;", null);
         List<Category> categories = new ArrayList<>();
@@ -57,14 +58,11 @@ public class DBhelper extends SQLiteAssetHelper {
             while(!cursor.isAfterLast()){
                 Question question = new Question(cursor.getInt(cursor.getColumnIndex("ID")),
                         cursor.getString(cursor.getColumnIndex("QuestionText")),
-                        cursor.getString(cursor.getColumnIndex("QuestionImage")),
                         cursor.getString(cursor.getColumnIndex("AnswerA")),
                         cursor.getString(cursor.getColumnIndex("AnswerB")),
                         cursor.getString(cursor.getColumnIndex("AnswerC")),
                         cursor.getString(cursor.getColumnIndex("AnswerD")),
-                        cursor.getString(cursor.getColumnIndex("CorrectAnswer")),
-                        cursor.getInt(cursor.getColumnIndex("IsImageQuestion")) == 0?Boolean.FALSE: Boolean.TRUE,
-                        cursor.getInt(cursor.getColumnIndex("CategoryID")));
+                        cursor.getString(cursor.getColumnIndex("CorrectAnswer")));
 
                 questions.add(question);
                 cursor.moveToNext();

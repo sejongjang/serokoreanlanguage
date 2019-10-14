@@ -11,7 +11,7 @@ import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.CurrentQuestion;
 import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.Question;
 import koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionFragment;
 
-public class Common {
+public class QuizCommon {
     public static Category selectedCategory = new Category();
     public static final int TOTAL_TIME = 20*60*1000; // 20mins
     public static List<Question> questionList = new ArrayList<>();

@@ -1,5 +1,7 @@
 package koreanlearning.hangul.serokorean.beginnerone.quiz;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,7 +13,11 @@ import android.view.WindowManager;
 
 import com.hangul.serokorean.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import koreanlearning.hangul.serokorean.beginnerone.quiz.DBhelper.DBhelper;
+import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.Category;
 import koreanlearning.hangul.serokorean.beginnerone.quiz.adapter.CategoryAdapter;
 import koreanlearning.hangul.serokorean.beginnerone.quiz.common.SpaceDecoration;
 
@@ -50,9 +56,14 @@ public class QuizCategories extends AppCompatActivity {
 //        DisplayMetrics displayMetrics = new DisplayMetrics();
 //        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 //        int height = displayMetrics.heightPixels / 8;
-        CategoryAdapter adapter = new CategoryAdapter(QuizCategories.this, DBhelper.getInstance(this).getAllCategories());
+//        CategoryAdapter adapter = new CategoryAdapter(QuizCategories.this, DBhelper.getInstance(this).getAllCategories());
+
+
+        CategoryAdapter adapter = new CategoryAdapter(QuizCategories.this, null);
+
         int spaceInPixel = 4;
         recyclerView_category.addItemDecoration(new SpaceDecoration(spaceInPixel));
         recyclerView_category.setAdapter(adapter);
     }
+
 }

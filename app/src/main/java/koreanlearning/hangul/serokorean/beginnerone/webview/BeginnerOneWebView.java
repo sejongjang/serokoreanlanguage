@@ -1,7 +1,5 @@
 package koreanlearning.hangul.serokorean.beginnerone.webview;
 
-
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.support.v4.app.Fragment;
@@ -13,7 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.webkit.JavascriptInterface;
+import android.webkit.PermissionRequest;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
@@ -25,7 +23,7 @@ import android.widget.Toast;
 import com.hangul.serokorean.R;
 import java.util.ArrayList;
 
-import koreanlearning.hangul.serokorean.beginnerone.quiz.QuizCategories;
+import koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity;
 
 
 public class BeginnerOneWebView extends AppCompatActivity implements ParentRequestInterface{
@@ -157,12 +155,39 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
             webView.setScrollContainer(false);
             webView.setVerticalScrollBarEnabled(false);
             webView.setHorizontalScrollBarEnabled(false);
+            webView.setWebChromeClient(new WebChromeClient(){
+                @Override
+                public void onPermissionRequest(final PermissionRequest request) {
+                    request.grant(request.getResources());
+                }
+            });
+
             webView.setWebViewClient(new WebViewClient(){
+
+                public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){
+                    if(failingUrl.contains("chapter")){
+                        //level1chapter1
+                        Bundle args = new Bundle();
+                        args.putInt("level", Integer.parseInt(failingUrl.substring(12,13)));
+                        args.putInt("chapter", Integer.parseInt(failingUrl.substring(20,21)));
+                        Intent intent = new Intent(getActivity(), QuestionActivity.class); //ChapterOneQuiz.class
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(getActivity(), "System error", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
                 @Override
                 public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                     String url = request.getUrl().toString();
-                    if(url.contains("chapteronequiz")){
-                        Intent intent = new Intent(getActivity(), QuizCategories.class); //ChapterOneQuiz.class
+                    if(url.contains("chapter")){
+//                        Intent intent = new Intent(getActivity(), QuizCategories.class); //ChapterOneQuiz.class
+                        Bundle args = new Bundle();
+                        args.putInt("level", Integer.parseInt(url.substring(5,6)));
+                        args.putInt("chapter", Integer.parseInt(url.substring(13)));
+                        Intent intent = new Intent(getActivity(), QuestionActivity.class); //ChapterOneQuiz.class
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                     }
@@ -191,21 +216,6 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
             this.viewpager = viewpager;
         }
         public PlaceholderFragment() { }
-
-        public class WebAppInterface {
-            Context mContext;
-
-            /** Instantiate the interface and set the context */
-            WebAppInterface(Context c) {
-                mContext = c;
-            }
-
-            /** Show a toast from the web page */
-            @JavascriptInterface
-            public void showToast(String toast) {
-                Toast.makeText(mContext, toast, Toast.LENGTH_SHORT).show();
-            }
-        }
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {

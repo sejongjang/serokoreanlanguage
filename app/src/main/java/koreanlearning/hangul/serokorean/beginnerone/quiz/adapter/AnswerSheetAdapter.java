@@ -12,7 +12,7 @@ import com.hangul.serokorean.R;
 import java.util.List;
 
 import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.CurrentQuestion;
-import koreanlearning.hangul.serokorean.beginnerone.quiz.common.Common;
+import koreanlearning.hangul.serokorean.beginnerone.quiz.common.QuizCommon;
 
 public class AnswerSheetAdapter extends RecyclerView.Adapter<AnswerSheetAdapter.MyViewHolder> {
     Context context;
@@ -32,13 +32,13 @@ public class AnswerSheetAdapter extends RecyclerView.Adapter<AnswerSheetAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-        if(currentQuestionList.get(i).getType() == Common.ANSWER_TYPE.RIGHT_ANSWER){
+        if(currentQuestionList.get(i).getType() == QuizCommon.ANSWER_TYPE.RIGHT_ANSWER){
             myViewHolder.question_item.setBackgroundResource(R.drawable.grid_question_right_answer);
         }
-        else if(currentQuestionList.get(i).getType() == Common.ANSWER_TYPE.WRONG_ANSWER){
+        else if(currentQuestionList.get(i).getType() == QuizCommon.ANSWER_TYPE.WRONG_ANSWER){
             myViewHolder.question_item.setBackgroundResource(R.drawable.grid_question_wrong_answer);
         }
-        else if(currentQuestionList.get(i).getType() == Common.ANSWER_TYPE.NO_ANSWER){
+        else if(currentQuestionList.get(i).getType() == QuizCommon.ANSWER_TYPE.NO_ANSWER){
             myViewHolder.question_item.setBackgroundResource(R.drawable.grid_question_no_answer);
         }
     }

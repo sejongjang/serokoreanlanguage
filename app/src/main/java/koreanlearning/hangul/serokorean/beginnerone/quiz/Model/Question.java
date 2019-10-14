@@ -2,24 +2,21 @@ package koreanlearning.hangul.serokorean.beginnerone.quiz.Model;
 
 public class Question {
     private int id;
-    private String QuestionText, questionImage, answerA, answerB, answerC, answerD, correctAnswer;
+    private String questionText, questionImage, answerA, answerB, answerC, answerD, correctAnswer;
     private boolean isImageQuestion;
     private int categoryId;
 
     public Question() {
     }
 
-    public Question(int id, String questionText, String questionImage, String answerA, String answerB, String answerC, String answerD, String correctAnswer, boolean isImageQuestion, int categoryId) {
+    public Question(int id, String questionText, String answerA, String answerB, String answerC, String answerD, String correctAnswer) {
         this.id = id;
-        QuestionText = questionText;
-        this.questionImage = questionImage;
+        this.questionText = questionText;
         this.answerA = answerA;
         this.answerB = answerB;
         this.answerC = answerC;
         this.answerD = answerD;
         this.correctAnswer = correctAnswer;
-        this.isImageQuestion = isImageQuestion;
-        this.categoryId = categoryId;
     }
 
     public int getId() {
@@ -31,11 +28,11 @@ public class Question {
     }
 
     public String getQuestionText() {
-        return QuestionText;
+        return questionText;
     }
 
     public void setQuestionText(String questionText) {
-        QuestionText = questionText;
+        this.questionText = questionText;
     }
 
     public String getQuestionImage() {

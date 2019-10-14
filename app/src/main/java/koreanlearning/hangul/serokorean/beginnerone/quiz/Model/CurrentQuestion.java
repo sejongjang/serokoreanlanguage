@@ -1,12 +1,12 @@
 package koreanlearning.hangul.serokorean.beginnerone.quiz.Model;
 
-import koreanlearning.hangul.serokorean.beginnerone.quiz.common.Common;
+import koreanlearning.hangul.serokorean.beginnerone.quiz.common.QuizCommon;
 
 public class CurrentQuestion {
     private int questionIndex;
-    private Common.ANSWER_TYPE type;
+    private QuizCommon.ANSWER_TYPE type;
 
-    public CurrentQuestion(int questionIndex, Common.ANSWER_TYPE type) {
+    public CurrentQuestion(int questionIndex, QuizCommon.ANSWER_TYPE type) {
         this.questionIndex = questionIndex;
         this.type = type;
     }
@@ -19,11 +19,11 @@ public class CurrentQuestion {
         this.questionIndex = questionIndex;
     }
 
-    public Common.ANSWER_TYPE getType() {
+    public QuizCommon.ANSWER_TYPE getType() {
         return type;
     }
 
-    public void setType(Common.ANSWER_TYPE type) {
+    public void setType(QuizCommon.ANSWER_TYPE type) {
         this.type = type;
     }
 }

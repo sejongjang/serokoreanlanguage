@@ -4,8 +4,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
@@ -21,7 +19,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.WindowManager;
-import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.DialogAction;
@@ -29,6 +26,14 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog;
 import com.hangul.serokorean.R;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import koreanlearning.hangul.serokorean.beginnerone.quiz.DBhelper.DBhelper;
@@ -36,12 +41,12 @@ import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.CurrentQuestion;
 import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.Question;
 import koreanlearning.hangul.serokorean.beginnerone.quiz.adapter.AnswerSheetAdapter;
 import koreanlearning.hangul.serokorean.beginnerone.quiz.adapter.QuestionFragmentsAdapter;
-import koreanlearning.hangul.serokorean.beginnerone.quiz.common.Common;
+import koreanlearning.hangul.serokorean.beginnerone.quiz.common.QuizCommon;
 
 public class QuestionActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    int time_play = Common.TOTAL_TIME;
+    int time_play = QuizCommon.TOTAL_TIME;
     boolean isAnswerModeView = false;
     RecyclerView answer_sheet_view;
     AnswerSheetAdapter answerSheetAdapter;
@@ -52,8 +57,8 @@ public class QuestionActivity extends AppCompatActivity
 
     @Override
     protected void onDestroy() {
-        if(Common.countDownTimer != null){
-            Common.countDownTimer.cancel();
+        if(QuizCommon.countDownTimer != null){
+            QuizCommon.countDownTimer.cancel();
         }
         super.onDestroy();
     }
@@ -77,7 +82,7 @@ public class QuestionActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle(Common.selectedCategory.getName());
+        toolbar.setTitle(QuizCommon.selectedCategory.getName());
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -88,34 +93,33 @@ public class QuestionActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         
         //take questions from DB
-        takeQuestion();
+        Bundle bundle = getIntent().getExtras();
+        int level = bundle.getInt("level");
+        int chapter = bundle.getInt("chapter");
+//        takeQuestion();
+        importQuestion(level, chapter);
 
-        if(Common.questionList.size() > 0){
+        if(QuizCommon.questionList.size() > 0){
 
-            //show textView right answer and textView timer
+            //show textView right answer
             txt_right_answer = findViewById(R.id.txt_question_right);
-//            txt_timer = findViewById(R.id.txt_timer);
-
-//            txt_timer.setVisibility(View.VISIBLE);
             txt_right_answer.setVisibility(View.VISIBLE);
-            txt_right_answer.setText(new StringBuilder(String.format("%d/%d", Common.right_answer_count, Common.questionList.size())));
-
-//            countTimer();
+            txt_right_answer.setText(new StringBuilder(String.format("%d/%d", QuizCommon.right_answer_count, QuizCommon.questionList.size())));
 
             //view
             answer_sheet_view = findViewById(R.id.grid_answer);
             answer_sheet_view.setHasFixedSize(true);
-            if(Common.questionList.size() > 5){ // if question list have size > 5, we will sperate 2 rows
-                answer_sheet_view.setLayoutManager(new GridLayoutManager(this, Common.questionList.size()/2));
+            if(QuizCommon.questionList.size() > 5){ // if question list have size > 5, we will sperate 2 rows
+                answer_sheet_view.setLayoutManager(new GridLayoutManager(this, QuizCommon.questionList.size()/2));
             }
-            answerSheetAdapter = new AnswerSheetAdapter(this, Common.answerSheetList);
+            answerSheetAdapter = new AnswerSheetAdapter(this, QuizCommon.answerSheetList);
             answer_sheet_view.setAdapter(answerSheetAdapter);
             
             viewPager = findViewById(R.id.quizViewpager);
             tabLayout = findViewById(R.id.sliding_tabs);
             
             genFragmentList();
-            QuestionFragmentsAdapter questionFragmentsAdapter = new QuestionFragmentsAdapter(getSupportFragmentManager(), this, Common.fragmentsList);
+            QuestionFragmentsAdapter questionFragmentsAdapter = new QuestionFragmentsAdapter(getSupportFragmentManager(), this, QuizCommon.fragmentsList);
             viewPager.setAdapter(questionFragmentsAdapter);
 
             tabLayout.setupWithViewPager(viewPager);
@@ -162,34 +166,34 @@ public class QuestionActivity extends AppCompatActivity
                     if(i > 0){
                         if(isScrollingRight()){
                             // get previous when user scroll right
-                            questionFragment = Common.fragmentsList.get(i-1);
+                            questionFragment = QuizCommon.fragmentsList.get(i-1);
                             position = i-1;
                         }
                         else if(isScrollingLeft()){
                             // get next when user scroll left
-                            questionFragment = Common.fragmentsList.get(i+1);
+                            questionFragment = QuizCommon.fragmentsList.get(i+1);
                             position = i+1;
                         }
                         else{
-                            questionFragment = Common.fragmentsList.get(position);
+                            questionFragment = QuizCommon.fragmentsList.get(position);
                         }
                     }
                     else{
-                        questionFragment = Common.fragmentsList.get(0);
+                        questionFragment = QuizCommon.fragmentsList.get(0);
                         position = 0;
                     }
 
                     //if you want to show correct answer, just call function here
                     CurrentQuestion question_state = questionFragment.getSelectedAnswer();
-                    Common.answerSheetList.set(position, question_state);
+                    QuizCommon.answerSheetList.set(position, question_state);
                     answerSheetAdapter.notifyDataSetChanged(); // change color in answer sheet
 
                     countCorrectAnswer();
-                    txt_right_answer.setText(new StringBuilder(String.format("%d", Common.right_answer_count))
+                    txt_right_answer.setText(new StringBuilder(String.format("%d", QuizCommon.right_answer_count))
                             .append("/")
-                            .append(String.format("%d", Common.questionList.size())).toString());
+                            .append(String.format("%d", QuizCommon.questionList.size())).toString());
 
-                    if(question_state.getType() != Common.ANSWER_TYPE.NO_ANSWER){
+                    if(question_state.getType() != QuizCommon.ANSWER_TYPE.NO_ANSWER){
                         questionFragment.showCorrectAnswer();
                         questionFragment.disableAnswer();
                     }
@@ -209,77 +213,83 @@ public class QuestionActivity extends AppCompatActivity
 
     private void countCorrectAnswer() {
         // reset variable
-        Common.right_answer_count = Common.wrong_answer_counnt = 0;
-        for(CurrentQuestion item : Common.answerSheetList){
-            if(item.getType() == Common.ANSWER_TYPE.RIGHT_ANSWER){
-                Common.right_answer_count++;
+        QuizCommon.right_answer_count = QuizCommon.wrong_answer_counnt = 0;
+        for(CurrentQuestion item : QuizCommon.answerSheetList){
+            if(item.getType() == QuizCommon.ANSWER_TYPE.RIGHT_ANSWER){
+                QuizCommon.right_answer_count++;
             }
-            else if(item.getType() == Common.ANSWER_TYPE.WRONG_ANSWER){
-                Common.wrong_answer_counnt++;
+            else if(item.getType() == QuizCommon.ANSWER_TYPE.WRONG_ANSWER){
+                QuizCommon.wrong_answer_counnt++;
             }
         }
     }
 
     private void genFragmentList() {
-        for(int i=0; i<Common.questionList.size(); ++i){
+        for(int i = 0; i< QuizCommon.questionList.size(); ++i){
             Bundle bundle = new Bundle();
             bundle.putInt("index", i);
             QuestionFragment fragment = new QuestionFragment();
             fragment.setArguments(bundle);
 
-            Common.fragmentsList.add(fragment);
+            QuizCommon.fragmentsList.add(fragment);
         }
     }
 
+    private void importQuestion(int level, int chapter){
+        StringBuilder quizName = new StringBuilder();
+        quizName.append("level");
+        quizName.append(Integer.toString(level));
+        quizName.append("chapter");
+        quizName.append(Integer.toString(chapter));
+        String jsonString = loadJsonFromAssert(quizName.toString());
+        List<Question> questionList = new ArrayList<>();
 
-    private void countTimer() {
-        if(Common.countDownTimer == null){
-            Common.countDownTimer = new CountDownTimer(Common.TOTAL_TIME, 1000) {
+        try{
+            JSONObject jsonObject = new JSONObject(jsonString);
+            JSONArray questions = jsonObject.getJSONArray("questions");
+            for(int i=0; i<questions.length(); ++i){
+                JSONObject questionObj = questions.getJSONObject(i);
 
-                @Override
-                public void onTick(long millisUntilFinished) {
-                    txt_timer.setText(String.format("%02d:%02d",
-                            TimeUnit.MILLISECONDS.toMinutes(1),
-                            TimeUnit.MILLISECONDS.toSeconds(1) -
-                                    TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(1))));
-                    time_play -= 1000;
-                }
+                String questionText = questionObj.getString("question");
+                int id = questionObj.getInt("id");
+                String answerA = questionObj.getString("answerA");
+                String answerB = questionObj.getString("answerB");
+                String answerC = questionObj.getString("answerC");
+                String answerD = questionObj.getString("answerD");
+                String correctAns = questionObj.getString("correct_answer");
+                questionList.add(new Question(id, questionText, answerA, answerB, answerC, answerD, correctAns));
+            }
 
-                @Override
-                public void onFinish() {
-
-                }
-            }.start();
+            QuizCommon.questionList = questionList;
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
-        else{
-            Common.countDownTimer.cancel();
-            Common.countDownTimer = new CountDownTimer(Common.TOTAL_TIME, 1000) {
+    }
 
-                @Override
-                public void onTick(long millisUntilFinished) {
-                    txt_timer.setText(String.format("%02d:%02d",
-                            TimeUnit.MILLISECONDS.toMinutes(1),
-                            TimeUnit.MILLISECONDS.toSeconds(1) -
-                                    TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(1))));
-                    time_play -= 1000;
-                }
-
-                @Override
-                public void onFinish() {
-
-                }
-            }.start();
+    private String loadJsonFromAssert(String file){
+        String json = "";
+        try{
+            InputStream inputStream = getAssets().open(file);
+            int size = inputStream.available();
+            byte[] buffer = new byte[size];
+            inputStream.read(buffer);
+            inputStream.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        return json;
     }
 
     private void takeQuestion() {
-        Common.questionList = DBhelper.getInstance(this).getQuestionByCategory(Common.selectedCategory.getId());
-        if(Common.questionList.size() == 0){
+        QuizCommon.questionList = DBhelper.getInstance(this).getQuestionByCategory(QuizCommon.selectedCategory.getId());
+
+        if(QuizCommon.questionList.size() == 0){
             //if there is no question
             new MaterialStyledDialog.Builder(this)
                     .setTitle("There is no question")
                     .setIcon(R.drawable.lb_ic_shuffle)
-                    .setDescription("We don't have any question in this" + Common.selectedCategory.getName() + " category")
+                    .setDescription("We don't have any question in this" + QuizCommon.selectedCategory.getName() + " category")
                     .setPositiveText("OK")
                     .onPositive(new MaterialDialog.SingleButtonCallback() {
                         @Override
@@ -292,12 +302,12 @@ public class QuestionActivity extends AppCompatActivity
         else {
             //generate answerSheet item from question
 
-            if(Common.answerSheetList.size() > 0){
-                Common.answerSheetList.clear();
+            if(QuizCommon.answerSheetList.size() > 0){
+                QuizCommon.answerSheetList.clear();
             }
 
-            for(int i=0; i<Common.questionList.size(); i++){
-                Common.answerSheetList.add(new CurrentQuestion(i, Common.ANSWER_TYPE.NO_ANSWER));
+            for(int i = 0; i< QuizCommon.questionList.size(); i++){
+                QuizCommon.answerSheetList.add(new CurrentQuestion(i, QuizCommon.ANSWER_TYPE.NO_ANSWER));
             }
         }
     }
