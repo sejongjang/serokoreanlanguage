@@ -178,7 +178,7 @@
                     make sure you can say them properly. Try recording yourself and then listening to the recording.</p>
 
                 <!--Audio record and playback-->
-                <select style="visibility:hidden;" id="encodingTypeSelect">
+                <select style="display:none;" id="encodingTypeSelect">
                     <option value="mp3">MP3 (MPEG-1 Audio Layer III) (.mp3)</option>
                 </select>
                 <p>
@@ -186,9 +186,9 @@
                         <button id="recordButton">Record</button>
                         <button id="stopButton" disabled>Stop</button>
                     </div>
-                    <div id="formats"></div>
-                    <h3>Log</h3>
-                    <pre id="log"></pre>
+                    <div style="display:none;" id="formats"></div>
+                    <h3 style="display:none;">Log</h3>
+                    <pre style="display:none;" id="log"></pre>
 
                     <h3>Recordings</h3>
                     <ol id="recordingsList"></ol>

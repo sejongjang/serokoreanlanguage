@@ -64,7 +64,7 @@ function startRecording() {
 		encodingTypeSelect.disabled = true;
 
 		recorder = new WebAudioRecorder(input, {
-		  workerDir: "js/", // must end with slash
+		  workerDir: "../../js/", // must end with slash
 		  encoding: encodingType,
 		  numChannels:2, //2 is the default, mp3 encoding supports only 2
 		  onEncoderLoading: function(recorder, encoding) {
@@ -134,10 +134,10 @@ function createDownloadLink(blob,encoding) {
 	au.controls = true;
 	au.src = url;
 
-	//link the a element to the blob
+/* 	//link the a element to the blob
 	link.href = url;
 	link.download = new Date().toISOString() + '.'+encoding;
-	link.innerHTML = link.download;
+	link.innerHTML = link.download; */
 
 	//add the new audio and a elements to the li element
 	li.appendChild(au);
