@@ -1,0 +1,81 @@
+{
+  "module": {
+    "number": 1,
+    "name": "chapter1 quiz",
+    "questions": 30,
+    "revision": "2019-10-13"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "type": "mc",
+      "number": 1,
+      "question": "quiz 1",
+      "answerA": "A",
+      "answerB": "B",
+      "answerC": "C",
+      "answerD": "D",
+      "correct_answer": "A"
+    },
+    {
+      "id": 2,
+      "number": 2,
+      "question": "quiz 2",
+      "answerA": "A",
+      "answerB": "B",
+      "answerC": "C",
+      "answerD": "D",
+      "correct_answer": "A"
+    },
+    {
+      "id": 2,
+      "number": 2,
+      "question": "quiz 3",
+      "answerA": "A",
+      "answerB": "B",
+      "answerC": "C",
+      "answerD": "D",
+      "correct_answer": "A"
+    },
+    {
+      "id": 2,
+      "number": 2,
+      "question": "quiz 4",
+      "answerA": "A",
+      "answerB": "B",
+      "answerC": "C",
+      "answerD": "D",
+      "correct_answer": "A"
+    },
+    {
+      "id": 2,
+      "number": 2,
+      "question": "quiz 5",
+      "answerA": "A",
+      "answerB": "B",
+      "answerC": "C",
+      "answerD": "D",
+      "correct_answer": "A"
+    },
+    {
+      "id": 2,
+      "number": 2,
+      "question": "quiz 6",
+      "answerA": "A",
+      "answerB": "B",
+      "answerC": "C",
+      "answerD": "D",
+      "correct_answer": "A"
+    },
+    {
+      "id": 2,
+      "number": 2,
+      "question": "quiz 7",
+      "answerA": "A",
+      "answerB": "B",
+      "answerC": "C",
+      "answerD": "D",
+      "correct_answer": "A"
+    }
+  ]
+}

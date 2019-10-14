@@ -99,7 +99,7 @@ function startRecording() {
 	  	//enable the record button if getUSerMedia() fails
     	recordButton.disabled = false;
     	stopButton.disabled = true;
-
+    	console.log("userMedia error " + err)
 	});
 
 	//disable the record button
