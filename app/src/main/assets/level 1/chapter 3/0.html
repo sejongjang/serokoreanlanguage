@@ -24,6 +24,13 @@
             <div class="msubheader">Tensed Consonants and Special Cases</div><br>
             <div class="mheadpara">
                 <p style="text-indent: 0; text-align: center;"><b>Chapter Insight</b></p>
+                <p>
+                    <ul>
+                        <li>Tensed Consonants</li>
+                        <li>Dipthongs (Compound Vowels)</li>
+                        <li>Sound Changes</li>
+                    </ul>
+                </p>
                 <p style="padding-left: 8px; padding-right: 8px;"><i>While 한글 is highly logical and extremely easy to
                         learn there are a few
                         more mysterious behaviors
@@ -169,10 +176,28 @@
                 <p style="padding-right: 10px">We've got four more of these tensed-consonants coming up, and you're
                     going to need to practice a lot to
                     make sure you can say them properly. Try recording yourself and then listening to the recording.</p>
-                <p>*ADD RECORDING AND LISTENING BACK FUNCTION*</p>
+
+                <!--Audio record and playback-->
+                <select style="visibility:hidden;" id="encodingTypeSelect">
+                    <option value="mp3">MP3 (MPEG-1 Audio Layer III) (.mp3)</option>
+                </select>
+                <p>
+                    <div id="controls">
+                        <button id="recordButton">Record</button>
+                        <button id="stopButton" disabled>Stop</button>
+                    </div>
+                    <div id="formats"></div>
+                    <h3>Log</h3>
+                    <pre id="log"></pre>
+
+                    <h3>Recordings</h3>
+                    <ol id="recordingsList"></ol>
+                </p>
             </div>
         </div>
     </div>
+    <script src="../../js/WebAudioRecorder.min.js"></script>
+    <script src="../../js/app.js"></script>
 </body>
 
 </html>
