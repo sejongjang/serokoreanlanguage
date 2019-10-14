@@ -241,6 +241,7 @@ public class QuestionActivity extends AppCompatActivity
         quizName.append(Integer.toString(level));
         quizName.append("chapter");
         quizName.append(Integer.toString(chapter));
+        quizName.append(".json");
         String jsonString = loadJsonFromAssert(quizName.toString());
         List<Question> questionList = new ArrayList<>();
 
@@ -261,6 +262,33 @@ public class QuestionActivity extends AppCompatActivity
             }
 
             QuizCommon.questionList = questionList;
+
+            if(QuizCommon.questionList.size() == 0){
+                //if there is no question
+                new MaterialStyledDialog.Builder(this)
+                        .setTitle("There is no question")
+                        .setIcon(R.drawable.lb_ic_shuffle)
+                        .setDescription("We don't have any question in this" + QuizCommon.selectedCategory.getName() + " category")
+                        .setPositiveText("OK")
+                        .onPositive(new MaterialDialog.SingleButtonCallback() {
+                            @Override
+                            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                dialog.dismiss();
+                                finish();
+                            }
+                        }).show();
+            }
+            else {
+                //generate answerSheet item from question
+
+                if(QuizCommon.answerSheetList.size() > 0){
+                    QuizCommon.answerSheetList.clear();
+                }
+
+                for(int i = 0; i< QuizCommon.questionList.size(); i++){
+                    QuizCommon.answerSheetList.add(new CurrentQuestion(i, QuizCommon.ANSWER_TYPE.NO_ANSWER));
+                }
+            }
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -281,36 +309,36 @@ public class QuestionActivity extends AppCompatActivity
         return json;
     }
 
-    private void takeQuestion() {
-        QuizCommon.questionList = DBhelper.getInstance(this).getQuestionByCategory(QuizCommon.selectedCategory.getId());
-
-        if(QuizCommon.questionList.size() == 0){
-            //if there is no question
-            new MaterialStyledDialog.Builder(this)
-                    .setTitle("There is no question")
-                    .setIcon(R.drawable.lb_ic_shuffle)
-                    .setDescription("We don't have any question in this" + QuizCommon.selectedCategory.getName() + " category")
-                    .setPositiveText("OK")
-                    .onPositive(new MaterialDialog.SingleButtonCallback() {
-                        @Override
-                        public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                            dialog.dismiss();
-                            finish();
-                        }
-                    }).show();
-        }
-        else {
-            //generate answerSheet item from question
-
-            if(QuizCommon.answerSheetList.size() > 0){
-                QuizCommon.answerSheetList.clear();
-            }
-
-            for(int i = 0; i< QuizCommon.questionList.size(); i++){
-                QuizCommon.answerSheetList.add(new CurrentQuestion(i, QuizCommon.ANSWER_TYPE.NO_ANSWER));
-            }
-        }
-    }
+//    private void takeQuestion() {
+//        QuizCommon.questionList = DBhelper.getInstance(this).getQuestionByCategory(QuizCommon.selectedCategory.getId());
+//
+//        if(QuizCommon.questionList.size() == 0){
+//            //if there is no question
+//            new MaterialStyledDialog.Builder(this)
+//                    .setTitle("There is no question")
+//                    .setIcon(R.drawable.lb_ic_shuffle)
+//                    .setDescription("We don't have any question in this" + QuizCommon.selectedCategory.getName() + " category")
+//                    .setPositiveText("OK")
+//                    .onPositive(new MaterialDialog.SingleButtonCallback() {
+//                        @Override
+//                        public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+//                            dialog.dismiss();
+//                            finish();
+//                        }
+//                    }).show();
+//        }
+//        else {
+//            //generate answerSheet item from question
+//
+//            if(QuizCommon.answerSheetList.size() > 0){
+//                QuizCommon.answerSheetList.clear();
+//            }
+//
+//            for(int i = 0; i< QuizCommon.questionList.size(); i++){
+//                QuizCommon.answerSheetList.add(new CurrentQuestion(i, QuizCommon.ANSWER_TYPE.NO_ANSWER));
+//            }
+//        }
+//    }
 
     @Override
     public void onBackPressed() {

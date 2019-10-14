@@ -151,6 +151,12 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
             lastPage = htmlFiles.get(numberOfPages-1);
 
             WebSettings settings = webView.getSettings();
+            settings.setAllowFileAccessFromFileURLs(true);
+            settings.setAllowUniversalAccessFromFileURLs(true);
+            settings.setMediaPlaybackRequiresUserGesture(false);
+            settings.setUseWideViewPort(true);
+            settings.setDomStorageEnabled(true);
+
             webView.setWebChromeClient(new WebChromeClient());
             webView.setScrollContainer(false);
             webView.setVerticalScrollBarEnabled(false);
@@ -167,10 +173,10 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
                 public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){
                     if(failingUrl.contains("chapter")){
                         //level1chapter1
-                        Bundle args = new Bundle();
-                        args.putInt("level", Integer.parseInt(failingUrl.substring(12,13)));
-                        args.putInt("chapter", Integer.parseInt(failingUrl.substring(20,21)));
+
                         Intent intent = new Intent(getActivity(), QuestionActivity.class); //ChapterOneQuiz.class
+                        intent.putExtra("level", Integer.parseInt(failingUrl.substring(12,13)));
+                        intent.putExtra("chapter", Integer.parseInt(failingUrl.substring(20,21)));
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                     }
@@ -184,10 +190,9 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
                     String url = request.getUrl().toString();
                     if(url.contains("chapter")){
 //                        Intent intent = new Intent(getActivity(), QuizCategories.class); //ChapterOneQuiz.class
-                        Bundle args = new Bundle();
-                        args.putInt("level", Integer.parseInt(url.substring(5,6)));
-                        args.putInt("chapter", Integer.parseInt(url.substring(13)));
                         Intent intent = new Intent(getActivity(), QuestionActivity.class); //ChapterOneQuiz.class
+                        intent.putExtra("level", Integer.parseInt(url.substring(5,6)));
+                        intent.putExtra("chapter", Integer.parseInt(url.substring(13)));
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                     }
