@@ -34,9 +34,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
-
-import koreanlearning.hangul.serokorean.beginnerone.quiz.DBhelper.DBhelper;
 import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.CurrentQuestion;
 import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.Question;
 import koreanlearning.hangul.serokorean.beginnerone.quiz.adapter.AnswerSheetAdapter;
@@ -46,14 +43,12 @@ import koreanlearning.hangul.serokorean.beginnerone.quiz.common.QuizCommon;
 public class QuestionActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    int time_play = QuizCommon.TOTAL_TIME;
-    boolean isAnswerModeView = false;
-    RecyclerView answer_sheet_view;
-    AnswerSheetAdapter answerSheetAdapter;
+    private RecyclerView answer_sheet_view;
+    private AnswerSheetAdapter answerSheetAdapter;
 
-    TextView txt_right_answer, txt_timer;
-    ViewPager viewPager;
-    TabLayout tabLayout;
+    private TextView txt_right_answer;
+    private ViewPager viewPager;
+    private TabLayout tabLayout;
 
     @Override
     protected void onDestroy() {
@@ -81,22 +76,21 @@ public class QuestionActivity extends AppCompatActivity
         fullScreencall();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle(QuizCommon.selectedCategory.getName());
-        setSupportActionBar(toolbar);
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-        navigationView.setNavigationItemSelectedListener(this);
+//        Toolbar toolbar = findViewById(R.id.toolbar);
+//        toolbar.setTitle(QuizCommon.selectedCategory.getName());
+//        setSupportActionBar(toolbar);
+//        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+//        NavigationView navigationView = findViewById(R.id.nav_view);
+//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+//        drawer.addDrawerListener(toggle);
+//        toggle.syncState();
+//        navigationView.setNavigationItemSelectedListener(this);
         
-        //take questions from DB
+        //take questions from JSON
         Bundle bundle = getIntent().getExtras();
         int level = bundle.getInt("level");
         int chapter = bundle.getInt("chapter");
-//        takeQuestion();
         importQuestion(level, chapter);
 
         if(QuizCommon.questionList.size() > 0){
@@ -280,7 +274,6 @@ public class QuestionActivity extends AppCompatActivity
             }
             else {
                 //generate answerSheet item from question
-
                 if(QuizCommon.answerSheetList.size() > 0){
                     QuizCommon.answerSheetList.clear();
                 }
@@ -309,46 +302,15 @@ public class QuestionActivity extends AppCompatActivity
         return json;
     }
 
-//    private void takeQuestion() {
-//        QuizCommon.questionList = DBhelper.getInstance(this).getQuestionByCategory(QuizCommon.selectedCategory.getId());
-//
-//        if(QuizCommon.questionList.size() == 0){
-//            //if there is no question
-//            new MaterialStyledDialog.Builder(this)
-//                    .setTitle("There is no question")
-//                    .setIcon(R.drawable.lb_ic_shuffle)
-//                    .setDescription("We don't have any question in this" + QuizCommon.selectedCategory.getName() + " category")
-//                    .setPositiveText("OK")
-//                    .onPositive(new MaterialDialog.SingleButtonCallback() {
-//                        @Override
-//                        public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-//                            dialog.dismiss();
-//                            finish();
-//                        }
-//                    }).show();
-//        }
-//        else {
-//            //generate answerSheet item from question
-//
-//            if(QuizCommon.answerSheetList.size() > 0){
-//                QuizCommon.answerSheetList.clear();
-//            }
-//
-//            for(int i = 0; i< QuizCommon.questionList.size(); i++){
-//                QuizCommon.answerSheetList.add(new CurrentQuestion(i, QuizCommon.ANSWER_TYPE.NO_ANSWER));
-//            }
+//    @Override
+//    public void onBackPressed() {
+//        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+//        if (drawer.isDrawerOpen(GravityCompat.START)) {
+//            drawer.closeDrawer(GravityCompat.START);
+//        } else {
+//            super.onBackPressed();
 //        }
 //    }
-
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -392,8 +354,39 @@ public class QuestionActivity extends AppCompatActivity
 
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+//        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+//        drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    //    private void takeQuestion() {
+//        QuizCommon.questionList = DBhelper.getInstance(this).getQuestionByCategory(QuizCommon.selectedCategory.getId());
+//
+//        if(QuizCommon.questionList.size() == 0){
+//            //if there is no question
+//            new MaterialStyledDialog.Builder(this)
+//                    .setTitle("There is no question")
+//                    .setIcon(R.drawable.lb_ic_shuffle)
+//                    .setDescription("We don't have any question in this" + QuizCommon.selectedCategory.getName() + " category")
+//                    .setPositiveText("OK")
+//                    .onPositive(new MaterialDialog.SingleButtonCallback() {
+//                        @Override
+//                        public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+//                            dialog.dismiss();
+//                            finish();
+//                        }
+//                    }).show();
+//        }
+//        else {
+//            //generate answerSheet item from question
+//
+//            if(QuizCommon.answerSheetList.size() > 0){
+//                QuizCommon.answerSheetList.clear();
+//            }
+//
+//            for(int i = 0; i< QuizCommon.questionList.size(); i++){
+//                QuizCommon.answerSheetList.add(new CurrentQuestion(i, QuizCommon.ANSWER_TYPE.NO_ANSWER));
+//            }
+//        }
+//    }
 }

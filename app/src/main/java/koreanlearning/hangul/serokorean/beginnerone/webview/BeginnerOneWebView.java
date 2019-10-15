@@ -17,8 +17,6 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toast;
-
 
 import com.hangul.serokorean.R;
 import java.util.ArrayList;
@@ -30,13 +28,9 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
 
     private SectionsPagerAdapter sectionsPagerAdapter;
     private CustomViewPager customViewPager;
-
     private int numberOfPages = 0;
-    private int currentPage = 0;
     private int currentChapterNum = 0;
     private String currentChapter = "";
-    private ArrayList<String> htmlFiles = new ArrayList<>();
-    private int isPrevious = 0;
 
     public void fullScreencall() {
         if(Build.VERSION.SDK_INT < 19){
@@ -169,30 +163,13 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
             });
 
             webView.setWebViewClient(new WebViewClient(){
-
-                public void onReceivedError(WebView view, int errorCode, String description, String failingUrl){
-                    if(failingUrl.contains("chapter")){
-                        //level1chapter1
-
-                        Intent intent = new Intent(getActivity(), QuestionActivity.class); //ChapterOneQuiz.class
-                        intent.putExtra("level", Integer.parseInt(failingUrl.substring(12,13)));
-                        intent.putExtra("chapter", Integer.parseInt(failingUrl.substring(20,21)));
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
-                    }
-                    else{
-                        Toast.makeText(getActivity(), "System error", Toast.LENGTH_SHORT).show();
-                    }
-                }
-
                 @Override
                 public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                     String url = request.getUrl().toString();
                     if(url.contains("chapter")){
-//                        Intent intent = new Intent(getActivity(), QuizCategories.class); //ChapterOneQuiz.class
                         Intent intent = new Intent(getActivity(), QuestionActivity.class); //ChapterOneQuiz.class
-                        intent.putExtra("level", Integer.parseInt(url.substring(5,6)));
-                        intent.putExtra("chapter", Integer.parseInt(url.substring(13)));
+                        intent.putExtra("level", Integer.parseInt(url.substring(12,13)));
+                        intent.putExtra("chapter", Integer.parseInt(url.substring(20,21)));
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                     }
