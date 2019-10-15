@@ -9,12 +9,14 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.hangul.serokorean.R;
 
 public class Welcome extends AppCompatActivity {
     private TextView tv;
+    private ImageView iv;
 
     //get rid of top status bar and bottom navigation bar
     public void fullScreencall() {
@@ -40,16 +42,16 @@ public class Welcome extends AppCompatActivity {
         setContentView(R.layout.welcome_main);
 
         //welcome page text, Sero Korean
-        tv = findViewById(R.id.tv);
-        //iv = findViewById(R.id.iv);
+//        tv = findViewById(R.id.tv);
+        iv = findViewById(R.id.iv);
 
         //set up welcome page font
-        Typeface customFont = Typeface.createFromAsset(getAssets(), "fonts/makgeolli.ttf");
-        tv.setTypeface(customFont);
+//        Typeface customFont = Typeface.createFromAsset(getAssets(), "fonts/makgeolli.ttf");
+//        tv.setTypeface(customFont);
 
         //wait for 2 seconds before the main page starts
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.loading);
-        tv.startAnimation(animation);
+        iv.startAnimation(animation);
         //iv.startAnimation(animation);
 
         final Intent intent = new Intent(this, MainActivity.class);
