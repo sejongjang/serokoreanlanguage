@@ -29,6 +29,7 @@ public class QuestionFragment extends Fragment implements IQuestion {
     CheckBox ckbA, ckbB, ckbC, ckbD;
     FrameLayout layout_image;
     ProgressBar progressBar;
+    Boolean isAlreadyVisited = false;
 
     Question question;
     int questionIndex = -1;
@@ -44,6 +45,14 @@ public class QuestionFragment extends Fragment implements IQuestion {
 
         fragment.setArguments(args);
         return fragment;
+    }
+
+    public Boolean getAlreadyVisited() {
+        return isAlreadyVisited;
+    }
+
+    public void setAlreadyVisited(Boolean alreadyVisited) {
+        isAlreadyVisited = alreadyVisited;
     }
 
     @Override

@@ -115,6 +115,7 @@ public class QuestionActivity extends AppCompatActivity
             genFragmentList();
             QuestionFragmentsAdapter questionFragmentsAdapter = new QuestionFragmentsAdapter(getSupportFragmentManager(), this, QuizCommon.fragmentsList);
             viewPager.setAdapter(questionFragmentsAdapter);
+            viewPager.setOffscreenPageLimit(QuizCommon.questionList.size()-1);
 
             tabLayout.setupWithViewPager(viewPager);
 
@@ -156,7 +157,7 @@ public class QuestionActivity extends AppCompatActivity
                 @Override
                 public void onPageSelected(int i) {
                     QuestionFragment questionFragment;
-                    int position = 0;
+                    int position = i;
                     if(i > 0){
                         if(isScrollingRight()){
                             // get previous when user scroll right
@@ -179,10 +180,14 @@ public class QuestionActivity extends AppCompatActivity
 
                     //if you want to show correct answer, just call function here
                     CurrentQuestion question_state = questionFragment.getSelectedAnswer();
-                    QuizCommon.answerSheetList.set(position, question_state);
-                    answerSheetAdapter.notifyDataSetChanged(); // change color in answer sheet
-
-                    countCorrectAnswer();
+                    if(!questionFragment.getAlreadyVisited()){
+                        QuizCommon.answerSheetList.set(position, question_state);
+                        answerSheetAdapter.notifyDataSetChanged();
+                        if(!question_state.getType().equals(QuizCommon.ANSWER_TYPE.NO_ANSWER)){
+                            questionFragment.setAlreadyVisited(true);// change color in answer sheet
+                        }
+                        countCorrectAnswer();
+                    }
                     txt_right_answer.setText(new StringBuilder(String.format("%d", QuizCommon.right_answer_count))
                             .append("/")
                             .append(String.format("%d", QuizCommon.questionList.size())).toString());
