@@ -116,11 +116,17 @@
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch1sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterOneSubtext"
                             android:textAlignment="center"
@@ -166,11 +172,17 @@
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch2sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterTwoSubtext"
                             android:textAlignment="center"
@@ -216,11 +228,17 @@
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch3sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterThreeSubtext"
                             android:textAlignment="center"
@@ -266,11 +284,17 @@
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch4sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterFourSubtext"
                             android:textAlignment="center"
@@ -317,11 +341,17 @@
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"/>
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch5sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterFiveSubtext"
                             android:textAlignment="center"
@@ -368,11 +398,17 @@
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"/>
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch6sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterSixSubtext"
                             android:textAlignment="center"
@@ -419,11 +455,17 @@
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch7sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterSevenSubtext"
                             android:textAlignment="center"
@@ -470,11 +512,17 @@
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch8sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterEightSubtext"
                             android:textAlignment="center"
@@ -521,11 +569,17 @@
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch9sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterNineSubtext"
                             android:textAlignment="center"
@@ -566,16 +620,22 @@
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
+                            android:layout_marginTop="15sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch10sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterTenSubtext"
                             android:textAlignment="center"
@@ -615,16 +675,22 @@
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
+                            android:layout_marginTop="15sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch11sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterElevenSubtext"
                             android:textAlignment="center"
@@ -664,16 +730,22 @@
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
+                            android:layout_marginTop="15sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch12sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterTwelveSubtext"
                             android:textAlignment="center"
@@ -713,16 +785,22 @@
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
+                            android:layout_marginTop="15sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch13sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterThirteenSubtext"
                             android:textAlignment="center"
@@ -762,16 +840,22 @@
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
+                            android:layout_marginTop="15sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch14sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterFourteenSubtext"
                             android:textAlignment="center"
@@ -811,16 +895,22 @@
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
+                            android:layout_marginTop="15sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch15sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterFifteenSubtext"
                             android:textAlignment="center"
@@ -860,16 +950,22 @@
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
+                            android:layout_marginTop="15sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch16sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterSixteenSubtext"
                             android:textAlignment="center"
@@ -909,10 +1005,27 @@
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
+                            android:layout_marginTop="15sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
+                        <TextView
+                            android:id="@+id/ch17sub"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:layout_marginTop="15px"
+                            android:text="@string/chapterSeventeenSubtext"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
@@ -947,16 +1060,22 @@
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
+                            android:layout_marginTop="15sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch18sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterEightSubtext"
                             android:textAlignment="center"
@@ -996,16 +1115,22 @@
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
+                            android:layout_marginTop="15sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch19sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterNineteenSubtext"
                             android:textAlignment="center"
@@ -1045,16 +1170,22 @@
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
+                            android:layout_marginTop="15sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch20sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterTwentySubtext"
                             android:textAlignment="center"
@@ -1094,16 +1225,21 @@
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
+                            android:layout_marginTop="15sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
 
                         <TextView
                             android:id="@+id/ch21sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterTwentyOneSubtext"
                             android:textAlignment="center"
@@ -1143,16 +1279,22 @@
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
+                            android:layout_marginTop="15sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch22sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterTwentyTwoSubtext"
                             android:textAlignment="center"
@@ -1192,16 +1334,22 @@
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
+                            android:layout_marginTop="15sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch23sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterTwentyThreeSubtext"
                             android:textAlignment="center"
@@ -1241,16 +1389,22 @@
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
+                            android:layout_marginTop="15sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch24sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterTwentyFourSubtext"
                             android:textAlignment="center"
@@ -1290,16 +1444,22 @@
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
+                            android:layout_marginTop="15sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch25sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterTwentyFiveSubtext"
                             android:textAlignment="center"
@@ -1339,16 +1499,22 @@
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
+                            android:layout_marginTop="15sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch26sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterTwentySixSubtext"
                             android:textAlignment="center"
@@ -1388,16 +1554,22 @@
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
+                            android:layout_marginTop="15sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch27sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterTwentySevenSubtext"
                             android:textAlignment="center"
@@ -1437,16 +1609,22 @@
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
+                            android:layout_marginTop="15sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch28sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterTwentyEightSubtext"
                             android:textAlignment="center"
@@ -1486,16 +1664,22 @@
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
+                            android:layout_marginTop="15sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch29sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterTwentyNineSubtext"
                             android:textAlignment="center"
@@ -1535,16 +1719,22 @@
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
+                            android:layout_marginTop="15sp"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:layout_marginTop="2sp"
+                            android:background="@android:color/white"/>
+
                         <TextView
                             android:id="@+id/ch30sub"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:layout_marginTop="15px"
                             android:text="@string/chapterThirtySubtext"
                             android:textAlignment="center"

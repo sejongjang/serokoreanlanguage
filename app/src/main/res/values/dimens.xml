@@ -9,5 +9,5 @@
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="chapter_card_text_size">18sp</dimen>
     <dimen name="chapter_card_subtext_size">15sp</dimen>
-    <dimen name="chapter_card_height">200dp</dimen>
+    <dimen name="chapter_card_height">210dp</dimen>
 </resources>
