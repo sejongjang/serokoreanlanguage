@@ -2,16 +2,16 @@ package koreanlearning.hangul.serokorean.utility;
 
 public class NumOfPages {
     private static int CHAPTER_INTRO_NUM_OF_PAGE = 6;
-    private static int CHAPTER_ONE_NUM_OF_PAGE = 17;
-    private static int CHAPTER_TWO_NUM_OF_PAGE = 9;
-    private static int CHAPTER_THREE_NUM_OF_PAGE = 7;
-    private static int CHAPTER_FOUR_NUM_OF_PAGE = 4;
-    private static int CHAPTER_FIVE_NUM_OF_PAGE = 6;
-    private static int CHAPTER_SIX_NUM_OF_PAGE = 11;
-    private static int CHAPTER_SEVEN_NUM_OF_PAGE = 6;
-    private static int CHAPTER_EIGHT_NUM_OF_PAGE = 4;
-    private static int CHAPTER_NINE_NUM_OF_PAGE = 7;
-    private static int CHAPTER_TEN_NUM_OF_PAGE = 7;
+    private static int CHAPTER_ONE_NUM_OF_PAGE = 18;
+    private static int CHAPTER_TWO_NUM_OF_PAGE = 10;
+    private static int CHAPTER_THREE_NUM_OF_PAGE = 8;
+    private static int CHAPTER_FOUR_NUM_OF_PAGE = 5;
+    private static int CHAPTER_FIVE_NUM_OF_PAGE = 7;
+    private static int CHAPTER_SIX_NUM_OF_PAGE = 12;
+    private static int CHAPTER_SEVEN_NUM_OF_PAGE = 7;
+    private static int CHAPTER_EIGHT_NUM_OF_PAGE = 5;
+    private static int CHAPTER_NINE_NUM_OF_PAGE = 8;
+    private static int CHAPTER_TEN_NUM_OF_PAGE = 8;
 
     public NumOfPages() {
     }

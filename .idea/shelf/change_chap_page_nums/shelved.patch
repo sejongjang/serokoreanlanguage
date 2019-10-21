@@ -1,0 +1,36 @@
+Index: app/src/main/java/koreanlearning/hangul/serokorean/utility/NumOfPages.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package koreanlearning.hangul.serokorean.utility;\n\npublic class NumOfPages {\n    private static int CHAPTER_INTRO_NUM_OF_PAGE = 6;\n    private static int CHAPTER_ONE_NUM_OF_PAGE = 17;\n    private static int CHAPTER_TWO_NUM_OF_PAGE = 9;\n    private static int CHAPTER_THREE_NUM_OF_PAGE = 7;\n    private static int CHAPTER_FOUR_NUM_OF_PAGE = 4;\n    private static int CHAPTER_FIVE_NUM_OF_PAGE = 6;\n    private static int CHAPTER_SIX_NUM_OF_PAGE = 11;\n    private static int CHAPTER_SEVEN_NUM_OF_PAGE = 6;\n    private static int CHAPTER_EIGHT_NUM_OF_PAGE = 4;\n    private static int CHAPTER_NINE_NUM_OF_PAGE = 7;\n    private static int CHAPTER_TEN_NUM_OF_PAGE = 7;\n\n    public NumOfPages() {\n    }\n\n    public static int getChapterIntroNumOfPage() {\n        return CHAPTER_INTRO_NUM_OF_PAGE;\n    }\n\n    public static void setChapterIntroNumOfPage(int chapterIntroNumOfPage) {\n        CHAPTER_INTRO_NUM_OF_PAGE = chapterIntroNumOfPage;\n    }\n\n    public static int getChapterOneNumOfPage() {\n        return CHAPTER_ONE_NUM_OF_PAGE;\n    }\n\n    public static void setChapterOneNumOfPage(int chapterOneNumOfPage) {\n        CHAPTER_ONE_NUM_OF_PAGE = chapterOneNumOfPage;\n    }\n\n    public static int getChapterTwoNumOfPage() {\n        return CHAPTER_TWO_NUM_OF_PAGE;\n    }\n\n    public static void setChapterTwoNumOfPage(int chapterTwoNumOfPage) {\n        CHAPTER_TWO_NUM_OF_PAGE = chapterTwoNumOfPage;\n    }\n\n    public static int getChapterThreeNumOfPage() {\n        return CHAPTER_THREE_NUM_OF_PAGE;\n    }\n\n    public static void setChapterThreeNumOfPage(int chapterThreeNumOfPage) {\n        CHAPTER_THREE_NUM_OF_PAGE = chapterThreeNumOfPage;\n    }\n\n    public static int getChapterFourNumOfPage() {\n        return CHAPTER_FOUR_NUM_OF_PAGE;\n    }\n\n    public static void setChapterFourNumOfPage(int chapterFourNumOfPage) {\n        CHAPTER_FOUR_NUM_OF_PAGE = chapterFourNumOfPage;\n    }\n\n    public static int getChapterFiveNumOfPage() {\n        return CHAPTER_FIVE_NUM_OF_PAGE;\n    }\n\n    public static void setChapterFiveNumOfPage(int chapterFiveNumOfPage) {\n        CHAPTER_FIVE_NUM_OF_PAGE = chapterFiveNumOfPage;\n    }\n\n    public static int getChapterSixNumOfPage() {\n        return CHAPTER_SIX_NUM_OF_PAGE;\n    }\n\n    public static void setChapterSixNumOfPage(int chapterSixNumOfPage) {\n        CHAPTER_SIX_NUM_OF_PAGE = chapterSixNumOfPage;\n    }\n\n    public static int getChapterSevenNumOfPage() {\n        return CHAPTER_SEVEN_NUM_OF_PAGE;\n    }\n\n    public static void setChapterSevenNumOfPage(int chapterSevenNumOfPage) {\n        CHAPTER_SEVEN_NUM_OF_PAGE = chapterSevenNumOfPage;\n    }\n\n    public static int getChapterEightNumOfPage() {\n        return CHAPTER_EIGHT_NUM_OF_PAGE;\n    }\n\n    public static void setChapterEightNumOfPage(int chapterEightNumOfPage) {\n        CHAPTER_EIGHT_NUM_OF_PAGE = chapterEightNumOfPage;\n    }\n\n    public static int getChapterNineNumOfPage() {\n        return CHAPTER_NINE_NUM_OF_PAGE;\n    }\n\n    public static void setChapterNineNumOfPage(int chapterNineNumOfPage) {\n        CHAPTER_NINE_NUM_OF_PAGE = chapterNineNumOfPage;\n    }\n\n    public static int getChapterTenNumOfPage() {\n        return CHAPTER_TEN_NUM_OF_PAGE;\n    }\n\n    public static void setChapterTenNumOfPage(int chapterTenNumOfPage) {\n        CHAPTER_TEN_NUM_OF_PAGE = chapterTenNumOfPage;\n    }\n\n    public static int detectTheNumberOfPages(String chapter){\n        switch (chapter){\n            case \"1\": return NumOfPages.getChapterOneNumOfPage();\n            case \"2\": return NumOfPages.getChapterTwoNumOfPage();\n            case \"3\": return NumOfPages.getChapterThreeNumOfPage();\n            case \"4\": return NumOfPages.getChapterFourNumOfPage();\n            case \"5\": return NumOfPages.getChapterFiveNumOfPage();\n            case \"6\": return NumOfPages.getChapterSixNumOfPage();\n            case \"7\": return NumOfPages.getChapterSevenNumOfPage();\n            case \"8\": return NumOfPages.getChapterEightNumOfPage();\n            case \"9\": return NumOfPages.getChapterNineNumOfPage();\n            case \"10\": return NumOfPages.getChapterTenNumOfPage();\n            //TODO: add the number of pages here\n            case \"11\": return 20;\n            case \"12\": return 20;\n            case \"13\": return 20;\n            case \"14\": return 20;\n            case \"15\": return 20;\n            case \"16\": return 20;\n            case \"17\": return 20;\n            case \"18\": return 20;\n            case \"19\": return 20;\n            case \"20\": return 20;\n            case \"21\": return 20;\n            case \"22\": return 20;\n            case \"23\": return 20;\n            case \"24\": return 20;\n            case \"25\": return 20;\n            case \"26\": return 20;\n            case \"27\": return 20;\n            case \"28\": return 20;\n            case \"29\": return 20;\n            case \"30\": return 20;\n        }\n        return 0;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/koreanlearning/hangul/serokorean/utility/NumOfPages.java	(revision 88de6251cc888e7700119dde53ea1fcf7371062e)
++++ app/src/main/java/koreanlearning/hangul/serokorean/utility/NumOfPages.java	(date 1571637092000)
+@@ -2,16 +2,16 @@
+ 
+ public class NumOfPages {
+     private static int CHAPTER_INTRO_NUM_OF_PAGE = 6;
+-    private static int CHAPTER_ONE_NUM_OF_PAGE = 17;
+-    private static int CHAPTER_TWO_NUM_OF_PAGE = 9;
+-    private static int CHAPTER_THREE_NUM_OF_PAGE = 7;
+-    private static int CHAPTER_FOUR_NUM_OF_PAGE = 4;
+-    private static int CHAPTER_FIVE_NUM_OF_PAGE = 6;
+-    private static int CHAPTER_SIX_NUM_OF_PAGE = 11;
+-    private static int CHAPTER_SEVEN_NUM_OF_PAGE = 6;
+-    private static int CHAPTER_EIGHT_NUM_OF_PAGE = 4;
+-    private static int CHAPTER_NINE_NUM_OF_PAGE = 7;
+-    private static int CHAPTER_TEN_NUM_OF_PAGE = 7;
++    private static int CHAPTER_ONE_NUM_OF_PAGE = 18;
++    private static int CHAPTER_TWO_NUM_OF_PAGE = 10;
++    private static int CHAPTER_THREE_NUM_OF_PAGE = 8;
++    private static int CHAPTER_FOUR_NUM_OF_PAGE = 5;
++    private static int CHAPTER_FIVE_NUM_OF_PAGE = 7;
++    private static int CHAPTER_SIX_NUM_OF_PAGE = 12;
++    private static int CHAPTER_SEVEN_NUM_OF_PAGE = 7;
++    private static int CHAPTER_EIGHT_NUM_OF_PAGE = 5;
++    private static int CHAPTER_NINE_NUM_OF_PAGE = 8;
++    private static int CHAPTER_TEN_NUM_OF_PAGE = 8;
+ 
+     public NumOfPages() {
+     }
