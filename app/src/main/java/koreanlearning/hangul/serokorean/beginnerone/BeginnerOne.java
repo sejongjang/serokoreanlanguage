@@ -3,6 +3,7 @@ package koreanlearning.hangul.serokorean.beginnerone;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -21,6 +22,8 @@ public class BeginnerOne extends AppCompatActivity implements BottomNavigationVi
     private Vocab vocab = new Vocab();
     private FAQ faq = new FAQ();
     private More more = new More();
+    private ViewPager viewPager;
+    private MenuItem prevMenuItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,44 @@ public class BeginnerOne extends AppCompatActivity implements BottomNavigationVi
         if(savedInstanceState == null){
             bottomNavigationView.setSelectedItemId(R.id.home);
         }
+
+        viewPager = findViewById(R.id.beginnerone_viewpager);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                if (prevMenuItem != null) {
+                    prevMenuItem.setChecked(false);
+                } else {
+                    bottomNavigationView.getMenu().getItem(0).setChecked(false);
+                }
+                bottomNavigationView.getMenu().getItem(position).setChecked(true);
+                prevMenuItem = bottomNavigationView.getMenu().getItem(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
+            }
+        });
+        setupViewPager(viewPager);
+    }
+
+    private void setupViewPager(ViewPager viewPager) {
+        BeginnerOneViewPagerAdapter viewPagerAdapter = new BeginnerOneViewPagerAdapter(getSupportFragmentManager());
+        home = new Home();
+        vocab = new Vocab();
+        faq = new FAQ();
+        more = new More();
+        viewPagerAdapter.addFragment(home);
+        viewPagerAdapter.addFragment(vocab);
+        viewPagerAdapter.addFragment(faq);
+        viewPagerAdapter.addFragment(more);
+        viewPager.setAdapter(viewPagerAdapter);
     }
 
     @Override
