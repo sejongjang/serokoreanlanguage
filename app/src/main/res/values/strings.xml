@@ -19,13 +19,13 @@
     <string name="chapterTwo">Chapter 2</string>
     <string name="chapterTwoSubtext">Mixing in the Vowels</string>
     <string name="chapterThree">Chapter 3</string>
-    <string name="chapterThreeSubtext">Tensed sounds and dipthongs</string>
+    <string name="chapterThreeSubtext">Tensed sounds and diphthongs</string>
     <string name="chapterFour">Chapter 4</string>
     <string name="chapterFourSubtext">The Korean Wave</string>
     <string name="chapterFive">Chapter 5</string>
     <string name="chapterFiveSubtext">The verb "to be"</string>
     <string name="chapterSix">Chapter 6</string>
-    <string name="chapterSixSubtext">Let's learn some greetings</string>
+    <string name="chapterSixSubtext">Let\'s learn some greetings</string>
     <string name="chapterSeven">Chapter 7</string>
     <string name="chapterSevenSubtext">Existence and the subject marker</string>
     <string name="chapterEight">Chapter 8</string>
@@ -45,7 +45,7 @@
     <string name="chapterFifteen">Chapter 15</string>
     <string name="chapterFifteenSubtext">Verbs part 2: negation, change, and exceptions </string>
     <string name="chapterSixteen">Chapter 16</string>
-    <string name="chapterSixteenSubtext">Get hungry, it's the food chapter</string>
+    <string name="chapterSixteenSubtext">Get hungry, it\'s the food chapter</string>
     <string name="chapterSeventeen">Chapter 17</string>
     <string name="chapterSeventeenSubtext">Getting around with directions</string>
     <string name="chapterEighteen">Chapter 18</string>
@@ -59,7 +59,7 @@
     <string name="chapterTwentyTwo">Chapter 22</string>
     <string name="chapterTwentyTwoSubtext">Names and titles</string>
     <string name="chapterTwentyThree">Chapter 23</string>
-    <string name="chapterTwentyThreeSubtext">Possesives and "of"</string>
+    <string name="chapterTwentyThreeSubtext">Possessives and "of"</string>
     <string name="chapterTwentyFour">Chapter 24</string>
     <string name="chapterTwentyFourSubtext">Causation and "because"</string>
     <string name="chapterTwentyFive">Chapter 25</string>
