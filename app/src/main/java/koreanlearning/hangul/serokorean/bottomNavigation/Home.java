@@ -54,7 +54,7 @@ public class Home extends Fragment {
             }
         });
 
-        Typeface customFont = Typeface.createFromAsset(getActivity().getAssets(), "fonts/makgeolli.ttf");
+        Typeface customFont = Typeface.createFromAsset(getActivity().getAssets(), "fonts/helvetica.ttf");
         changeFont(view, customFont);
 
         mainGrid = view.findViewById(R.id.mainGrid);

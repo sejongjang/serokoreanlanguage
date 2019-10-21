@@ -10,8 +10,8 @@ public class Search extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setStatusBarColor(Color.parseColor("#c0000000"));
-        getWindow().setNavigationBarColor(Color.parseColor("#c0000000"));
+        getWindow().setStatusBarColor(Color.parseColor("#1e1e1e"));
+        getWindow().setNavigationBarColor(Color.parseColor("#1e1e1e"));
         setContentView(R.layout.activity_search);
 
 

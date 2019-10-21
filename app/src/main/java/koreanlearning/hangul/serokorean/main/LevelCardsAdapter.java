@@ -2,7 +2,9 @@ package koreanlearning.hangul.serokorean.main;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
@@ -58,7 +60,7 @@ public class LevelCardsAdapter extends PagerAdapter {
         title.setText(levelCards.get(position).getTitle());
         desc.setText(levelCards.get(position).getDesc());
 
-        Typeface customFont = Typeface.createFromAsset(view.getContext().getAssets(), "fonts/flowerroad.ttf");
+        Typeface customFont = Typeface.createFromAsset(view.getContext().getAssets(), "fonts/helvetica.ttf");
         title.setTypeface(customFont);
         desc.setTypeface(customFont);
 

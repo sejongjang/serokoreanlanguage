@@ -23,5 +23,6 @@
     <color name="darkThemeLight">#252526</color>
     <color name="darkThemeLight2">#383838</color>
     <color name="darkThemeText">#e2e2e2</color>
+    <color name="darkThemeHighlight">#F19F4D</color>
 
 </resources>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
-    <background android:drawable="@drawable/chp2_back"/>
-    <foreground android:drawable="@mipmap/chp2_fore"/>
+    <background android:drawable="@color/lv1_chp2_background"/>
+    <foreground android:drawable="@mipmap/lv1_chp2_foreground"/>
 </adaptive-icon>

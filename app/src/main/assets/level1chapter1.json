@@ -9,6 +9,7 @@
     {
       "id": 1,
       "type": "mc",
+      "category": "letter",
       "number": 1,
       "question": "quiz 1",
       "answerA": "Apple",
