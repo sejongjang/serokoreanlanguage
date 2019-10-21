@@ -14,7 +14,7 @@ import koreanlearning.hangul.serokorean.bottomNavigation.Home;
 import koreanlearning.hangul.serokorean.bottomNavigation.More;
 import koreanlearning.hangul.serokorean.bottomNavigation.Vocab;
 
-public class BeginnerOne extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
+public class BeginnerOne extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
 
@@ -35,12 +35,33 @@ public class BeginnerOne extends AppCompatActivity implements BottomNavigationVi
         setContentView(R.layout.activity_beginner_one);
 
         bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+//        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.home:
+                        viewPager.setCurrentItem(0);
+                        break;
+                    case R.id.vocab:
+                        viewPager.setCurrentItem(1);
+                        break;
+                    case R.id.FAQ:
+                        viewPager.setCurrentItem(2);
+                        break;
+                    case R.id.more:
+                        viewPager.setCurrentItem(3);
+                        break;
+                }
+
+                return false;
+            }
+        });
 
         //set default fragment only when the activity begins
-        if(savedInstanceState == null){
-            bottomNavigationView.setSelectedItemId(R.id.home);
-        }
+//        if(savedInstanceState == null){
+//            bottomNavigationView.setSelectedItemId(R.id.home);
+//        }
 
         viewPager = findViewById(R.id.beginnerone_viewpager);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -81,32 +102,48 @@ public class BeginnerOne extends AppCompatActivity implements BottomNavigationVi
         viewPager.setAdapter(viewPagerAdapter);
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item){
-
-        for (int i = 0; i < bottomNavigationView.getMenu().size(); i++) {
-            MenuItem menuItem = bottomNavigationView.getMenu().getItem(i);
-            boolean isChecked = menuItem.getItemId() == item.getItemId();
-            menuItem.setChecked(isChecked);
-        }
-
-        //switch fragments
-        switch(item.getItemId()){
-            case R.id.home:
-                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, home).commit();
-                //.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left)
-                return true;
-            case R.id.vocab:
-                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, vocab).commit();
-                return true;
-            case R.id.FAQ:
-                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, faq).commit();
-                return true;
-            case R.id.more:
-                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, more).commit();
-                return true;
-
-        }
-        return true;
-    }
+//    @Override
+//    public boolean onNavigationItemSelected(@NonNull MenuItem item){
+//
+//        switch(item.getItemId()){
+//            case R.id.home:
+//                viewPager.setCurrentItem(0);
+//                return true;
+//            case R.id.vocab:
+//                viewPager.setCurrentItem(1);
+//                return true;
+//            case R.id.FAQ:
+//                viewPager.setCurrentItem(2);
+//                return true;
+//            case R.id.more:
+//                viewPager.setCurrentItem(3);
+//                return true;
+//
+//        }
+//
+////        for (int i = 0; i < bottomNavigationView.getMenu().size(); i++) {
+////            MenuItem menuItem = bottomNavigationView.getMenu().getItem(i);
+////            boolean isChecked = menuItem.getItemId() == item.getItemId();
+////            menuItem.setChecked(isChecked);
+////        }
+////
+////        //switch fragments
+////        switch(item.getItemId()){
+////            case R.id.home:
+////                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, home).commit();
+////                //.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left)
+////                return true;
+////            case R.id.vocab:
+////                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, vocab).commit();
+////                return true;
+////            case R.id.FAQ:
+////                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, faq).commit();
+////                return true;
+////            case R.id.more:
+////                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, more).commit();
+////                return true;
+////
+////        }
+//        return true;
+//    }
 }

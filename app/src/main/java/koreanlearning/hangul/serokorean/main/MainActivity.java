@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         //change top status bar and bottom naviation bar color change
         getWindow().setStatusBarColor(Color.parseColor("#1e1e1e"));
-        getWindow().setNavigationBarColor(Color.parseColor("#1e1e1e"));
+        getWindow().setNavigationBarColor(Color.parseColor("#383838"));
 
         //setContentView matches the Java file and Xml file
         //view pager is declared in activity_main
