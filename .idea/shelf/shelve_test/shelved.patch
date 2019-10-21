@@ -1,0 +1,17 @@
+Index: app/src/main/java/koreanlearning/hangul/serokorean/main/Welcome.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package koreanlearning.hangul.serokorean.main;\n\nimport android.content.Intent;\nimport android.graphics.Typeface;\nimport android.os.Build;\nimport android.support.v7.app.AppCompatActivity;\nimport android.os.Bundle;\nimport android.view.View;\nimport android.view.WindowManager;\nimport android.view.animation.Animation;\nimport android.view.animation.AnimationUtils;\nimport android.widget.ImageView;\nimport android.widget.TextView;\n\nimport com.hangul.serokorean.R;\n\npublic class Welcome extends AppCompatActivity {\n    private TextView tv;\n    private ImageView iv;\n\n    //get rid of top status bar and bottom navigation bar\n    public void fullScreencall() {\n        if(Build.VERSION.SDK_INT < 19){\n            View v = this.getWindow().getDecorView();\n            v.setSystemUiVisibility(View.GONE);\n        } else {\n            //for higher api versions.\n            View decorView = getWindow().getDecorView();\n            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;\n            decorView.setSystemUiVisibility(uiOptions);\n            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);\n        }\n    }\n\n    //application starts from here.\n    //initiate first activity can be changed in manifests setting\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        //callFullScreenCall and set up View before it sets up on onCreate\n        fullScreencall();\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.welcome_main);\n\n        //welcome page text, Sero Korean\n//        tv = findViewById(R.id.tv);\n        iv = findViewById(R.id.iv);\n\n        //set up welcome page font\n//        Typeface customFont = Typeface.createFromAsset(getAssets(), \"fonts/makgeolli.ttf\");\n//        tv.setTypeface(customFont);\n\n        //wait for 2 seconds before the main page starts\n        Animation animation = AnimationUtils.loadAnimation(this, R.anim.loading);\n        iv.startAnimation(animation);\n        //iv.startAnimation(animation);\n\n        final Intent intent = new Intent(this, MainActivity.class);\n\n        Thread timer = new Thread() {\n            public void run() {\n                try {\n                    sleep(2000);\n                } catch (InterruptedException e) {\n                    e.printStackTrace();\n                } finally {\n                    startActivity(intent);\n                    finish();\n                }\n            }\n        };\n        timer.start();\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/koreanlearning/hangul/serokorean/main/Welcome.java	(revision 1cb4a90622215d658a41ec3514c97ce04a2463dd)
++++ app/src/main/java/koreanlearning/hangul/serokorean/main/Welcome.java	(date 1571642707000)
+@@ -29,6 +29,7 @@
+             int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+             decorView.setSystemUiVisibility(uiOptions);
+             getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
++            // test
+         }
+     }
+ 
