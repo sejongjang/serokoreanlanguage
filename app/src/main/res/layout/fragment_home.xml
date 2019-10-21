@@ -7,12 +7,9 @@
     tools:context="koreanlearning.hangul.serokorean.bottomNavigation.Home">
 
     <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@color/darkTheme"
         tools:context="koreanlearning.hangul.serokorean.beginnerone.BeginnerOne">
 
         <LinearLayout
@@ -30,13 +27,14 @@
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/intro"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="8dp">
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardBackgroundColor="#252526"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -55,11 +53,11 @@
                             android:id="@+id/introduction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
                             android:text="Introduction"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
-                            android:textSize="17dp"
-                            android:fontFamily="sans-serif" />
+                            android:textColor="@android:color/white"
+                            android:textSize="17dp" />
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
 
@@ -82,126 +80,134 @@
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/chapter1"
-                    android:layout_gravity="fill"
                     android:layout_width="0dp"
-                    android:layout_weight="0.5"
                     android:layout_height="@dimen/chapter_card_height"
-                    android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
                     android:layout_margin="20dp"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="8dp">
+                    android:layout_weight="0.5"
+                    app:cardBackgroundColor="#252526"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp">
 
                     <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal|center_vertical"
                         android:layout_margin="16dp"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:orientation="vertical">
 
                         <ImageView
-                            android:src="@mipmap/lv1_chp1"
-                            android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:background="#FFFFFF"
+                            android:src="@mipmap/chp1" />
 
                         <TextView
                             android:id="@+id/ch1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="15px"
                             android:text="@string/chapterOne"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
-                            android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/chapter_card_text_size" />
 
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
+
                 <android.support.v7.widget.CardView
-                    android:layout_gravity="fill"
                     android:layout_width="0dp"
-                    android:layout_weight="0.5"
                     android:layout_height="@dimen/chapter_card_height"
-                    android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
                     android:layout_margin="20dp"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="8dp">
+                    android:layout_weight="0.5"
+                    app:cardBackgroundColor="#252526"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp">
 
                     <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal|center_vertical"
                         android:layout_margin="16dp"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:orientation="vertical">
 
                         <ImageView
-                            android:src="@mipmap/lv1_chp2"
-                            android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@mipmap/lv1_chp2" />
 
                         <TextView
                             android:id="@+id/ch2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="15px"
                             android:text="@string/chapterTwo"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
-                            android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/chapter_card_text_size" />
                     </LinearLayout>
 
                 </android.support.v7.widget.CardView>
+
                 <android.support.v7.widget.CardView
-                    android:layout_gravity="fill"
                     android:layout_width="0dp"
-                    android:layout_weight="0.5"
                     android:layout_height="@dimen/chapter_card_height"
-                    android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
                     android:layout_margin="20dp"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="8dp">
+                    android:layout_weight="0.5"
+                    app:cardBackgroundColor="#252526"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp">
 
                     <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal|center_vertical"
                         android:layout_margin="16dp"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:orientation="vertical">
 
                         <ImageView
-                            android:src="@mipmap/lv1_chp3"
-                            android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@mipmap/lv1_chp3" />
 
                         <TextView
                             android:id="@+id/ch3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="15px"
                             android:text="@string/chapterThree"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
-                            android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/chapter_card_text_size" />
                     </LinearLayout>
 
                 </android.support.v7.widget.CardView>
+
                 <android.support.v7.widget.CardView
-                    android:layout_gravity="fill"
                     android:layout_width="0dp"
-                    android:layout_weight="0.5"
                     android:layout_height="@dimen/chapter_card_height"
-                    android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
                     android:layout_margin="20dp"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="8dp">
+                    android:layout_weight="0.5"
+                    app:cardBackgroundColor="#262626"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -224,7 +230,207 @@
                             android:layout_marginTop="15px"
                             android:text="@string/chapterFour"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/chapter_card_text_size" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/chapter_card_height"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:layout_margin="20dp"
+                    android:layout_weight="0.5"
+                    app:cardBackgroundColor="#262626"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@mipmap/lv1_chp5" />
+
+                        <TextView
+                            android:id="@+id/ch5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="15px"
+                            android:text="@string/chapterFive"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/chapter_card_text_size" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/chapter_card_height"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:layout_margin="20dp"
+                    android:layout_weight="0.5"
+                    app:cardBackgroundColor="#262626"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@mipmap/lv1_chp6" />
+
+                        <TextView
+                            android:id="@+id/ch6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="15px"
+                            android:text="@string/chapterSix"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/chapter_card_text_size" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/chapter_card_height"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:layout_margin="20dp"
+                    android:layout_weight="0.5"
+                    app:cardBackgroundColor="#262626"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@mipmap/lv1_chp7" />
+
+                        <TextView
+                            android:id="@+id/ch7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="15px"
+                            android:text="@string/chapterSeven"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/chapter_card_text_size" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/chapter_card_height"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:layout_margin="20dp"
+                    android:layout_weight="0.5"
+                    app:cardBackgroundColor="#262626"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@mipmap/lv1_chp8" />
+
+                        <TextView
+                            android:id="@+id/ch8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="15px"
+                            android:text="@string/chapterEight"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/chapter_card_text_size" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/chapter_card_height"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="fill"
+                    android:layout_margin="20dp"
+                    android:layout_weight="0.5"
+                    app:cardBackgroundColor="#262626"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@mipmap/lv1_chp9" />
+
+                        <TextView
+                            android:id="@+id/ch9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="15px"
+                            android:text="@string/chapterNine"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size" />
 
                     </LinearLayout>
@@ -238,196 +444,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_margin="20dp"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="8dp">
-
-                    <LinearLayout
-                        android:layout_gravity="center_horizontal|center_vertical"
-                        android:layout_margin="16dp"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:src="@mipmap/lv1_chp5" />
-
-                        <TextView
-                            android:id="@+id/ch5"
-                            android:text="@string/chapterFive"
-                            android:textAlignment="center"
-                            android:textColor="@android:color/black"
-                            android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
-                    android:layout_gravity="fill"
-                    android:layout_width="0dp"
-                    android:layout_weight="0.5"
-                    android:layout_height="@dimen/chapter_card_height"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:layout_margin="20dp"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="8dp">
-
-                    <LinearLayout
-                        android:layout_gravity="center_horizontal|center_vertical"
-                        android:layout_margin="16dp"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:src="@mipmap/lv1_chp6"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <TextView
-                            android:id="@+id/ch6"
-                            android:text="@string/chapterSix"
-                            android:textAlignment="center"
-                            android:textColor="@android:color/black"
-                            android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
-                    android:layout_gravity="fill"
-                    android:layout_width="0dp"
-                    android:layout_weight="0.5"
-                    android:layout_height="@dimen/chapter_card_height"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:layout_margin="20dp"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="8dp">
-
-                    <LinearLayout
-                        android:layout_gravity="center_horizontal|center_vertical"
-                        android:layout_margin="16dp"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:src="@mipmap/lv1_chp7"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <TextView
-                            android:id="@+id/ch7"
-                            android:text="@string/chapterSeven"
-                            android:textAlignment="center"
-                            android:textColor="@android:color/black"
-                            android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
-                    android:layout_gravity="fill"
-                    android:layout_width="0dp"
-                    android:layout_weight="0.5"
-                    android:layout_height="@dimen/chapter_card_height"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:layout_margin="20dp"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="8dp">
-
-                    <LinearLayout
-                        android:layout_gravity="center_horizontal|center_vertical"
-                        android:layout_margin="16dp"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:src="@mipmap/lv1_chp8"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <TextView
-                            android:id="@+id/ch8"
-                            android:text="@string/chapterEight"
-                            android:textAlignment="center"
-                            android:textColor="@android:color/black"
-                            android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
-                    android:layout_gravity="fill"
-                    android:layout_width="0dp"
-                    android:layout_weight="0.5"
-                    android:layout_height="@dimen/chapter_card_height"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:layout_margin="20dp"
-                    app:cardElevation="8dp"
-                    app:cardCornerRadius="8dp">
-
-                    <LinearLayout
-                        android:layout_gravity="center_horizontal|center_vertical"
-                        android:layout_margin="16dp"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:src="@mipmap/lv1_chp9"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                        <TextView
-                            android:id="@+id/ch9"
-                            android:text="@string/chapterNine"
-                            android:textAlignment="center"
-                            android:textColor="@android:color/black"
-                            android:textSize="@dimen/chapter_card_text_size"
-                            android:layout_marginTop="15px"
-                            android:layout_gravity="center_horizontal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
-                    android:layout_gravity="fill"
-                    android:layout_width="0dp"
-                    android:layout_weight="0.5"
-                    android:layout_height="@dimen/chapter_card_height"
-                    android:layout_columnWeight="1"
-                    android:layout_rowWeight="1"
-                    android:layout_margin="20dp"
+                    app:cardBackgroundColor="#262626"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp">
 
@@ -448,7 +465,7 @@
                             android:id="@+id/ch10"
                             android:text="@string/chapterTen"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
                             android:layout_marginTop="15px"
                             android:layout_gravity="center_horizontal"
@@ -465,6 +482,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_margin="20dp"
+                    app:cardBackgroundColor="#262626"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp">
 
@@ -485,7 +503,7 @@
                             android:id="@+id/ch11"
                             android:text="@string/chapterEleven"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
                             android:layout_marginTop="15px"
                             android:layout_gravity="center_horizontal"
@@ -501,6 +519,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_margin="20dp"
+                    app:cardBackgroundColor="#262626"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp">
 
@@ -521,7 +540,7 @@
                             android:id="@+id/ch12"
                             android:text="@string/chapterTwelve"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
                             android:layout_marginTop="15px"
                             android:layout_gravity="center_horizontal"
@@ -537,6 +556,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_margin="20dp"
+                    app:cardBackgroundColor="#262626"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp">
 
@@ -557,7 +577,7 @@
                             android:id="@+id/ch13"
                             android:text="@string/chapterThirteen"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
                             android:layout_marginTop="15px"
                             android:layout_gravity="center_horizontal"
@@ -573,6 +593,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_margin="20dp"
+                    app:cardBackgroundColor="#262626"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp">
 
@@ -593,7 +614,7 @@
                             android:id="@+id/ch14"
                             android:text="@string/chapterFourteen"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
                             android:layout_marginTop="15px"
                             android:layout_gravity="center_horizontal"
@@ -609,6 +630,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_margin="20dp"
+                    app:cardBackgroundColor="#262626"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp">
 
@@ -629,7 +651,7 @@
                             android:id="@+id/ch15"
                             android:text="@string/chapterFifteen"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
                             android:layout_marginTop="15px"
                             android:layout_gravity="center_horizontal"
@@ -645,6 +667,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_margin="20dp"
+                    app:cardBackgroundColor="#262626"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp">
 
@@ -665,7 +688,7 @@
                             android:id="@+id/ch16"
                             android:text="@string/chapterSixteen"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
                             android:layout_marginTop="15px"
                             android:layout_gravity="center_horizontal"
@@ -681,6 +704,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_margin="20dp"
+                    app:cardBackgroundColor="#262626"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp">
 
@@ -701,7 +725,7 @@
                             android:id="@+id/ch17"
                             android:text="@string/chapterSeventeen"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
                             android:layout_marginTop="15px"
                             android:layout_gravity="center_horizontal"
@@ -718,6 +742,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_margin="20dp"
+                    app:cardBackgroundColor="#262626"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp">
 
@@ -738,7 +763,7 @@
                             android:id="@+id/ch18"
                             android:text="@string/chapterEighteen"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
                             android:layout_marginTop="15px"
                             android:layout_gravity="center_horizontal"
@@ -754,6 +779,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_margin="20dp"
+                    app:cardBackgroundColor="#262626"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp">
 
@@ -774,7 +800,7 @@
                             android:id="@+id/ch19"
                             android:text="@string/chapterNineteen"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
                             android:layout_marginTop="15px"
                             android:layout_gravity="center_horizontal"
@@ -790,6 +816,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_margin="20dp"
+                    app:cardBackgroundColor="#262626"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp">
 
@@ -810,7 +837,7 @@
                             android:id="@+id/ch20"
                             android:text="@string/chapterTwenty"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
                             android:layout_marginTop="15px"
                             android:layout_gravity="center_horizontal"
@@ -826,6 +853,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_margin="20dp"
+                    app:cardBackgroundColor="#262626"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp">
 
@@ -846,7 +874,7 @@
                             android:id="@+id/ch21"
                             android:text="@string/chapterTwentyOne"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
                             android:layout_marginTop="15px"
                             android:layout_gravity="center_horizontal"
@@ -862,6 +890,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_margin="20dp"
+                    app:cardBackgroundColor="#262626"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp">
 
@@ -882,7 +911,7 @@
                             android:id="@+id/ch22"
                             android:text="@string/chapterTwentyTwo"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
                             android:layout_marginTop="15px"
                             android:layout_gravity="center_horizontal"
@@ -898,6 +927,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_margin="20dp"
+                    app:cardBackgroundColor="#262626"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp">
 
@@ -918,7 +948,7 @@
                             android:id="@+id/ch23"
                             android:text="@string/chapterTwentyThree"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
                             android:layout_marginTop="15px"
                             android:layout_gravity="center_horizontal"
@@ -934,6 +964,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_margin="20dp"
+                    app:cardBackgroundColor="#262626"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp">
 
@@ -954,7 +985,7 @@
                             android:id="@+id/ch24"
                             android:text="@string/chapterTwentyFour"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
                             android:layout_marginTop="15px"
                             android:layout_gravity="center_horizontal"
@@ -970,6 +1001,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_margin="20dp"
+                    app:cardBackgroundColor="#262626"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp">
 
@@ -990,7 +1022,7 @@
                             android:id="@+id/ch25"
                             android:text="@string/chapterTwentyFive"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
                             android:layout_marginTop="15px"
                             android:layout_gravity="center_horizontal"
@@ -1006,6 +1038,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_margin="20dp"
+                    app:cardBackgroundColor="#262626"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp">
 
@@ -1026,7 +1059,7 @@
                             android:id="@+id/ch26"
                             android:text="@string/chapterTwentySix"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
                             android:layout_marginTop="15px"
                             android:layout_gravity="center_horizontal"
@@ -1042,6 +1075,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_margin="20dp"
+                    app:cardBackgroundColor="#262626"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp">
 
@@ -1062,7 +1096,7 @@
                             android:id="@+id/ch27"
                             android:text="@string/chapterTwentySeven"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
                             android:layout_marginTop="15px"
                             android:layout_gravity="center_horizontal"
@@ -1078,6 +1112,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_margin="20dp"
+                    app:cardBackgroundColor="#262626"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp">
 
@@ -1098,7 +1133,7 @@
                             android:id="@+id/ch28"
                             android:text="@string/chapterTwentyEight"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
                             android:layout_marginTop="15px"
                             android:layout_gravity="center_horizontal"
@@ -1114,6 +1149,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_margin="20dp"
+                    app:cardBackgroundColor="#262626"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp">
 
@@ -1134,7 +1170,7 @@
                             android:id="@+id/ch29"
                             android:text="@string/chapterTwentyNine"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
                             android:layout_marginTop="15px"
                             android:layout_gravity="center_horizontal"
@@ -1150,6 +1186,7 @@
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
                     android:layout_margin="20dp"
+                    app:cardBackgroundColor="#262626"
                     app:cardElevation="8dp"
                     app:cardCornerRadius="8dp">
 
@@ -1170,7 +1207,7 @@
                             android:id="@+id/ch30"
                             android:text="@string/chapterThirty"
                             android:textAlignment="center"
-                            android:textColor="@android:color/black"
+                            android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size"
                             android:layout_marginTop="15px"
                             android:layout_gravity="center_horizontal"

@@ -5,9 +5,9 @@
     "questions": 30,
     "revision": "2019-10-13"
   },
-  "questions": [
+  "vocab": [
     {
-      "id": 1,
+      "id": "chapter1",
       "type": "mc",
       "number": 1,
       "question": "quiz 1",
