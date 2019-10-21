@@ -1,2324 +1,0 @@
-Index: app/src/main/res/layout/activity_chapter_one_quiz.xml
-===================================================================
---- app/src/main/res/layout/activity_chapter_one_quiz.xml	(revision f0d0487ae6a5a6cd5b46fc4e49728fe7272b9471)
-+++ app/src/main/res/layout/activity_chapter_one_quiz.xml	(revision f0d0487ae6a5a6cd5b46fc4e49728fe7272b9471)
-@@ -1,17 +0,0 @@
--<?xml version="1.0" encoding="utf-8"?>
--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
--    xmlns:app="http://schemas.android.com/apk/res-auto"
--    xmlns:tools="http://schemas.android.com/tools"
--    android:layout_width="match_parent"
--    android:layout_height="match_parent"
--    tools:context="koreanlearning.hangul.serokorean.beginnerone.quiz.ChapterOneQuiz">
--
--    <FrameLayout
--        android:id="@+id/QuizOneContainer"
--        android:layout_width="match_parent"
--        android:layout_height="match_parent"
--        app:layout_constraintEnd_toEndOf="parent"
--        app:layout_constraintStart_toStartOf="parent"
--        app:layout_constraintTop_toTopOf="parent"/>
--
--</android.support.constraint.ConstraintLayout>
-\ No newline at end of file
-Index: app/src/main/res/menu/question.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/menu/question.xml	(date 1568772114000)
-+++ app/src/main/res/menu/question.xml	(date 1568772114000)
-@@ -0,0 +1,9 @@
-+<?xml version="1.0" encoding="utf-8"?>
-+<menu xmlns:android="http://schemas.android.com/apk/res/android"
-+    xmlns:app="http://schemas.android.com/apk/res-auto">
-+    <item
-+        android:id="@+id/action_settings"
-+        android:orderInCategory="100"
-+        android:title="@string/action_settings"
-+        app:showAsAction="never" />
-+</menu>
-Index: app/src/main/res/drawable/grid_question_no_answer.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/drawable/grid_question_no_answer.xml	(date 1569218497000)
-+++ app/src/main/res/drawable/grid_question_no_answer.xml	(date 1569218497000)
-@@ -0,0 +1,4 @@
-+<?xml version="1.0" encoding="utf-8"?>
-+<shape xmlns:android="http://schemas.android.com/apk/res/android">
-+    <solid android:color="@color/white"></solid>
-+</shape>
-\ No newline at end of file
-Index: app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/Model/Question.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/Model/Question.java	(date 1569131022000)
-+++ app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/Model/Question.java	(date 1569131022000)
-@@ -0,0 +1,104 @@
-+package koreanlearning.hangul.serokorean.beginnerone.quiz.Model;
-+
-+public class Question {
-+    private int id;
-+    private String QuestionText, questionImage, answerA, answerB, answerC, answerD, correctAnswer;
-+    private boolean isImageQuestion;
-+    private int categoryId;
-+
-+    public Question() {
-+    }
-+
-+    public Question(int id, String questionText, String questionImage, String answerA, String answerB, String answerC, String answerD, String correctAnswer, boolean isImageQuestion, int categoryId) {
-+        this.id = id;
-+        QuestionText = questionText;
-+        this.questionImage = questionImage;
-+        this.answerA = answerA;
-+        this.answerB = answerB;
-+        this.answerC = answerC;
-+        this.answerD = answerD;
-+        this.correctAnswer = correctAnswer;
-+        this.isImageQuestion = isImageQuestion;
-+        this.categoryId = categoryId;
-+    }
-+
-+    public int getId() {
-+        return id;
-+    }
-+
-+    public void setId(int id) {
-+        this.id = id;
-+    }
-+
-+    public String getQuestionText() {
-+        return QuestionText;
-+    }
-+
-+    public void setQuestionText(String questionText) {
-+        QuestionText = questionText;
-+    }
-+
-+    public String getQuestionImage() {
-+        return questionImage;
-+    }
-+
-+    public void setQuestionImage(String questionImage) {
-+        this.questionImage = questionImage;
-+    }
-+
-+    public String getAnswerA() {
-+        return answerA;
-+    }
-+
-+    public void setAnswerA(String answerA) {
-+        this.answerA = answerA;
-+    }
-+
-+    public String getAnswerB() {
-+        return answerB;
-+    }
-+
-+    public void setAnswerB(String answerB) {
-+        this.answerB = answerB;
-+    }
-+
-+    public String getAnswerC() {
-+        return answerC;
-+    }
-+
-+    public void setAnswerC(String answerC) {
-+        this.answerC = answerC;
-+    }
-+
-+    public String getAnswerD() {
-+        return answerD;
-+    }
-+
-+    public void setAnswerD(String answerD) {
-+        this.answerD = answerD;
-+    }
-+
-+    public String getCorrectAnswer() {
-+        return correctAnswer;
-+    }
-+
-+    public void setCorrectAnswer(String correctAnswer) {
-+        this.correctAnswer = correctAnswer;
-+    }
-+
-+    public boolean isImageQuestion() {
-+        return isImageQuestion;
-+    }
-+
-+    public void setImageQuestion(boolean imageQuestion) {
-+        isImageQuestion = imageQuestion;
-+    }
-+
-+    public int getCategoryId() {
-+        return categoryId;
-+    }
-+
-+    public void setCategoryId(int categoryId) {
-+        this.categoryId = categoryId;
-+    }
-+}
-Index: app/src/main/res/layout/activity_question.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/layout/activity_question.xml	(date 1568778882000)
-+++ app/src/main/res/layout/activity_question.xml	(date 1568778882000)
-@@ -0,0 +1,41 @@
-+<?xml version="1.0" encoding="utf-8"?>
-+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-+    xmlns:app="http://schemas.android.com/apk/res-auto"
-+    xmlns:tools="http://schemas.android.com/tools"
-+    android:id="@+id/drawer_layout"
-+    android:layout_width="match_parent"
-+    android:layout_height="match_parent"
-+    android:fitsSystemWindows="true"
-+    tools:openDrawer="start">
-+
-+    <include
-+        layout="@layout/app_bar_question"
-+        android:layout_width="match_parent"
-+        android:layout_height="match_parent" />
-+
-+    <android.support.design.widget.NavigationView
-+        android:id="@+id/nav_view"
-+        android:layout_width="wrap_content"
-+        android:layout_height="match_parent"
-+        android:layout_gravity="start"
-+        android:fitsSystemWindows="true"
-+        app:headerLayout="@layout/nav_header_question"
-+        />
-+
-+    <!--<android.support.v7.widget.RecyclerView-->
-+        <!--android:id="@+id/answer_sheet"-->
-+        <!--android:layout_marginTop="24dp"-->
-+        <!--android:layout_width="match_parent"-->
-+        <!--android:layout_height="wrap_content">-->
-+
-+    <!--</android.support.v7.widget.RecyclerView>-->
-+
-+    <!--<Button-->
-+        <!--android:id="@+id/btn_done"-->
-+        <!--android:layout_margin="16dp"-->
-+        <!--android:layout_below="@+id/answer_sheet"-->
-+        <!--android:text="done"-->
-+        <!--android:layout_width="match_parent"-->
-+        <!--android:layout_height="wrap_content" />-->
-+
-+</android.support.v4.widget.DrawerLayout>
-Index: app/src/main/res/layout/layout_grid_answer_sheet_item.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/layout/layout_grid_answer_sheet_item.xml	(date 1568776710000)
-+++ app/src/main/res/layout/layout_grid_answer_sheet_item.xml	(date 1568776710000)
-@@ -0,0 +1,17 @@
-+<?xml version="1.0" encoding="utf-8"?>
-+<RelativeLayout
-+    xmlns:android="http://schemas.android.com/apk/res/android"
-+    android:padding="1dp"
-+    android:layout_width="wrap_content"
-+    android:layout_height="wrap_content">
-+
-+    <View
-+        android:id="@+id/question_item"
-+        android:background="@drawable/grid_question_no_answer"
-+        android:layout_width="10dp"
-+        android:layout_height="10dp"
-+        >
-+
-+    </View>
-+
-+</RelativeLayout>
-\ No newline at end of file
-Index: app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/adapter/AnswerSheetAdapter.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/adapter/AnswerSheetAdapter.java	(date 1569219207000)
-+++ app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/adapter/AnswerSheetAdapter.java	(date 1569219207000)
-@@ -0,0 +1,58 @@
-+package koreanlearning.hangul.serokorean.beginnerone.quiz.adapter;
-+
-+import android.content.Context;
-+import android.support.annotation.NonNull;
-+import android.support.v7.widget.RecyclerView;
-+import android.view.LayoutInflater;
-+import android.view.View;
-+import android.view.ViewGroup;
-+
-+import com.hangul.serokorean.R;
-+
-+import java.util.List;
-+
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.CurrentQuestion;
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.common.Common;
-+
-+public class AnswerSheetAdapter extends RecyclerView.Adapter<AnswerSheetAdapter.MyViewHolder> {
-+    Context context;
-+    List<CurrentQuestion> currentQuestionList;
-+
-+    public AnswerSheetAdapter(Context context, List<CurrentQuestion> currentQuestionList) {
-+        this.context = context;
-+        this.currentQuestionList = currentQuestionList;
-+    }
-+
-+    @NonNull
-+    @Override
-+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-+        View itemView = LayoutInflater.from(context).inflate(R.layout.layout_grid_answer_sheet_item, viewGroup, false);
-+        return new MyViewHolder(itemView);
-+    }
-+
-+    @Override
-+    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-+        if(currentQuestionList.get(i).getType() == Common.ANSWER_TYPE.RIGHT_ANSWER){
-+            myViewHolder.question_item.setBackgroundResource(R.drawable.grid_question_right_answer);
-+        }
-+        else if(currentQuestionList.get(i).getType() == Common.ANSWER_TYPE.WRONG_ANSWER){
-+            myViewHolder.question_item.setBackgroundResource(R.drawable.grid_question_wrong_answer);
-+        }
-+        else if(currentQuestionList.get(i).getType() == Common.ANSWER_TYPE.NO_ANSWER){
-+            myViewHolder.question_item.setBackgroundResource(R.drawable.grid_question_no_answer);
-+        }
-+    }
-+
-+    @Override
-+    public int getItemCount() {
-+        return currentQuestionList.size();
-+    }
-+
-+    public class MyViewHolder extends RecyclerView.ViewHolder {
-+        View question_item;
-+        public MyViewHolder(View itemView){
-+            super(itemView);
-+            question_item = itemView.findViewById(R.id.question_item);
-+        }
-+    }
-+}
-Index: app/src/main/res/drawable/grid_question_wrong_answer.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/drawable/grid_question_wrong_answer.xml	(date 1568776505000)
-+++ app/src/main/res/drawable/grid_question_wrong_answer.xml	(date 1568776505000)
-@@ -0,0 +1,4 @@
-+<?xml version="1.0" encoding="utf-8"?>
-+<shape xmlns:android="http://schemas.android.com/apk/res/android">
-+    <solid android:color="@android:color/holo_red_light"></solid>
-+</shape>
-\ No newline at end of file
-Index: app/src/main/res/layout/app_bar_question.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/layout/app_bar_question.xml	(date 1568772709000)
-+++ app/src/main/res/layout/app_bar_question.xml	(date 1568772709000)
-@@ -0,0 +1,25 @@
-+<?xml version="1.0" encoding="utf-8"?>
-+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-+    xmlns:app="http://schemas.android.com/apk/res-auto"
-+    xmlns:tools="http://schemas.android.com/tools"
-+    android:layout_width="match_parent"
-+    android:layout_height="match_parent"
-+    tools:context="koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity">
-+
-+    <android.support.design.widget.AppBarLayout
-+        android:layout_width="match_parent"
-+        android:layout_height="wrap_content"
-+        android:theme="@style/AppTheme.AppBarOverLay">
-+
-+        <android.support.v7.widget.Toolbar
-+            android:id="@+id/toolbar"
-+            android:layout_width="match_parent"
-+            android:layout_height="?attr/actionBarSize"
-+            android:background="?attr/colorPrimary"
-+            app:popupTheme="@style/AppTheme.PopupOverLay" />
-+
-+    </android.support.design.widget.AppBarLayout>
-+
-+    <include layout="@layout/content_question" />
-+
-+</android.support.design.widget.CoordinatorLayout>
-\ No newline at end of file
-Index: app/src/main/res/drawable/grid_question_right_answer.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/drawable/grid_question_right_answer.xml	(date 1568776560000)
-+++ app/src/main/res/drawable/grid_question_right_answer.xml	(date 1568776560000)
-@@ -0,0 +1,4 @@
-+<?xml version="1.0" encoding="utf-8"?>
-+<shape xmlns:android="http://schemas.android.com/apk/res/android">
-+    <solid android:color="@android:color/holo_green_light"></solid>
-+</shape>
-\ No newline at end of file
-Index: app/src/main/res/menu/activity_question_drawer.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/menu/activity_question_drawer.xml	(date 1568772113000)
-+++ app/src/main/res/menu/activity_question_drawer.xml	(date 1568772113000)
-@@ -0,0 +1,38 @@
-+<?xml version="1.0" encoding="utf-8"?>
-+<menu xmlns:android="http://schemas.android.com/apk/res/android"
-+    xmlns:tools="http://schemas.android.com/tools"
-+    tools:showIn="navigation_view">
-+
-+    <group android:checkableBehavior="single">
-+        <item
-+            android:id="@+id/nav_home"
-+            android:icon="@drawable/ic_menu_camera"
-+            android:title="@string/menu_home" />
-+        <item
-+            android:id="@+id/nav_gallery"
-+            android:icon="@drawable/ic_menu_gallery"
-+            android:title="@string/menu_gallery" />
-+        <item
-+            android:id="@+id/nav_slideshow"
-+            android:icon="@drawable/ic_menu_slideshow"
-+            android:title="@string/menu_slideshow" />
-+        <item
-+            android:id="@+id/nav_tools"
-+            android:icon="@drawable/ic_menu_manage"
-+            android:title="@string/menu_tools" />
-+    </group>
-+
-+    <item android:title="Communicate">
-+        <menu>
-+            <item
-+                android:id="@+id/nav_share"
-+                android:icon="@drawable/ic_menu_share"
-+                android:title="@string/menu_share" />
-+            <item
-+                android:id="@+id/nav_send"
-+                android:icon="@drawable/ic_menu_send"
-+                android:title="@string/menu_send" />
-+        </menu>
-+    </item>
-+
-+</menu>
-Index: app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/Model/CurrentQuestion.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/Model/CurrentQuestion.java	(date 1568777589000)
-+++ app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/Model/CurrentQuestion.java	(date 1568777589000)
-@@ -0,0 +1,29 @@
-+package koreanlearning.hangul.serokorean.beginnerone.quiz.Model;
-+
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.common.Common;
-+
-+public class CurrentQuestion {
-+    private int questionIndex;
-+    private Common.ANSWER_TYPE type;
-+
-+    public CurrentQuestion(int questionIndex, Common.ANSWER_TYPE type) {
-+        this.questionIndex = questionIndex;
-+        this.type = type;
-+    }
-+
-+    public int getQuestionIndex() {
-+        return questionIndex;
-+    }
-+
-+    public void setQuestionIndex(int questionIndex) {
-+        this.questionIndex = questionIndex;
-+    }
-+
-+    public Common.ANSWER_TYPE getType() {
-+        return type;
-+    }
-+
-+    public void setType(Common.ANSWER_TYPE type) {
-+        this.type = type;
-+    }
-+}
-Index: app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/QuestionActivity.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/QuestionActivity.java	(date 1569218948000)
-+++ app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/QuestionActivity.java	(date 1569218948000)
-@@ -0,0 +1,361 @@
-+package koreanlearning.hangul.serokorean.beginnerone.quiz;
-+
-+import android.os.Build;
-+import android.os.Bundle;
-+import android.os.CountDownTimer;
-+import android.support.annotation.NonNull;
-+import android.support.design.widget.FloatingActionButton;
-+import android.support.design.widget.Snackbar;
-+import android.support.design.widget.TabLayout;
-+import android.support.v4.view.ViewPager;
-+import android.support.v7.widget.GridLayoutManager;
-+import android.support.v7.widget.RecyclerView;
-+import android.view.View;
-+import android.support.v4.view.GravityCompat;
-+import android.support.v7.app.ActionBarDrawerToggle;
-+import android.view.MenuItem;
-+import android.support.design.widget.NavigationView;
-+import android.support.v4.widget.DrawerLayout;
-+
-+import android.support.v7.app.AppCompatActivity;
-+import android.support.v7.widget.Toolbar;
-+import android.view.Menu;
-+import android.view.WindowManager;
-+import android.widget.TableLayout;
-+import android.widget.TextView;
-+
-+import com.afollestad.materialdialogs.DialogAction;
-+import com.afollestad.materialdialogs.MaterialDialog;
-+import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog;
-+import com.hangul.serokorean.R;
-+
-+import java.util.concurrent.TimeUnit;
-+
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.DBhelper.DBhelper;
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.CurrentQuestion;
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.Question;
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.adapter.AnswerSheetAdapter;
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.adapter.QuestionFragmentsAdapter;
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.common.Common;
-+
-+public class QuestionActivity extends AppCompatActivity
-+        implements NavigationView.OnNavigationItemSelectedListener {
-+
-+    int time_play = Common.TOTAL_TIME;
-+    boolean isAnswerModeView = false;
-+    RecyclerView answer_sheet_view;
-+    AnswerSheetAdapter answerSheetAdapter;
-+
-+    TextView txt_right_answer, txt_timer;
-+    ViewPager viewPager;
-+    TabLayout tabLayout;
-+
-+    @Override
-+    protected void onDestroy() {
-+        if(Common.countDownTimer != null){
-+            Common.countDownTimer.cancel();
-+        }
-+        super.onDestroy();
-+    }
-+
-+    public void fullScreencall() {
-+        if(Build.VERSION.SDK_INT < 19){
-+            View v = this.getWindow().getDecorView();
-+            v.setSystemUiVisibility(View.GONE);
-+        } else {
-+            //for higher api versions.
-+            View decorView = getWindow().getDecorView();
-+            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
-+            decorView.setSystemUiVisibility(uiOptions);
-+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-+        }
-+    }
-+
-+    @Override
-+    protected void onCreate(Bundle savedInstanceState) {
-+        fullScreencall();
-+        super.onCreate(savedInstanceState);
-+        setContentView(R.layout.activity_question);
-+        Toolbar toolbar = findViewById(R.id.toolbar);
-+        toolbar.setTitle(Common.selectedCategory.getName());
-+        setSupportActionBar(toolbar);
-+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-+        NavigationView navigationView = findViewById(R.id.nav_view);
-+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-+        drawer.addDrawerListener(toggle);
-+        toggle.syncState();
-+        navigationView.setNavigationItemSelectedListener(this);
-+        
-+        //take questions from DB
-+        takeQuestion();
-+
-+        if(Common.questionList.size() > 0){
-+
-+            //show textView right answer and textView timer
-+            txt_right_answer = findViewById(R.id.txt_question_right);
-+//            txt_timer = findViewById(R.id.txt_timer);
-+
-+//            txt_timer.setVisibility(View.VISIBLE);
-+            txt_right_answer.setVisibility(View.VISIBLE);
-+            txt_right_answer.setText(new StringBuilder(String.format("%d/%d", Common.right_answer_count, Common.questionList.size())));
-+
-+//            countTimer();
-+
-+            //view
-+            answer_sheet_view = findViewById(R.id.grid_answer);
-+            answer_sheet_view.setHasFixedSize(true);
-+            if(Common.questionList.size() > 5){ // if question list have size > 5, we will sperate 2 rows
-+                answer_sheet_view.setLayoutManager(new GridLayoutManager(this, Common.questionList.size()/2));
-+            }
-+            answerSheetAdapter = new AnswerSheetAdapter(this, Common.answerSheetList);
-+            answer_sheet_view.setAdapter(answerSheetAdapter);
-+            
-+            viewPager = findViewById(R.id.quizViewpager);
-+            tabLayout = findViewById(R.id.sliding_tabs);
-+            
-+            genFragmentList();
-+            QuestionFragmentsAdapter questionFragmentsAdapter = new QuestionFragmentsAdapter(getSupportFragmentManager(), this, Common.fragmentsList);
-+            viewPager.setAdapter(questionFragmentsAdapter);
-+
-+            tabLayout.setupWithViewPager(viewPager);
-+
-+            // event
-+            viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-+                int SCROLLINNG_RIGHT = 0;
-+                int SCROLLINNG_LEFT = 1;
-+                int SCROLLINNG_UNDETERMINDED = 2;
-+                int currentScrollDirection = 2;
-+
-+                private void setScrollingDirection(float positionOffset){
-+                    if((1-positionOffset) >= 0.5){
-+                        this.currentScrollDirection = SCROLLINNG_RIGHT;
-+                    }
-+                    else if((1-positionOffset) <= 0.5){
-+                        this.currentScrollDirection = SCROLLINNG_LEFT;
-+                    }
-+                }
-+
-+                private boolean isScrollDirectionUndetermined(){
-+                    return currentScrollDirection == SCROLLINNG_UNDETERMINDED;
-+                }
-+
-+                private boolean isScrollingRight(){
-+                    return currentScrollDirection == SCROLLINNG_RIGHT;
-+                }
-+
-+                private boolean isScrollingLeft(){
-+                    return currentScrollDirection == SCROLLINNG_LEFT;
-+                }
-+
-+                @Override
-+                public void onPageScrolled(int i, float v, int i1) {
-+                    if(isScrollDirectionUndetermined()){
-+                        setScrollingDirection(v);
-+                    }
-+                }
-+
-+                @Override
-+                public void onPageSelected(int i) {
-+                    QuestionFragment questionFragment;
-+                    int position = 0;
-+                    if(i > 0){
-+                        if(isScrollingRight()){
-+                            // get previous when user scroll right
-+                            questionFragment = Common.fragmentsList.get(i-1);
-+                            position = i-1;
-+                        }
-+                        else if(isScrollingLeft()){
-+                            // get next when user scroll left
-+                            questionFragment = Common.fragmentsList.get(i+1);
-+                            position = i+1;
-+                        }
-+                        else{
-+                            questionFragment = Common.fragmentsList.get(position);
-+                        }
-+                    }
-+                    else{
-+                        questionFragment = Common.fragmentsList.get(0);
-+                        position = 0;
-+                    }
-+
-+                    //if you want to show correct answer, just call function here
-+                    CurrentQuestion question_state = questionFragment.getSelectedAnswer();
-+                    Common.answerSheetList.set(position, question_state);
-+                    answerSheetAdapter.notifyDataSetChanged(); // change color in answer sheet
-+
-+                    countCorrectAnswer();
-+                    txt_right_answer.setText(new StringBuilder(String.format("%d", Common.right_answer_count))
-+                            .append("/")
-+                            .append(String.format("%d", Common.questionList.size())).toString());
-+
-+                    if(question_state.getType() != Common.ANSWER_TYPE.NO_ANSWER){
-+                        questionFragment.showCorrectAnswer();
-+                        questionFragment.disableAnswer();
-+                    }
-+                }
-+
-+                @Override
-+                public void onPageScrollStateChanged(int i) {
-+                    if(i == ViewPager.SCROLL_STATE_IDLE){
-+                        this.currentScrollDirection = SCROLLINNG_UNDETERMINDED;
-+                    }
-+                }
-+
-+
-+            });
-+        }
-+    }
-+
-+    private void countCorrectAnswer() {
-+        // reset variable
-+        Common.right_answer_count = Common.wrong_answer_counnt = 0;
-+        for(CurrentQuestion item : Common.answerSheetList){
-+            if(item.getType() == Common.ANSWER_TYPE.RIGHT_ANSWER){
-+                Common.right_answer_count++;
-+            }
-+            else if(item.getType() == Common.ANSWER_TYPE.WRONG_ANSWER){
-+                Common.wrong_answer_counnt++;
-+            }
-+        }
-+    }
-+
-+    private void genFragmentList() {
-+        for(int i=0; i<Common.questionList.size(); ++i){
-+            Bundle bundle = new Bundle();
-+            bundle.putInt("index", i);
-+            QuestionFragment fragment = new QuestionFragment();
-+            fragment.setArguments(bundle);
-+
-+            Common.fragmentsList.add(fragment);
-+        }
-+    }
-+
-+
-+    private void countTimer() {
-+        if(Common.countDownTimer == null){
-+            Common.countDownTimer = new CountDownTimer(Common.TOTAL_TIME, 1000) {
-+
-+                @Override
-+                public void onTick(long millisUntilFinished) {
-+                    txt_timer.setText(String.format("%02d:%02d",
-+                            TimeUnit.MILLISECONDS.toMinutes(1),
-+                            TimeUnit.MILLISECONDS.toSeconds(1) -
-+                                    TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(1))));
-+                    time_play -= 1000;
-+                }
-+
-+                @Override
-+                public void onFinish() {
-+
-+                }
-+            }.start();
-+        }
-+        else{
-+            Common.countDownTimer.cancel();
-+            Common.countDownTimer = new CountDownTimer(Common.TOTAL_TIME, 1000) {
-+
-+                @Override
-+                public void onTick(long millisUntilFinished) {
-+                    txt_timer.setText(String.format("%02d:%02d",
-+                            TimeUnit.MILLISECONDS.toMinutes(1),
-+                            TimeUnit.MILLISECONDS.toSeconds(1) -
-+                                    TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(1))));
-+                    time_play -= 1000;
-+                }
-+
-+                @Override
-+                public void onFinish() {
-+
-+                }
-+            }.start();
-+        }
-+    }
-+
-+    private void takeQuestion() {
-+        Common.questionList = DBhelper.getInstance(this).getQuestionByCategory(Common.selectedCategory.getId());
-+        if(Common.questionList.size() == 0){
-+            //if there is no question
-+            new MaterialStyledDialog.Builder(this)
-+                    .setTitle("There is no question")
-+                    .setIcon(R.drawable.lb_ic_shuffle)
-+                    .setDescription("We don't have any question in this" + Common.selectedCategory.getName() + " category")
-+                    .setPositiveText("OK")
-+                    .onPositive(new MaterialDialog.SingleButtonCallback() {
-+                        @Override
-+                        public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-+                            dialog.dismiss();
-+                            finish();
-+                        }
-+                    }).show();
-+        }
-+        else {
-+            //generate answerSheet item from question
-+
-+            if(Common.answerSheetList.size() > 0){
-+                Common.answerSheetList.clear();
-+            }
-+
-+            for(int i=0; i<Common.questionList.size(); i++){
-+                Common.answerSheetList.add(new CurrentQuestion(i, Common.ANSWER_TYPE.NO_ANSWER));
-+            }
-+        }
-+    }
-+
-+    @Override
-+    public void onBackPressed() {
-+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-+        if (drawer.isDrawerOpen(GravityCompat.START)) {
-+            drawer.closeDrawer(GravityCompat.START);
-+        } else {
-+            super.onBackPressed();
-+        }
-+    }
-+
-+    @Override
-+    public boolean onCreateOptionsMenu(Menu menu) {
-+        // Inflate the menu; this adds items to the action bar if it is present.
-+        getMenuInflater().inflate(R.menu.question, menu);
-+        return true;
-+    }
-+
-+    @Override
-+    public boolean onOptionsItemSelected(MenuItem item) {
-+        // Handle action bar item clicks here. The action bar will
-+        // automatically handle clicks on the Home/Up button, so long
-+        // as you specify a parent activity in AndroidManifest.xml.
-+        int id = item.getItemId();
-+
-+        //noinspection SimplifiableIfStatement
-+        if (id == R.id.action_settings) {
-+            return true;
-+        }
-+
-+        return super.onOptionsItemSelected(item);
-+    }
-+
-+    @SuppressWarnings("StatementWithEmptyBody")
-+    @Override
-+    public boolean onNavigationItemSelected(MenuItem item) {
-+        // Handle navigation view item clicks here.
-+        int id = item.getItemId();
-+
-+        if (id == R.id.nav_home) {
-+            // Handle the camera action
-+        } else if (id == R.id.nav_gallery) {
-+
-+        } else if (id == R.id.nav_slideshow) {
-+
-+        } else if (id == R.id.nav_tools) {
-+
-+        } else if (id == R.id.nav_share) {
-+
-+        } else if (id == R.id.nav_send) {
-+
-+        }
-+
-+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-+        drawer.closeDrawer(GravityCompat.START);
-+        return true;
-+    }
-+}
-Index: app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/Model/Category.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/Model/Category.java	(date 1568606060000)
-+++ app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/Model/Category.java	(date 1568606060000)
-@@ -0,0 +1,39 @@
-+package koreanlearning.hangul.serokorean.beginnerone.quiz.Model;
-+
-+public class Category {
-+    private int id;
-+    private String name, image;
-+
-+    public Category() {
-+    }
-+
-+    public Category(int id, String name, String image) {
-+        this.id = id;
-+        this.name = name;
-+        this.image = image;
-+    }
-+
-+    public int getId() {
-+        return id;
-+    }
-+
-+    public void setId(int id) {
-+        this.id = id;
-+    }
-+
-+    public String getName() {
-+        return name;
-+    }
-+
-+    public void setName(String name) {
-+        this.name = name;
-+    }
-+
-+    public String getImage() {
-+        return image;
-+    }
-+
-+    public void setImage(String image) {
-+        this.image = image;
-+    }
-+}
-Index: app/src/main/res/layout/activity_main.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
-<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<RelativeLayout\n    xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    tools:context=\"koreanlearning.hangul.serokorean.main.MainActivity\">\n\n    <android.support.v4.view.ViewPager\n        android:layout_width=\"match_parent\"\n        android:layout_height=\"match_parent\"\n        android:foregroundGravity=\"center\"\n        android:id=\"@+id/viewPager\"\n        android:layout_centerInParent=\"true\"\n        android:overScrollMode=\"never\"\n        android:clipToPadding=\"false\">\n\n    </android.support.v4.view.ViewPager>\n\n    <!--<Button-->\n    <!--android:id=\"@+id/btnOrder\"-->\n    <!--android:text=\"Select\"-->\n    <!--android:textColor=\"#fff\"-->\n    <!--android:paddingLeft=\"30dp\"-->\n    <!--android:paddingRight=\"30dp\"-->\n    <!--android:layout_alignParentBottom=\"true\"-->\n    <!--android:layout_marginBottom=\"60dp\"-->\n    <!--android:layout_centerHorizontal=\"true\"-->\n    <!--android:background=\"@drawable/round\"-->\n    <!--android:layout_width=\"wrap_content\"-->\n    <!--android:layout_height=\"wrap_content\" />-->\n\n</RelativeLayout>
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/layout/activity_main.xml	(revision f0d0487ae6a5a6cd5b46fc4e49728fe7272b9471)
-+++ app/src/main/res/layout/activity_main.xml	(date 1563412107000)
-@@ -18,17 +18,4 @@
- 
-     </android.support.v4.view.ViewPager>
- 
--    <!--<Button-->
--    <!--android:id="@+id/btnOrder"-->
--    <!--android:text="Select"-->
--    <!--android:textColor="#fff"-->
--    <!--android:paddingLeft="30dp"-->
--    <!--android:paddingRight="30dp"-->
--    <!--android:layout_alignParentBottom="true"-->
--    <!--android:layout_marginBottom="60dp"-->
--    <!--android:layout_centerHorizontal="true"-->
--    <!--android:background="@drawable/round"-->
--    <!--android:layout_width="wrap_content"-->
--    <!--android:layout_height="wrap_content" />-->
--
- </RelativeLayout>
-\ No newline at end of file
-Index: app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/common/Common.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/common/Common.java	(date 1569135746000)
-+++ app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/common/Common.java	(date 1569135746000)
-@@ -0,0 +1,30 @@
-+package koreanlearning.hangul.serokorean.beginnerone.quiz.common;
-+
-+import android.os.CountDownTimer;
-+
-+import java.util.ArrayList;
-+import java.util.List;
-+import java.util.TreeSet;
-+
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.Category;
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.CurrentQuestion;
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.Question;
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionFragment;
-+
-+public class Common {
-+    public static Category selectedCategory = new Category();
-+    public static final int TOTAL_TIME = 20*60*1000; // 20mins
-+    public static List<Question> questionList = new ArrayList<>();
-+    public static List<CurrentQuestion> answerSheetList = new ArrayList<>();
-+    public static CountDownTimer countDownTimer;
-+    public static int right_answer_count = 0;
-+    public static int wrong_answer_counnt = 0;
-+    public static ArrayList<QuestionFragment> fragmentsList = new ArrayList<>();
-+    public static TreeSet<String> selected_values = new TreeSet<>();
-+
-+    public enum ANSWER_TYPE{
-+        NO_ANSWER,
-+        WRONG_ANSWER,
-+        RIGHT_ANSWER
-+    }
-+}
-Index: app/src/main/AndroidManifest.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
-<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    package=\"com.hangul.serokorean\"\n    tools:ignore=\"ImpliedTouchscreenHardware,MissingLeanbackLauncher,MissingLeanbackSupport\">\n\n    <uses-permission android:name=\"android.permission.INTERNET\" />\n\n    <application\n        android:allowBackup=\"true\"\n        android:icon=\"@drawable/ic_penguin\"\n        android:label=\"@string/app_name\"\n        android:roundIcon=\"@drawable/ic_penguin\"\n        android:supportsRtl=\"true\"\n        android:theme=\"@style/AppTheme2\">\n        <activity android:name=\"koreanlearning.hangul.serokorean.beginnerone.quiz.ChapterOneQuiz\"/>\n        <activity android:name=\"koreanlearning.hangul.serokorean.search.Search\" />\n        <activity android:name=\"koreanlearning.hangul.serokorean.beginnerone.webview.BeginnerOneWebView\" />\n        <activity android:name=\"koreanlearning.hangul.serokorean.beginnerone.BeginnerOne\" />\n        <activity android:name=\"koreanlearning.hangul.serokorean.main.MainActivity\" />\n        <activity android:name=\"koreanlearning.hangul.serokorean.main.Welcome\">\n            <intent-filter>\n                <action android:name=\"android.intent.action.MAIN\" />\n\n                <category android:name=\"android.intent.category.LAUNCHER\" />\n            </intent-filter>\n        </activity>\n    </application>\n\n</manifest>
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/AndroidManifest.xml	(revision f0d0487ae6a5a6cd5b46fc4e49728fe7272b9471)
-+++ app/src/main/AndroidManifest.xml	(date 1568772114000)
-@@ -13,7 +13,11 @@
-         android:roundIcon="@drawable/ic_penguin"
-         android:supportsRtl="true"
-         android:theme="@style/AppTheme2">
--        <activity android:name="koreanlearning.hangul.serokorean.beginnerone.quiz.ChapterOneQuiz"/>
-+        <activity
-+            android:name="koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity"
-+            android:label="@string/title_activity_question"
-+            android:theme="@style/AppTheme2.NoActionBar"></activity>
-+        <activity android:name="koreanlearning.hangul.serokorean.beginnerone.quiz.QuizCategories" />
-         <activity android:name="koreanlearning.hangul.serokorean.search.Search" />
-         <activity android:name="koreanlearning.hangul.serokorean.beginnerone.webview.BeginnerOneWebView" />
-         <activity android:name="koreanlearning.hangul.serokorean.beginnerone.BeginnerOne" />
-Index: app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/DBhelper/DBhelper.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/DBhelper/DBhelper.java	(date 1569131094000)
-+++ app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/DBhelper/DBhelper.java	(date 1569131094000)
-@@ -0,0 +1,77 @@
-+package koreanlearning.hangul.serokorean.beginnerone.quiz.DBhelper;
-+
-+import android.content.Context;
-+import android.database.Cursor;
-+import android.database.sqlite.SQLiteDatabase;
-+
-+import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
-+
-+import java.util.ArrayList;
-+import java.util.List;
-+
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.Category;
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.Question;
-+
-+public class DBhelper extends SQLiteAssetHelper {
-+
-+    private static final String DB_NAME = "samplequiz2.db";
-+    private static final int DB_VER = 1;
-+
-+    private static DBhelper instance;
-+
-+    public static synchronized DBhelper getInstance(Context context){
-+        if(instance == null){
-+            instance = new DBhelper(context);
-+        }
-+        return instance;
-+    }
-+
-+    public DBhelper(Context context) {
-+        super(context, DB_NAME, null, DB_VER);
-+    }
-+
-+    public List<Category> getAllCategories(){
-+        SQLiteDatabase db = instance.getWritableDatabase();
-+        Cursor cursor = db.rawQuery("Select * From Category;", null);
-+        List<Category> categories = new ArrayList<>();
-+        if(cursor.moveToFirst()){
-+            while(!cursor.isAfterLast()){
-+                Category category = new Category(cursor.getInt(cursor.getColumnIndex("ID")),
-+                        cursor.getString(cursor.getColumnIndex("Name")),
-+                        cursor.getString(cursor.getColumnIndex("Image")));
-+                categories.add(category);
-+                cursor.moveToNext();
-+            }
-+        }
-+        cursor.close();
-+        db.close();
-+        return categories;
-+    }
-+
-+    //get all question from DB
-+    public List<Question> getQuestionByCategory(int categoryIndex){
-+        SQLiteDatabase db = instance.getWritableDatabase();
-+        Cursor cursor = db.rawQuery(String.format("Select * From Question Where CategoryID = %d Order by Random() Limit 30", categoryIndex), null);
-+        List<Question> questions = new ArrayList<>();
-+        if(cursor.moveToFirst()){
-+            while(!cursor.isAfterLast()){
-+                Question question = new Question(cursor.getInt(cursor.getColumnIndex("ID")),
-+                        cursor.getString(cursor.getColumnIndex("QuestionText")),
-+                        cursor.getString(cursor.getColumnIndex("QuestionImage")),
-+                        cursor.getString(cursor.getColumnIndex("AnswerA")),
-+                        cursor.getString(cursor.getColumnIndex("AnswerB")),
-+                        cursor.getString(cursor.getColumnIndex("AnswerC")),
-+                        cursor.getString(cursor.getColumnIndex("AnswerD")),
-+                        cursor.getString(cursor.getColumnIndex("CorrectAnswer")),
-+                        cursor.getInt(cursor.getColumnIndex("IsImageQuestion")) == 0?Boolean.FALSE: Boolean.TRUE,
-+                        cursor.getInt(cursor.getColumnIndex("CategoryID")));
-+
-+                questions.add(question);
-+                cursor.moveToNext();
-+            }
-+        }
-+        cursor.close();
-+        db.close();
-+        return questions;
-+    }
-+}
-Index: app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/webview/BeginnerOneWebView.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
-<+>package koreanlearning.hangul.serokorean.beginnerone.webview;\n\n\nimport android.content.Context;\nimport android.content.Intent;\nimport android.os.Build;\nimport android.support.v4.app.Fragment;\nimport android.support.v4.app.FragmentManager;\nimport android.support.v4.app.FragmentPagerAdapter;\nimport android.support.v7.app.AppCompatActivity;\nimport android.os.Bundle;\nimport android.view.LayoutInflater;\nimport android.view.View;\nimport android.view.ViewGroup;\nimport android.view.WindowManager;\nimport android.webkit.JavascriptInterface;\nimport android.webkit.WebChromeClient;\nimport android.webkit.WebResourceRequest;\nimport android.webkit.WebSettings;\nimport android.webkit.WebView;\nimport android.webkit.WebViewClient;\nimport android.widget.Toast;\n\n\nimport com.hangul.serokorean.R;\nimport java.util.ArrayList;\n\nimport koreanlearning.hangul.serokorean.beginnerone.quiz.ChapterOneQuiz;\n\n\npublic class BeginnerOneWebView extends AppCompatActivity implements ParentRequestInterface{\n\n    private SectionsPagerAdapter sectionsPagerAdapter;\n    private CustomViewPager customViewPager;\n\n    private int numberOfPages = 0;\n    private int currentPage = 0;\n    private int currentChapterNum = 0;\n    private String currentChapter = \"\";\n    private ArrayList<String> htmlFiles = new ArrayList<>();\n    private int isPrevious = 0;\n\n    public void fullScreencall() {\n        if(Build.VERSION.SDK_INT < 19){\n            View v = this.getWindow().getDecorView();\n            v.setSystemUiVisibility(View.GONE);\n        } else {\n            //for higher api versions.\n            View decorView = getWindow().getDecorView();\n            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;\n            decorView.setSystemUiVisibility(uiOptions);\n            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);\n        }\n    }\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        fullScreencall();\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_main_webview_test);\n\n        //bundle gets passed in parameters when chapters' onClick from the Home\n        Bundle bundle = getIntent().getExtras();\n        StringBuilder stringBuilderPageNum = new StringBuilder();\n        StringBuilder stringBuilderChapNum = new StringBuilder();\n\n        //check bundle to see if it's null\n        if(bundle == null){\n//            textView.setText(\"bundle error\");\n        }\n        //if not, stores the parameters are passed in\n        else{\n            //bundle is like a Map, matches key and stores the value\n            numberOfPages = bundle.getInt(\"pages\");\n            currentChapter = bundle.getString(\"chapter\");\n//            isPrevious = bundle.getInt(\"previous\");\n            stringBuilderPageNum.append(bundle.getString(\"chapter\"));\n            stringBuilderPageNum.append(\" number of pages:\");\n            stringBuilderPageNum.append(Integer.toString(bundle.getInt(\"pages\")));\n\n            //check the length of the string, and gets the number as a substring, 0-9\n            if(currentChapter.length()<=9){\n                stringBuilderChapNum.append(currentChapter.substring(8,9));\n            }\n            //number greater than 9\n            else{\n                stringBuilderChapNum.append(currentChapter.substring(8,10));\n            }\n            currentChapterNum = Integer.parseInt(stringBuilderChapNum.toString());\n        }\n\n        // Create the adapter that will return a fragment for each. primary sections of the activity.\n        sectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), customViewPager, this);\n\n        // Set up the ViewPager with the sections adapter.\n        customViewPager = (CustomViewPager) findViewById(R.id.container);\n        customViewPager.setAdapter(sectionsPagerAdapter);\n        customViewPager.setOffscreenPageLimit(2);\n    }\n\n\n    @Override\n    public void setViewPagerStatus(Boolean b) { customViewPager.setPagingEnabled(b); }\n\n    public static class PlaceholderFragment extends Fragment{\n\n        private static final String ARG_SECTION_NUMBER = \"section_number\";\n        private static final String CURRENT_CHAPTER = \"current_chapter\";\n        private static final String NUMBER_OF_PAGES = \"number_of_pages\";\n        private int position;\n        private int currentChapterNum;\n        private int numberOfPages;\n        private BeginnerOneWebView activity;\n        private CustomViewPager viewpager;\n        private BeginnerOneWebView parentActivity;\n\n        public static PlaceholderFragment newInstance(int position , int chapterNum, int numberOfPages) {\n            PlaceholderFragment fragment = new PlaceholderFragment();\n            Bundle args = new Bundle();\n            args.putInt(ARG_SECTION_NUMBER, position);\n            args.putInt(CURRENT_CHAPTER, chapterNum);\n            args.putInt(NUMBER_OF_PAGES, numberOfPages);\n            fragment.setArguments(args);\n            return fragment;\n        }\n\n        @Override\n        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {\n            Bundle arguments = getArguments();\n            String url=\"\";\n            String lastPage=\"\";\n            ArrayList<String> htmlFiles = new ArrayList<>();\n\n            position = arguments.getInt(ARG_SECTION_NUMBER);\n            currentChapterNum = arguments.getInt(CURRENT_CHAPTER);\n            numberOfPages = arguments.getInt(NUMBER_OF_PAGES);\n            parentActivity = (BeginnerOneWebView) getActivity();\n\n            View rootView = inflater.inflate(R.layout.fragment_main, container, false);\n            final CustomWebView webView = rootView.findViewById(R.id.webView);\n            webView.setFragment(this);\n\n            StringBuilder stringBuilder = new StringBuilder();\n            stringBuilder.append(\"file:///android_asset/level 1/chapter \");\n            stringBuilder.append(Integer.toString(currentChapterNum));\n            stringBuilder.append(\"/\");\n\n            for(int i=0; i<numberOfPages; ++i){\n                htmlFiles.add(stringBuilder.toString() + Integer.toString(i) + \".html\");\n            }\n\n            url = htmlFiles.get(position);\n            lastPage = htmlFiles.get(numberOfPages-1);\n\n            WebSettings settings = webView.getSettings();\n            webView.setWebChromeClient(new WebChromeClient());\n//            webView.setWebViewClient(new WebViewClient());\n            webView.setScrollContainer(false);\n            webView.setVerticalScrollBarEnabled(false);\n            webView.setHorizontalScrollBarEnabled(false);\n            webView.setWebViewClient(new WebViewClient(){\n                @Override\n                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {\n                    String url = request.getUrl().toString();\n                    if(url.contains(\"chapteronequiz\")){\n                        Intent intent = new Intent(getActivity(), ChapterOneQuiz.class);\n                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);\n                        startActivity(intent);\n                    }\n                    return true;\n                }\n            });\n\n            settings.setJavaScriptEnabled(true);\n            settings.setBuiltInZoomControls(true);\n            settings.setSupportZoom(true);\n            settings.setDisplayZoomControls(false);\n            settings.setLoadWithOverviewMode(true);\n            settings.setUseWideViewPort(false);\n\n            webView.loadUrl(url);\n            return rootView;\n        }\n\n        public void setViewPager(boolean b) {\n            parentActivity.setViewPagerStatus(b);\n        }\n        public void setActivity(BeginnerOneWebView activity) {\n            this.activity = activity;\n        }\n        public void setPager(CustomViewPager viewpager) {\n            this.viewpager = viewpager;\n        }\n        public PlaceholderFragment() { }\n\n        public class WebAppInterface {\n            Context mContext;\n\n            /** Instantiate the interface and set the context */\n            WebAppInterface(Context c) {\n                mContext = c;\n            }\n\n            /** Show a toast from the web page */\n            @JavascriptInterface\n            public void showToast(String toast) {\n                Toast.makeText(mContext, toast, Toast.LENGTH_SHORT).show();\n            }\n        }\n    }\n\n    public class SectionsPagerAdapter extends FragmentPagerAdapter {\n\n        CustomViewPager viewPager;\n        BeginnerOneWebView activity;\n\n        public SectionsPagerAdapter(FragmentManager fm, CustomViewPager viewPager, BeginnerOneWebView activity) {\n            super(fm);\n            this.viewPager=viewPager;\n            this.activity=activity;\n        }\n\n        @Override\n        public Fragment getItem(int position) {\n            // getItem is called to instantiate the fragment for the given page.\n            // Return a PlaceholderFragment (defined as a static inner class below).\n            PlaceholderFragment fragment= PlaceholderFragment.newInstance(position, currentChapterNum, numberOfPages);\n            fragment.setActivity(activity);\n            fragment.setPager(viewPager);\n            return fragment;\n        }\n\n        @Override\n        public int getCount() { return numberOfPages; }\n    }\n}\n
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/webview/BeginnerOneWebView.java	(revision f0d0487ae6a5a6cd5b46fc4e49728fe7272b9471)
-+++ app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/webview/BeginnerOneWebView.java	(date 1568604436000)
-@@ -25,7 +25,7 @@
- import com.hangul.serokorean.R;
- import java.util.ArrayList;
- 
--import koreanlearning.hangul.serokorean.beginnerone.quiz.ChapterOneQuiz;
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.QuizCategories;
- 
- 
- public class BeginnerOneWebView extends AppCompatActivity implements ParentRequestInterface{
-@@ -154,7 +154,6 @@
- 
-             WebSettings settings = webView.getSettings();
-             webView.setWebChromeClient(new WebChromeClient());
--//            webView.setWebViewClient(new WebViewClient());
-             webView.setScrollContainer(false);
-             webView.setVerticalScrollBarEnabled(false);
-             webView.setHorizontalScrollBarEnabled(false);
-@@ -163,7 +162,7 @@
-                 public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                     String url = request.getUrl().toString();
-                     if(url.contains("chapteronequiz")){
--                        Intent intent = new Intent(getActivity(), ChapterOneQuiz.class);
-+                        Intent intent = new Intent(getActivity(), QuizCategories.class); //ChapterOneQuiz.class
-                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                         startActivity(intent);
-                     }
-Index: app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/adapter/QuestionFragmentsAdapter.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/adapter/QuestionFragmentsAdapter.java	(date 1569127026000)
-+++ app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/adapter/QuestionFragmentsAdapter.java	(date 1569127026000)
-@@ -0,0 +1,39 @@
-+package koreanlearning.hangul.serokorean.beginnerone.quiz.adapter;
-+
-+import android.content.Context;
-+import android.support.annotation.Nullable;
-+import android.support.v4.app.Fragment;
-+import android.support.v4.app.FragmentManager;
-+import android.support.v4.app.FragmentPagerAdapter;
-+
-+import java.util.List;
-+
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionFragment;
-+
-+public class QuestionFragmentsAdapter extends FragmentPagerAdapter {
-+
-+    Context context;
-+    List<QuestionFragment> fragmentList;
-+
-+    public QuestionFragmentsAdapter(FragmentManager fm, Context context, List<QuestionFragment> fragmentList) {
-+        super(fm);
-+        this.context = context;
-+        this.fragmentList = fragmentList;
-+    }
-+
-+    @Override
-+    public Fragment getItem(int i) {
-+        return fragmentList.get(i);
-+    }
-+
-+    @Override
-+    public int getCount() {
-+        return fragmentList.size();
-+    }
-+
-+    @Nullable
-+    @Override
-+    public CharSequence getPageTitle(int position) {
-+        return new StringBuilder("Question ").append(position+1).toString();
-+    }
-+}
-Index: app/src/main/res/layout/activity_quiz_categories.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/layout/activity_quiz_categories.xml	(date 1569114290000)
-+++ app/src/main/res/layout/activity_quiz_categories.xml	(date 1569114290000)
-@@ -0,0 +1,35 @@
-+<?xml version="1.0" encoding="utf-8"?>
-+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-+    xmlns:app="http://schemas.android.com/apk/res-auto"
-+    xmlns:tools="http://schemas.android.com/tools"
-+    android:layout_width="match_parent"
-+    android:layout_height="match_parent"
-+    tools:context="koreanlearning.hangul.serokorean.beginnerone.quiz.QuizCategories"
-+    android:orientation="vertical">
-+
-+    <android.support.design.widget.AppBarLayout
-+        android:theme="@style/AppTheme.AppBarOverLay"
-+        android:layout_width="match_parent"
-+        android:layout_height="wrap_content">
-+
-+        <android.support.v7.widget.Toolbar
-+            android:layout_width="match_parent"
-+            android:layout_height="?attr/actionBarSize"
-+            android:id="@+id/toolbar"
-+            android:background="@color/aqua"
-+            app:popupTheme="@style/AppTheme.PopupOverLay">
-+
-+        </android.support.v7.widget.Toolbar>
-+
-+
-+    </android.support.design.widget.AppBarLayout>
-+
-+    <android.support.v7.widget.RecyclerView
-+        android:id="@+id/recycler_category"
-+        android:layout_margin="8dp"
-+        android:layout_width="match_parent"
-+        android:layout_height="match_parent">
-+
-+    </android.support.v7.widget.RecyclerView>
-+
-+</LinearLayout>
-\ No newline at end of file
-Index: app/src/main/res/values/strings.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
-<+><resources>\n    <string name=\"app_name\">SeroKorean</string>\n    <string name=\"desc0\">Intro</string>\n    <string name=\"desc1\">chapter 1</string>\n    <string name=\"desc2\">chapter 2</string>\n    <string name=\"desc3\">chapter 3</string>\n    <string name=\"desc4\">chapter 4</string>\n    <string name=\"desc5\">chapter 5</string>\n    <string name=\"title_activity_main2\">Main2Activity</string>\n    <string name=\"settings\">Settings</string>\n    <string name=\"search\">Search</string>\n    <string name=\"FAQ\">FAQ</string>\n    <string name=\"home\">Home</string>\n    <string name=\"bookmark\">Bookmark</string>\n    <string name=\"vocab\">Vocab</string>\n    <string name=\"more\">More</string>\n    <string name=\"chapterOne\">Consonants</string>\n    <string name=\"chapterTwo\">Vowels</string>\n    <string name=\"chapterThree\">Compounds</string>\n    <string name=\"chapterFour\">The Korean Wave</string>\n    <string name=\"chapterFive\">The Copula</string>\n    <string name=\"chapterSix\">Greetings</string>\n    <string name=\"chapterSeven\">Existence</string>\n    <string name=\"chapterEight\">Korea</string>\n    <string name=\"chapterNine\">Numbers Pt. 1</string>\n    <string name=\"chapterTen\">Topics</string>\n    <string name=\"chapterEleven\">At Home</string>\n    <string name=\"chapterTwelve\">Numbers Pt. 2</string>\n    <string name=\"chapterThirteen\">Verbs Pt. 1</string>\n    <string name=\"chapterFourteen\">Objects</string>\n    <string name=\"chapterFifteen\">Verbs Pt. 2</string>\n    <string name=\"chapterSixteen\">Food</string>\n    <string name=\"chapterSeventeen\">Directions</string>\n    <string name=\"chapterEighteen\">Questions</string>\n    <string name=\"chapterNineteen\">Adjectives</string>\n    <string name=\"chapterTwenty\">North &amp; South</string>\n    <string name=\"chapterTwentyOne\">Prepositions</string>\n    <string name=\"chapterTwentyTwo\">Names &amp; Titles</string>\n    <string name=\"chapterTwentyThree\">Possessives</string>\n    <string name=\"chapterTwentyFour\">Because</string>\n    <string name=\"chapterTwentyFive\">By Means of</string>\n    <string name=\"chapterTwentySix\">Weather &amp; Seasons</string>\n    <string name=\"chapterTwentySeven\">And &amp; With</string>\n    <string name=\"chapterTwentyEight\">Levels</string>\n    <string name=\"chapterTwentyNine\">Demonstratives</string>\n    <string name=\"chapterThirty\">Wrap Up</string>\n\n    <!-- TODO: Remove or change this placeholder text -->\n    <string name=\"hello_blank_fragment\">Hello blank fragment</string>\n</resources>\n
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/values/strings.xml	(revision f0d0487ae6a5a6cd5b46fc4e49728fe7272b9471)
-+++ app/src/main/res/values/strings.xml	(date 1568772113000)
-@@ -45,6 +45,26 @@
-     <string name="chapterTwentyNine">Demonstratives</string>
-     <string name="chapterThirty">Wrap Up</string>
- 
--    <!-- TODO: Remove or change this placeholder text -->
-     <string name="hello_blank_fragment">Hello blank fragment</string>
-+    <string name="title_activity_chapter_two_quiz">ChapterTwoQuiz</string>
-+    <string name="navigation_drawer_open">Open navigation drawer</string>
-+    <string name="navigation_drawer_close">Close navigation drawer</string>
-+    <string name="nav_header_title">Android Studio</string>
-+    <string name="nav_header_subtitle">android.studio@android.com</string>
-+    <string name="nav_header_desc">Navigation header</string>
-+    <string name="action_settings">Settings</string>
-+
-+    <string name="menu_home">Home</string>
-+    <string name="menu_gallery">Gallery</string>
-+    <string name="menu_slideshow">Slideshow</string>
-+    <string name="menu_tools">Tools</string>
-+    <string name="menu_share">Share</string>
-+    <string name="menu_send">Send</string>
-+
-+    <string name="chapter_one_quiz">Chapter One Quiz</string>
-+    <string name="chapter_two_quiz">Chapter Two Quiz</string>
-+    <string name="chapter_three_quiz">Chapter Three Quiz</string>
-+    <string name="chapter_four_quiz">Chapter Four Quiz</string>
-+    <string name="chapter_Five_quiz">Chapter Five Quiz</string>
-+    <string name="title_activity_question">QuestionActivity</string>
- </resources>
-Index: app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/ChapterOneQuiz.java
-===================================================================
---- app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/ChapterOneQuiz.java	(revision f0d0487ae6a5a6cd5b46fc4e49728fe7272b9471)
-+++ app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/QuizCategories.java	(date 1569126029000)
-@@ -1,17 +1,58 @@
- package koreanlearning.hangul.serokorean.beginnerone.quiz;
- 
-+import android.os.Build;
- import android.support.v7.app.AppCompatActivity;
- import android.os.Bundle;
-+import android.support.v7.widget.GridLayoutManager;
-+import android.support.v7.widget.RecyclerView;
-+import android.support.v7.widget.Toolbar;
-+import android.view.View;
-+import android.view.WindowManager;
- 
- import com.hangul.serokorean.R;
- 
--public class ChapterOneQuiz extends AppCompatActivity  {
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.DBhelper.DBhelper;
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.adapter.CategoryAdapter;
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.common.SpaceDecoration;
-+
-+public class QuizCategories extends AppCompatActivity {
-+
-+    Toolbar toolbar;
-+    RecyclerView recyclerView_category;
-+
-+    public void fullScreencall() {
-+        if(Build.VERSION.SDK_INT < 19){
-+            View v = this.getWindow().getDecorView();
-+            v.setSystemUiVisibility(View.GONE);
-+        } else {
-+            //for higher api versions.
-+            View decorView = getWindow().getDecorView();
-+            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
-+            decorView.setSystemUiVisibility(uiOptions);
-+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-+        }
-+    }
- 
-     @Override
-     protected void onCreate(Bundle savedInstanceState) {
-+        fullScreencall();
-         super.onCreate(savedInstanceState);
--        setContentView(R.layout.activity_chapter_one_quiz);
-+        setContentView(R.layout.activity_quiz_categories);
- 
-+        toolbar = findViewById(R.id.toolbar);
-+        toolbar.setTitle("Chapter Quiz");
-+        setSupportActionBar(toolbar);
- 
-+        recyclerView_category = findViewById(R.id.recycler_category);
-+        recyclerView_category.setHasFixedSize(true);
-+        recyclerView_category.setLayoutManager(new GridLayoutManager(this, 2));
-+
-+//        DisplayMetrics displayMetrics = new DisplayMetrics();
-+//        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-+//        int height = displayMetrics.heightPixels / 8;
-+        CategoryAdapter adapter = new CategoryAdapter(QuizCategories.this, DBhelper.getInstance(this).getAllCategories());
-+        int spaceInPixel = 4;
-+        recyclerView_category.addItemDecoration(new SpaceDecoration(spaceInPixel));
-+        recyclerView_category.setAdapter(adapter);
-     }
- }
-Index: app/src/main/res/layout/fragment_question.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/layout/fragment_question.xml	(date 1569212199000)
-+++ app/src/main/res/layout/fragment_question.xml	(date 1569212199000)
-@@ -0,0 +1,67 @@
-+<?xml version="1.0" encoding="utf-8"?>
-+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-+    xmlns:tools="http://schemas.android.com/tools"
-+    android:layout_width="match_parent"
-+    android:layout_height="match_parent"
-+    tools:context="koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionFragment">
-+
-+    <LinearLayout
-+        android:layout_margin="16dp"
-+        android:orientation="vertical"
-+        android:layout_width="match_parent"
-+        android:layout_height="wrap_content">
-+
-+        <FrameLayout
-+            android:id="@+id/layout_image"
-+            android:layout_width="match_parent"
-+            android:layout_height="200dp">
-+            
-+            <ImageView
-+                android:id="@+id/img_question"
-+                android:scaleType="fitCenter"
-+                android:layout_width="match_parent"
-+                android:layout_height="match_parent" />
-+            
-+            <ProgressBar
-+                android:id="@+id/progress_bar"
-+                android:layout_gravity="center"
-+                android:layout_width="wrap_content"
-+                android:layout_height="wrap_content" />
-+
-+        </FrameLayout>
-+
-+        <TextView
-+            android:id="@+id/txt_question_text"
-+            android:text="Choose the right answer(s)"
-+            android:textStyle="bold"
-+            android:textSize="20dp"
-+            android:layout_width="wrap_content"
-+            android:layout_height="wrap_content" />
-+
-+        <CheckBox
-+            android:id="@+id/ckbA"
-+            android:text="A"
-+            android:layout_width="wrap_content"
-+            android:layout_height="wrap_content" />
-+
-+        <CheckBox
-+            android:id="@+id/ckbB"
-+            android:text="B"
-+            android:layout_width="wrap_content"
-+            android:layout_height="wrap_content" />
-+
-+        <CheckBox
-+            android:id="@+id/ckbC"
-+            android:text="C"
-+            android:layout_width="wrap_content"
-+            android:layout_height="wrap_content" />
-+
-+        <CheckBox
-+            android:id="@+id/ckbD"
-+            android:text="D"
-+            android:layout_width="wrap_content"
-+            android:layout_height="wrap_content" />
-+
-+    </LinearLayout>
-+
-+</RelativeLayout>
-\ No newline at end of file
-Index: app/src/main/res/layout/layout_category_item.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/layout/layout_category_item.xml	(date 1568593216000)
-+++ app/src/main/res/layout/layout_category_item.xml	(date 1568593216000)
-@@ -0,0 +1,23 @@
-+<?xml version="1.0" encoding="utf-8"?>
-+<android.support.v7.widget.CardView
-+    xmlns:android="http://schemas.android.com/apk/res/android"
-+    android:layout_width="match_parent"
-+    android:layout_height="wrap_content"
-+    android:id="@+id/card_catetory">
-+    
-+    <RelativeLayout
-+        android:padding="40dp"
-+        android:layout_width="match_parent"
-+        android:layout_height="match_parent">
-+        
-+        <TextView
-+            android:text="@string/chapter_one_quiz"
-+            android:id="@+id/quiz_category_one"
-+            android:layout_width="wrap_content"
-+            android:layout_height="wrap_content"
-+            android:textStyle="bold"
-+            android:textSize="20sp"
-+            android:layout_centerInParent="true"/>
-+    </RelativeLayout>
-+
-+</android.support.v7.widget.CardView>
-\ No newline at end of file
-Index: build.gradle
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
-<+>// Top-level build file where you can add configuration options common to all sub-projects/modules.\n\nbuildscript {\n    repositories {\n        google()\n        jcenter()\n        \n    }\n    dependencies {\n        classpath 'com.android.tools.build:gradle:3.4.2'\n\n        classpath 'com.android.tools.build:gradle:3.4.2'\n        \n        // NOTE: Do not place your application dependencies here; they belong\n        // in the individual module build.gradle files\n    }\n}\n\nallprojects {\n    repositories {\n        google()\n        jcenter()\n        \n    }\n}\n\ntask clean(type: Delete) {\n    delete rootProject.buildDir\n}\n
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- build.gradle	(revision f0d0487ae6a5a6cd5b46fc4e49728fe7272b9471)
-+++ build.gradle	(date 1568583982000)
-@@ -20,7 +20,7 @@
-     repositories {
-         google()
-         jcenter()
--        
-+        maven{ url 'https://jitpack.io'}
-     }
- }
- 
-Index: app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/QuestionFragment.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/QuestionFragment.java	(date 1569217236000)
-+++ app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/QuestionFragment.java	(date 1569217236000)
-@@ -0,0 +1,256 @@
-+package koreanlearning.hangul.serokorean.beginnerone.quiz;
-+
-+import android.content.Context;
-+import android.graphics.Color;
-+import android.graphics.Typeface;
-+import android.net.Uri;
-+import android.os.Bundle;
-+import android.support.v4.app.Fragment;
-+import android.text.TextUtils;
-+import android.view.LayoutInflater;
-+import android.view.View;
-+import android.view.ViewGroup;
-+import android.widget.CheckBox;
-+import android.widget.CompoundButton;
-+import android.widget.FrameLayout;
-+import android.widget.ImageView;
-+import android.widget.ProgressBar;
-+import android.widget.TextView;
-+import android.widget.Toast;
-+
-+import com.hangul.serokorean.R;
-+
-+import javax.security.auth.callback.Callback;
-+
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.CurrentQuestion;
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.Question;
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.common.Common;
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.quizInterface.IQuestion;
-+
-+public class QuestionFragment extends Fragment implements IQuestion {
-+
-+    TextView txt_question_text;
-+    CheckBox ckbA, ckbB, ckbC, ckbD;
-+    FrameLayout layout_image;
-+    ProgressBar progressBar;
-+
-+    Question question;
-+    int questionIndex = -1;
-+
-+
-+    public QuestionFragment() {
-+        // Required empty public constructor
-+    }
-+
-+    public static QuestionFragment newInstance(String param1, String param2) {
-+        QuestionFragment fragment = new QuestionFragment();
-+        Bundle args = new Bundle();
-+
-+        fragment.setArguments(args);
-+        return fragment;
-+    }
-+
-+    @Override
-+    public void onCreate(Bundle savedInstanceState) {
-+        super.onCreate(savedInstanceState);
-+        if (getArguments() != null) {
-+
-+        }
-+    }
-+
-+    @Override
-+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-+                             Bundle savedInstanceState) {
-+        View itemView = inflater.inflate(R.layout.fragment_question, container, false);
-+
-+        //get question
-+        questionIndex = getArguments().getInt("index", -1);
-+        question = Common.questionList.get(questionIndex);
-+
-+        if(question != null){
-+
-+            layout_image = itemView.findViewById(R.id.layout_image);
-+            progressBar = itemView.findViewById(R.id.progress_bar);
-+
-+            if(question.isImageQuestion()){
-+                ImageView img_question = itemView.findViewById(R.id.img_question);
-+                //TODO: Picasso.get().load(question.getQuestionImage()).into(img_question, new Callback())
-+            }
-+            else{
-+                layout_image.setVisibility(View.GONE);
-+            }
-+
-+
-+            //view
-+            txt_question_text = itemView.findViewById(R.id.txt_question_text);
-+            txt_question_text.setText(question.getQuestionText());
-+
-+            ckbA = itemView.findViewById(R.id.ckbA);
-+            ckbA.setText(question.getAnswerA());
-+            ckbA.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-+                @Override
-+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-+                    if(isChecked){
-+                        Common.selected_values.add(ckbA.getText().toString());
-+                    }
-+                    else{
-+                        Common.selected_values.remove(ckbA.getText().toString());
-+                    }
-+                }
-+            });
-+
-+            ckbB = itemView.findViewById(R.id.ckbB);
-+            ckbB.setText(question.getAnswerB());
-+            ckbB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-+                @Override
-+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-+                    if(isChecked){
-+                        Common.selected_values.add(ckbB.getText().toString());
-+                    }
-+                    else{
-+                        Common.selected_values.remove(ckbB.getText().toString());
-+                    }
-+                }
-+            });
-+
-+            ckbC = itemView.findViewById(R.id.ckbC);
-+            ckbC.setText(question.getAnswerC());
-+            ckbC.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-+                @Override
-+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-+                    if(isChecked){
-+                        Common.selected_values.add(ckbC.getText().toString());
-+                    }
-+                    else{
-+                        Common.selected_values.remove(ckbC.getText().toString());
-+                    }
-+                }
-+            });
-+
-+            ckbD = itemView.findViewById(R.id.ckbD);
-+            ckbD.setText(question.getAnswerD());
-+            ckbD.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-+                @Override
-+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-+                    if(isChecked){
-+                        Common.selected_values.add(ckbD.getText().toString());
-+                    }
-+                    else{
-+                        Common.selected_values.remove(ckbD.getText().toString());
-+                    }
-+                }
-+            });
-+        }
-+
-+        // Inflate the layout for this fragment
-+        return itemView;
-+    }
-+
-+    @Override
-+    public CurrentQuestion getSelectedAnswer() {
-+        // it will return state of answer (right or wrong)
-+        CurrentQuestion currentQuestion = new CurrentQuestion(questionIndex, Common.ANSWER_TYPE.NO_ANSWER);
-+        StringBuilder result = new StringBuilder();
-+        if(Common.selected_values.size() > 1){
-+            // multiple choices' answer will be array
-+            // ex. arr[0] = A. New York
-+            // ex. arr[1] = B. Paris
-+
-+            Object[] arrayAnswer = Common.selected_values.toArray();
-+            for(int i=0; i<arrayAnswer.length; ++i){
-+                if(i < arrayAnswer.length -1){
-+                    // Take first letter of the answer
-+                    // ex. A. New York => only take A
-+                    result.append(new StringBuilder(((String)arrayAnswer[i]).substring(0,1)).append(","));
-+                }
-+                else{
-+                    result.append(new StringBuilder((String)arrayAnswer[i]).substring(0,1));
-+                }
-+            }
-+        }
-+        else if(Common.selected_values.size() == 1){
-+            Object[] arrayAnswer = Common.selected_values.toArray();
-+            result.append((String)arrayAnswer[0]).substring(0,1);
-+        }
-+
-+        if(question != null){
-+            // compare correctAnswer with user answer
-+            if(!TextUtils.isEmpty(result)){
-+                if(result.toString().equals(question.getCorrectAnswer())){
-+                    currentQuestion.setType(Common.ANSWER_TYPE.RIGHT_ANSWER);
-+                }
-+                else{
-+                    currentQuestion.setType(Common.ANSWER_TYPE.WRONG_ANSWER);
-+                }
-+            }
-+            else{
-+                currentQuestion.setType(Common.ANSWER_TYPE.NO_ANSWER);
-+            }
-+        }
-+        else{
-+            Toast.makeText(getContext(), "Cannot get quiz", Toast.LENGTH_SHORT).show();
-+        }
-+        // always clear selected_value when it's done
-+        Common.selected_values.clear();
-+
-+        return currentQuestion;
-+    }
-+
-+    @Override
-+    public void showCorrectAnswer() {
-+        // bold correct answer
-+        String[] correctAnswer = question.getCorrectAnswer().split(",");
-+        for(String answer : correctAnswer){
-+            if(answer.equals("A")){
-+                ckbA.setTypeface(null, Typeface.BOLD);
-+                ckbA.setTextColor(Color.RED);
-+            }
-+            else if(answer.equals("B")){
-+                ckbB.setTypeface(null, Typeface.BOLD);
-+                ckbB.setTextColor(Color.RED);
-+            }
-+            else if(answer.equals("C")){
-+                ckbC.setTypeface(null, Typeface.BOLD);
-+                ckbC.setTextColor(Color.RED);
-+            }
-+            else if(answer.equals("D")){
-+                ckbD.setTypeface(null, Typeface.BOLD);
-+                ckbD.setTextColor(Color.RED);
-+            }
-+        }
-+    }
-+
-+    @Override
-+    public void disableAnswer() {
-+        ckbA.setEnabled(false);
-+        ckbB.setEnabled(false);
-+        ckbC.setEnabled(false);
-+        ckbD.setEnabled(false);
-+    }
-+
-+    @Override
-+    public void resetQuestion() {
-+
-+        //enable checkbox
-+        ckbA.setEnabled(true);
-+        ckbB.setEnabled(true);
-+        ckbC.setEnabled(true);
-+        ckbD.setEnabled(true);
-+
-+        //remove all selected
-+        ckbA.setChecked(false);
-+        ckbB.setChecked(false);
-+        ckbC.setChecked(false);
-+        ckbD.setChecked(false);
-+
-+        //remove all bold on text
-+        ckbA.setTypeface(null, Typeface.NORMAL);
-+        ckbA.setTextColor(Color.BLACK);
-+        ckbB.setTypeface(null, Typeface.NORMAL);
-+        ckbB.setTextColor(Color.BLACK);
-+        ckbC.setTypeface(null, Typeface.NORMAL);
-+        ckbC.setTextColor(Color.BLACK);
-+        ckbD.setTypeface(null, Typeface.NORMAL);
-+        ckbD.setTextColor(Color.BLACK);
-+    }
-+}
-Index: app/src/main/res/menu/chapter_two_quiz.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/menu/chapter_two_quiz.xml	(date 1568580421000)
-+++ app/src/main/res/menu/chapter_two_quiz.xml	(date 1568580421000)
-@@ -0,0 +1,9 @@
-+<?xml version="1.0" encoding="utf-8"?>
-+<menu xmlns:android="http://schemas.android.com/apk/res/android"
-+    xmlns:app="http://schemas.android.com/apk/res-auto">
-+    <item
-+        android:id="@+id/action_settings"
-+        android:orderInCategory="100"
-+        android:title="@string/action_settings"
-+        app:showAsAction="never" />
-+</menu>
-Index: app/src/main/res/drawable/ic_menu_send.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/drawable/ic_menu_send.xml	(date 1568580421000)
-+++ app/src/main/res/drawable/ic_menu_send.xml	(date 1568580421000)
-@@ -0,0 +1,9 @@
-+<vector xmlns:android="http://schemas.android.com/apk/res/android"
-+    android:width="24dp"
-+    android:height="24dp"
-+    android:viewportWidth="24.0"
-+    android:viewportHeight="24.0">
-+    <path
-+        android:fillColor="#FF000000"
-+        android:pathData="M2.01,21L23,12 2.01,3 2,10l15,2 -15,2z" />
-+</vector>
-Index: app/src/main/res/drawable/side_nav_bar.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/drawable/side_nav_bar.xml	(date 1568580419000)
-+++ app/src/main/res/drawable/side_nav_bar.xml	(date 1568580419000)
-@@ -0,0 +1,9 @@
-+<shape xmlns:android="http://schemas.android.com/apk/res/android"
-+    android:shape="rectangle">
-+    <gradient
-+        android:angle="135"
-+        android:centerColor="#009688"
-+        android:endColor="#00695C"
-+        android:startColor="#4DB6AC"
-+        android:type="linear" />
-+</shape>
-\ No newline at end of file
-Index: app/src/main/res/drawable/ic_menu_camera.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/drawable/ic_menu_camera.xml	(date 1568580421000)
-+++ app/src/main/res/drawable/ic_menu_camera.xml	(date 1568580421000)
-@@ -0,0 +1,12 @@
-+<vector xmlns:android="http://schemas.android.com/apk/res/android"
-+    android:width="24dp"
-+    android:height="24dp"
-+    android:viewportWidth="24.0"
-+    android:viewportHeight="24.0">
-+    <path
-+        android:fillColor="#FF000000"
-+        android:pathData="M12,12m-3.2,0a3.2,3.2 0,1 1,6.4 0a3.2,3.2 0,1 1,-6.4 0" />
-+    <path
-+        android:fillColor="#FF000000"
-+        android:pathData="M9,2L7.17,4H4c-1.1,0 -2,0.9 -2,2v12c0,1.1 0.9,2 2,2h16c1.1,0 2,-0.9 2,-2V6c0,-1.1 -0.9,-2 -2,-2h-3.17L15,2H9zm3,15c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5z" />
-+</vector>
-Index: app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/adapter/CategoryAdapter.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/adapter/CategoryAdapter.java	(date 1568772157000)
-+++ app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/adapter/CategoryAdapter.java	(date 1568772157000)
-@@ -0,0 +1,68 @@
-+package koreanlearning.hangul.serokorean.beginnerone.quiz.adapter;
-+
-+import android.content.Context;
-+import android.content.Intent;
-+import android.support.annotation.NonNull;
-+import android.support.v7.widget.CardView;
-+import android.support.v7.widget.RecyclerView;
-+import android.view.LayoutInflater;
-+import android.view.View;
-+import android.view.ViewGroup;
-+import android.widget.TextView;
-+
-+import com.hangul.serokorean.R;
-+
-+import java.util.List;
-+
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.Category;
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity;
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.QuizCategories;
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.common.Common;
-+
-+public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyViewHolder> {
-+    Context context;
-+    List<Category> categories;
-+
-+    public CategoryAdapter(QuizCategories quizCategories, List<Category> allCategories) {
-+        context = quizCategories;
-+        categories = allCategories;
-+    }
-+
-+    @NonNull
-+    @Override
-+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-+        View itemView = LayoutInflater.from(context).inflate(R.layout.layout_category_item, viewGroup, false);
-+        return new MyViewHolder(itemView);
-+    }
-+
-+    @Override
-+    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-+        myViewHolder.quiz_chapter.setText(categories.get(i).getName());
-+    }
-+
-+    @Override
-+    public int getItemCount() {
-+        if(categories == null){
-+            return 0;
-+        }
-+        return categories.size();
-+    }
-+
-+    public class MyViewHolder extends RecyclerView.ViewHolder {
-+        CardView card_category;
-+        TextView quiz_chapter;
-+        public MyViewHolder(@NonNull View itemView) {
-+            super(itemView);
-+            card_category = itemView.findViewById(R.id.card_catetory);
-+            quiz_chapter = itemView.findViewById(R.id.quiz_category_one);
-+            card_category.setOnClickListener(new View.OnClickListener(){
-+                @Override
-+                public void onClick(View v) {
-+                    Common.selectedCategory = categories.get(getAdapterPosition()); //assign current category position
-+                    Intent selectedCategory = new Intent(context, QuestionActivity.class);
-+                    context.startActivity(selectedCategory);
-+                }
-+            });
-+        }
-+    }
-+}
-Index: app/src/main/res/drawable/ic_menu_share.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/drawable/ic_menu_share.xml	(date 1568580421000)
-+++ app/src/main/res/drawable/ic_menu_share.xml	(date 1568580421000)
-@@ -0,0 +1,9 @@
-+<vector xmlns:android="http://schemas.android.com/apk/res/android"
-+    android:width="24dp"
-+    android:height="24dp"
-+    android:viewportWidth="24.0"
-+    android:viewportHeight="24.0">
-+    <path
-+        android:fillColor="#FF000000"
-+        android:pathData="M18,16.08c-0.76,0 -1.44,0.3 -1.96,0.77L8.91,12.7c0.05,-0.23 0.09,-0.46 0.09,-0.7s-0.04,-0.47 -0.09,-0.7l7.05,-4.11c0.54,0.5 1.25,0.81 2.04,0.81 1.66,0 3,-1.34 3,-3s-1.34,-3 -3,-3 -3,1.34 -3,3c0,0.24 0.04,0.47 0.09,0.7L8.04,9.81C7.5,9.31 6.79,9 6,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3c0.79,0 1.5,-0.31 2.04,-0.81l7.12,4.16c-0.05,0.21 -0.08,0.43 -0.08,0.65 0,1.61 1.31,2.92 2.92,2.92 1.61,0 2.92,-1.31 2.92,-2.92s-1.31,-2.92 -2.92,-2.92z" />
-+</vector>
-Index: app/src/main/res/drawable/ic_menu_gallery.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/drawable/ic_menu_gallery.xml	(date 1568580421000)
-+++ app/src/main/res/drawable/ic_menu_gallery.xml	(date 1568580421000)
-@@ -0,0 +1,9 @@
-+<vector xmlns:android="http://schemas.android.com/apk/res/android"
-+    android:width="24dp"
-+    android:height="24dp"
-+    android:viewportWidth="24.0"
-+    android:viewportHeight="24.0">
-+    <path
-+        android:fillColor="#FF000000"
-+        android:pathData="M22,16V4c0,-1.1 -0.9,-2 -2,-2H8c-1.1,0 -2,0.9 -2,2v12c0,1.1 0.9,2 2,2h12c1.1,0 2,-0.9 2,-2zm-11,-4l2.03,2.71L16,11l4,5H8l3,-4zM2,6v14c0,1.1 0.9,2 2,2h14v-2H4V6H2z" />
-+</vector>
-Index: app/src/main/res/drawable/ic_menu_manage.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/drawable/ic_menu_manage.xml	(date 1568580421000)
-+++ app/src/main/res/drawable/ic_menu_manage.xml	(date 1568580421000)
-@@ -0,0 +1,9 @@
-+<vector xmlns:android="http://schemas.android.com/apk/res/android"
-+    android:width="24dp"
-+    android:height="24dp"
-+    android:viewportWidth="24.0"
-+    android:viewportHeight="24.0">
-+    <path
-+        android:fillColor="#FF000000"
-+        android:pathData="M22.7,19l-9.1,-9.1c0.9,-2.3 0.4,-5 -1.5,-6.9 -2,-2 -5,-2.4 -7.4,-1.3L9,6 6,9 1.6,4.7C0.4,7.1 0.9,10.1 2.9,12.1c1.9,1.9 4.6,2.4 6.9,1.5l9.1,9.1c0.4,0.4 1,0.4 1.4,0l2.3,-2.3c0.5,-0.4 0.5,-1.1 0.1,-1.4z" />
-+</vector>
-\ No newline at end of file
-Index: app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/common/SpaceDecoration.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/common/SpaceDecoration.java	(date 1568595520000)
-+++ app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/common/SpaceDecoration.java	(date 1568595520000)
-@@ -0,0 +1,19 @@
-+package koreanlearning.hangul.serokorean.beginnerone.quiz.common;
-+
-+import android.graphics.Rect;
-+import android.support.annotation.NonNull;
-+import android.support.v7.widget.RecyclerView;
-+import android.view.View;
-+
-+public class SpaceDecoration extends RecyclerView.ItemDecoration {
-+    private int space;
-+
-+    public SpaceDecoration(int space) {
-+        this.space = space;
-+    }
-+
-+    @Override
-+    public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
-+        outRect.left = outRect.right = outRect.bottom = outRect.top = space;
-+    }
-+}
-Index: app/src/main/res/drawable/ic_menu_slideshow.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/drawable/ic_menu_slideshow.xml	(date 1568580421000)
-+++ app/src/main/res/drawable/ic_menu_slideshow.xml	(date 1568580421000)
-@@ -0,0 +1,9 @@
-+<vector xmlns:android="http://schemas.android.com/apk/res/android"
-+    android:width="24dp"
-+    android:height="24dp"
-+    android:viewportWidth="24.0"
-+    android:viewportHeight="24.0">
-+    <path
-+        android:fillColor="#FF000000"
-+        android:pathData="M4,6H2v14c0,1.1 0.9,2 2,2h14v-2H4V6zm16,-4H8c-1.1,0 -2,0.9 -2,2v12c0,1.1 0.9,2 2,2h12c1.1,0 2,-0.9 2,-2V4c0,-1.1 -0.9,-2 -2,-2zm-8,12.5v-9l6,4.5 -6,4.5z" />
-+</vector>
-Index: app/src/main/res/values/dimens.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
-<+><resources>\n    <!-- Default screen margins, per the Android Design guidelines. -->\n    <dimen name=\"activity_horizontal_margin\">16dp</dimen>\n    <dimen name=\"activity_vertical_margin\">16dp</dimen>\n    <dimen name=\"fab_margin\">16dp</dimen>\n    <dimen name=\"appbar_padding_top\">8dp</dimen>\n    <dimen name=\"page_margin\">10dp</dimen>\n</resources>
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/values/dimens.xml	(revision f0d0487ae6a5a6cd5b46fc4e49728fe7272b9471)
-+++ app/src/main/res/values/dimens.xml	(date 1568580419000)
-@@ -5,4 +5,6 @@
-     <dimen name="fab_margin">16dp</dimen>
-     <dimen name="appbar_padding_top">8dp</dimen>
-     <dimen name="page_margin">10dp</dimen>
-+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
-+    <dimen name="nav_header_height">176dp</dimen>
- </resources>
-\ No newline at end of file
-Index: app/src/main/res/menu/activity_chapter_two_quiz_drawer.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/menu/activity_chapter_two_quiz_drawer.xml	(date 1568580420000)
-+++ app/src/main/res/menu/activity_chapter_two_quiz_drawer.xml	(date 1568580420000)
-@@ -0,0 +1,38 @@
-+<?xml version="1.0" encoding="utf-8"?>
-+<menu xmlns:android="http://schemas.android.com/apk/res/android"
-+    xmlns:tools="http://schemas.android.com/tools"
-+    tools:showIn="navigation_view">
-+
-+    <group android:checkableBehavior="single">
-+        <item
-+            android:id="@+id/nav_home"
-+            android:icon="@drawable/ic_menu_camera"
-+            android:title="@string/menu_home" />
-+        <item
-+            android:id="@+id/nav_gallery"
-+            android:icon="@drawable/ic_menu_gallery"
-+            android:title="@string/menu_gallery" />
-+        <item
-+            android:id="@+id/nav_slideshow"
-+            android:icon="@drawable/ic_menu_slideshow"
-+            android:title="@string/menu_slideshow" />
-+        <item
-+            android:id="@+id/nav_tools"
-+            android:icon="@drawable/ic_menu_manage"
-+            android:title="@string/menu_tools" />
-+    </group>
-+
-+    <item android:title="Communicate">
-+        <menu>
-+            <item
-+                android:id="@+id/nav_share"
-+                android:icon="@drawable/ic_menu_share"
-+                android:title="@string/menu_share" />
-+            <item
-+                android:id="@+id/nav_send"
-+                android:icon="@drawable/ic_menu_send"
-+                android:title="@string/menu_send" />
-+        </menu>
-+    </item>
-+
-+</menu>
-Index: app/src/main/res/values/styles.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
-<+><resources>\n\n    <style name=\"AppTheme2\" parent=\"Theme.AppCompat.Light.NoActionBar\">\n        <!-- Customize your theme here. -->\n        <item name=\"colorPrimary\">@color/black</item>\n        <item name=\"colorPrimaryDark\">@color/white</item>\n        <item name=\"colorAccent\">@color/white</item>\n    </style>\n\n</resources>\n
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/values/styles.xml	(revision f0d0487ae6a5a6cd5b46fc4e49728fe7272b9471)
-+++ app/src/main/res/values/styles.xml	(date 1568580421000)
-@@ -7,4 +7,13 @@
-         <item name="colorAccent">@color/white</item>
-     </style>
- 
-+    <style name="AppTheme2.NoActionBar">
-+        <item name="windowActionBar">false</item>
-+        <item name="windowNoTitle">true</item>
-+    </style>
-+
-+    <style name="AppTheme2.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-+
-+    <style name="AppTheme2.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-+
- </resources>
-Index: app/src/main/res/values-v21/styles.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/values-v21/styles.xml	(date 1568587874000)
-+++ app/src/main/res/values-v21/styles.xml	(date 1568587874000)
-@@ -0,0 +1,11 @@
-+<resources>
-+
-+    <style name="AppTheme2.NoActionBar">
-+        <item name="windowActionBar">false</item>
-+        <item name="windowNoTitle">true</item>
-+        <item name="android:statusBarColor">@android:color/transparent</item>
-+    </style>
-+
-+    <style name="AppTheme.AppBarOverLay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-+    <style name="AppTheme.PopupOverLay" parent="ThemeOverlay.AppCompat.Light" />
-+</resources>
-Index: app/src/main/assets/databases/samplequiz2.db
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/assets/databases/samplequiz2.db	(date 1569128103000)
-+++ app/src/main/assets/databases/samplequiz2.db	(date 1569128103000)
-@@ -0,0 +1,73 @@
-+SQLite format 3   @     #                                                             # .(j
-+� � ^
-+���\\                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          �WW�ctablesqlitebrowser_rename_column_new_tablesqlitebrowser_rename_column_new_tableCREATE TABLE `sqlitebrowser_rename_column_new_table` (
-+	`ID`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-+	`QuestionText`	TEXT,
-+	`QuestionImage`	TEXT,
-+	`AnswerA`	TEXT,
-+	`AnswerB`	TEXT,
-+	`AnswerC`	TEXT,
-+	`AnswerD`	TEXT,
-+	`CorrectAnswer`	TEXT,
-+	`IsImageQuestion`	INTEGER,
-+	`CategoryID`	INTEGER
-+)�+�)tableQuestionQuestionCREATE TABLE "Question" (
-+	`ID`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-+	`QuestionText`	TEXT,
-+	`QuestionImage`	TEXT,
-+	`AnswerA`	TEXT,
-+	`AnswerB`	TEXT,
-+	`AnswerC`	TEXT,
-+	`AnswerD`	TEXT,
-+	`CorrectAnswer`	TEXT,
-+	`IsImageQuestion`	INTEGER,
-+	`CategoryID`	INTEGER
-+)��_tableCategoryCategoryCREATE TABLE `Category` (
-+	`ID`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-+	`Name`	TEXT,
-+	`Image`	TEXT
-+)P++Ytablesqlite_sequencesqlite_sequenceCREATE TABLE sqlite_sequence(name,seq)  �{tableQuestionQuestionCREATE TABLE `Question` (
-+	`ID`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-+	`QuestionText`	TEXT,
-+	`QuestionImage`	TEXT,
-+	`Ani}W i}W indexsqlite_autoindex_sqlitebrowser_rename_column_new_table_1sqlitebrowser_rename_column_new_table   9    /C indexsqlite_autoindex_Question_1Question   �    �
-+�
-+H��>��$
-+�
-+E	�	|	�1�]��?�c�Q��`�h � � �              a# q #%'  	In which city is the famous Manneken Pis fountain?A. BrusselsB. BarcelonaC. Botticelli9$ S #    	Who is the inventor of photography?A. Daguerrej" [ +%'+	Who was the original author of Dracula?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerDs! m +%'+	Which Italian artist painted the Birth of Venus?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerC�   � +%'+	In which Spanish city did the Joan Miro museum open in 1975?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerBx w +%'+	What color are often the domes of churches in Russia?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerA�n '�Q%/#	Where is it ?https://dynaimage.cdn.cnn.com/cnn/q_auto,w_900,c_fill,g_auto,h_506,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F150806121501-sg-50---lead-image.jpgA. SydneyB. Hong KongC. Hochiminh CityD. SinaporeD� '}%/#	Where is it ?http://www.abc.net.au/news/image/6887602-3x2-700x467.jpgA. SydneyB. Hong KongC. Hochiminh CityD. SinaporeA� '�%%/	Where is it ?https://cdn.crtkl.com/wp-content/uploads/sites/1/2015/07/hongkong-office.jpgA. SaharaB. Hong KongC. HanoiD. Hochiminh CityBx '}!#	Where is it ?https://www.newyorkpass.com/images/rebrand/prices_01.jpgA. NewyorkB. AlaskaC. TexasD. IllinoisA} e _#Which two seas are joined by the Suez Canal?A. AfricaB. AsiaC. The Mediterranean Sea and the Red SeasD. CanberraC[ [ %#What is the capital city of Australia ?A. AfricaB. AsiaC. East-AsiaD. CanberraDV S !#What is the largest city in Canada?A. TorontoB. AlaskaC. TexasD. IllinoisAZ S %%In which country is Krakow located?A. AfricaB. PolandC. East-AsiaD. West-AsiaBh s !%What do the Japanese people call their own country?A. NipponB. SiberiaC. SouthsideD. MoscowAc o ##What is the capital of the American state Hawaii?A. USAB. RussiaC. ZimbabweD. HonoluluDm � #What is the second largest country in Europe after Russia?A. FranceB. RussiaC. ZimbabweD. ChinaAq o )))Through which capital does the Liffey river flow?A. Donau riverB. DublinC. Wolga riverD. Wolga riverB\ U ))What is the longest river in Europe?A. TiberB. NyleC. Wolga riverD. Wolga riverDx � ))Which European river does flow through six different countries?A. Donau riverB. NyleC. Wolga riverD. TiberAc i %%On which continent can you visit Sierra Leone?A. AfricaB. AsiaC. East-AsiaD. West-AsiaAb k !#What is the largest state of the United States?A. NewyorkB. AlaskaC. TexasD. IllinoisB~ �
-+ '!/What island, which belonged to Denmark, was independent in 1944?A. PhilipinesB. TimorC. IcelandD. HoangSa IslandC]
-+ i #Which country did once have the name Rhodesia?A. USAB. RussiaC. ZimbabweD. ChinaCZ U %)Which river is flowing through Rome?A. Han RiverB. NyleC. Wolga riverD. TiberD` W %/Which is the largest desert on earth?A. SaharaB. Hong KongC. HanoiD. Hochiminh CityAZ
-+ c )How many time zones are there in the world?A. OneB. TwoC. Twenty-fourD. ThreeCb	 S )')On which Italian island is Palermo?A. CrystalmereB. ShadecliffC. SicilyD. FallboroughCH I How many continents are there?A. FourB. SevenC. TwoD. ThreeBZ S #!%What is a very cold part of Russia?A. NortwestB. SiberiaC. SouthsideD. MoscowB^ i What is the name of the desert area in Mexico?A. SonoraB. SaharaC. TexasD. SehereAb [ %/What is the noisiest city in the world?A. BombayB. Hong KongC. HanoiD. Hochiminh CityBn { #!%Which Turkish city has the name of a cartoon character?A. SupermanB. Ant-manC. SpidermanD. BatmanD[ W )#What is the national animal of China?A. TigerB. NappaC. Giant pandaD. ElephentCR I !%What is the capital of Turkey?A. HanoiB. AnkaraC. WakandaD. PhnompenhB�P #�/#!	Where is ithttps://cdn-web.sidlee.com/-/media/sidlee/cities/paris/sidlee-cities-pre-par-01_798x895.jpg?mw=1420&hash=0DA87CBA5A6626B67D73CB08579BDFD6E46CB2E6A. ParisB. LondonC. New YorkD. Vati   
-+   6� ���������������������~xrlf`ZTNHB<60*$ �����������                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          66554433221100//..--,,++**))((''&&%%$$##""!!  
-+
-+
-+
-+				
-+   � ���                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           )Wsqlitebrowser_rename_column_new_tableCategoryQuestion6
-+ ��������scSC.�                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ! Chapter 14
-+  Chapter 6> 
-+    ! Chapter 15
-+ ! Chapter 13�  ! Chapter 12 ! Chapter 11
-+ ! Chapter 10
-+	  Chapter 9
-+  Chapter 8
-+  Chapter 7�   
-+  Chapter 5
-+  Chapter 4
-+  Chapter 2    Nature 
-+  Chapter 3
-+ 
-+Chapter 1              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
-+   � -�|
-+�
-+H��>��$
-+�
-+E	�	|	�1�]��?�c�Q��`�h � �                                                                                                                   9$ S #    	Who is the inventor of photography?A. Daguerrej" [ +%'+	Who was the original author of Dracula?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerDs! m +%'+	Which Italian artist painted the Birth of Venus?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerC�   � +%'+	In which Spanish city did the Joan Miro museum open in 1975?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerBx w +%'+	What color are often the domes of churches in Russia?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerA�n '�Q%/#	Where is it ?https://dynaimage.cdn.cnn.com/cnn/q_auto,w_900,c_fill,g_auto,h_506,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F150806121501-sg-50---lead-image.jpgA. SydneyB. Hong KongC. Hochiminh CityD. SinaporeD� '}%/#	Where is it ?http://www.abc.net.au/news/image/6887602-3x2-700x467.jpgA. SydneyB. Hong KongC. Hochiminh CityD. SinaporeA� '�%%/	Where is it ?https://cdn.crtkl.com/wp-content/uploads/sites/1/2015/07/hongkong-office.jpgA. SaharaB. Hong KongC. HanoiD. Hochiminh CityBx '}!#	Where is it ?https://www.newyorkpass.com/images/rebrand/prices_01.jpgA. NewyorkB. AlaskaC. TexasD. IllinoisA} e _#Which two seas are joined by the Suez Canal?A. AfricaB. AsiaC. The Mediterranean Sea and the Red SeasD. CanberraC[ [ %#What is the capital city of Australia ?A. AfricaB. AsiaC. East-AsiaD. CanberraDV S !#What is the largest city in Canada?A. TorontoB. AlaskaC. TexasD. IllinoisAZ S %%In which country is Krakow located?A. AfricaB. PolandC. East-AsiaD. West-AsiaBh s !%What do the Japanese people call their own country?A. NipponB. SiberiaC. SouthsideD. MoscowAc o ##What is the capital of the American state Hawaii?A. USAB. RussiaC. ZimbabweD. HonoluluDm � #What is the second largest country in Europe after Russia?A. FranceB. RussiaC. ZimbabweD. ChinaAq o )))Through which capital does the Liffey river flow?A. Donau riverB. DublinC. Wolga riverD. Wolga riverB\ U ))What is the longest river in Europe?A. TiberB. NyleC. Wolga riverD. Wolga riverDx � ))Which European river does flow through six different countries?A. Donau riverB. NyleC. Wolga riverD. TiberAc i %%On which continent can you visit Sierra Leone?A. AfricaB. AsiaC. East-AsiaD. West-AsiaAb k !#What is the largest state of the United States?A. NewyorkB. AlaskaC. TexasD. IllinoisB~ �
-+ '!/What island, which belonged to Denmark, was independent in 1944?A. PhilipinesB. TimorC. IcelandD. HoangSa IslandC]
-+ i #Which country did once have the name Rhodesia?A. USAB. RussiaC. ZimbabweD. ChinaCZ U %)Which river is flowing through Rome?A. Han RiverB. NyleC. Wolga riverD. TiberD` W %/Which is the largest desert on earth?A. SaharaB. Hong KongC. HanoiD. Hochiminh CityAZ
-+ c )How many time zones are there in the world?A. OneB. TwoC. Twenty-fourD. ThreeCb	 S )')On which Italian island is Palermo?A. CrystalmereB. ShadecliffC. SicilyD. FallboroughCH I How many continents are there?A. FourB. SevenC. TwoD. ThreeBZ S #!%What is a very cold part of Russia?A. NortwestB. SiberiaC. SouthsideD. MoscowB^ i What is the name of the desert area in Mexico?A. SonoraB. SaharaC. TexasD. SehereAb [ %/What is the noisiest city in the world?A. BombayB. Hong KongC. HanoiD. Hochiminh CityBn { #!%Which Turkish city has the name of a cartoon character?A. SupermanB. Ant-manC. SpidermanD. BatmanD[ W )#What is the national animal of China?A. TigerB. NappaC. Giant pandaD. ElephentCR I !%What is the capital of Turkey?A. HanoiB. AnkaraC. WakandaD. PhnompenhB�P #�/#!	Where is ithttps://cdn-web.sidlee.com/-/media/sidlee/cities/paris/sidlee-cities-pre-par-01_798x895.jpg?mw=1420&hash=0DA87CBA5A6626B67D73CB08579BDFD6E46CB2E6A. ParisB. LondonC. New YorkD. VaticanA
-+   " Z �1�} 
-+�
-+'�	
-+�
-+	�	:�c��|�V�b��7�t�1 � Z              j6 K ++++This is multi choice question 6A. Wrong AnswerB. Right AnswerC. Right AnswerD. Wrong AnswerB,Ci5 K )+++This is multi choice question 5A Right AnswerB. Right AnswerC. Wrong AnswerD. Wrong AnswerA,Bi4 K )+++This is multi choice question 4A Right AnswerB. Wrong AnswerC. Right AnswerD. Wrong AnswerA,Cj3 K ++++This is multi choice question 3A. Wrong AnswerB. Right AnswerC. Wrong AnswerD. Right AnswerB,Dj2 K ++++This is multi choice question 2A. Right AnswerB. Wrong AnswerC. Wrong AnswerD. Right AnswerA,Dh1 G ++++This is multi choice questionA. Wrong AnswerB. Wrong AnswerC. Right AnswerD. Right AnswerC,DW0 [ !	In which city did Romeo and Julia live?A. GreeceB. ParisC. PicassoD. VeronaD[/ c !	Who did paint the famous painting Guernica?A. GreeceB. ParisC. PicassoD. VeronaCd. u !	n which city is the composer Frederic Chopin buried?A. GreeceB. ParisC. PicassoD. VeronaBf- y !	In which country was the famous painter El Greco born?A. GreeceB. ParisC. PicassoD. VeronaA�, i #!Y+	Who painted the ceiling of the Sistine Chapel?A. FlorenceB. MenorahC. A System of Jewish Mystical BeliefsD. MichelangeloDk+ 7 #!Y+	What is the Kabbalah?A. FlorenceB. MenorahC. A System of Jewish Mystical BeliefsD. MichelangeloC�* � #!Y+	What is called the Jewish candlestick with special religious meaning?A. FlorenceB. MenorahC. A System of Jewish Mystical BeliefsD. MichelangeloB�) i #!Y+	In which city can you see Michelangelos David?A. FlorenceB. MenorahC. A System of Jewish Mystical BeliefsD. MichelangeloA�( � !5%/	Which famous French engineer designed two bridges for the city of Porto?A. GenesisB. Leonardo Da VinciC. LiverpoolD. Gustave EiffelDx' o !5%/	In which English town did Adolf Hitler study art?A. GenesisB. Leonardo Da VinciC. LiverpoolD. Gustave EiffelCc& E !5%/	Who did the Mona Lisa paint?A. GenesisB. Leonardo Da VinciC. LiverpoolD. Gustave EiffelBs% e !5%/	What is the first book of the Old Testament?A. GenesisB. Leonardo Da VinciC. LiverpoolD. Gustave EiffelAb$ S #%'+	Who is the inventor of photography?A. DaguerreB. BarcelonaC. BotticelliD. Baram StokerAq# q #%'+	In which city is the famous Manneken Pis fountain?A. BrusselsB. BarcelonaC. BotticelliD. Baram StokerAj" [ +%'+	Who was the original author of Dracula?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerDs! m +%'+	Which Italian artist painted the Birth of Venus?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerC�   � +%'+	In which Spanish city did the Joan Miro museum open in 1975?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerBx w +%'+	What color are often the domes of churches in Russia?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerA�n '�Q%/#	Where is it ?https://dynaimage.cdn.cnn.com/cnn/q_auto,w_900,c_fill,g_auto,h_506,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F150806121501-sg-50---lead-image.jpgA. SydneyB. Hong KongC. Hochiminh CityD. SinaporeD� '}%/#	Where is it ?http://www.abc.net.au/news/image/6887602-3x2-700x467.jpgA. SydneyB. Hong KongC. Hochiminh CityD. SinaporeA� '�%%/	Where is it ?https://cdn.crtkl.com/wp-content/uploads/sites/1/2015/07/hongkong-office.jpgA. SaharaB. Hong KongC. HanoiD. Hochiminh CityBx '}!#	Where is it ?https://www.newyorkpass.com/images/rebrand/prices_01.jpgA. NewyorkB. AlaskaC. TexasD. IllinoisA} e _#Which two seas are joined by the Suez Canal?A. AfricaB. AsiaC. The Mediterranean Sea and the Red SeasD. CanberraC[ [ %#What is the capital city of Australia ?A. AfricaB. AsiaC. East-AsiaD. CanberraDV S !#What is the largest city in Canada?A. TorontoB. AlaskaC. TexasD. IllinoisAZ S %%In which country is Krakow located?A. AfricaB. PolandC. East-AsiaD. West-AsiaBh s !%What do the Japanese people call their own country?A. NipponB. SiberiaC. SouthsideD. MoscowAc o ##What is the capital of the American state Hawaii?A. USAB. RussiaC. ZimbabweD. HonoluluD
-\ No newline at end of file
-Index: app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/quizInterface/IQuestion.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/quizInterface/IQuestion.java	(date 1569133868000)
-+++ app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/quizInterface/IQuestion.java	(date 1569133868000)
-@@ -0,0 +1,11 @@
-+package koreanlearning.hangul.serokorean.beginnerone.quiz.quizInterface;
-+
-+import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.CurrentQuestion;
-+
-+public interface IQuestion {
-+    CurrentQuestion getSelectedAnswer(); // get selected answer
-+    void showCorrectAnswer(); // bold correct answer
-+    void disableAnswer(); // disable all check box
-+    void resetQuestion(); // reset all function on questions
-+
-+}
-Index: app/src/main/assets/databases/samplequiz.db
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/assets/databases/samplequiz.db	(date 1569128103000)
-+++ app/src/main/assets/databases/samplequiz.db	(date 1569128103000)
-@@ -0,0 +1,73 @@
-+SQLite format 3   @     #                                                             # .(j
-+� � ^
-+���\\                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          �WW�ctablesqlitebrowser_rename_column_new_tablesqlitebrowser_rename_column_new_tableCREATE TABLE `sqlitebrowser_rename_column_new_table` (
-+	`ID`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-+	`QuestionText`	TEXT,
-+	`QuestionImage`	TEXT,
-+	`AnswerA`	TEXT,
-+	`AnswerB`	TEXT,
-+	`AnswerC`	TEXT,
-+	`AnswerD`	TEXT,
-+	`CorrectAnswer`	TEXT,
-+	`IsImageQuestion`	INTEGER,
-+	`CategoryID`	INTEGER
-+)�+�)tableQuestionQuestionCREATE TABLE "Question" (
-+	`ID`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-+	`QuestionText`	TEXT,
-+	`QuestionImage`	TEXT,
-+	`AnswerA`	TEXT,
-+	`AnswerB`	TEXT,
-+	`AnswerC`	TEXT,
-+	`AnswerD`	TEXT,
-+	`CorrectAnswer`	TEXT,
-+	`IsImageQuestion`	INTEGER,
-+	`CategoryID`	INTEGER
-+)��_tableCategoryCategoryCREATE TABLE `Category` (
-+	`ID`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-+	`Name`	TEXT,
-+	`Image`	TEXT
-+)P++Ytablesqlite_sequencesqlite_sequenceCREATE TABLE sqlite_sequence(name,seq)  �{tableQuestionQuestionCREATE TABLE `Question` (
-+	`ID`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-+	`QuestionText`	TEXT,
-+	`QuestionImage`	TEXT,
-+	`Ani}W i}W indexsqlite_autoindex_sqlitebrowser_rename_column_new_table_1sqlitebrowser_rename_column_new_table   9    /C indexsqlite_autoindex_Question_1Question   �    �
-+�
-+H��>��$
-+�
-+E	�	|	�1�]��?�c�Q��`�h � � �              a# q #%'  	In which city is the famous Manneken Pis fountain?A. BrusselsB. BarcelonaC. Botticelli9$ S #    	Who is the inventor of photography?A. Daguerrej" [ +%'+	Who was the original author of Dracula?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerDs! m +%'+	Which Italian artist painted the Birth of Venus?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerC�   � +%'+	In which Spanish city did the Joan Miro museum open in 1975?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerBx w +%'+	What color are often the domes of churches in Russia?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerA�n '�Q%/#	Where is it ?https://dynaimage.cdn.cnn.com/cnn/q_auto,w_900,c_fill,g_auto,h_506,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F150806121501-sg-50---lead-image.jpgA. SydneyB. Hong KongC. Hochiminh CityD. SinaporeD� '}%/#	Where is it ?http://www.abc.net.au/news/image/6887602-3x2-700x467.jpgA. SydneyB. Hong KongC. Hochiminh CityD. SinaporeA� '�%%/	Where is it ?https://cdn.crtkl.com/wp-content/uploads/sites/1/2015/07/hongkong-office.jpgA. SaharaB. Hong KongC. HanoiD. Hochiminh CityBx '}!#	Where is it ?https://www.newyorkpass.com/images/rebrand/prices_01.jpgA. NewyorkB. AlaskaC. TexasD. IllinoisA} e _#Which two seas are joined by the Suez Canal?A. AfricaB. AsiaC. The Mediterranean Sea and the Red SeasD. CanberraC[ [ %#What is the capital city of Australia ?A. AfricaB. AsiaC. East-AsiaD. CanberraDV S !#What is the largest city in Canada?A. TorontoB. AlaskaC. TexasD. IllinoisAZ S %%In which country is Krakow located?A. AfricaB. PolandC. East-AsiaD. West-AsiaBh s !%What do the Japanese people call their own country?A. NipponB. SiberiaC. SouthsideD. MoscowAc o ##What is the capital of the American state Hawaii?A. USAB. RussiaC. ZimbabweD. HonoluluDm � #What is the second largest country in Europe after Russia?A. FranceB. RussiaC. ZimbabweD. ChinaAq o )))Through which capital does the Liffey river flow?A. Donau riverB. DublinC. Wolga riverD. Wolga riverB\ U ))What is the longest river in Europe?A. TiberB. NyleC. Wolga riverD. Wolga riverDx � ))Which European river does flow through six different countries?A. Donau riverB. NyleC. Wolga riverD. TiberAc i %%On which continent can you visit Sierra Leone?A. AfricaB. AsiaC. East-AsiaD. West-AsiaAb k !#What is the largest state of the United States?A. NewyorkB. AlaskaC. TexasD. IllinoisB~ �
-+ '!/What island, which belonged to Denmark, was independent in 1944?A. PhilipinesB. TimorC. IcelandD. HoangSa IslandC]
-+ i #Which country did once have the name Rhodesia?A. USAB. RussiaC. ZimbabweD. ChinaCZ U %)Which river is flowing through Rome?A. Han RiverB. NyleC. Wolga riverD. TiberD` W %/Which is the largest desert on earth?A. SaharaB. Hong KongC. HanoiD. Hochiminh CityAZ
-+ c )How many time zones are there in the world?A. OneB. TwoC. Twenty-fourD. ThreeCb	 S )')On which Italian island is Palermo?A. CrystalmereB. ShadecliffC. SicilyD. FallboroughCH I How many continents are there?A. FourB. SevenC. TwoD. ThreeBZ S #!%What is a very cold part of Russia?A. NortwestB. SiberiaC. SouthsideD. MoscowB^ i What is the name of the desert area in Mexico?A. SonoraB. SaharaC. TexasD. SehereAb [ %/What is the noisiest city in the world?A. BombayB. Hong KongC. HanoiD. Hochiminh CityBn { #!%Which Turkish city has the name of a cartoon character?A. SupermanB. Ant-manC. SpidermanD. BatmanD[ W )#What is the national animal of China?A. TigerB. NappaC. Giant pandaD. ElephentCR I !%What is the capital of Turkey?A. HanoiB. AnkaraC. WakandaD. PhnompenhB�P #�/#!	Where is ithttps://cdn-web.sidlee.com/-/media/sidlee/cities/paris/sidlee-cities-pre-par-01_798x895.jpg?mw=1420&hash=0DA87CBA5A6626B67D73CB08579BDFD6E46CB2E6A. ParisB. LondonC. New YorkD. Vati   
-+   6� ���������������������~xrlf`ZTNHB<60*$ �����������                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          66554433221100//..--,,++**))((''&&%%$$##""!!  
-+
-+
-+
-+				
-+   � ���                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           )Wsqlitebrowser_rename_column_new_tableCategoryQuestion6
-+ ��������scSC.�                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ! Chapter 14
-+  Chapter 6> 
-+    ! Chapter 15
-+ ! Chapter 13�  ! Chapter 12 ! Chapter 11
-+ ! Chapter 10
-+	  Chapter 9
-+  Chapter 8
-+  Chapter 7�   
-+  Chapter 5
-+  Chapter 4
-+  Chapter 2    Nature 
-+  Chapter 3
-+ 
-+Chapter 1              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
-+   � -�|
-+�
-+H��>��$
-+�
-+E	�	|	�1�]��?�c�Q��`�h � �                                                                                                                   9$ S #    	Who is the inventor of photography?A. Daguerrej" [ +%'+	Who was the original author of Dracula?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerDs! m +%'+	Which Italian artist painted the Birth of Venus?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerC�   � +%'+	In which Spanish city did the Joan Miro museum open in 1975?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerBx w +%'+	What color are often the domes of churches in Russia?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerA�n '�Q%/#	Where is it ?https://dynaimage.cdn.cnn.com/cnn/q_auto,w_900,c_fill,g_auto,h_506,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F150806121501-sg-50---lead-image.jpgA. SydneyB. Hong KongC. Hochiminh CityD. SinaporeD� '}%/#	Where is it ?http://www.abc.net.au/news/image/6887602-3x2-700x467.jpgA. SydneyB. Hong KongC. Hochiminh CityD. SinaporeA� '�%%/	Where is it ?https://cdn.crtkl.com/wp-content/uploads/sites/1/2015/07/hongkong-office.jpgA. SaharaB. Hong KongC. HanoiD. Hochiminh CityBx '}!#	Where is it ?https://www.newyorkpass.com/images/rebrand/prices_01.jpgA. NewyorkB. AlaskaC. TexasD. IllinoisA} e _#Which two seas are joined by the Suez Canal?A. AfricaB. AsiaC. The Mediterranean Sea and the Red SeasD. CanberraC[ [ %#What is the capital city of Australia ?A. AfricaB. AsiaC. East-AsiaD. CanberraDV S !#What is the largest city in Canada?A. TorontoB. AlaskaC. TexasD. IllinoisAZ S %%In which country is Krakow located?A. AfricaB. PolandC. East-AsiaD. West-AsiaBh s !%What do the Japanese people call their own country?A. NipponB. SiberiaC. SouthsideD. MoscowAc o ##What is the capital of the American state Hawaii?A. USAB. RussiaC. ZimbabweD. HonoluluDm � #What is the second largest country in Europe after Russia?A. FranceB. RussiaC. ZimbabweD. ChinaAq o )))Through which capital does the Liffey river flow?A. Donau riverB. DublinC. Wolga riverD. Wolga riverB\ U ))What is the longest river in Europe?A. TiberB. NyleC. Wolga riverD. Wolga riverDx � ))Which European river does flow through six different countries?A. Donau riverB. NyleC. Wolga riverD. TiberAc i %%On which continent can you visit Sierra Leone?A. AfricaB. AsiaC. East-AsiaD. West-AsiaAb k !#What is the largest state of the United States?A. NewyorkB. AlaskaC. TexasD. IllinoisB~ �
-+ '!/What island, which belonged to Denmark, was independent in 1944?A. PhilipinesB. TimorC. IcelandD. HoangSa IslandC]
-+ i #Which country did once have the name Rhodesia?A. USAB. RussiaC. ZimbabweD. ChinaCZ U %)Which river is flowing through Rome?A. Han RiverB. NyleC. Wolga riverD. TiberD` W %/Which is the largest desert on earth?A. SaharaB. Hong KongC. HanoiD. Hochiminh CityAZ
-+ c )How many time zones are there in the world?A. OneB. TwoC. Twenty-fourD. ThreeCb	 S )')On which Italian island is Palermo?A. CrystalmereB. ShadecliffC. SicilyD. FallboroughCH I How many continents are there?A. FourB. SevenC. TwoD. ThreeBZ S #!%What is a very cold part of Russia?A. NortwestB. SiberiaC. SouthsideD. MoscowB^ i What is the name of the desert area in Mexico?A. SonoraB. SaharaC. TexasD. SehereAb [ %/What is the noisiest city in the world?A. BombayB. Hong KongC. HanoiD. Hochiminh CityBn { #!%Which Turkish city has the name of a cartoon character?A. SupermanB. Ant-manC. SpidermanD. BatmanD[ W )#What is the national animal of China?A. TigerB. NappaC. Giant pandaD. ElephentCR I !%What is the capital of Turkey?A. HanoiB. AnkaraC. WakandaD. PhnompenhB�P #�/#!	Where is ithttps://cdn-web.sidlee.com/-/media/sidlee/cities/paris/sidlee-cities-pre-par-01_798x895.jpg?mw=1420&hash=0DA87CBA5A6626B67D73CB08579BDFD6E46CB2E6A. ParisB. LondonC. New YorkD. VaticanA
-+   " Z �1�} 
-+�
-+'�	
-+�
-+	�	:�c��|�V�b��7�t�1 � Z              j6 K ++++This is multi choice question 6A. Wrong AnswerB. Right AnswerC. Right AnswerD. Wrong AnswerB,Ci5 K )+++This is multi choice question 5A Right AnswerB. Right AnswerC. Wrong AnswerD. Wrong AnswerA,Bi4 K )+++This is multi choice question 4A Right AnswerB. Wrong AnswerC. Right AnswerD. Wrong AnswerA,Cj3 K ++++This is multi choice question 3A. Wrong AnswerB. Right AnswerC. Wrong AnswerD. Right AnswerB,Dj2 K ++++This is multi choice question 2A. Right AnswerB. Wrong AnswerC. Wrong AnswerD. Right AnswerA,Dh1 G ++++This is multi choice questionA. Wrong AnswerB. Wrong AnswerC. Right AnswerD. Right AnswerC,DW0 [ !	In which city did Romeo and Julia live?A. GreeceB. ParisC. PicassoD. VeronaD[/ c !	Who did paint the famous painting Guernica?A. GreeceB. ParisC. PicassoD. VeronaCd. u !	n which city is the composer Frederic Chopin buried?A. GreeceB. ParisC. PicassoD. VeronaBf- y !	In which country was the famous painter El Greco born?A. GreeceB. ParisC. PicassoD. VeronaA�, i #!Y+	Who painted the ceiling of the Sistine Chapel?A. FlorenceB. MenorahC. A System of Jewish Mystical BeliefsD. MichelangeloDk+ 7 #!Y+	What is the Kabbalah?A. FlorenceB. MenorahC. A System of Jewish Mystical BeliefsD. MichelangeloC�* � #!Y+	What is called the Jewish candlestick with special religious meaning?A. FlorenceB. MenorahC. A System of Jewish Mystical BeliefsD. MichelangeloB�) i #!Y+	In which city can you see Michelangelos David?A. FlorenceB. MenorahC. A System of Jewish Mystical BeliefsD. MichelangeloA�( � !5%/	Which famous French engineer designed two bridges for the city of Porto?A. GenesisB. Leonardo Da VinciC. LiverpoolD. Gustave EiffelDx' o !5%/	In which English town did Adolf Hitler study art?A. GenesisB. Leonardo Da VinciC. LiverpoolD. Gustave EiffelCc& E !5%/	Who did the Mona Lisa paint?A. GenesisB. Leonardo Da VinciC. LiverpoolD. Gustave EiffelBs% e !5%/	What is the first book of the Old Testament?A. GenesisB. Leonardo Da VinciC. LiverpoolD. Gustave EiffelAb$ S #%'+	Who is the inventor of photography?A. DaguerreB. BarcelonaC. BotticelliD. Baram StokerAq# q #%'+	In which city is the famous Manneken Pis fountain?A. BrusselsB. BarcelonaC. BotticelliD. Baram StokerAj" [ +%'+	Who was the original author of Dracula?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerDs! m +%'+	Which Italian artist painted the Birth of Venus?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerC�   � +%'+	In which Spanish city did the Joan Miro museum open in 1975?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerBx w +%'+	What color are often the domes of churches in Russia?A. Gold coloredB. BarcelonaC. BotticelliD. Baram StokerA�n '�Q%/#	Where is it ?https://dynaimage.cdn.cnn.com/cnn/q_auto,w_900,c_fill,g_auto,h_506,ar_16:9/http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F150806121501-sg-50---lead-image.jpgA. SydneyB. Hong KongC. Hochiminh CityD. SinaporeD� '}%/#	Where is it ?http://www.abc.net.au/news/image/6887602-3x2-700x467.jpgA. SydneyB. Hong KongC. Hochiminh CityD. SinaporeA� '�%%/	Where is it ?https://cdn.crtkl.com/wp-content/uploads/sites/1/2015/07/hongkong-office.jpgA. SaharaB. Hong KongC. HanoiD. Hochiminh CityBx '}!#	Where is it ?https://www.newyorkpass.com/images/rebrand/prices_01.jpgA. NewyorkB. AlaskaC. TexasD. IllinoisA} e _#Which two seas are joined by the Suez Canal?A. AfricaB. AsiaC. The Mediterranean Sea and the Red SeasD. CanberraC[ [ %#What is the capital city of Australia ?A. AfricaB. AsiaC. East-AsiaD. CanberraDV S !#What is the largest city in Canada?A. TorontoB. AlaskaC. TexasD. IllinoisAZ S %%In which country is Krakow located?A. AfricaB. PolandC. East-AsiaD. West-AsiaBh s !%What do the Japanese people call their own country?A. NipponB. SiberiaC. SouthsideD. MoscowAc o ##What is the capital of the American state Hawaii?A. USAB. RussiaC. ZimbabweD. HonoluluD
-\ No newline at end of file
-Index: app/src/main/res/layout/content_question.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/layout/content_question.xml	(date 1569127768000)
-+++ app/src/main/res/layout/content_question.xml	(date 1569127768000)
-@@ -0,0 +1,76 @@
-+<?xml version="1.0" encoding="utf-8"?>
-+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-+    android:layout_width="match_parent"
-+    android:layout_height="match_parent"
-+    xmlns:app="http://schemas.android.com/apk/res-auto"
-+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-+    android:orientation="vertical">
-+    
-+    <RelativeLayout
-+        android:background="@color/aqua"
-+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-+        android:layout_width="match_parent"
-+        android:layout_height="wrap_content">
-+
-+        <android.support.v7.widget.RecyclerView
-+            android:id="@+id/grid_answer"
-+            android:layout_width="wrap_content"
-+            android:layout_height="wrap_content"
-+            android:layout_marginTop="8dp"
-+            android:layout_marginBottom="8dp">
-+
-+        </android.support.v7.widget.RecyclerView>
-+
-+        <TextView
-+            android:id="@+id/txt_question_right"
-+            android:layout_marginLeft="8dp"
-+            android:text="0/30"
-+            android:layout_centerVertical="true"
-+            android:textSize="24sp"
-+            android:textStyle="bold"
-+            android:visibility="gone"
-+            android:textColor="@android:color/darker_gray"
-+            android:layout_toRightOf="@+id/grid_answer"
-+            android:layout_width="wrap_content"
-+            android:layout_height="wrap_content" />
-+
-+        <!--<TextView-->
-+            <!--android:id="@+id/txt_timer"-->
-+            <!--android:layout_alignParentRight="true"-->
-+            <!--android:layout_alignParentEnd="true"-->
-+            <!--android:layout_marginRight="8dp"-->
-+            <!--android:layout_centerVertical="true"-->
-+            <!--android:text="20:00"-->
-+            <!--android:textSize="24sp"-->
-+            <!--android:textStyle="bold"-->
-+            <!--android:visibility="gone"-->
-+            <!--android:textColor="@android:color/black"-->
-+            <!--android:layout_width="wrap_content"-->
-+            <!--android:layout_height="wrap_content" />-->
-+
-+    </RelativeLayout>
-+    
-+    <LinearLayout
-+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-+        android:orientation="vertical"
-+        android:layout_width="match_parent"
-+        android:layout_height="match_parent">
-+
-+        <android.support.design.widget.TabLayout
-+            android:id="@+id/sliding_tabs"
-+            app:tabMode="scrollable"
-+            android:layout_width="match_parent"
-+            android:layout_height="wrap_content">
-+
-+        </android.support.design.widget.TabLayout>
-+
-+        <android.support.v4.view.ViewPager
-+            android:id="@+id/quizViewpager"
-+            android:background="@android:color/white"
-+            android:layout_width="match_parent"
-+            android:layout_height="match_parent">
-+
-+        </android.support.v4.view.ViewPager>
-+    </LinearLayout>
-+
-+</LinearLayout>
-\ No newline at end of file
-Index: app/src/main/res/layout/nav_header_question.xml
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/src/main/res/layout/nav_header_question.xml	(date 1569117149000)
-+++ app/src/main/res/layout/nav_header_question.xml	(date 1569117149000)
-@@ -0,0 +1,25 @@
-+<?xml version="1.0" encoding="utf-8"?>
-+<RelativeLayout
-+    xmlns:android="http://schemas.android.com/apk/res/android"
-+    android:layout_width="match_parent"
-+    android:layout_height="match_parent"
-+    android:theme="@style/AppTheme2">
-+
-+    <android.support.v7.widget.RecyclerView
-+        android:id="@+id/answer_sheet"
-+        android:layout_marginTop="24dp"
-+        android:layout_width="match_parent"
-+        android:layout_height="wrap_content">
-+
-+    </android.support.v7.widget.RecyclerView>
-+
-+    <Button
-+        android:id="@+id/button"
-+        android:text="done"
-+        android:layout_margin="16dp"
-+        android:layout_below="@id/answer_sheet"
-+        android:layout_width="match_parent"
-+        android:layout_height="wrap_content" />
-+
-+
-+</RelativeLayout>
-\ No newline at end of file
-Index: app/build.gradle
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
-<+>apply plugin: 'com.android.application'\n\nandroid {\n    compileSdkVersion 28\n    defaultConfig {\n        applicationId \"koreanlearning.hangul.serokorean\"\n\n        minSdkVersion 21\n        targetSdkVersion 28\n        versionCode 3\n        versionName \"Alpha v4.1\"\n        testInstrumentationRunner \"android.support.test.runner.AndroidJUnitRunner\"\n    }\n    buildTypes {\n        release {\n            minifyEnabled false\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\n        }\n    }\n}\n\ndependencies {\n    implementation fileTree(include: ['*.jar'], dir: 'libs')\n    implementation 'com.android.support:appcompat-v7:28.0.0'\n    implementation 'com.android.support.constraint:constraint-layout:1.1.3'\n    testImplementation 'junit:junit:4.12'\n    androidTestImplementation 'com.android.support.test:runner:1.0.2'\n    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'\n    implementation fileTree(include: ['*.jar'], dir: 'libs')\n    implementation 'com.android.support.constraint:constraint-layout:1.1.3'\n    implementation 'com.android.support:support-v4:28.0.0'\n    testImplementation 'junit:junit:4.12'\n    androidTestImplementation 'com.android.support.test:runner:1.0.2'\n    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'\n    implementation 'com.android.support:cardview-v7:28.0.0'\n    implementation 'com.android.support:design:28.0.0'\n    implementation 'com.android.support:leanback-v17:28.0.0'\n}\n
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- app/build.gradle	(revision f0d0487ae6a5a6cd5b46fc4e49728fe7272b9471)
-+++ app/build.gradle	(date 1569132722000)
-@@ -35,4 +35,7 @@
-     implementation 'com.android.support:cardview-v7:28.0.0'
-     implementation 'com.android.support:design:28.0.0'
-     implementation 'com.android.support:leanback-v17:28.0.0'
-+
-+    implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
-+    implementation 'com.github.javiersantos:MaterialStyledDialogs:2.1'
- }
