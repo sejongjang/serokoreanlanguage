@@ -24,6 +24,7 @@ import com.hangul.serokorean.R;
 import java.util.ArrayList;
 
 import koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity;
+import koreanlearning.hangul.serokorean.utility.NumOfPages;
 
 public class BeginnerOneWebView extends AppCompatActivity implements ParentRequestInterface{
 
@@ -89,17 +90,57 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
         customViewPager = (CustomViewPager) findViewById(R.id.container);
         customViewPager.setAdapter(sectionsPagerAdapter);
         customViewPager.setOffscreenPageLimit(2);
+
         customViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener(){
             private int nextChapterIndex = currentChapterNum + 1;
+            int SCROLLINNG_RIGHT = 0;
+            int SCROLLINNG_LEFT = 1;
+            int SCROLLINNG_UNDETERMINDED = 2;
+            int currentScrollDirection = 2;
+
+            private void setScrollingDirection(float positionOffset){
+                if((1-positionOffset) >= 0.5){
+                    this.currentScrollDirection = SCROLLINNG_RIGHT;
+                }
+                else if((1-positionOffset) <= 0.5){
+                    this.currentScrollDirection = SCROLLINNG_LEFT;
+                }
+            }
+
+            private boolean isScrollDirectionUndetermined(){
+                return currentScrollDirection == SCROLLINNG_UNDETERMINDED;
+            }
+
+            private boolean isScrollingRight(){
+                return currentScrollDirection == SCROLLINNG_RIGHT;
+            }
+
+            private boolean isScrollingLeft(){
+                return currentScrollDirection == SCROLLINNG_LEFT;
+            }
+
             @Override
-            public void onPageScrolled(int i, float v, int i1) { }
+            public void onPageScrolled(int i, float v, int i1) {
+                if(isScrollDirectionUndetermined()){
+                    setScrollingDirection(v);
+                }
+            }
 
             @Override
             public void onPageSelected(int i) {
                 // action when it's scrolled at the last page
                 if(i == numberOfPages-1){
 //                    Toast.makeText(BeginnerOneWebView.this, "after next page index: " + i, Toast.LENGTH_SHORT).show();
-//                    Intent startNextChapter = new Intent()
+                    Intent intent = new Intent(BeginnerOneWebView.this, BeginnerOneWebView.class);
+
+                    int numberOfPages = NumOfPages.detectTheNumberOfPages(Integer.toString(nextChapterIndex));
+                    intent.putExtra("chapter", "chapter " + nextChapterIndex);
+                    intent.putExtra("pages", numberOfPages);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                }
+                else if(i==0 && isScrollingRight()){
+                    Toast.makeText(BeginnerOneWebView.this, "detect first page: " + i, Toast.LENGTH_SHORT).show();
                 }
             }
 
