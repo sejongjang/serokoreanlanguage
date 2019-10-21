@@ -8,12 +8,12 @@
 
     <item
         android:id="@+id/vocab"
-        android:icon="@drawable/ic_book"
+        android:icon="@drawable/ic_vocab"
         android:title="@string/vocab" />
 
     <item
         android:id="@+id/FAQ"
-        android:icon="@drawable/ic_question"
+        android:icon="@drawable/ic_question_mark"
         android:title="@string/FAQ" />
 
     <item

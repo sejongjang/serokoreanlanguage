@@ -17,16 +17,18 @@ public class BeginnerOne extends AppCompatActivity implements BottomNavigationVi
 
     private BottomNavigationView bottomNavigationView;
 
-    Home home = new Home();
-    Vocab vocab = new Vocab();
-    FAQ faq = new FAQ();
-    More more = new More();
+    private Home home = new Home();
+    private Vocab vocab = new Vocab();
+    private FAQ faq = new FAQ();
+    private More more = new More();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // change top status bar color
         getWindow().setStatusBarColor(Color.parseColor("#1e1e1e"));
-        getWindow().setNavigationBarColor(Color.parseColor("#1e1e1e"));
+        getWindow().setNavigationBarColor(Color.parseColor("#383838"));
         setContentView(R.layout.activity_beginner_one);
 
         bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation);
