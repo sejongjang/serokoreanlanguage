@@ -1,0 +1,340 @@
+Index: app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/QuestionActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package koreanlearning.hangul.serokorean.beginnerone.quiz;\n\nimport android.os.Build;\nimport android.os.Bundle;\nimport android.os.CountDownTimer;\nimport android.support.annotation.NonNull;\nimport android.support.design.widget.TabLayout;\nimport android.support.v4.view.ViewPager;\nimport android.support.v7.widget.GridLayoutManager;\nimport android.support.v7.widget.RecyclerView;\nimport android.view.View;\nimport android.support.v4.view.GravityCompat;\nimport android.support.v7.app.ActionBarDrawerToggle;\nimport android.view.MenuItem;\nimport android.support.design.widget.NavigationView;\nimport android.support.v4.widget.DrawerLayout;\n\nimport android.support.v7.app.AppCompatActivity;\nimport android.support.v7.widget.Toolbar;\nimport android.view.Menu;\nimport android.view.WindowManager;\nimport android.widget.TextView;\n\nimport com.afollestad.materialdialogs.DialogAction;\nimport com.afollestad.materialdialogs.MaterialDialog;\nimport com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog;\nimport com.hangul.serokorean.R;\n\nimport org.json.JSONArray;\nimport org.json.JSONException;\nimport org.json.JSONObject;\n\nimport java.io.IOException;\nimport java.io.InputStream;\nimport java.util.ArrayList;\nimport java.util.List;\nimport koreanlearning.hangul.serokorean.beginnerone.quiz.Model.CurrentQuestion;\nimport koreanlearning.hangul.serokorean.beginnerone.quiz.Model.Question;\nimport koreanlearning.hangul.serokorean.beginnerone.quiz.adapter.AnswerSheetAdapter;\nimport koreanlearning.hangul.serokorean.beginnerone.quiz.adapter.QuestionFragmentsAdapter;\nimport koreanlearning.hangul.serokorean.beginnerone.quiz.common.QuizCommon;\n\npublic class QuestionActivity extends AppCompatActivity\n        implements NavigationView.OnNavigationItemSelectedListener {\n\n    private RecyclerView answer_sheet_view;\n    private AnswerSheetAdapter answerSheetAdapter;\n\n    private TextView txt_right_answer;\n    private ViewPager viewPager;\n    private TabLayout tabLayout;\n\n    @Override\n    protected void onDestroy() {\n        if(QuizCommon.countDownTimer != null){\n            QuizCommon.countDownTimer.cancel();\n        }\n        super.onDestroy();\n    }\n\n    public void fullScreencall() {\n        if(Build.VERSION.SDK_INT < 19){\n            View v = this.getWindow().getDecorView();\n            v.setSystemUiVisibility(View.GONE);\n        } else {\n            //for higher api versions.\n            View decorView = getWindow().getDecorView();\n            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;\n            decorView.setSystemUiVisibility(uiOptions);\n            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);\n        }\n    }\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        fullScreencall();\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_question);\n//        Toolbar toolbar = findViewById(R.id.toolbar);\n//        toolbar.setTitle(QuizCommon.selectedCategory.getName());\n//        setSupportActionBar(toolbar);\n//        DrawerLayout drawer = findViewById(R.id.drawer_layout);\n//        NavigationView navigationView = findViewById(R.id.nav_view);\n//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(\n//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);\n//        drawer.addDrawerListener(toggle);\n//        toggle.syncState();\n//        navigationView.setNavigationItemSelectedListener(this);\n        \n        //take questions from JSON\n        Bundle bundle = getIntent().getExtras();\n        int level = bundle.getInt(\"level\");\n        int chapter = bundle.getInt(\"chapter\");\n        importQuestion(level, chapter);\n\n        if(QuizCommon.questionList.size() > 0){\n\n            //show textView right answer\n            txt_right_answer = findViewById(R.id.txt_question_right);\n            txt_right_answer.setVisibility(View.VISIBLE);\n            txt_right_answer.setText(new StringBuilder(String.format(\"%d/%d\", QuizCommon.right_answer_count, QuizCommon.questionList.size())));\n\n            //view\n            answer_sheet_view = findViewById(R.id.grid_answer);\n            answer_sheet_view.setHasFixedSize(true);\n            if(QuizCommon.questionList.size() > 5){ // if question list have size > 5, we will sperate 2 rows\n                answer_sheet_view.setLayoutManager(new GridLayoutManager(this, QuizCommon.questionList.size()/2));\n            }\n            answerSheetAdapter = new AnswerSheetAdapter(this, QuizCommon.answerSheetList);\n            answer_sheet_view.setAdapter(answerSheetAdapter);\n            \n            viewPager = findViewById(R.id.quizViewpager);\n            tabLayout = findViewById(R.id.sliding_tabs);\n            \n            genFragmentList();\n            QuestionFragmentsAdapter questionFragmentsAdapter = new QuestionFragmentsAdapter(getSupportFragmentManager(), this, QuizCommon.fragmentsList);\n            viewPager.setAdapter(questionFragmentsAdapter);\n            viewPager.setOffscreenPageLimit(QuizCommon.questionList.size()-1);\n\n            tabLayout.setupWithViewPager(viewPager);\n\n            // event\n            viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {\n                int SCROLLINNG_RIGHT = 0;\n                int SCROLLINNG_LEFT = 1;\n                int SCROLLINNG_UNDETERMINDED = 2;\n                int currentScrollDirection = 2;\n\n                private void setScrollingDirection(float positionOffset){\n                    if((1-positionOffset) >= 0.5){\n                        this.currentScrollDirection = SCROLLINNG_RIGHT;\n                    }\n                    else if((1-positionOffset) <= 0.5){\n                        this.currentScrollDirection = SCROLLINNG_LEFT;\n                    }\n                }\n\n                private boolean isScrollDirectionUndetermined(){\n                    return currentScrollDirection == SCROLLINNG_UNDETERMINDED;\n                }\n\n                private boolean isScrollingRight(){\n                    return currentScrollDirection == SCROLLINNG_RIGHT;\n                }\n\n                private boolean isScrollingLeft(){\n                    return currentScrollDirection == SCROLLINNG_LEFT;\n                }\n\n                @Override\n                public void onPageScrolled(int i, float v, int i1) {\n                    if(isScrollDirectionUndetermined()){\n                        setScrollingDirection(v);\n                    }\n                }\n\n                @Override\n                public void onPageSelected(int i) {\n                    QuestionFragment questionFragment;\n                    int position = i;\n                    if(i > 0){\n                        if(isScrollingRight()){\n                            // get previous when user scroll right\n                            questionFragment = QuizCommon.fragmentsList.get(i-1);\n                            position = i-1;\n                        }\n                        else if(isScrollingLeft()){\n                            // get next when user scroll left\n                            questionFragment = QuizCommon.fragmentsList.get(i+1);\n                            position = i+1;\n                        }\n                        else{\n                            questionFragment = QuizCommon.fragmentsList.get(position);\n                        }\n                    }\n                    else{\n                        questionFragment = QuizCommon.fragmentsList.get(0);\n                        position = 0;\n                    }\n\n                    //if you want to show correct answer, just call function here\n                    CurrentQuestion question_state = questionFragment.getSelectedAnswer();\n                    if(!questionFragment.getAlreadyVisited()){\n                        QuizCommon.answerSheetList.set(position, question_state);\n                        answerSheetAdapter.notifyDataSetChanged();\n                        if(!question_state.getType().equals(QuizCommon.ANSWER_TYPE.NO_ANSWER)){\n                            questionFragment.setAlreadyVisited(true);// change color in answer sheet\n                        }\n                        countCorrectAnswer();\n                    }\n                    txt_right_answer.setText(new StringBuilder(String.format(\"%d\", QuizCommon.right_answer_count))\n                            .append(\"/\")\n                            .append(String.format(\"%d\", QuizCommon.questionList.size())).toString());\n\n                    if(question_state.getType() != QuizCommon.ANSWER_TYPE.NO_ANSWER){\n                        questionFragment.showCorrectAnswer();\n                        questionFragment.disableAnswer();\n                    }\n                }\n\n                @Override\n                public void onPageScrollStateChanged(int i) {\n                    if(i == ViewPager.SCROLL_STATE_IDLE){\n                        this.currentScrollDirection = SCROLLINNG_UNDETERMINDED;\n                    }\n                }\n\n\n            });\n        }\n    }\n\n    private void countCorrectAnswer() {\n        // reset variable\n        QuizCommon.right_answer_count = QuizCommon.wrong_answer_counnt = 0;\n        for(CurrentQuestion item : QuizCommon.answerSheetList){\n            if(item.getType() == QuizCommon.ANSWER_TYPE.RIGHT_ANSWER){\n                QuizCommon.right_answer_count++;\n            }\n            else if(item.getType() == QuizCommon.ANSWER_TYPE.WRONG_ANSWER){\n                QuizCommon.wrong_answer_counnt++;\n            }\n        }\n    }\n\n    private void genFragmentList() {\n        for(int i = 0; i< QuizCommon.questionList.size(); ++i){\n            Bundle bundle = new Bundle();\n            bundle.putInt(\"index\", i);\n            QuestionFragment fragment = new QuestionFragment();\n            fragment.setArguments(bundle);\n\n            QuizCommon.fragmentsList.add(fragment);\n        }\n    }\n\n    private void importQuestion(int level, int chapter){\n        StringBuilder quizName = new StringBuilder();\n        quizName.append(\"level\");\n        quizName.append(Integer.toString(level));\n        quizName.append(\"chapter\");\n        quizName.append(Integer.toString(chapter));\n        quizName.append(\".json\");\n        String jsonString = loadJsonFromAssert(quizName.toString());\n        List<Question> questionList = new ArrayList<>();\n\n        try{\n            JSONObject jsonObject = new JSONObject(jsonString);\n            JSONArray questions = jsonObject.getJSONArray(\"questions\");\n            for(int i=0; i<questions.length(); ++i){\n                JSONObject questionObj = questions.getJSONObject(i);\n\n                String questionText = questionObj.getString(\"question\");\n                int id = questionObj.getInt(\"id\");\n                String answerA = questionObj.getString(\"answerA\");\n                String answerB = questionObj.getString(\"answerB\");\n                String answerC = questionObj.getString(\"answerC\");\n                String answerD = questionObj.getString(\"answerD\");\n                String correctAns = questionObj.getString(\"correct_answer\");\n                questionList.add(new Question(id, questionText, answerA, answerB, answerC, answerD, correctAns));\n            }\n\n            QuizCommon.questionList = questionList;\n\n            if(QuizCommon.questionList.size() == 0){\n                //if there is no question\n                new MaterialStyledDialog.Builder(this)\n                        .setTitle(\"There is no question\")\n                        .setIcon(R.drawable.lb_ic_shuffle)\n                        .setDescription(\"We don't have any question in this\" + QuizCommon.selectedCategory.getName() + \" category\")\n                        .setPositiveText(\"OK\")\n                        .onPositive(new MaterialDialog.SingleButtonCallback() {\n                            @Override\n                            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {\n                                dialog.dismiss();\n                                finish();\n                            }\n                        }).show();\n            }\n            else {\n                //generate answerSheet item from question\n                if(QuizCommon.answerSheetList.size() > 0){\n                    QuizCommon.answerSheetList.clear();\n                }\n\n                for(int i = 0; i< QuizCommon.questionList.size(); i++){\n                    QuizCommon.answerSheetList.add(new CurrentQuestion(i, QuizCommon.ANSWER_TYPE.NO_ANSWER));\n                }\n            }\n        } catch (JSONException e) {\n            e.printStackTrace();\n        }\n    }\n\n    private String loadJsonFromAssert(String file){\n        String json = \"\";\n        try{\n            InputStream inputStream = getAssets().open(file);\n            int size = inputStream.available();\n            byte[] buffer = new byte[size];\n            inputStream.read(buffer);\n            inputStream.close();\n            json = new String(buffer, \"UTF-8\");\n        } catch (IOException e) {\n            e.printStackTrace();\n        }\n        return json;\n    }\n\n//    @Override\n//    public void onBackPressed() {\n//        DrawerLayout drawer = findViewById(R.id.drawer_layout);\n//        if (drawer.isDrawerOpen(GravityCompat.START)) {\n//            drawer.closeDrawer(GravityCompat.START);\n//        } else {\n//            super.onBackPressed();\n//        }\n//    }\n\n    @Override\n    public boolean onCreateOptionsMenu(Menu menu) {\n        // Inflate the menu; this adds items to the action bar if it is present.\n        getMenuInflater().inflate(R.menu.question, menu);\n        return true;\n    }\n\n    @Override\n    public boolean onOptionsItemSelected(MenuItem item) {\n        // Handle action bar item clicks here. The action bar will\n        // automatically handle clicks on the Home/Up button, so long\n        // as you specify a parent activity in AndroidManifest.xml.\n        int id = item.getItemId();\n\n        //noinspection SimplifiableIfStatement\n        if (id == R.id.action_settings) {\n            return true;\n        }\n\n        return super.onOptionsItemSelected(item);\n    }\n\n    @SuppressWarnings(\"StatementWithEmptyBody\")\n    @Override\n    public boolean onNavigationItemSelected(MenuItem item) {\n        // Handle navigation view item clicks here.\n        int id = item.getItemId();\n\n        if (id == R.id.nav_home) {\n            // Handle the camera action\n        } else if (id == R.id.nav_gallery) {\n\n        } else if (id == R.id.nav_slideshow) {\n\n        } else if (id == R.id.nav_tools) {\n\n        } else if (id == R.id.nav_share) {\n\n        } else if (id == R.id.nav_send) {\n\n        }\n\n//        DrawerLayout drawer = findViewById(R.id.drawer_layout);\n//        drawer.closeDrawer(GravityCompat.START);\n        return true;\n    }\n\n    //    private void takeQuestion() {\n//        QuizCommon.questionList = DBhelper.getInstance(this).getQuestionByCategory(QuizCommon.selectedCategory.getId());\n//\n//        if(QuizCommon.questionList.size() == 0){\n//            //if there is no question\n//            new MaterialStyledDialog.Builder(this)\n//                    .setTitle(\"There is no question\")\n//                    .setIcon(R.drawable.lb_ic_shuffle)\n//                    .setDescription(\"We don't have any question in this\" + QuizCommon.selectedCategory.getName() + \" category\")\n//                    .setPositiveText(\"OK\")\n//                    .onPositive(new MaterialDialog.SingleButtonCallback() {\n//                        @Override\n//                        public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {\n//                            dialog.dismiss();\n//                            finish();\n//                        }\n//                    }).show();\n//        }\n//        else {\n//            //generate answerSheet item from question\n//\n//            if(QuizCommon.answerSheetList.size() > 0){\n//                QuizCommon.answerSheetList.clear();\n//            }\n//\n//            for(int i = 0; i< QuizCommon.questionList.size(); i++){\n//                QuizCommon.answerSheetList.add(new CurrentQuestion(i, QuizCommon.ANSWER_TYPE.NO_ANSWER));\n//            }\n//        }\n//    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/QuestionActivity.java	(revision dcf4bdb0969660592a59d886998bf7324c0a456b)
++++ app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/quiz/QuestionActivity.java	(date 1571627668000)
+@@ -2,21 +2,16 @@
+ 
+ import android.os.Build;
+ import android.os.Bundle;
+-import android.os.CountDownTimer;
+ import android.support.annotation.NonNull;
+ import android.support.design.widget.TabLayout;
+ import android.support.v4.view.ViewPager;
+ import android.support.v7.widget.GridLayoutManager;
+ import android.support.v7.widget.RecyclerView;
+ import android.view.View;
+-import android.support.v4.view.GravityCompat;
+-import android.support.v7.app.ActionBarDrawerToggle;
+ import android.view.MenuItem;
+ import android.support.design.widget.NavigationView;
+-import android.support.v4.widget.DrawerLayout;
+ 
+ import android.support.v7.app.AppCompatActivity;
+-import android.support.v7.widget.Toolbar;
+ import android.view.Menu;
+ import android.view.WindowManager;
+ import android.widget.TextView;
+Index: app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/webview/BeginnerOneWebView.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package koreanlearning.hangul.serokorean.beginnerone.webview;\n\nimport android.content.Intent;\nimport android.os.Build;\nimport android.support.v4.app.Fragment;\nimport android.support.v4.app.FragmentManager;\nimport android.support.v4.app.FragmentPagerAdapter;\nimport android.support.v7.app.AppCompatActivity;\nimport android.os.Bundle;\nimport android.view.LayoutInflater;\nimport android.view.View;\nimport android.view.ViewGroup;\nimport android.view.WindowManager;\nimport android.webkit.PermissionRequest;\nimport android.webkit.WebChromeClient;\nimport android.webkit.WebResourceRequest;\nimport android.webkit.WebSettings;\nimport android.webkit.WebView;\nimport android.webkit.WebViewClient;\nimport android.widget.Toast;\n\nimport com.hangul.serokorean.R;\nimport java.util.ArrayList;\n\nimport koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity;\n\n\npublic class BeginnerOneWebView extends AppCompatActivity implements ParentRequestInterface{\n\n    private SectionsPagerAdapter sectionsPagerAdapter;\n    private CustomViewPager customViewPager;\n    private int numberOfPages = 0;\n    private int currentChapterNum = 0;\n    private String currentChapter = \"\";\n\n    public void fullScreencall() {\n        if(Build.VERSION.SDK_INT < 19){\n            View v = this.getWindow().getDecorView();\n            v.setSystemUiVisibility(View.GONE);\n        } else {\n            //for higher api versions.\n            View decorView = getWindow().getDecorView();\n            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;\n            decorView.setSystemUiVisibility(uiOptions);\n            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);\n        }\n    }\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        fullScreencall();\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_main_webview_test);\n\n        //bundle gets passed in parameters when chapters' onClick from the Home\n        Bundle bundle = getIntent().getExtras();\n        StringBuilder stringBuilderPageNum = new StringBuilder();\n        StringBuilder stringBuilderChapNum = new StringBuilder();\n\n        //check bundle to see if it's null\n        if(bundle == null){\n//            textView.setText(\"bundle error\");\n        }\n        //if not, stores the parameters are passed in\n        else{\n            //bundle is like a Map, matches key and stores the value\n            numberOfPages = bundle.getInt(\"pages\");\n            currentChapter = bundle.getString(\"chapter\");\n//            isPrevious = bundle.getInt(\"previous\");\n            stringBuilderPageNum.append(bundle.getString(\"chapter\"));\n            stringBuilderPageNum.append(\" number of pages:\");\n            stringBuilderPageNum.append(Integer.toString(bundle.getInt(\"pages\")));\n\n            //check the length of the string, and gets the number as a substring, 0-9\n            if(currentChapter.length()<=9){\n                stringBuilderChapNum.append(currentChapter.substring(8,9));\n            }\n            //number greater than 9\n            else{\n                stringBuilderChapNum.append(currentChapter.substring(8,10));\n            }\n            currentChapterNum = Integer.parseInt(stringBuilderChapNum.toString());\n        }\n\n        // Create the adapter that will return a fragment for each. primary sections of the activity.\n        sectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), customViewPager, this);\n\n        // Set up the ViewPager with the sections adapter.\n        customViewPager = (CustomViewPager) findViewById(R.id.container);\n        customViewPager.setAdapter(sectionsPagerAdapter);\n        customViewPager.setOffscreenPageLimit(2);\n    }\n\n\n    @Override\n    public void setViewPagerStatus(Boolean b) { customViewPager.setPagingEnabled(b); }\n\n    public static class PlaceholderFragment extends Fragment{\n\n        private static final String ARG_SECTION_NUMBER = \"section_number\";\n        private static final String CURRENT_CHAPTER = \"current_chapter\";\n        private static final String NUMBER_OF_PAGES = \"number_of_pages\";\n        private int position;\n        private int currentChapterNum;\n        private int numberOfPages;\n        private BeginnerOneWebView activity;\n        private CustomViewPager viewpager;\n        private BeginnerOneWebView parentActivity;\n\n        public static PlaceholderFragment newInstance(int position , int chapterNum, int numberOfPages) {\n            PlaceholderFragment fragment = new PlaceholderFragment();\n            Bundle args = new Bundle();\n            args.putInt(ARG_SECTION_NUMBER, position);\n            args.putInt(CURRENT_CHAPTER, chapterNum);\n            args.putInt(NUMBER_OF_PAGES, numberOfPages);\n            fragment.setArguments(args);\n            return fragment;\n        }\n\n        @Override\n        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {\n            Bundle arguments = getArguments();\n            String url=\"\";\n            String lastPage=\"\";\n            ArrayList<String> htmlFiles = new ArrayList<>();\n\n            position = arguments.getInt(ARG_SECTION_NUMBER);\n            currentChapterNum = arguments.getInt(CURRENT_CHAPTER);\n            numberOfPages = arguments.getInt(NUMBER_OF_PAGES);\n            parentActivity = (BeginnerOneWebView) getActivity();\n\n            View rootView = inflater.inflate(R.layout.fragment_main, container, false);\n            final CustomWebView webView = rootView.findViewById(R.id.webView);\n            webView.setFragment(this);\n\n            StringBuilder stringBuilder = new StringBuilder();\n            stringBuilder.append(\"file:///android_asset/level 1/chapter \");\n            stringBuilder.append(Integer.toString(currentChapterNum));\n            stringBuilder.append(\"/\");\n\n            for(int i=0; i<numberOfPages; ++i){\n                htmlFiles.add(stringBuilder.toString() + Integer.toString(i) + \".html\");\n            }\n\n            url = htmlFiles.get(position);\n            lastPage = htmlFiles.get(numberOfPages-1);\n\n            WebSettings settings = webView.getSettings();\n            settings.setAllowFileAccessFromFileURLs(true);\n            settings.setAllowUniversalAccessFromFileURLs(true);\n            settings.setMediaPlaybackRequiresUserGesture(false);\n            settings.setUseWideViewPort(true);\n            settings.setDomStorageEnabled(true);\n\n            webView.setWebChromeClient(new WebChromeClient());\n            webView.setScrollContainer(false);\n            webView.setVerticalScrollBarEnabled(false);\n            webView.setHorizontalScrollBarEnabled(false);\n            webView.setWebChromeClient(new WebChromeClient(){\n                @Override\n                public void onPermissionRequest(final PermissionRequest request) {\n                    request.grant(request.getResources());\n                }\n            });\n\n            webView.setWebViewClient(new WebViewClient(){\n                @Override\n                public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {\n                    String url = request.getUrl().toString();\n                    if(url.contains(\"chapter\")){\n                        Intent intent = new Intent(getActivity(), QuestionActivity.class); //ChapterOneQuiz.class\n                        intent.putExtra(\"level\", Integer.parseInt(url.substring(12,13)));\n                        intent.putExtra(\"chapter\", Integer.parseInt(url.substring(20,21)));\n                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);\n                        startActivity(intent);\n                    }\n                    return true;\n                }\n            });\n\n            settings.setJavaScriptEnabled(true);\n            settings.setBuiltInZoomControls(true);\n            settings.setSupportZoom(true);\n            settings.setDisplayZoomControls(false);\n            settings.setLoadWithOverviewMode(true);\n            settings.setUseWideViewPort(false);\n\n            webView.loadUrl(url);\n            return rootView;\n        }\n\n        public void setViewPager(boolean b) {\n            parentActivity.setViewPagerStatus(b);\n        }\n        public void setActivity(BeginnerOneWebView activity) {\n            this.activity = activity;\n        }\n        public void setPager(CustomViewPager viewpager) {\n            this.viewpager = viewpager;\n        }\n        public PlaceholderFragment() { }\n    }\n\n    public class SectionsPagerAdapter extends FragmentPagerAdapter {\n\n        CustomViewPager viewPager;\n        BeginnerOneWebView activity;\n\n        public SectionsPagerAdapter(FragmentManager fm, CustomViewPager viewPager, BeginnerOneWebView activity) {\n            super(fm);\n            this.viewPager=viewPager;\n            this.activity=activity;\n        }\n\n        @Override\n        public Fragment getItem(int position) {\n            // getItem is called to instantiate the fragment for the given page.\n            // Return a PlaceholderFragment (defined as a static inner class below).\n            PlaceholderFragment fragment= PlaceholderFragment.newInstance(position, currentChapterNum, numberOfPages);\n            fragment.setActivity(activity);\n            fragment.setPager(viewPager);\n            return fragment;\n        }\n\n        @Override\n        public int getCount() { return numberOfPages; }\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/webview/BeginnerOneWebView.java	(revision dcf4bdb0969660592a59d886998bf7324c0a456b)
++++ app/src/main/java/koreanlearning/hangul/serokorean/beginnerone/webview/BeginnerOneWebView.java	(date 1571631010000)
+@@ -5,6 +5,7 @@
+ import android.support.v4.app.Fragment;
+ import android.support.v4.app.FragmentManager;
+ import android.support.v4.app.FragmentPagerAdapter;
++import android.support.v4.view.ViewPager;
+ import android.support.v7.app.AppCompatActivity;
+ import android.os.Bundle;
+ import android.view.LayoutInflater;
+@@ -24,7 +25,6 @@
+ 
+ import koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity;
+ 
+-
+ public class BeginnerOneWebView extends AppCompatActivity implements ParentRequestInterface{
+ 
+     private SectionsPagerAdapter sectionsPagerAdapter;
+@@ -89,6 +89,23 @@
+         customViewPager = (CustomViewPager) findViewById(R.id.container);
+         customViewPager.setAdapter(sectionsPagerAdapter);
+         customViewPager.setOffscreenPageLimit(2);
++        customViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener(){
++            private int nextChapterIndex = currentChapterNum + 1;
++            @Override
++            public void onPageScrolled(int i, float v, int i1) { }
++
++            @Override
++            public void onPageSelected(int i) {
++                // action when it's scrolled at the last page
++                if(i == numberOfPages-1){
++//                    Toast.makeText(BeginnerOneWebView.this, "after next page index: " + i, Toast.LENGTH_SHORT).show();
++//                    Intent startNextChapter = new Intent()
++                }
++            }
++
++            @Override
++            public void onPageScrollStateChanged(int i) { }
++        });
+     }
+ 
+ 
+Index: app/src/main/java/koreanlearning/hangul/serokorean/utility/NumOfPages.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/koreanlearning/hangul/serokorean/utility/NumOfPages.java	(date 1571631010000)
++++ app/src/main/java/koreanlearning/hangul/serokorean/utility/NumOfPages.java	(date 1571631010000)
+@@ -0,0 +1,143 @@
++package koreanlearning.hangul.serokorean.utility;
++
++public class NumOfPages {
++    private static int CHAPTER_INTRO_NUM_OF_PAGE = 6;
++    private static int CHAPTER_ONE_NUM_OF_PAGE = 17;
++    private static int CHAPTER_TWO_NUM_OF_PAGE = 9;
++    private static int CHAPTER_THREE_NUM_OF_PAGE = 7;
++    private static int CHAPTER_FOUR_NUM_OF_PAGE = 4;
++    private static int CHAPTER_FIVE_NUM_OF_PAGE = 6;
++    private static int CHAPTER_SIX_NUM_OF_PAGE = 11;
++    private static int CHAPTER_SEVEN_NUM_OF_PAGE = 6;
++    private static int CHAPTER_EIGHT_NUM_OF_PAGE = 4;
++    private static int CHAPTER_NINE_NUM_OF_PAGE = 7;
++    private static int CHAPTER_TEN_NUM_OF_PAGE = 7;
++
++    public NumOfPages() {
++    }
++
++    public static int getChapterIntroNumOfPage() {
++        return CHAPTER_INTRO_NUM_OF_PAGE;
++    }
++
++    public static void setChapterIntroNumOfPage(int chapterIntroNumOfPage) {
++        CHAPTER_INTRO_NUM_OF_PAGE = chapterIntroNumOfPage;
++    }
++
++    public static int getChapterOneNumOfPage() {
++        return CHAPTER_ONE_NUM_OF_PAGE;
++    }
++
++    public static void setChapterOneNumOfPage(int chapterOneNumOfPage) {
++        CHAPTER_ONE_NUM_OF_PAGE = chapterOneNumOfPage;
++    }
++
++    public static int getChapterTwoNumOfPage() {
++        return CHAPTER_TWO_NUM_OF_PAGE;
++    }
++
++    public static void setChapterTwoNumOfPage(int chapterTwoNumOfPage) {
++        CHAPTER_TWO_NUM_OF_PAGE = chapterTwoNumOfPage;
++    }
++
++    public static int getChapterThreeNumOfPage() {
++        return CHAPTER_THREE_NUM_OF_PAGE;
++    }
++
++    public static void setChapterThreeNumOfPage(int chapterThreeNumOfPage) {
++        CHAPTER_THREE_NUM_OF_PAGE = chapterThreeNumOfPage;
++    }
++
++    public static int getChapterFourNumOfPage() {
++        return CHAPTER_FOUR_NUM_OF_PAGE;
++    }
++
++    public static void setChapterFourNumOfPage(int chapterFourNumOfPage) {
++        CHAPTER_FOUR_NUM_OF_PAGE = chapterFourNumOfPage;
++    }
++
++    public static int getChapterFiveNumOfPage() {
++        return CHAPTER_FIVE_NUM_OF_PAGE;
++    }
++
++    public static void setChapterFiveNumOfPage(int chapterFiveNumOfPage) {
++        CHAPTER_FIVE_NUM_OF_PAGE = chapterFiveNumOfPage;
++    }
++
++    public static int getChapterSixNumOfPage() {
++        return CHAPTER_SIX_NUM_OF_PAGE;
++    }
++
++    public static void setChapterSixNumOfPage(int chapterSixNumOfPage) {
++        CHAPTER_SIX_NUM_OF_PAGE = chapterSixNumOfPage;
++    }
++
++    public static int getChapterSevenNumOfPage() {
++        return CHAPTER_SEVEN_NUM_OF_PAGE;
++    }
++
++    public static void setChapterSevenNumOfPage(int chapterSevenNumOfPage) {
++        CHAPTER_SEVEN_NUM_OF_PAGE = chapterSevenNumOfPage;
++    }
++
++    public static int getChapterEightNumOfPage() {
++        return CHAPTER_EIGHT_NUM_OF_PAGE;
++    }
++
++    public static void setChapterEightNumOfPage(int chapterEightNumOfPage) {
++        CHAPTER_EIGHT_NUM_OF_PAGE = chapterEightNumOfPage;
++    }
++
++    public static int getChapterNineNumOfPage() {
++        return CHAPTER_NINE_NUM_OF_PAGE;
++    }
++
++    public static void setChapterNineNumOfPage(int chapterNineNumOfPage) {
++        CHAPTER_NINE_NUM_OF_PAGE = chapterNineNumOfPage;
++    }
++
++    public static int getChapterTenNumOfPage() {
++        return CHAPTER_TEN_NUM_OF_PAGE;
++    }
++
++    public static void setChapterTenNumOfPage(int chapterTenNumOfPage) {
++        CHAPTER_TEN_NUM_OF_PAGE = chapterTenNumOfPage;
++    }
++
++    public static int detectTheNumberOfPages(String chapter){
++        switch (chapter){
++            case "1": return NumOfPages.getChapterOneNumOfPage();
++            case "2": return NumOfPages.getChapterTwoNumOfPage();
++            case "3": return NumOfPages.getChapterThreeNumOfPage();
++            case "4": return NumOfPages.getChapterFourNumOfPage();
++            case "5": return NumOfPages.getChapterFiveNumOfPage();
++            case "6": return NumOfPages.getChapterSixNumOfPage();
++            case "7": return NumOfPages.getChapterSevenNumOfPage();
++            case "8": return NumOfPages.getChapterEightNumOfPage();
++            case "9": return NumOfPages.getChapterNineNumOfPage();
++            case "10": return NumOfPages.getChapterTenNumOfPage();
++            //TODO: add the number of pages here
++            case "11": return 20;
++            case "12": return 20;
++            case "13": return 20;
++            case "14": return 20;
++            case "15": return 20;
++            case "16": return 20;
++            case "17": return 20;
++            case "18": return 20;
++            case "19": return 20;
++            case "20": return 20;
++            case "21": return 20;
++            case "22": return 20;
++            case "23": return 20;
++            case "24": return 20;
++            case "25": return 20;
++            case "26": return 20;
++            case "27": return 20;
++            case "28": return 20;
++            case "29": return 20;
++            case "30": return 20;
++        }
++        return 0;
++    }
++}
+Index: app/src/main/java/koreanlearning/hangul/serokorean/bottomNavigation/Home.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package koreanlearning.hangul.serokorean.bottomNavigation;\n\nimport android.content.Intent;\nimport android.graphics.Typeface;\nimport android.os.Bundle;\nimport android.support.v4.app.Fragment;\nimport android.support.v7.widget.CardView;\nimport android.view.LayoutInflater;\nimport android.view.View;\nimport android.view.ViewGroup;\nimport android.widget.GridLayout;\nimport android.widget.TextView;\n\nimport com.hangul.serokorean.R;\n\nimport koreanlearning.hangul.serokorean.beginnerone.webview.BeginnerOneWebView;\n\npublic class Home extends Fragment {\n\n    private GridLayout mainGrid;\n    private CardView intro;\n    private final int CHAPTERS = 30;\n    private final int CHAPTER_ONE_NUM_OF_PAGE = 17;\n    private final int CHAPTER_TWO_NUM_OF_PAGE = 9;\n    private final int CHAPTER_THREE_NUM_OF_PAGE = 7;\n    private final int CHAPTER_FOUR_NUM_OF_PAGE = 4;\n    private final int CHAPTER_FIVE_NUM_OF_PAGE = 6;\n    private final int CHAPTER_SIX_NUM_OF_PAGE = 11;\n    private final int CHAPTER_SEVEN_NUM_OF_PAGE = 6;\n    private final int CHAPTER_EIGHT_NUM_OF_PAGE = 4;\n    private final int CHAPTER_NINE_NUM_OF_PAGE = 7;\n    private final int CHAPTER_TEN_NUM_OF_PAGE = 7;\n\n    public Home() {\n        // Required empty public constructor\n    }\n\n    @Override\n    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {\n\n        View view = inflater.inflate(R.layout.fragment_home, container, false);\n\n        intro = view.findViewById(R.id.intro);\n        intro.setOnClickListener(new View.OnClickListener()   {\n            public void onClick(View v)  {\n                try {\n                    Intent intent = new Intent(getActivity(), BeginnerOneWebView.class);\n                    intent.putExtra(\"chapter\", \"chapter 0\");\n                    intent.putExtra(\"pages\", 5);\n                    startActivity(intent);\n                } catch (Exception e) {\n                    e.printStackTrace();\n                }\n            }\n        });\n\n        Typeface customFont = Typeface.createFromAsset(getActivity().getAssets(), \"fonts/makgeolli.ttf\");\n        changeFont(view, customFont);\n\n        mainGrid = view.findViewById(R.id.mainGrid);\n        setChaptersGrid(mainGrid);\n\n        // Inflate the layout for this fragment\n        return view;\n    }\n\n    private void setChaptersGrid(GridLayout mainGrid){\n\n        for (int i=0; i<mainGrid.getChildCount(); i++){\n            final CardView cardView = (CardView) mainGrid.getChildAt(i);\n            final String chapter = Integer.toString(i+1);\n\n            cardView.setOnClickListener(new View.OnClickListener() {\n                @Override\n                public void onClick(View v) {\n                    Intent intent = new Intent(getActivity(), BeginnerOneWebView.class);\n\n                    int numberOfPages = detectTheNumberOfPages(chapter);\n                    intent.putExtra(\"chapter\", \"chapter \" + chapter);\n                    intent.putExtra(\"pages\", numberOfPages);\n                    startActivity(intent);\n                }\n            });\n\n        }\n    }\n\n    private void changeFont(View view, Typeface customFont) {\n        TextView tv;\n        tv = view.findViewById(R.id.introduction);\n        tv.setTypeface(customFont);\n\n        for(int i=1; i<=CHAPTERS; ++i){\n            try {\n                int id = R.id.class.getField(\"ch\" + i).getInt(0);\n                tv = view.findViewById(id);\n                tv.setTypeface(customFont);\n            } catch (IllegalAccessException | NoSuchFieldException e) {\n                e.printStackTrace();\n            }\n        }\n    }\n\n    private int detectTheNumberOfPages(String chapter){\n        switch (chapter){\n            case \"1\": return CHAPTER_ONE_NUM_OF_PAGE;\n            case \"2\": return CHAPTER_TWO_NUM_OF_PAGE;\n            case \"3\": return CHAPTER_THREE_NUM_OF_PAGE;\n            case \"4\": return CHAPTER_FOUR_NUM_OF_PAGE;\n            case \"5\": return CHAPTER_FIVE_NUM_OF_PAGE;\n            case \"6\": return CHAPTER_SIX_NUM_OF_PAGE;\n            case \"7\": return CHAPTER_SEVEN_NUM_OF_PAGE;\n            case \"8\": return CHAPTER_EIGHT_NUM_OF_PAGE;\n            case \"9\": return CHAPTER_NINE_NUM_OF_PAGE;\n            case \"10\": return CHAPTER_TEN_NUM_OF_PAGE;\n            case \"11\": return 20;\n            case \"12\": return 20;\n            case \"13\": return 20;\n            case \"14\": return 20;\n            case \"15\": return 20;\n            case \"16\": return 20;\n            case \"17\": return 20;\n            case \"18\": return 20;\n            case \"19\": return 20;\n            case \"20\": return 20;\n            case \"21\": return 20;\n            case \"22\": return 20;\n            case \"23\": return 20;\n            case \"24\": return 20;\n            case \"25\": return 20;\n            case \"26\": return 20;\n            case \"27\": return 20;\n            case \"28\": return 20;\n            case \"29\": return 20;\n            case \"30\": return 20;\n        }\n        return 0;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/koreanlearning/hangul/serokorean/bottomNavigation/Home.java	(revision dcf4bdb0969660592a59d886998bf7324c0a456b)
++++ app/src/main/java/koreanlearning/hangul/serokorean/bottomNavigation/Home.java	(date 1571631010000)
+@@ -14,22 +14,13 @@
+ import com.hangul.serokorean.R;
+ 
+ import koreanlearning.hangul.serokorean.beginnerone.webview.BeginnerOneWebView;
++import koreanlearning.hangul.serokorean.utility.NumOfPages;
+ 
+ public class Home extends Fragment {
+ 
+     private GridLayout mainGrid;
+     private CardView intro;
+     private final int CHAPTERS = 30;
+-    private final int CHAPTER_ONE_NUM_OF_PAGE = 17;
+-    private final int CHAPTER_TWO_NUM_OF_PAGE = 9;
+-    private final int CHAPTER_THREE_NUM_OF_PAGE = 7;
+-    private final int CHAPTER_FOUR_NUM_OF_PAGE = 4;
+-    private final int CHAPTER_FIVE_NUM_OF_PAGE = 6;
+-    private final int CHAPTER_SIX_NUM_OF_PAGE = 11;
+-    private final int CHAPTER_SEVEN_NUM_OF_PAGE = 6;
+-    private final int CHAPTER_EIGHT_NUM_OF_PAGE = 4;
+-    private final int CHAPTER_NINE_NUM_OF_PAGE = 7;
+-    private final int CHAPTER_TEN_NUM_OF_PAGE = 7;
+ 
+     public Home() {
+         // Required empty public constructor
+@@ -40,13 +31,14 @@
+ 
+         View view = inflater.inflate(R.layout.fragment_home, container, false);
+ 
++        // set intro chapter's chapter and the number of pages
+         intro = view.findViewById(R.id.intro);
+         intro.setOnClickListener(new View.OnClickListener()   {
+             public void onClick(View v)  {
+                 try {
+                     Intent intent = new Intent(getActivity(), BeginnerOneWebView.class);
+                     intent.putExtra("chapter", "chapter 0");
+-                    intent.putExtra("pages", 5);
++                    intent.putExtra("pages", NumOfPages.getChapterIntroNumOfPage());
+                     startActivity(intent);
+                 } catch (Exception e) {
+                     e.printStackTrace();
+@@ -75,7 +67,7 @@
+                 public void onClick(View v) {
+                     Intent intent = new Intent(getActivity(), BeginnerOneWebView.class);
+ 
+-                    int numberOfPages = detectTheNumberOfPages(chapter);
++                    int numberOfPages = NumOfPages.detectTheNumberOfPages(chapter);
+                     intent.putExtra("chapter", "chapter " + chapter);
+                     intent.putExtra("pages", numberOfPages);
+                     startActivity(intent);
+@@ -100,40 +92,4 @@
+             }
+         }
+     }
+-
+-    private int detectTheNumberOfPages(String chapter){
+-        switch (chapter){
+-            case "1": return CHAPTER_ONE_NUM_OF_PAGE;
+-            case "2": return CHAPTER_TWO_NUM_OF_PAGE;
+-            case "3": return CHAPTER_THREE_NUM_OF_PAGE;
+-            case "4": return CHAPTER_FOUR_NUM_OF_PAGE;
+-            case "5": return CHAPTER_FIVE_NUM_OF_PAGE;
+-            case "6": return CHAPTER_SIX_NUM_OF_PAGE;
+-            case "7": return CHAPTER_SEVEN_NUM_OF_PAGE;
+-            case "8": return CHAPTER_EIGHT_NUM_OF_PAGE;
+-            case "9": return CHAPTER_NINE_NUM_OF_PAGE;
+-            case "10": return CHAPTER_TEN_NUM_OF_PAGE;
+-            case "11": return 20;
+-            case "12": return 20;
+-            case "13": return 20;
+-            case "14": return 20;
+-            case "15": return 20;
+-            case "16": return 20;
+-            case "17": return 20;
+-            case "18": return 20;
+-            case "19": return 20;
+-            case "20": return 20;
+-            case "21": return 20;
+-            case "22": return 20;
+-            case "23": return 20;
+-            case "24": return 20;
+-            case "25": return 20;
+-            case "26": return 20;
+-            case "27": return 20;
+-            case "28": return 20;
+-            case "29": return 20;
+-            case "30": return 20;
+-        }
+-        return 0;
+-    }
+ }
+Index: app/src/main/java/koreanlearning/hangul/serokorean/Search/Search.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package koreanlearning.hangul.serokorean.search;\nimport android.graphics.Color;\nimport android.support.v7.app.AppCompatActivity;\nimport android.os.Bundle;\n\nimport com.hangul.serokorean.R;\n\npublic class Search extends AppCompatActivity {\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        getWindow().setStatusBarColor(Color.parseColor(\"#c0000000\"));\n        getWindow().setNavigationBarColor(Color.parseColor(\"#c0000000\"));\n        setContentView(R.layout.activity_search);\n\n\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/koreanlearning/hangul/serokorean/Search/Search.java	(revision dcf4bdb0969660592a59d886998bf7324c0a456b)
++++ app/src/main/java/koreanlearning/hangul/serokorean/search/Search.java	(date 1570091713000)
+@@ -1,0 +1,0 @@

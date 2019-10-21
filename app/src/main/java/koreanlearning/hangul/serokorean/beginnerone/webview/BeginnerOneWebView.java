@@ -5,6 +5,7 @@ import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -23,7 +24,6 @@ import com.hangul.serokorean.R;
 import java.util.ArrayList;
 
 import koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity;
-
 
 public class BeginnerOneWebView extends AppCompatActivity implements ParentRequestInterface{
 
@@ -89,6 +89,23 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
         customViewPager = (CustomViewPager) findViewById(R.id.container);
         customViewPager.setAdapter(sectionsPagerAdapter);
         customViewPager.setOffscreenPageLimit(2);
+        customViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener(){
+            private int nextChapterIndex = currentChapterNum + 1;
+            @Override
+            public void onPageScrolled(int i, float v, int i1) { }
+
+            @Override
+            public void onPageSelected(int i) {
+                // action when it's scrolled at the last page
+                if(i == numberOfPages-1){
+//                    Toast.makeText(BeginnerOneWebView.this, "after next page index: " + i, Toast.LENGTH_SHORT).show();
+//                    Intent startNextChapter = new Intent()
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) { }
+        });
     }
 
 
