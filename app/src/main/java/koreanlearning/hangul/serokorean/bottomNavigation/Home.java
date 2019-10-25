@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.hangul.serokorean.R;
 
-import koreanlearning.hangul.serokorean.beginnerone.webview.ChapterWebview;
+import koreanlearning.hangul.serokorean.beginnerone.webview.ChapterWebviewActivity;
 import koreanlearning.hangul.serokorean.utility.ChapterUtil;
 
 public class Home extends Fragment {
@@ -34,7 +34,7 @@ public class Home extends Fragment {
         intro.setOnClickListener(new View.OnClickListener()   {
             public void onClick(View v)  {
                 try {
-                    Intent intent = new Intent(getActivity(), ChapterWebview.class);
+                    Intent intent = new Intent(getActivity(), ChapterWebviewActivity.class);
                     intent.putExtra("chapter", "chapter 0");
                     intent.putExtra("pages", ChapterUtil.getChapterIntroNumOfPage());
                     startActivity(intent);
@@ -55,7 +55,7 @@ public class Home extends Fragment {
         return view;
     }
 
-    // set up chapter cardview grid. When it's clicked it sends the arguments of chapter number and the number of pages to ChapterWebview
+    // set up chapter cardview grid. When it's clicked it sends the arguments of chapter number and the number of pages to ChapterWebviewActivity
     private void setChaptersGrid(GridLayout mainGrid){
 
         for (int i=0; i<mainGrid.getChildCount(); i++){
@@ -65,7 +65,7 @@ public class Home extends Fragment {
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getActivity(), ChapterWebview.class);
+                    Intent intent = new Intent(getActivity(), ChapterWebviewActivity.class);
 
                     int numberOfPages = ChapterUtil.detectTheNumberOfPages(chapter);
                     intent.putExtra("chapter", "chapter " + chapter);

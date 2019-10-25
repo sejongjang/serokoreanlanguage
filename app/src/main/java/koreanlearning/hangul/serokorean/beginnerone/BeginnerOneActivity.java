@@ -14,7 +14,7 @@ import koreanlearning.hangul.serokorean.bottomNavigation.Home;
 import koreanlearning.hangul.serokorean.bottomNavigation.More;
 import koreanlearning.hangul.serokorean.bottomNavigation.Vocab;
 
-public class BeginnerOne extends AppCompatActivity {
+public class BeginnerOneActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private ViewPager viewPager;

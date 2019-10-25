@@ -13,7 +13,7 @@ public class CustomWebView extends WebView {
     private String link, image;
     CustomWebView webView;
 
-    ChapterWebview.PlaceholderFragment webViewFragment;
+    ChapterWebviewActivity.PlaceholderFragment webViewFragment;
 
     public CustomWebView(Context context) {
         super(context);
@@ -28,7 +28,7 @@ public class CustomWebView extends WebView {
         super(context, attrs, defStyleAttr);
     }
 
-    public void setFragment(ChapterWebview.PlaceholderFragment webViewFragment) {
+    public void setFragment(ChapterWebviewActivity.PlaceholderFragment webViewFragment) {
         this.webViewFragment = webViewFragment;
 
     }

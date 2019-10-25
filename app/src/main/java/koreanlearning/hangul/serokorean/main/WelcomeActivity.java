@@ -12,7 +12,7 @@ import com.hangul.serokorean.R;
 
 import koreanlearning.hangul.serokorean.utility.FullScreenCall;
 
-public class Welcome extends AppCompatActivity {
+public class WelcomeActivity extends AppCompatActivity {
     private TextView tv;
     private ImageView iv;
 
@@ -39,7 +39,7 @@ public class Welcome extends AppCompatActivity {
         iv.startAnimation(animation);
         //iv.startAnimation(animation);
 
-        final Intent intent = new Intent(this, MainActivity.class);
+        final Intent intent = new Intent(this, LevelSelectionActivity.class);
 
         Thread timer = new Thread() {
             public void run() {

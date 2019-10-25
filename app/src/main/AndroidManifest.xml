@@ -10,7 +10,6 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,17 +17,20 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme2">
+        <activity android:name="koreanlearning.hangul.serokorean.login.ProfileActivity"></activity>
+        <activity android:name="koreanlearning.hangul.serokorean.login.LoginActivity" />
         <activity
             android:name="koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity"
             android:label="@string/title_activity_question"
-            android:theme="@style/AppTheme2.NoActionBar"></activity>
+            android:theme="@style/AppTheme2.NoActionBar" />
         <activity android:name="koreanlearning.hangul.serokorean.beginnerone.quiz.QuizCategories" />
         <activity android:name="koreanlearning.hangul.serokorean.search.Search" />
-        <activity android:name="koreanlearning.hangul.serokorean.beginnerone.webview.ChapterWebview"
-            android:theme="@style/noWhitePreview"/>
-        <activity android:name="koreanlearning.hangul.serokorean.beginnerone.BeginnerOne"/>
-        <activity android:name="koreanlearning.hangul.serokorean.main.MainActivity" />
-        <activity android:name="koreanlearning.hangul.serokorean.main.Welcome">
+        <activity
+            android:name="koreanlearning.hangul.serokorean.beginnerone.webview.ChapterWebviewActivity"
+            android:theme="@style/noWhitePreview" />
+        <activity android:name="koreanlearning.hangul.serokorean.beginnerone.BeginnerOneActivity" />
+        <activity android:name="koreanlearning.hangul.serokorean.main.LevelSelectionActivity" />
+        <activity android:name="koreanlearning.hangul.serokorean.main.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -23,7 +23,7 @@ import koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity;
 import koreanlearning.hangul.serokorean.utility.ChapterUtil;
 import koreanlearning.hangul.serokorean.utility.FullScreenCall;
 
-public class ChapterWebview extends AppCompatActivity implements ParentRequestInterface{
+public class ChapterWebviewActivity extends AppCompatActivity implements ParentRequestInterface{
 
     private SectionsPagerAdapter sectionsPagerAdapter;
     private CustomViewPager customViewPager;
@@ -84,7 +84,7 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
             @Override
             public void onSwipeOutAtStart() {
                 if(previousChapterIndex >= 0){
-                    Intent intent = new Intent(ChapterWebview.this, ChapterWebview.class);
+                    Intent intent = new Intent(ChapterWebviewActivity.this, ChapterWebviewActivity.class);
                     int numberOfPages = ChapterUtil.detectTheNumberOfPages(Integer.toString(previousChapterIndex));
                     intent.putExtra("chapter", "chapter " + previousChapterIndex);
                     intent.putExtra("pages", numberOfPages);
@@ -100,7 +100,7 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
             @Override
             public void onSwipeOutAtEnd() {
                 if(nextChapterIndex <= 30){
-                    Intent intent = new Intent(ChapterWebview.this, ChapterWebview.class);
+                    Intent intent = new Intent(ChapterWebviewActivity.this, ChapterWebviewActivity.class);
                     int numberOfPages = ChapterUtil.detectTheNumberOfPages(Integer.toString(nextChapterIndex));
                     intent.putExtra("chapter", "chapter " + nextChapterIndex);
                     intent.putExtra("pages", numberOfPages);
@@ -122,7 +122,7 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
         private static final String ARG_SECTION_NUMBER = "section_number";
         private static final String CURRENT_CHAPTER = "current_chapter";
         private static final String NUMBER_OF_PAGES = "number_of_pages";
-        private ChapterWebview parentActivity;
+        private ChapterWebviewActivity parentActivity;
 
         public static PlaceholderFragment newInstance(int position , int chapterNum, int numberOfPages) {
             PlaceholderFragment fragment = new PlaceholderFragment();
@@ -140,7 +140,7 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
             int position = arguments.getInt(ARG_SECTION_NUMBER);
             int currentChapterNum = arguments.getInt(CURRENT_CHAPTER);
             int numberOfPages = arguments.getInt(NUMBER_OF_PAGES);
-            parentActivity = (ChapterWebview) getActivity();
+            parentActivity = (ChapterWebviewActivity) getActivity();
 
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             final CustomWebView webView = rootView.findViewById(R.id.webView);
@@ -218,7 +218,7 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
         public void setViewPager(boolean b) {
             parentActivity.setViewPagerStatus(b);
         }
-        public void setActivity(ChapterWebview activity) {
+        public void setActivity(ChapterWebviewActivity activity) {
         }
         public void setPager(CustomViewPager viewpager) {
         }
@@ -228,9 +228,9 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         private CustomViewPager viewPager;
-        private ChapterWebview activity;
+        private ChapterWebviewActivity activity;
 
-        public SectionsPagerAdapter(FragmentManager fm, CustomViewPager viewPager, ChapterWebview activity) {
+        public SectionsPagerAdapter(FragmentManager fm, CustomViewPager viewPager, ChapterWebviewActivity activity) {
             super(fm);
             this.viewPager=viewPager;
             this.activity=activity;

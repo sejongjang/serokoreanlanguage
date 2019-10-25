@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="koreanlearning.hangul.serokorean.beginnerone.webview.ChapterWebview$PlaceholderFragment">
+    tools:context="koreanlearning.hangul.serokorean.beginnerone.webview.ChapterWebviewActivity$PlaceholderFragment">
 
     <koreanlearning.hangul.serokorean.beginnerone.webview.CustomWebView
         android:id="@+id/webView"

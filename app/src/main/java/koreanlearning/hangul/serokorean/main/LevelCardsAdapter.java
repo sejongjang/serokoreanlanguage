@@ -2,9 +2,7 @@ package koreanlearning.hangul.serokorean.main;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Typeface;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
@@ -14,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.hangul.serokorean.R;
-import koreanlearning.hangul.serokorean.beginnerone.BeginnerOne;
+import koreanlearning.hangul.serokorean.beginnerone.BeginnerOneActivity;
 
 import java.util.List;
 
@@ -74,23 +72,23 @@ public class LevelCardsAdapter extends PagerAdapter {
 
                 switch(title){
                     case "Level 1 (Brand New Learner)":
-                        Intent beginnerOneActivity = new Intent(container.getContext(), BeginnerOne.class);
+                        Intent beginnerOneActivity = new Intent(container.getContext(), BeginnerOneActivity.class);
                         container.getContext().startActivity(beginnerOneActivity);
                         break;
                     case "Level 2 (Beginner)":
-                        Intent beginnerTwoActivity = new Intent(container.getContext(), BeginnerOne.class);
+                        Intent beginnerTwoActivity = new Intent(container.getContext(), BeginnerOneActivity.class);
                         container.getContext().startActivity(beginnerTwoActivity);
                         break;
                     case "Level 3 (Lower Intermediate)":
-                        Intent IntermediateOneActivity = new Intent(container.getContext(), BeginnerOne.class);
+                        Intent IntermediateOneActivity = new Intent(container.getContext(), BeginnerOneActivity.class);
                         container.getContext().startActivity(IntermediateOneActivity);
                         break;
                     case "Level 4 (Upper Intermediate)":
-                        Intent IntermediateTwoActivity = new Intent(container.getContext(), BeginnerOne.class);
+                        Intent IntermediateTwoActivity = new Intent(container.getContext(), BeginnerOneActivity.class);
                         container.getContext().startActivity(IntermediateTwoActivity);
                         break;
                     case "Level 5 (Advanced)":
-                        Intent advancedActivity = new Intent(container.getContext(), BeginnerOne.class);
+                        Intent advancedActivity = new Intent(container.getContext(), BeginnerOneActivity.class);
                         container.getContext().startActivity(advancedActivity);
                         break;
                 }

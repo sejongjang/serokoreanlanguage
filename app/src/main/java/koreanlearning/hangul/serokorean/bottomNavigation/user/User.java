@@ -1,21 +1,21 @@
 package koreanlearning.hangul.serokorean.bottomNavigation.user;
 
-public class Model {
+public class User {
 
-    private static Model model;
+    private static User user;
     private String authtoken;
 
     // constructor is private
-    private Model() {
+    private User() {
 
     }
 
-    //returns the instance of the Model
-    public static Model getModel() {
-        if (model == null) {
-            model = new Model();
+    //returns the instance of the User
+    public static User getUser() {
+        if (user == null) {
+            user = new User();
         }
-        return model;
+        return user;
     }
 
     public String getAuthtoken() {

@@ -7,7 +7,7 @@
     android:background="#282828"
     android:id="@+id/mainActivityLayout"
     android:fitsSystemWindows="false"
-    tools:context="koreanlearning.hangul.serokorean.main.Welcome">
+    tools:context="koreanlearning.hangul.serokorean.main.WelcomeActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
