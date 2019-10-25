@@ -18,8 +18,6 @@ import koreanlearning.hangul.serokorean.utility.ChapterUtil;
 
 public class Home extends Fragment {
 
-    private GridLayout mainGrid;
-    private CardView intro;
     private final int CHAPTERS = 30;
 
     public Home() {
@@ -32,7 +30,7 @@ public class Home extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         // set intro chapter's chapter and the number of pages
-        intro = view.findViewById(R.id.intro);
+        CardView intro = view.findViewById(R.id.intro);
         intro.setOnClickListener(new View.OnClickListener()   {
             public void onClick(View v)  {
                 try {
@@ -40,6 +38,7 @@ public class Home extends Fragment {
                     intent.putExtra("chapter", "chapter 0");
                     intent.putExtra("pages", ChapterUtil.getChapterIntroNumOfPage());
                     startActivity(intent);
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -49,7 +48,7 @@ public class Home extends Fragment {
         Typeface customFont = Typeface.createFromAsset(getActivity().getAssets(), "fonts/helvetica.ttf");
         changeFont(view, customFont);
 
-        mainGrid = view.findViewById(R.id.mainGrid);
+        GridLayout mainGrid = view.findViewById(R.id.mainGrid);
         setChaptersGrid(mainGrid);
 
         // Inflate the layout for this fragment

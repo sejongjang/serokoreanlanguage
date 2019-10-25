@@ -91,6 +91,7 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
                     intent.putExtra("isFromNext", true);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                 }
 //                Toast.makeText(getApplicationContext(), "try to swipe right", Toast.LENGTH_SHORT).show();
             }
@@ -107,6 +108,7 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
                     intent.putExtra("pages", numberOfPages);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 }
             }
         });

@@ -96,49 +96,4 @@ public class BeginnerOne extends AppCompatActivity {
         viewPagerAdapter.addFragment(more);
         viewPager.setAdapter(viewPagerAdapter);
     }
-
-//    @Override
-//    public boolean onNavigationItemSelected(@NonNull MenuItem item){
-//
-//        switch(item.getItemId()){
-//            case R.id.home:
-//                viewPager.setCurrentItem(0);
-//                return true;
-//            case R.id.vocab:
-//                viewPager.setCurrentItem(1);
-//                return true;
-//            case R.id.FAQ:
-//                viewPager.setCurrentItem(2);
-//                return true;
-//            case R.id.more:
-//                viewPager.setCurrentItem(3);
-//                return true;
-//
-//        }
-//
-////        for (int i = 0; i < bottomNavigationView.getMenu().size(); i++) {
-////            MenuItem menuItem = bottomNavigationView.getMenu().getItem(i);
-////            boolean isChecked = menuItem.getItemId() == item.getItemId();
-////            menuItem.setChecked(isChecked);
-////        }
-////
-////        //switch fragments
-////        switch(item.getItemId()){
-////            case R.id.home:
-////                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, home).commit();
-////                //.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left)
-////                return true;
-////            case R.id.vocab:
-////                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, vocab).commit();
-////                return true;
-////            case R.id.FAQ:
-////                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, faq).commit();
-////                return true;
-////            case R.id.more:
-////                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, more).commit();
-////                return true;
-////
-////        }
-//        return true;
-//    }
 }
