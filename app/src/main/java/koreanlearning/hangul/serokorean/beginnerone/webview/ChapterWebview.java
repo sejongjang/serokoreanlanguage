@@ -5,7 +5,6 @@ import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,21 +17,21 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Toast;
 
 import com.hangul.serokorean.R;
 import java.util.ArrayList;
 
 import koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity;
-import koreanlearning.hangul.serokorean.utility.NumOfPages;
+import koreanlearning.hangul.serokorean.utility.ChapterUtil;
 
-public class BeginnerOneWebView extends AppCompatActivity implements ParentRequestInterface{
+public class ChapterWebview extends AppCompatActivity implements ParentRequestInterface{
 
     private SectionsPagerAdapter sectionsPagerAdapter;
     private CustomViewPager customViewPager;
     private int numberOfPages = 0;
     private int currentChapterNum = 0;
     private String currentChapter = "";
+    private boolean isFromNext = false;
 
     public void fullScreencall() {
         if(Build.VERSION.SDK_INT < 19){
@@ -47,6 +46,10 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
         }
     }
 
+    // 1. load all the pages
+    // 2. initiate x-0.html file depending on chapter number
+    // 3. at the last page of the chapter how to load next chapter?
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         fullScreencall();
@@ -55,32 +58,27 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
 
         //bundle gets passed in parameters when chapters' onClick from the Home
         Bundle bundle = getIntent().getExtras();
-        StringBuilder stringBuilderPageNum = new StringBuilder();
-        StringBuilder stringBuilderChapNum = new StringBuilder();
-
-        //check bundle to see if it's null
         if(bundle == null){
 //            textView.setText("bundle error");
         }
         //if not, stores the parameters are passed in
         else{
-            //bundle is like a Map, matches key and stores the value
             numberOfPages = bundle.getInt("pages");
             currentChapter = bundle.getString("chapter");
+            isFromNext = bundle.getBoolean("isFromNext");
+
 //            isPrevious = bundle.getInt("previous");
-            stringBuilderPageNum.append(bundle.getString("chapter"));
-            stringBuilderPageNum.append(" number of pages:");
-            stringBuilderPageNum.append(Integer.toString(bundle.getInt("pages")));
+            StringBuilder chapNum = new StringBuilder();
 
             //check the length of the string, and gets the number as a substring, 0-9
             if(currentChapter.length()<=9){
-                stringBuilderChapNum.append(currentChapter.substring(8,9));
+                chapNum.append(currentChapter.substring(8,9));
             }
             //number greater than 9
             else{
-                stringBuilderChapNum.append(currentChapter.substring(8,10));
+                chapNum.append(currentChapter.substring(8,10));
             }
-            currentChapterNum = Integer.parseInt(stringBuilderChapNum.toString());
+            currentChapterNum = Integer.parseInt(chapNum.toString());
         }
 
         // Create the adapter that will return a fragment for each. primary sections of the activity.
@@ -89,63 +87,44 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
         // Set up the ViewPager with the sections adapter.
         customViewPager = (CustomViewPager) findViewById(R.id.container);
         customViewPager.setAdapter(sectionsPagerAdapter);
+
+        if(isFromNext) {
+            int index = ChapterUtil.findFirstPageOfChapter(currentChapterNum+1);
+            customViewPager.setCurrentItem(index-1);
+        }
         customViewPager.setOffscreenPageLimit(2);
-
-        customViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener(){
+        customViewPager.setOnSwipeOutListener(new CustomViewPager.OnSwipeOutListener() {
             private int nextChapterIndex = currentChapterNum + 1;
-            int SCROLLINNG_RIGHT = 0;
-            int SCROLLINNG_LEFT = 1;
-            int SCROLLINNG_UNDETERMINDED = 2;
-            int currentScrollDirection = 2;
+            private int previousChapterIndex = currentChapterNum - 1;
 
-            private void setScrollingDirection(float positionOffset){
-                if((1-positionOffset) >= 0.5){
-                    this.currentScrollDirection = SCROLLINNG_RIGHT;
+            @Override
+            public void onSwipeOutAtStart() {
+
+                if(previousChapterIndex >= 0){
+                    Intent intent = new Intent(ChapterWebview.this, ChapterWebview.class);
+                    int numberOfPages = ChapterUtil.detectTheNumberOfPages(Integer.toString(previousChapterIndex));
+                    intent.putExtra("chapter", "chapter " + previousChapterIndex);
+                    intent.putExtra("pages", numberOfPages);
+                    intent.putExtra("isFromNext", true);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
                 }
-                else if((1-positionOffset) <= 0.5){
-                    this.currentScrollDirection = SCROLLINNG_LEFT;
-                }
-            }
-
-            private boolean isScrollDirectionUndetermined(){
-                return currentScrollDirection == SCROLLINNG_UNDETERMINDED;
-            }
-
-            private boolean isScrollingRight(){
-                return currentScrollDirection == SCROLLINNG_RIGHT;
-            }
-
-            private boolean isScrollingLeft(){
-                return currentScrollDirection == SCROLLINNG_LEFT;
+//                Toast.makeText(getApplicationContext(), "try to swipe right", Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public void onPageScrolled(int i, float v, int i1) {
-                if(isScrollDirectionUndetermined()){
-                    setScrollingDirection(v);
-                }
-            }
+            public void onSwipeOutAtEnd() {
+//                Toast.makeText(getApplicationContext(), "try to swipe left", Toast.LENGTH_SHORT).show();
 
-            @Override
-            public void onPageSelected(int i) {
-                // action when it's scrolled at the last page
-                if(i == numberOfPages-1){
-//                    Toast.makeText(BeginnerOneWebView.this, "after next page index: " + i, Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(BeginnerOneWebView.this, BeginnerOneWebView.class);
-
-                    int numberOfPages = NumOfPages.detectTheNumberOfPages(Integer.toString(nextChapterIndex));
+                if(nextChapterIndex <= 30){
+                    Intent intent = new Intent(ChapterWebview.this, ChapterWebview.class);
+                    int numberOfPages = ChapterUtil.detectTheNumberOfPages(Integer.toString(nextChapterIndex));
                     intent.putExtra("chapter", "chapter " + nextChapterIndex);
                     intent.putExtra("pages", numberOfPages);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                 }
-                else if(i==0 && isScrollingRight()){
-                    Toast.makeText(BeginnerOneWebView.this, "detect first page: " + i, Toast.LENGTH_SHORT).show();
-                }
             }
-
-            @Override
-            public void onPageScrollStateChanged(int i) { }
         });
     }
 
@@ -161,9 +140,9 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
         private int position;
         private int currentChapterNum;
         private int numberOfPages;
-        private BeginnerOneWebView activity;
+        private ChapterWebview activity;
         private CustomViewPager viewpager;
-        private BeginnerOneWebView parentActivity;
+        private ChapterWebview parentActivity;
 
         public static PlaceholderFragment newInstance(int position , int chapterNum, int numberOfPages) {
             PlaceholderFragment fragment = new PlaceholderFragment();
@@ -175,35 +154,57 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
             return fragment;
         }
 
+        private ArrayList<String> loadAllHTML(){
+            ArrayList<String> htmlPaths = new ArrayList<>();
+
+            for(int i=0; i<ChapterUtil.getNumOfChapters(); ++i){
+                int numOfPages = ChapterUtil.detectTheNumberOfPages(Integer.toString(i));
+
+                for(int j=0; j<numOfPages; ++j){
+                    StringBuilder htmlPath = new StringBuilder();
+                    htmlPath.append("file:///android_asset/level 1/");
+                    htmlPath.append(i);
+                    htmlPath.append("-");
+                    htmlPath.append(j);
+                    htmlPath.append(".html");
+                    htmlPaths.add(htmlPath.toString());
+                }
+            }
+            return htmlPaths;
+        }
+
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             Bundle arguments = getArguments();
-            String url="";
-            String lastPage="";
-            ArrayList<String> htmlFiles = new ArrayList<>();
-
             position = arguments.getInt(ARG_SECTION_NUMBER);
             currentChapterNum = arguments.getInt(CURRENT_CHAPTER);
             numberOfPages = arguments.getInt(NUMBER_OF_PAGES);
-            parentActivity = (BeginnerOneWebView) getActivity();
+            parentActivity = (ChapterWebview) getActivity();
 
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             final CustomWebView webView = rootView.findViewById(R.id.webView);
             webView.setFragment(this);
 
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.append("file:///android_asset/level 1/chapter ");
-            stringBuilder.append(Integer.toString(currentChapterNum));
-            stringBuilder.append("/");
+//            StringBuilder htmlPath = new StringBuilder();
+//            htmlPath.append("file:///android_asset/level 1/chapter ");
+//            htmlPath.append(currentChapterNum);
+//            htmlPath.append("/");
+//
+//            for(int i=0; i<numberOfPages; ++i){
+//                htmlFiles.add(htmlPath.toString() + i + ".html");
+//            }
 
-            for(int i=0; i<numberOfPages; ++i){
-                htmlFiles.add(stringBuilder.toString() + Integer.toString(i) + ".html");
-            }
-
-            url = htmlFiles.get(position);
-            lastPage = htmlFiles.get(numberOfPages-1);
+            ArrayList<String> htmlFiles = loadAllHTML();
+            int index = ChapterUtil.findFirstPageOfChapter(currentChapterNum);
+            String url = htmlFiles.get(position + index);
 
             WebSettings settings = webView.getSettings();
+            javascriptSetting(webView, settings);
+            webView.loadUrl(url);
+
+            return rootView;
+        }
+        private void javascriptSetting(WebView webView, WebSettings settings){
             settings.setAllowFileAccessFromFileURLs(true);
             settings.setAllowUniversalAccessFromFileURLs(true);
             settings.setMediaPlaybackRequiresUserGesture(false);
@@ -221,6 +222,7 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
                 }
             });
 
+            // this is how we call quiz activity from javascript
             webView.setWebViewClient(new WebViewClient(){
                 @Override
                 public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
@@ -242,15 +244,11 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
             settings.setDisplayZoomControls(false);
             settings.setLoadWithOverviewMode(true);
             settings.setUseWideViewPort(false);
-
-            webView.loadUrl(url);
-            return rootView;
         }
-
         public void setViewPager(boolean b) {
             parentActivity.setViewPagerStatus(b);
         }
-        public void setActivity(BeginnerOneWebView activity) {
+        public void setActivity(ChapterWebview activity) {
             this.activity = activity;
         }
         public void setPager(CustomViewPager viewpager) {
@@ -261,10 +259,10 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        CustomViewPager viewPager;
-        BeginnerOneWebView activity;
+        private CustomViewPager viewPager;
+        private ChapterWebview activity;
 
-        public SectionsPagerAdapter(FragmentManager fm, CustomViewPager viewPager, BeginnerOneWebView activity) {
+        public SectionsPagerAdapter(FragmentManager fm, CustomViewPager viewPager, ChapterWebview activity) {
             super(fm);
             this.viewPager=viewPager;
             this.activity=activity;
@@ -284,3 +282,4 @@ public class BeginnerOneWebView extends AppCompatActivity implements ParentReque
         public int getCount() { return numberOfPages; }
     }
 }
+

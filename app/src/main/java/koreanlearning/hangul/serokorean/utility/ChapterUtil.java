@@ -1,19 +1,36 @@
 package koreanlearning.hangul.serokorean.utility;
 
-public class NumOfPages {
-    private static int CHAPTER_INTRO_NUM_OF_PAGE = 6;
-    private static int CHAPTER_ONE_NUM_OF_PAGE = 18;
-    private static int CHAPTER_TWO_NUM_OF_PAGE = 10;
-    private static int CHAPTER_THREE_NUM_OF_PAGE = 8;
-    private static int CHAPTER_FOUR_NUM_OF_PAGE = 5;
-    private static int CHAPTER_FIVE_NUM_OF_PAGE = 7;
-    private static int CHAPTER_SIX_NUM_OF_PAGE = 12;
-    private static int CHAPTER_SEVEN_NUM_OF_PAGE = 7;
-    private static int CHAPTER_EIGHT_NUM_OF_PAGE = 5;
-    private static int CHAPTER_NINE_NUM_OF_PAGE = 8;
-    private static int CHAPTER_TEN_NUM_OF_PAGE = 8;
+public class ChapterUtil {
+    private static int NUM_OF_CHAPTERS = 30;
+    private static int CHAPTER_INTRO_NUM_OF_PAGE = 5;
+    private static int CHAPTER_ONE_NUM_OF_PAGE = 17;
+    private static int CHAPTER_TWO_NUM_OF_PAGE = 9;
+    private static int CHAPTER_THREE_NUM_OF_PAGE = 7;
+    private static int CHAPTER_FOUR_NUM_OF_PAGE = 4;
+    private static int CHAPTER_FIVE_NUM_OF_PAGE = 6;
+    private static int CHAPTER_SIX_NUM_OF_PAGE = 11;
+    private static int CHAPTER_SEVEN_NUM_OF_PAGE = 6;
+    private static int CHAPTER_EIGHT_NUM_OF_PAGE = 4;
+    private static int CHAPTER_NINE_NUM_OF_PAGE = 7;
+    private static int CHAPTER_TEN_NUM_OF_PAGE = 7;
 
-    public NumOfPages() {
+    public ChapterUtil() {
+    }
+
+    public static int findFirstPageOfChapter(int currentChapterNum) {
+        int sum = 0;
+        for(int i=0; i<currentChapterNum; ++i){
+            sum += detectTheNumberOfPages(String.valueOf(i));
+        }
+        return sum;
+    }
+
+    public static int getNumOfChapters() {
+        return NUM_OF_CHAPTERS;
+    }
+
+    public static void setNumOfChapters(int numOfChapters) {
+        NUM_OF_CHAPTERS = numOfChapters;
     }
 
     public static int getChapterIntroNumOfPage() {
@@ -106,16 +123,17 @@ public class NumOfPages {
 
     public static int detectTheNumberOfPages(String chapter){
         switch (chapter){
-            case "1": return NumOfPages.getChapterOneNumOfPage();
-            case "2": return NumOfPages.getChapterTwoNumOfPage();
-            case "3": return NumOfPages.getChapterThreeNumOfPage();
-            case "4": return NumOfPages.getChapterFourNumOfPage();
-            case "5": return NumOfPages.getChapterFiveNumOfPage();
-            case "6": return NumOfPages.getChapterSixNumOfPage();
-            case "7": return NumOfPages.getChapterSevenNumOfPage();
-            case "8": return NumOfPages.getChapterEightNumOfPage();
-            case "9": return NumOfPages.getChapterNineNumOfPage();
-            case "10": return NumOfPages.getChapterTenNumOfPage();
+            case "0": return ChapterUtil.getChapterIntroNumOfPage();
+            case "1": return ChapterUtil.getChapterOneNumOfPage();
+            case "2": return ChapterUtil.getChapterTwoNumOfPage();
+            case "3": return ChapterUtil.getChapterThreeNumOfPage();
+            case "4": return ChapterUtil.getChapterFourNumOfPage();
+            case "5": return ChapterUtil.getChapterFiveNumOfPage();
+            case "6": return ChapterUtil.getChapterSixNumOfPage();
+            case "7": return ChapterUtil.getChapterSevenNumOfPage();
+            case "8": return ChapterUtil.getChapterEightNumOfPage();
+            case "9": return ChapterUtil.getChapterNineNumOfPage();
+            case "10": return ChapterUtil.getChapterTenNumOfPage();
             //TODO: add the number of pages here
             case "11": return 20;
             case "12": return 20;
