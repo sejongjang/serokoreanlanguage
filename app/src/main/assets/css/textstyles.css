@@ -75,6 +75,16 @@ body {
   }
 }
 
+.firstcharacter {
+  color: #e2e2e2;
+  float: left;
+  font-family: Georgia;
+  font-size: 90px;
+  line-height: 60px;
+  padding-right: 8px;
+  text-indent: 0%;
+}
+
 ul {
   margin: 20px 0;
   margin-left: 20px;
