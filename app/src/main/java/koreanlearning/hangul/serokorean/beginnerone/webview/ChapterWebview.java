@@ -46,10 +46,6 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
         }
     }
 
-    // 1. load all the pages
-    // 2. initiate x-0.html file depending on chapter number
-    // 3. at the last page of the chapter how to load next chapter?
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         fullScreencall();
@@ -184,15 +180,6 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             final CustomWebView webView = rootView.findViewById(R.id.webView);
             webView.setFragment(this);
-
-//            StringBuilder htmlPath = new StringBuilder();
-//            htmlPath.append("file:///android_asset/level 1/chapter ");
-//            htmlPath.append(currentChapterNum);
-//            htmlPath.append("/");
-//
-//            for(int i=0; i<numberOfPages; ++i){
-//                htmlFiles.add(htmlPath.toString() + i + ".html");
-//            }
 
             ArrayList<String> htmlFiles = loadAllHTML();
             int index = ChapterUtil.findFirstPageOfChapter(currentChapterNum);
