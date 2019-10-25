@@ -1,7 +1,6 @@
 package koreanlearning.hangul.serokorean.beginnerone.webview;
 
 import android.content.Intent;
-import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -10,7 +9,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.webkit.PermissionRequest;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
@@ -23,6 +21,7 @@ import java.util.ArrayList;
 
 import koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity;
 import koreanlearning.hangul.serokorean.utility.ChapterUtil;
+import koreanlearning.hangul.serokorean.utility.FullScreenCall;
 
 public class ChapterWebview extends AppCompatActivity implements ParentRequestInterface{
 
@@ -33,37 +32,23 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
     private String currentChapter = "";
     private boolean isFromNext = false;
 
-    public void fullScreencall() {
-        if(Build.VERSION.SDK_INT < 19){
-            View v = this.getWindow().getDecorView();
-            v.setSystemUiVisibility(View.GONE);
-        } else {
-            //for higher api versions.
-            View decorView = getWindow().getDecorView();
-            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
-            decorView.setSystemUiVisibility(uiOptions);
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        fullScreencall();
+        FullScreenCall.fullScreen(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_webview_test);
 
         //bundle gets passed in parameters when chapters' onClick from the Home
         Bundle bundle = getIntent().getExtras();
         if(bundle == null){
-//            textView.setText("bundle error");
+            // handles bundle error here
         }
-        //if not, stores the parameters are passed in
+        // if not, stores the parameters are passed in
         else{
             numberOfPages = bundle.getInt("pages");
             currentChapter = bundle.getString("chapter");
             isFromNext = bundle.getBoolean("isFromNext");
 
-//            isPrevious = bundle.getInt("previous");
             StringBuilder chapNum = new StringBuilder();
 
             //check the length of the string, and gets the number as a substring, 0-9
@@ -84,18 +69,20 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
         customViewPager = (CustomViewPager) findViewById(R.id.container);
         customViewPager.setAdapter(sectionsPagerAdapter);
 
+        // detect to see if this request to get to previous chapter, if so current index should be the last page of the chapter.
         if(isFromNext) {
             int index = ChapterUtil.findFirstPageOfChapter(currentChapterNum+1);
             customViewPager.setCurrentItem(index-1);
         }
-        customViewPager.setOffscreenPageLimit(2);
+
+        // helps to scroll beyond edges
         customViewPager.setOnSwipeOutListener(new CustomViewPager.OnSwipeOutListener() {
             private int nextChapterIndex = currentChapterNum + 1;
             private int previousChapterIndex = currentChapterNum - 1;
 
+            // first to the last page of last chapter
             @Override
             public void onSwipeOutAtStart() {
-
                 if(previousChapterIndex >= 0){
                     Intent intent = new Intent(ChapterWebview.this, ChapterWebview.class);
                     int numberOfPages = ChapterUtil.detectTheNumberOfPages(Integer.toString(previousChapterIndex));
@@ -108,6 +95,7 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
 //                Toast.makeText(getApplicationContext(), "try to swipe right", Toast.LENGTH_SHORT).show();
             }
 
+            // last page to the first page of next chapter
             @Override
             public void onSwipeOutAtEnd() {
 //                Toast.makeText(getApplicationContext(), "try to swipe left", Toast.LENGTH_SHORT).show();
@@ -133,11 +121,6 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
         private static final String ARG_SECTION_NUMBER = "section_number";
         private static final String CURRENT_CHAPTER = "current_chapter";
         private static final String NUMBER_OF_PAGES = "number_of_pages";
-        private int position;
-        private int currentChapterNum;
-        private int numberOfPages;
-        private ChapterWebview activity;
-        private CustomViewPager viewpager;
         private ChapterWebview parentActivity;
 
         public static PlaceholderFragment newInstance(int position , int chapterNum, int numberOfPages) {
@@ -150,6 +133,28 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
             return fragment;
         }
 
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+            Bundle arguments = getArguments();
+            int position = arguments.getInt(ARG_SECTION_NUMBER);
+            int currentChapterNum = arguments.getInt(CURRENT_CHAPTER);
+            int numberOfPages = arguments.getInt(NUMBER_OF_PAGES);
+            parentActivity = (ChapterWebview) getActivity();
+
+            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            final CustomWebView webView = rootView.findViewById(R.id.webView);
+            webView.setFragment(this);
+
+            ArrayList<String> htmlFiles = loadAllHTML();
+            int index = ChapterUtil.findFirstPageOfChapter(currentChapterNum);
+            String url = htmlFiles.get(position + index);
+
+            WebSettings settings = webView.getSettings();
+            javascriptSetting(webView, settings);
+            webView.loadUrl(url);
+
+            return rootView;
+        }
         private ArrayList<String> loadAllHTML(){
             ArrayList<String> htmlPaths = new ArrayList<>();
 
@@ -167,29 +172,6 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
                 }
             }
             return htmlPaths;
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            Bundle arguments = getArguments();
-            position = arguments.getInt(ARG_SECTION_NUMBER);
-            currentChapterNum = arguments.getInt(CURRENT_CHAPTER);
-            numberOfPages = arguments.getInt(NUMBER_OF_PAGES);
-            parentActivity = (ChapterWebview) getActivity();
-
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            final CustomWebView webView = rootView.findViewById(R.id.webView);
-            webView.setFragment(this);
-
-            ArrayList<String> htmlFiles = loadAllHTML();
-            int index = ChapterUtil.findFirstPageOfChapter(currentChapterNum);
-            String url = htmlFiles.get(position + index);
-
-            WebSettings settings = webView.getSettings();
-            javascriptSetting(webView, settings);
-            webView.loadUrl(url);
-
-            return rootView;
         }
         private void javascriptSetting(WebView webView, WebSettings settings){
             settings.setAllowFileAccessFromFileURLs(true);
@@ -236,10 +218,8 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
             parentActivity.setViewPagerStatus(b);
         }
         public void setActivity(ChapterWebview activity) {
-            this.activity = activity;
         }
         public void setPager(CustomViewPager viewpager) {
-            this.viewpager = viewpager;
         }
         public PlaceholderFragment() { }
     }

@@ -34,6 +34,7 @@ import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.Question;
 import koreanlearning.hangul.serokorean.beginnerone.quiz.adapter.AnswerSheetAdapter;
 import koreanlearning.hangul.serokorean.beginnerone.quiz.adapter.QuestionFragmentsAdapter;
 import koreanlearning.hangul.serokorean.beginnerone.quiz.common.QuizCommon;
+import koreanlearning.hangul.serokorean.utility.FullScreenCall;
 
 public class QuestionActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -53,22 +54,9 @@ public class QuestionActivity extends AppCompatActivity
         super.onDestroy();
     }
 
-    public void fullScreencall() {
-        if(Build.VERSION.SDK_INT < 19){
-            View v = this.getWindow().getDecorView();
-            v.setSystemUiVisibility(View.GONE);
-        } else {
-            //for higher api versions.
-            View decorView = getWindow().getDecorView();
-            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
-            decorView.setSystemUiVisibility(uiOptions);
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        fullScreencall();
+        FullScreenCall.fullScreen(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
 //        Toolbar toolbar = findViewById(R.id.toolbar);

@@ -17,11 +17,6 @@ import koreanlearning.hangul.serokorean.bottomNavigation.Vocab;
 public class BeginnerOne extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
-
-    private Home home = new Home();
-    private Vocab vocab = new Vocab();
-    private FAQ faq = new FAQ();
-    private More more = new More();
     private ViewPager viewPager;
     private MenuItem prevMenuItem;
 
@@ -91,10 +86,10 @@ public class BeginnerOne extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         BeginnerOneViewPagerAdapter viewPagerAdapter = new BeginnerOneViewPagerAdapter(getSupportFragmentManager());
-        home = new Home();
-        vocab = new Vocab();
-        faq = new FAQ();
-        more = new More();
+        Home home = new Home();
+        Vocab vocab = new Vocab();
+        FAQ faq = new FAQ();
+        More more = new More();
         viewPagerAdapter.addFragment(home);
         viewPagerAdapter.addFragment(vocab);
         viewPagerAdapter.addFragment(faq);
