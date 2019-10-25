@@ -24,8 +24,9 @@
             android:theme="@style/AppTheme2.NoActionBar"></activity>
         <activity android:name="koreanlearning.hangul.serokorean.beginnerone.quiz.QuizCategories" />
         <activity android:name="koreanlearning.hangul.serokorean.search.Search" />
-        <activity android:name="koreanlearning.hangul.serokorean.beginnerone.webview.ChapterWebview"/>
-        <activity android:name="koreanlearning.hangul.serokorean.beginnerone.BeginnerOne" />
+        <activity android:name="koreanlearning.hangul.serokorean.beginnerone.webview.ChapterWebview"
+            android:theme="@style/noWhitePreview"/>
+        <activity android:name="koreanlearning.hangul.serokorean.beginnerone.BeginnerOne"/>
         <activity android:name="koreanlearning.hangul.serokorean.main.MainActivity" />
         <activity android:name="koreanlearning.hangul.serokorean.main.Welcome">
             <intent-filter>

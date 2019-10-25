@@ -17,11 +17,8 @@
 
     <style name="AppTheme2.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="noWhitePreview">
+    <style name="noWhitePreview" parent="AppTheme2">
         <item name="android:windowDisablePreview">true</item>
-    </style>
-
-    <style name="SplashTheme" parent="AppTheme2">
         <item name="android:windowBackground">@color/darkTheme</item>
     </style>
 

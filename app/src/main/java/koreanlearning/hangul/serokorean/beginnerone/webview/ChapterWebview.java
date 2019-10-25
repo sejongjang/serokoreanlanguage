@@ -66,7 +66,7 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
         sectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), customViewPager, this);
 
         // Set up the ViewPager with the sections adapter.
-        customViewPager = (CustomViewPager) findViewById(R.id.container);
+        customViewPager = findViewById(R.id.container);
         customViewPager.setAdapter(sectionsPagerAdapter);
 
         // detect to see if this request to get to previous chapter, if so current index should be the last page of the chapter.
@@ -93,14 +93,12 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
                     startActivity(intent);
                     overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                 }
-//                Toast.makeText(getApplicationContext(), "try to swipe right", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "try to swipe right", Toast.LENGTH_SHORT).show();
             }
 
             // last page to the first page of next chapter
             @Override
             public void onSwipeOutAtEnd() {
-//                Toast.makeText(getApplicationContext(), "try to swipe left", Toast.LENGTH_SHORT).show();
-
                 if(nextChapterIndex <= 30){
                     Intent intent = new Intent(ChapterWebview.this, ChapterWebview.class);
                     int numberOfPages = ChapterUtil.detectTheNumberOfPages(Integer.toString(nextChapterIndex));
@@ -110,6 +108,7 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
                     startActivity(intent);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 }
+                //Toast.makeText(getApplicationContext(), "try to swipe left", Toast.LENGTH_SHORT).show();
             }
         });
     }
