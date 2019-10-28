@@ -46,8 +46,17 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // google sign in
+        googleSignInFlow();
+
+        // facebook sign in
+        facebookSignInFlow();
+    }
+
+    private void googleSignInFlow() {
         // initializing view
         google_signInButton = findViewById(R.id.google_sign_in_button);
+        google_signInButton.setSize(SignInButton.SIZE_STANDARD);
 
         // configure sign in to request the user's id, email and basics
         // profile id and basic profile are included in DEFAULT_SIGN_IN
@@ -55,10 +64,10 @@ public class LoginActivity extends AppCompatActivity {
 
         // build a GoogleSignInClient with the options specified by gso
         googleSignInClient = GoogleSignIn.getClient(this, gso);
-        google_signInButton.setOnClickListener((view)-> signIn());
-
-        // facebook sign in
-        facebookSignInFlow();
+        google_signInButton.setOnClickListener((view)-> {
+            Intent signInIntent = googleSignInClient.getSignInIntent();
+            startActivityForResult(signInIntent, RC_SIGN_IN);
+        });
     }
 
     private void facebookSignInFlow() {
@@ -134,26 +143,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void getFacebookMe() {
-//        if (AccessToken.getCurrentAccessToken() != null) {
-//            GraphRequest request = GraphRequest.newMeRequest(AccessToken.getCurrentAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
-//                @Override
-//                public void onCompleted(JSONObject object, GraphResponse response) {
-//                    Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
-//                    try {
-//                        intent.putExtra("first_name", object.getString("first_name"));
-//                        intent.putExtra("last_name", object.getString("last_name"));
-//                        intent.putExtra("email", object.getString("email"));
-//                        intent.putExtra("id", object.getString("id"));
-//                        intent.putExtra("profilePhotoURL", "https://graph.facebook.com/" + object.getString("id") + "/picture?width=250&height=250");
-//                        startActivity(intent);
-//                    } catch (JSONException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//            });
-//        } else {
-//
-//        }
         if(Profile.getCurrentProfile() != null){
             Profile currentProfile = Profile.getCurrentProfile();
             Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
@@ -188,15 +177,11 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private void signIn(){
-        Intent signInIntent = googleSignInClient.getSignInIntent();
-        startActivityForResult(signInIntent, RC_SIGN_IN);
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        // result from facebook
         if(requestCode == 64206){
             callbackManager.onActivityResult(requestCode, resultCode, data);
         }

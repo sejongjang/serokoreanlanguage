@@ -1,9 +1,11 @@
 package koreanlearning.hangul.serokorean.beginnerone.webview;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,6 +17,7 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 
 import com.hangul.serokorean.R;
 import java.util.ArrayList;
@@ -123,6 +126,7 @@ public class ChapterWebviewActivity extends AppCompatActivity implements ParentR
         private static final String CURRENT_CHAPTER = "current_chapter";
         private static final String NUMBER_OF_PAGES = "number_of_pages";
         private ChapterWebviewActivity parentActivity;
+        private ProgressBar webviewProgressBar;
 
         public static PlaceholderFragment newInstance(int position , int chapterNum, int numberOfPages) {
             PlaceholderFragment fragment = new PlaceholderFragment();
@@ -144,6 +148,7 @@ public class ChapterWebviewActivity extends AppCompatActivity implements ParentR
 
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             final CustomWebView webView = rootView.findViewById(R.id.webView);
+            webviewProgressBar = rootView.findViewById(R.id.webview_progress_bar);
             webView.setFragment(this);
 
             ArrayList<String> htmlFiles = loadAllHTML();
@@ -151,7 +156,7 @@ public class ChapterWebviewActivity extends AppCompatActivity implements ParentR
             String url = htmlFiles.get(position + index);
 
             WebSettings settings = webView.getSettings();
-            javascriptSetting(webView, settings);
+            webviewClientSettings(webView, settings);
             webView.loadUrl(url);
 
             return rootView;
@@ -174,7 +179,7 @@ public class ChapterWebviewActivity extends AppCompatActivity implements ParentR
             }
             return htmlPaths;
         }
-        private void javascriptSetting(WebView webView, WebSettings settings){
+        private void webviewClientSettings(WebView webView, WebSettings settings){
             settings.setAllowFileAccessFromFileURLs(true);
             settings.setAllowUniversalAccessFromFileURLs(true);
             settings.setMediaPlaybackRequiresUserGesture(false);
@@ -194,6 +199,19 @@ public class ChapterWebviewActivity extends AppCompatActivity implements ParentR
 
             // this is how we call quiz activity from javascript
             webView.setWebViewClient(new WebViewClient(){
+
+                @Override
+                public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                    super.onPageStarted(view, url, favicon);
+                    webviewProgressBar.setVisibility(View.VISIBLE);
+                }
+
+                @Override
+                public void onPageFinished(WebView view, String url) {
+                    super.onPageFinished(view, url);
+                    webviewProgressBar.setVisibility(View.GONE);
+                }
+
                 @Override
                 public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                     String url = request.getUrl().toString();
@@ -207,6 +225,7 @@ public class ChapterWebviewActivity extends AppCompatActivity implements ParentR
                     return true;
                 }
             });
+            webView.setBackgroundColor(383838);
 
             settings.setJavaScriptEnabled(true);
             settings.setBuiltInZoomControls(true);
@@ -218,10 +237,8 @@ public class ChapterWebviewActivity extends AppCompatActivity implements ParentR
         public void setViewPager(boolean b) {
             parentActivity.setViewPagerStatus(b);
         }
-        public void setActivity(ChapterWebviewActivity activity) {
-        }
-        public void setPager(CustomViewPager viewpager) {
-        }
+        public void setActivity(ChapterWebviewActivity activity) { }
+        public void setPager(CustomViewPager viewpager) { }
         public PlaceholderFragment() { }
     }
 
