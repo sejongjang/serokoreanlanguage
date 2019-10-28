@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.facebook.Profile;
+import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -17,9 +19,12 @@ import com.hangul.serokorean.R;
 
 import java.net.URL;
 
+import koreanlearning.hangul.serokorean.bottomNavigation.user.User;
+
 public class ProfileActivity extends AppCompatActivity {
 
     private GoogleSignInClient googleSignInClient;
+
     private String fb_first_name = "";
     private String fb_last_name = "";
     private String fb_email = "";
@@ -49,12 +54,14 @@ public class ProfileActivity extends AppCompatActivity {
         TextView userId = findViewById(R.id.userId);
         ImageView photo = findViewById(R.id.photo);
 
-        name.setText(fb_first_name + fb_last_name);
-        email.setText(fb_email);
-        userId.setText(fb_id);
-        Glide.with(this).load(fb_profilePhotoUri).into(photo);
-
-        if(fb_email == null){
+        if(fb_id != null){
+            name.setText(fb_first_name + fb_last_name);
+            email.setText(fb_email);
+            userId.setText(fb_id);
+            Glide.with(this).load(fb_profilePhotoUri).into(photo);
+            sign_out.setOnClickListener((view)-> signOut());
+        }
+        else{
             GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN).requestEmail().build();
             googleSignInClient = GoogleSignIn.getClient(this, gso);
 
@@ -72,14 +79,27 @@ public class ProfileActivity extends AppCompatActivity {
                 userId.setText("UserID: " + personId);
                 Glide.with(this).load(personPhoto).into(photo);
             }
-            sign_out.setOnClickListener((view)->{signOut();});
+            sign_out.setOnClickListener((view)-> signOut());
         }
     }
 
     private void signOut(){
-        googleSignInClient.signOut().addOnCompleteListener(this, (task -> {
-            startActivity(new Intent(ProfileActivity.this, LoginActivity.class));
+        // facebook sign out
+        if(Profile.getCurrentProfile() != null || fb_id != null){
+            LoginManager.getInstance().logOut();
+            String url = User.getUser().getPhotoURL();
+            Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             finish();
-        }));
+        }
+        // google sign out
+        else{
+            googleSignInClient.signOut().addOnCompleteListener(this, (task -> {
+                startActivity(new Intent(ProfileActivity.this, LoginActivity.class));
+                finish();
+            }));
+        }
     }
 }

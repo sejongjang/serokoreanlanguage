@@ -11,6 +11,7 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
+import com.facebook.Profile;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -103,8 +104,10 @@ public class LoginActivity extends AppCompatActivity {
                             intent.putExtra("email", email);
                             intent.putExtra("id", id);
                             intent.putExtra("profilePhotoURL", profilePhotoURL);
-
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
+                            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                            finish();
                         }
 //                        displayUserInfo(object);
                     }
@@ -129,29 +132,39 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void getFacebookMe() {
-        if (AccessToken.getCurrentAccessToken() != null) {
-            GraphRequest request = GraphRequest.newMeRequest(AccessToken.getCurrentAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
-                @Override
-                public void onCompleted(JSONObject object, GraphResponse response) {
-                    Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
-                    try {
-                        intent.putExtra("first_name", object.getString("first_name"));
-                        intent.putExtra("last_name", object.getString("last_name"));
-                        intent.putExtra("email", object.getString("email"));
-                        intent.putExtra("id", object.getString("id"));
-                        intent.putExtra("profilePhotoURL", "https://graph.facebook.com/" + object.getString("id") + "/picture?width=250&height=250");
-                        startActivity(intent);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-
-
-        } else {
-
+//        if (AccessToken.getCurrentAccessToken() != null) {
+//            GraphRequest request = GraphRequest.newMeRequest(AccessToken.getCurrentAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
+//                @Override
+//                public void onCompleted(JSONObject object, GraphResponse response) {
+//                    Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
+//                    try {
+//                        intent.putExtra("first_name", object.getString("first_name"));
+//                        intent.putExtra("last_name", object.getString("last_name"));
+//                        intent.putExtra("email", object.getString("email"));
+//                        intent.putExtra("id", object.getString("id"));
+//                        intent.putExtra("profilePhotoURL", "https://graph.facebook.com/" + object.getString("id") + "/picture?width=250&height=250");
+//                        startActivity(intent);
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            });
+//        } else {
+//
+//        }
+        if(Profile.getCurrentProfile() != null){
+            Profile currentProfile = Profile.getCurrentProfile();
+            Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
+            intent.putExtra("first_name", currentProfile.getFirstName());
+            intent.putExtra("last_name", currentProfile.getLastName());
+//            intent.putExtra("email", currentProfile.get());
+            intent.putExtra("id", currentProfile.getId());
+            intent.putExtra("profilePhotoURL", "https://graph.facebook.com/" + currentProfile.getId() + "/picture?width=250&height=250");
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            finish();
         }
-
     }
 
     private void displayUserInfo(JSONObject object){

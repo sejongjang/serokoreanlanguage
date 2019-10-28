@@ -31,7 +31,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="koreanlearning.hangul.serokorean.login.ProfileActivity" />
+        <activity android:name="koreanlearning.hangul.serokorean.login.ProfileActivity"/>
         <activity android:name="koreanlearning.hangul.serokorean.login.LoginActivity" />
         <activity
             android:name="koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity"
