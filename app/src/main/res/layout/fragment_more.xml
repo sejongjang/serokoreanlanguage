@@ -50,16 +50,16 @@
 
             <ImageView
                 android:layout_margin="20dp"
-                android:id="@+id/userimage"
+                android:id="@+id/more_userimage"
                 android:src="@drawable/ic_user"
                 android:tint="@color/white"
                 android:layout_width="60dp"
                 android:layout_height="60dp" />
 
             <TextView
-                android:id="@+id/username"
+                android:id="@+id/more_username"
                 android:layout_centerInParent="true"
-                android:layout_toRightOf="@+id/userimage"
+                android:layout_toRightOf="@+id/more_userimage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"

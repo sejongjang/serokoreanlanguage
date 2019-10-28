@@ -8,19 +8,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.hangul.serokorean.R;
 
-import koreanlearning.hangul.serokorean.beginnerone.webview.ChapterWebviewActivity;
+import koreanlearning.hangul.serokorean.bottomNavigation.user.User;
 import koreanlearning.hangul.serokorean.login.LoginActivity;
 import koreanlearning.hangul.serokorean.search.Search;
-import koreanlearning.hangul.serokorean.utility.ChapterUtil;
 
 public class More extends Fragment {
 
     private ImageView imageView;
     private RelativeLayout loginView;
+    private ImageView more_userPhoto;
+    private TextView more_username;
 
 
     public More() {
@@ -32,6 +34,8 @@ public class More extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_more, container, false);
+        more_username = getActivity().findViewById(R.id.more_username);
+        more_userPhoto = getActivity().findViewById(R.id.more_userimage);
 
         imageView = view.findViewById(R.id.moresearch);
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -45,7 +49,7 @@ public class More extends Fragment {
         loginView = view.findViewById(R.id.login);
         loginView.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                Toast.makeText(getContext(), "login button pressed", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(getContext(), "login button pressed", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
 //                User user = User.getUser();
@@ -61,6 +65,12 @@ public class More extends Fragment {
 //                }
             }
         });
+
+        // if user signed in already
+//        if(User.getUser() != null && User.getUser().getName() != null){
+//            more_username.setText(User.getUser().getName());
+//            Glide.with(getActivity()).load(User.getUser().getPhotoURL()).into(more_userPhoto);
+//        }
 
         return view;
     }
