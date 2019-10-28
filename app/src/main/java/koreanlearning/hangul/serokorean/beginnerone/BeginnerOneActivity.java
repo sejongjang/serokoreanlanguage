@@ -1,24 +1,32 @@
 package koreanlearning.hangul.serokorean.beginnerone;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.facebook.Profile;
 import com.hangul.serokorean.R;
 import koreanlearning.hangul.serokorean.bottomNavigation.FAQ;
 import koreanlearning.hangul.serokorean.bottomNavigation.Home;
 import koreanlearning.hangul.serokorean.bottomNavigation.More;
 import koreanlearning.hangul.serokorean.bottomNavigation.Vocab;
+import koreanlearning.hangul.serokorean.bottomNavigation.user.User;
 
 public class BeginnerOneActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private ViewPager viewPager;
     private MenuItem prevMenuItem;
+    private BeginnerOneViewPagerAdapter viewPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +93,7 @@ public class BeginnerOneActivity extends AppCompatActivity {
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        BeginnerOneViewPagerAdapter viewPagerAdapter = new BeginnerOneViewPagerAdapter(getSupportFragmentManager());
+        viewPagerAdapter = new BeginnerOneViewPagerAdapter(getSupportFragmentManager());
         Home home = new Home();
         Vocab vocab = new Vocab();
         FAQ faq = new FAQ();
@@ -95,5 +103,15 @@ public class BeginnerOneActivity extends AppCompatActivity {
         viewPagerAdapter.addFragment(faq);
         viewPagerAdapter.addFragment(more);
         viewPager.setAdapter(viewPagerAdapter);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 10001){
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            Fragment moreFragment = viewPagerAdapter.getItem(3);
+            fragmentTransaction.detach(moreFragment).attach(moreFragment).commit();
+        }
     }
 }

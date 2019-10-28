@@ -1,5 +1,6 @@
 package koreanlearning.hangul.serokorean.login;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -99,6 +100,7 @@ public class LoginActivity extends AppCompatActivity {
                             }
 
                             Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
+                            setResult(Activity.RESULT_OK);
                             intent.putExtra("first_name", first_name);
                             intent.putExtra("last_name", last_name);
                             intent.putExtra("email", email);
@@ -155,6 +157,7 @@ public class LoginActivity extends AppCompatActivity {
         if(Profile.getCurrentProfile() != null){
             Profile currentProfile = Profile.getCurrentProfile();
             Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
+            setResult(Activity.RESULT_OK);
             intent.putExtra("first_name", currentProfile.getFirstName());
             intent.putExtra("last_name", currentProfile.getLastName());
 //            intent.putExtra("email", currentProfile.get());

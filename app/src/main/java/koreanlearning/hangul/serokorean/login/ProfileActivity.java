@@ -19,6 +19,7 @@ import com.hangul.serokorean.R;
 
 import java.net.URL;
 
+import koreanlearning.hangul.serokorean.beginnerone.BeginnerOneActivity;
 import koreanlearning.hangul.serokorean.bottomNavigation.user.User;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -87,7 +88,6 @@ public class ProfileActivity extends AppCompatActivity {
         // facebook sign out
         if(Profile.getCurrentProfile() != null || fb_id != null){
             LoginManager.getInstance().logOut();
-            String url = User.getUser().getPhotoURL();
             Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);

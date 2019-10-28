@@ -10,14 +10,14 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+import com.facebook.Profile;
+import com.facebook.login.widget.ProfilePictureView;
 import com.hangul.serokorean.R;
 
-import koreanlearning.hangul.serokorean.bottomNavigation.user.User;
 import koreanlearning.hangul.serokorean.login.LoginActivity;
 import koreanlearning.hangul.serokorean.search.Search;
 
-public class More extends Fragment {
+public class More extends Fragment{
 
     private ImageView imageView;
     private RelativeLayout loginView;
@@ -34,8 +34,8 @@ public class More extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_more, container, false);
-        more_username = getActivity().findViewById(R.id.more_username);
-        more_userPhoto = getActivity().findViewById(R.id.more_userimage);
+        more_username = view.findViewById(R.id.more_username);
+        more_userPhoto = view.findViewById(R.id.more_userimage);
 
         imageView = view.findViewById(R.id.moresearch);
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +43,7 @@ public class More extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Search.class);
                 startActivity(intent);
+//                startActivityForResult(intent, 10001);
             }
         });
 
@@ -51,7 +52,8 @@ public class More extends Fragment {
             public void onClick(View v) {
                 // Toast.makeText(getContext(), "login button pressed", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
-                startActivity(intent);
+                getActivity().startActivityForResult(intent, 10001);
+//                startActivity(intent);
 //                User user = User.getUser();
 //
 //                if(user.getAuthtoken() == null){
@@ -66,11 +68,14 @@ public class More extends Fragment {
             }
         });
 
-        // if user signed in already
-//        if(User.getUser() != null && User.getUser().getName() != null){
-//            more_username.setText(User.getUser().getName());
-//            Glide.with(getActivity()).load(User.getUser().getPhotoURL()).into(more_userPhoto);
-//        }
+        // if user signed in already, then change name and profile picture
+        if(Profile.getCurrentProfile() != null){
+            more_username.setText(Profile.getCurrentProfile().getName());
+            imageView.setVisibility(View.GONE);
+            ProfilePictureView profilePictureView = view.findViewById(R.id.facebook_profile_picture);
+            profilePictureView.setProfileId(Profile.getCurrentProfile().getId());
+            profilePictureView.setVisibility(View.VISIBLE);
+        }
 
         return view;
     }

@@ -10,6 +10,7 @@ import java.util.List;
 public class BeginnerOneViewPagerAdapter extends FragmentPagerAdapter {
     private final List<Fragment> mFragmentList = new ArrayList<>();
 
+
     public BeginnerOneViewPagerAdapter(FragmentManager manager) {
         super(manager);
     }
