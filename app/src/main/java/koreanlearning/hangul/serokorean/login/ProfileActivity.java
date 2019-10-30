@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.facebook.Profile;
+import com.facebook.ProfileTracker;
 import com.facebook.login.LoginManager;
 import com.facebook.login.widget.ProfilePictureView;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -58,7 +59,6 @@ public class ProfileActivity extends AppCompatActivity {
                 }
             });
         }
-
         else if(googleSignInAccount != null){
             Uri personPhoto = googleSignInAccount.getPhotoUrl();
             name.setText("Name: " + googleSignInAccount.getDisplayName());
@@ -76,6 +76,7 @@ public class ProfileActivity extends AppCompatActivity {
             name.setText("cannot find user");
             email.setVisibility(View.GONE);
             userId.setVisibility(View.GONE);
+            sign_out.setVisibility(View.GONE);
         }
     }
 
@@ -83,6 +84,7 @@ public class ProfileActivity extends AppCompatActivity {
         // facebook sign out
         if(Profile.getCurrentProfile() != null){
             LoginManager.getInstance().logOut();
+
             Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
@@ -92,9 +94,9 @@ public class ProfileActivity extends AppCompatActivity {
         // google sign out
         if(googleSignInAccount != null){
             googleSignInClient.signOut();
+
             Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-            User.getUser().resetUser();
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             finish();

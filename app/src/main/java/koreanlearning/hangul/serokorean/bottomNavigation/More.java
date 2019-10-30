@@ -1,6 +1,8 @@
 package koreanlearning.hangul.serokorean.bottomNavigation;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,11 +15,18 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.facebook.Profile;
 import com.facebook.login.widget.ProfilePictureView;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.hangul.serokorean.R;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import koreanlearning.hangul.serokorean.bottomNavigation.user.User;
 import koreanlearning.hangul.serokorean.login.LoginActivity;
+import koreanlearning.hangul.serokorean.login.ProfileActivity;
 import koreanlearning.hangul.serokorean.search.Search;
 
 public class More extends Fragment{
@@ -69,12 +78,12 @@ public class More extends Fragment{
             profilePictureView.setVisibility(View.VISIBLE);
         }
 
-
-
-        if(User.getUser().getGoogleSignInAccount() != null){
-            GoogleSignInAccount googleSignInAccount = User.getUser().getGoogleSignInAccount();
+        // Google sign in account check
+        if(GoogleSignIn.getLastSignedInAccount(getActivity()) != null){
+            GoogleSignInAccount googleSignInAccount = GoogleSignIn.getLastSignedInAccount(getActivity());
             more_username.setText(googleSignInAccount.getDisplayName());
             Glide.with(this).load(googleSignInAccount.getPhotoUrl()).into(more_userPhoto);
+
         }
 
         return view;
