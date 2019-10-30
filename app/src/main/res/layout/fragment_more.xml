@@ -53,8 +53,10 @@
                 android:src="@drawable/ic_user"
                 android:tint="@color/white"
                 android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:visibility="visible"
-                android:layout_height="60dp" />
+                />
+
 
             <com.facebook.login.widget.ProfilePictureView
                 android:layout_margin="20dp"

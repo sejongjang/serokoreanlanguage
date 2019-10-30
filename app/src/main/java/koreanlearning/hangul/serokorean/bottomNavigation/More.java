@@ -10,10 +10,13 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.facebook.Profile;
 import com.facebook.login.widget.ProfilePictureView;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.hangul.serokorean.R;
 
+import koreanlearning.hangul.serokorean.bottomNavigation.user.User;
 import koreanlearning.hangul.serokorean.login.LoginActivity;
 import koreanlearning.hangul.serokorean.search.Search;
 
@@ -53,28 +56,25 @@ public class More extends Fragment{
                 // Toast.makeText(getContext(), "login button pressed", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), LoginActivity.class);
                 getActivity().startActivityForResult(intent, 10001);
-//                startActivity(intent);
-//                User user = User.getUser();
-//
-//                if(user.getAuthtoken() == null){
-//                    Toast.makeText(getContext(), "login button pressed", Toast.LENGTH_SHORT).show();
-//                    loginFragment = LoginFragment.newInstance();
-//                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-//                    fragmentTransaction.replace(R.id.BeginnerOneContainer, loginFragment).addToBackStack("login").commit();
-//                }
-//                else{
-//                    switchToProfileFragment();
-//                }
+                getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 
-        // if user signed in already, then change name and profile picture
+        // Facebook current user checker. if user signed in already, then change name and profile picture
         if(Profile.getCurrentProfile() != null){
-            more_username.setText(Profile.getCurrentProfile().getName());
+            more_username.setText(Profile.getCurrentProfile().getFirstName() + " " + Profile.getCurrentProfile().getLastName());
             imageView.setVisibility(View.GONE);
             ProfilePictureView profilePictureView = view.findViewById(R.id.facebook_profile_picture);
             profilePictureView.setProfileId(Profile.getCurrentProfile().getId());
             profilePictureView.setVisibility(View.VISIBLE);
+        }
+
+
+
+        if(User.getUser().getGoogleSignInAccount() != null){
+            GoogleSignInAccount googleSignInAccount = User.getUser().getGoogleSignInAccount();
+            more_username.setText(googleSignInAccount.getDisplayName());
+            Glide.with(this).load(googleSignInAccount.getPhotoUrl()).into(more_userPhoto);
         }
 
         return view;

@@ -146,15 +146,18 @@ public class ChapterWebviewActivity extends AppCompatActivity implements ParentR
             int numberOfPages = arguments.getInt(NUMBER_OF_PAGES);
             parentActivity = (ChapterWebviewActivity) getActivity();
 
+            // initialize webview and progressBar
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             final CustomWebView webView = rootView.findViewById(R.id.webView);
             webviewProgressBar = rootView.findViewById(R.id.webview_progress_bar);
             webView.setFragment(this);
 
+            // load all the level 1 html pages for the transition also between chapters
             ArrayList<String> htmlFiles = loadAllHTML();
             int index = ChapterUtil.findFirstPageOfChapter(currentChapterNum);
             String url = htmlFiles.get(position + index);
 
+            // change webview setting and javascript setting here
             WebSettings settings = webView.getSettings();
             webviewClientSettings(webView, settings);
             webView.loadUrl(url);

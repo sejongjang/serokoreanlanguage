@@ -1,5 +1,8 @@
 package koreanlearning.hangul.serokorean.bottomNavigation.user;
 
+import com.facebook.Profile;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+
 public class User {
 
     private static User user;
@@ -9,9 +12,11 @@ public class User {
     private String email;
     private String userId;
     private String photoURL;
+    private Profile profile;
+    private GoogleSignInAccount googleSignInAccount;
 
     // constructor is private
-    private User() {
+    public User() {
 
     }
 
@@ -21,6 +26,11 @@ public class User {
             user = new User();
         }
         return user;
+    }
+
+    public void resetUser(){
+        user = null;
+        getUser();
     }
 
     public static void setUser(User user) {
@@ -73,5 +83,24 @@ public class User {
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
+    }
+
+
+    // facebook current user profile
+    public Profile getProfile() {
+        return profile;
+    }
+
+    public void setProfile(Profile profile) {
+        this.profile = profile;
+    }
+
+    // google current user profile
+    public GoogleSignInAccount getGoogleSignInAccount() {
+        return googleSignInAccount;
+    }
+
+    public void setGoogleSignInAccount(GoogleSignInAccount googleSignInAccount) {
+        this.googleSignInAccount = googleSignInAccount;
     }
 }
