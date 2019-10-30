@@ -12,7 +12,9 @@ import java.util.List;
 
 import com.hangul.serokorean.R;
 
-public class MainActivity extends AppCompatActivity {
+import koreanlearning.hangul.serokorean.utility.FullScreenCall;
+
+public class LevelSelectionActivity extends AppCompatActivity {
 
     //viewPager for the horizontal scroll
     ViewPager viewPager;
@@ -23,17 +25,18 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        FullScreenCall.fullScreen(this);
         super.onCreate(savedInstanceState);
 
         //change top status bar and bottom naviation bar color change
         getWindow().setStatusBarColor(Color.parseColor("#1e1e1e"));
-        getWindow().setNavigationBarColor(Color.parseColor("#383838"));
+        getWindow().setNavigationBarColor(Color.parseColor("#1e1e1e"));
 
         //setContentView matches the Java file and Xml file
         //view pager is declared in activity_main
         setContentView(R.layout.activity_main);
 
-        //save five different level cards in the Model class
+        //save five different level cards in the User class
         levelCards = new ArrayList<>();
         levelCards.add(new LevelCardModel(R.drawable.beginnerone, "Level 1 (Brand New Learner)", "Remember every great thing starts somewhere."));
         levelCards.add(new LevelCardModel(R.drawable.beginnertwo, "Level 2 (Beginner)", "The good thing about learning languages \nis you don't need to be perfect!"));
@@ -53,10 +56,10 @@ public class MainActivity extends AppCompatActivity {
 //        viewPager.setPageMargin(marginPx);
 
         Integer[] colors_temp = {
-                getResources().getColor(R.color.beginnerone),
-                getResources().getColor(R.color.beginnertwo),
-                getResources().getColor(R.color.black),
-                getResources().getColor(R.color.nicewhite),
+                getResources().getColor(R.color.test1),
+                getResources().getColor(R.color.darkThemeLight),
+                getResources().getColor(R.color.darkTheme),
+                getResources().getColor(R.color.darkThemeHighlight),
                 getResources().getColor(R.color.aqua),
         };
 

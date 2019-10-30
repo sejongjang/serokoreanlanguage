@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/darkTheme"
-        tools:context="koreanlearning.hangul.serokorean.beginnerone.BeginnerOne">
+        tools:context="koreanlearning.hangul.serokorean.beginnerone.BeginnerOneActivity">
 
         <LinearLayout
             android:orientation="vertical"

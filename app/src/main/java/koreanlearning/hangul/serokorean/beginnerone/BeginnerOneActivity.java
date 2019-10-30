@@ -1,29 +1,32 @@
 package koreanlearning.hangul.serokorean.beginnerone;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.facebook.Profile;
 import com.hangul.serokorean.R;
 import koreanlearning.hangul.serokorean.bottomNavigation.FAQ;
 import koreanlearning.hangul.serokorean.bottomNavigation.Home;
 import koreanlearning.hangul.serokorean.bottomNavigation.More;
 import koreanlearning.hangul.serokorean.bottomNavigation.Vocab;
+import koreanlearning.hangul.serokorean.bottomNavigation.user.User;
 
-public class BeginnerOne extends AppCompatActivity {
+public class BeginnerOneActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
-
-    private Home home = new Home();
-    private Vocab vocab = new Vocab();
-    private FAQ faq = new FAQ();
-    private More more = new More();
     private ViewPager viewPager;
     private MenuItem prevMenuItem;
+    private BeginnerOneViewPagerAdapter viewPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,11 +93,11 @@ public class BeginnerOne extends AppCompatActivity {
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        BeginnerOneViewPagerAdapter viewPagerAdapter = new BeginnerOneViewPagerAdapter(getSupportFragmentManager());
-        home = new Home();
-        vocab = new Vocab();
-        faq = new FAQ();
-        more = new More();
+        viewPagerAdapter = new BeginnerOneViewPagerAdapter(getSupportFragmentManager());
+        Home home = new Home();
+        Vocab vocab = new Vocab();
+        FAQ faq = new FAQ();
+        More more = new More();
         viewPagerAdapter.addFragment(home);
         viewPagerAdapter.addFragment(vocab);
         viewPagerAdapter.addFragment(faq);
@@ -102,48 +105,13 @@ public class BeginnerOne extends AppCompatActivity {
         viewPager.setAdapter(viewPagerAdapter);
     }
 
-//    @Override
-//    public boolean onNavigationItemSelected(@NonNull MenuItem item){
-//
-//        switch(item.getItemId()){
-//            case R.id.home:
-//                viewPager.setCurrentItem(0);
-//                return true;
-//            case R.id.vocab:
-//                viewPager.setCurrentItem(1);
-//                return true;
-//            case R.id.FAQ:
-//                viewPager.setCurrentItem(2);
-//                return true;
-//            case R.id.more:
-//                viewPager.setCurrentItem(3);
-//                return true;
-//
-//        }
-//
-////        for (int i = 0; i < bottomNavigationView.getMenu().size(); i++) {
-////            MenuItem menuItem = bottomNavigationView.getMenu().getItem(i);
-////            boolean isChecked = menuItem.getItemId() == item.getItemId();
-////            menuItem.setChecked(isChecked);
-////        }
-////
-////        //switch fragments
-////        switch(item.getItemId()){
-////            case R.id.home:
-////                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, home).commit();
-////                //.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left)
-////                return true;
-////            case R.id.vocab:
-////                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, vocab).commit();
-////                return true;
-////            case R.id.FAQ:
-////                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, faq).commit();
-////                return true;
-////            case R.id.more:
-////                getSupportFragmentManager().beginTransaction().replace(R.id.BeginnerOneContainer, more).commit();
-////                return true;
-////
-////        }
-//        return true;
-//    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 10001){
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            Fragment moreFragment = viewPagerAdapter.getItem(3);
+            fragmentTransaction.detach(moreFragment).attach(moreFragment).commit();
+        }
+    }
 }

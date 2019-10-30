@@ -3,28 +3,30 @@ package koreanlearning.hangul.serokorean.bottomNavigation;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.facebook.Profile;
+import com.facebook.login.widget.ProfilePictureView;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.hangul.serokorean.R;
 
-import koreanlearning.hangul.serokorean.bottomNavigation.user.LoginFragment;
-import koreanlearning.hangul.serokorean.bottomNavigation.user.Model;
-import koreanlearning.hangul.serokorean.bottomNavigation.user.ProfileFragment;
+import koreanlearning.hangul.serokorean.bottomNavigation.user.User;
+import koreanlearning.hangul.serokorean.login.LoginActivity;
 import koreanlearning.hangul.serokorean.search.Search;
 
-public class More extends Fragment {
+public class More extends Fragment{
 
     private ImageView imageView;
     private RelativeLayout loginView;
-    private LoginFragment loginFragment;
-    private ProfileFragment profileFragment;
+    private ImageView more_userPhoto;
+    private TextView more_username;
+
 
     public More() {
         // Required empty public constructor
@@ -35,6 +37,8 @@ public class More extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_more, container, false);
+        more_username = view.findViewById(R.id.more_username);
+        more_userPhoto = view.findViewById(R.id.more_userimage);
 
         imageView = view.findViewById(R.id.moresearch);
         imageView.setOnClickListener(new View.OnClickListener() {
@@ -42,29 +46,37 @@ public class More extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Search.class);
                 startActivity(intent);
+//                startActivityForResult(intent, 10001);
             }
         });
 
         loginView = view.findViewById(R.id.login);
         loginView.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                Model model = Model.getModel();
-
-                if(model.getAuthtoken() == null){
-                    Toast.makeText(getContext(), "login button pressed", Toast.LENGTH_SHORT).show();
-                    loginFragment = LoginFragment.newInstance();
-                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.BeginnerOneContainer, loginFragment).addToBackStack("login").commit();
-                }
-                else{
-                    switchToProfileFragment();
-                }
+                // Toast.makeText(getContext(), "login button pressed", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                getActivity().startActivityForResult(intent, 10001);
+                getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
 
-        return view;
-    }
+        // Facebook current user checker. if user signed in already, then change name and profile picture
+        if(Profile.getCurrentProfile() != null){
+            more_username.setText(Profile.getCurrentProfile().getFirstName() + " " + Profile.getCurrentProfile().getLastName());
+            imageView.setVisibility(View.GONE);
+            ProfilePictureView profilePictureView = view.findViewById(R.id.facebook_profile_picture);
+            profilePictureView.setProfileId(Profile.getCurrentProfile().getId());
+            profilePictureView.setVisibility(View.VISIBLE);
+        }
 
-    private void switchToProfileFragment() {
+
+
+        if(User.getUser().getGoogleSignInAccount() != null){
+            GoogleSignInAccount googleSignInAccount = User.getUser().getGoogleSignInAccount();
+            more_username.setText(googleSignInAccount.getDisplayName());
+            Glide.with(this).load(googleSignInAccount.getPhotoUrl()).into(more_userPhoto);
+        }
+
+        return view;
     }
 }

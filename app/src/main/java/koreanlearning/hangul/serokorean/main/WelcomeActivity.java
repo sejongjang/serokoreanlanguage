@@ -1,12 +1,8 @@
 package koreanlearning.hangul.serokorean.main;
 
 import android.content.Intent;
-import android.graphics.Typeface;
-import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -14,31 +10,19 @@ import android.widget.TextView;
 
 import com.hangul.serokorean.R;
 
-public class Welcome extends AppCompatActivity {
+import koreanlearning.hangul.serokorean.utility.FullScreenCall;
+
+public class WelcomeActivity extends AppCompatActivity {
     private TextView tv;
     private ImageView iv;
-
-    //get rid of top status bar and bottom navigation bar
-    public void fullScreencall() {
-        if(Build.VERSION.SDK_INT < 19){
-            View v = this.getWindow().getDecorView();
-            v.setSystemUiVisibility(View.GONE);
-        } else {
-            //for higher api versions.
-            View decorView = getWindow().getDecorView();
-            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
-            decorView.setSystemUiVisibility(uiOptions);
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-            // test
-        }
-    }
 
     //application starts from here.
     //initiate first activity can be changed in manifests setting
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //callFullScreenCall and set up View before it sets up on onCreate
-        fullScreencall();
+        //get rid of top status bar and bottom navigation bar
+        FullScreenCall.fullScreen(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.welcome_main);
 
@@ -55,7 +39,7 @@ public class Welcome extends AppCompatActivity {
         iv.startAnimation(animation);
         //iv.startAnimation(animation);
 
-        final Intent intent = new Intent(this, MainActivity.class);
+        final Intent intent = new Intent(this, LevelSelectionActivity.class);
 
         Thread timer = new Thread() {
             public void run() {

@@ -1,47 +1,23 @@
 package koreanlearning.hangul.serokorean.beginnerone.quiz;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.view.WindowManager;
-
 import com.hangul.serokorean.R;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import koreanlearning.hangul.serokorean.beginnerone.quiz.DBhelper.DBhelper;
-import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.Category;
 import koreanlearning.hangul.serokorean.beginnerone.quiz.adapter.CategoryAdapter;
 import koreanlearning.hangul.serokorean.beginnerone.quiz.common.SpaceDecoration;
+import koreanlearning.hangul.serokorean.utility.FullScreenCall;
 
 public class QuizCategories extends AppCompatActivity {
 
     Toolbar toolbar;
     RecyclerView recyclerView_category;
 
-    public void fullScreencall() {
-        if(Build.VERSION.SDK_INT < 19){
-            View v = this.getWindow().getDecorView();
-            v.setSystemUiVisibility(View.GONE);
-        } else {
-            //for higher api versions.
-            View decorView = getWindow().getDecorView();
-            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
-            decorView.setSystemUiVisibility(uiOptions);
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        fullScreencall();
+        FullScreenCall.fullScreen(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_categories);
 

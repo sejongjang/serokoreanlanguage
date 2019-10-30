@@ -1,30 +1,32 @@
 package koreanlearning.hangul.serokorean.beginnerone.webview;
 
 import android.content.Intent;
-import android.os.Build;
+import android.graphics.Bitmap;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.webkit.PermissionRequest;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 
 import com.hangul.serokorean.R;
 import java.util.ArrayList;
 
 import koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity;
 import koreanlearning.hangul.serokorean.utility.ChapterUtil;
+import koreanlearning.hangul.serokorean.utility.FullScreenCall;
 
-public class ChapterWebview extends AppCompatActivity implements ParentRequestInterface{
+public class ChapterWebviewActivity extends AppCompatActivity implements ParentRequestInterface{
 
     private SectionsPagerAdapter sectionsPagerAdapter;
     private CustomViewPager customViewPager;
@@ -33,37 +35,23 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
     private String currentChapter = "";
     private boolean isFromNext = false;
 
-    public void fullScreencall() {
-        if(Build.VERSION.SDK_INT < 19){
-            View v = this.getWindow().getDecorView();
-            v.setSystemUiVisibility(View.GONE);
-        } else {
-            //for higher api versions.
-            View decorView = getWindow().getDecorView();
-            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
-            decorView.setSystemUiVisibility(uiOptions);
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        fullScreencall();
+        FullScreenCall.fullScreen(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_webview_test);
 
         //bundle gets passed in parameters when chapters' onClick from the Home
         Bundle bundle = getIntent().getExtras();
         if(bundle == null){
-//            textView.setText("bundle error");
+            // handles bundle error here
         }
-        //if not, stores the parameters are passed in
+        // if not, stores the parameters are passed in
         else{
             numberOfPages = bundle.getInt("pages");
             currentChapter = bundle.getString("chapter");
             isFromNext = bundle.getBoolean("isFromNext");
 
-//            isPrevious = bundle.getInt("previous");
             StringBuilder chapNum = new StringBuilder();
 
             //check the length of the string, and gets the number as a substring, 0-9
@@ -81,45 +69,49 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
         sectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), customViewPager, this);
 
         // Set up the ViewPager with the sections adapter.
-        customViewPager = (CustomViewPager) findViewById(R.id.container);
+        customViewPager = findViewById(R.id.container);
         customViewPager.setAdapter(sectionsPagerAdapter);
 
+        // detect to see if this request to get to previous chapter, if so current index should be the last page of the chapter.
         if(isFromNext) {
             int index = ChapterUtil.findFirstPageOfChapter(currentChapterNum+1);
             customViewPager.setCurrentItem(index-1);
         }
-        customViewPager.setOffscreenPageLimit(2);
+
+        // helps to scroll beyond edges
         customViewPager.setOnSwipeOutListener(new CustomViewPager.OnSwipeOutListener() {
             private int nextChapterIndex = currentChapterNum + 1;
             private int previousChapterIndex = currentChapterNum - 1;
 
+            // first to the last page of last chapter
             @Override
             public void onSwipeOutAtStart() {
-
                 if(previousChapterIndex >= 0){
-                    Intent intent = new Intent(ChapterWebview.this, ChapterWebview.class);
+                    Intent intent = new Intent(ChapterWebviewActivity.this, ChapterWebviewActivity.class);
                     int numberOfPages = ChapterUtil.detectTheNumberOfPages(Integer.toString(previousChapterIndex));
                     intent.putExtra("chapter", "chapter " + previousChapterIndex);
                     intent.putExtra("pages", numberOfPages);
                     intent.putExtra("isFromNext", true);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                 }
-//                Toast.makeText(getApplicationContext(), "try to swipe right", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "try to swipe right", Toast.LENGTH_SHORT).show();
             }
 
+            // last page to the first page of next chapter
             @Override
             public void onSwipeOutAtEnd() {
-//                Toast.makeText(getApplicationContext(), "try to swipe left", Toast.LENGTH_SHORT).show();
-
                 if(nextChapterIndex <= 30){
-                    Intent intent = new Intent(ChapterWebview.this, ChapterWebview.class);
+                    Intent intent = new Intent(ChapterWebviewActivity.this, ChapterWebviewActivity.class);
                     int numberOfPages = ChapterUtil.detectTheNumberOfPages(Integer.toString(nextChapterIndex));
                     intent.putExtra("chapter", "chapter " + nextChapterIndex);
                     intent.putExtra("pages", numberOfPages);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 }
+                //Toast.makeText(getApplicationContext(), "try to swipe left", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -133,12 +125,8 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
         private static final String ARG_SECTION_NUMBER = "section_number";
         private static final String CURRENT_CHAPTER = "current_chapter";
         private static final String NUMBER_OF_PAGES = "number_of_pages";
-        private int position;
-        private int currentChapterNum;
-        private int numberOfPages;
-        private ChapterWebview activity;
-        private CustomViewPager viewpager;
-        private ChapterWebview parentActivity;
+        private ChapterWebviewActivity parentActivity;
+        private ProgressBar webviewProgressBar;
 
         public static PlaceholderFragment newInstance(int position , int chapterNum, int numberOfPages) {
             PlaceholderFragment fragment = new PlaceholderFragment();
@@ -150,6 +138,32 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
             return fragment;
         }
 
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+            Bundle arguments = getArguments();
+            int position = arguments.getInt(ARG_SECTION_NUMBER);
+            int currentChapterNum = arguments.getInt(CURRENT_CHAPTER);
+            int numberOfPages = arguments.getInt(NUMBER_OF_PAGES);
+            parentActivity = (ChapterWebviewActivity) getActivity();
+
+            // initialize webview and progressBar
+            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+            final CustomWebView webView = rootView.findViewById(R.id.webView);
+            webviewProgressBar = rootView.findViewById(R.id.webview_progress_bar);
+            webView.setFragment(this);
+
+            // load all the level 1 html pages for the transition also between chapters
+            ArrayList<String> htmlFiles = loadAllHTML();
+            int index = ChapterUtil.findFirstPageOfChapter(currentChapterNum);
+            String url = htmlFiles.get(position + index);
+
+            // change webview setting and javascript setting here
+            WebSettings settings = webView.getSettings();
+            webviewClientSettings(webView, settings);
+            webView.loadUrl(url);
+
+            return rootView;
+        }
         private ArrayList<String> loadAllHTML(){
             ArrayList<String> htmlPaths = new ArrayList<>();
 
@@ -168,30 +182,7 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
             }
             return htmlPaths;
         }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            Bundle arguments = getArguments();
-            position = arguments.getInt(ARG_SECTION_NUMBER);
-            currentChapterNum = arguments.getInt(CURRENT_CHAPTER);
-            numberOfPages = arguments.getInt(NUMBER_OF_PAGES);
-            parentActivity = (ChapterWebview) getActivity();
-
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            final CustomWebView webView = rootView.findViewById(R.id.webView);
-            webView.setFragment(this);
-
-            ArrayList<String> htmlFiles = loadAllHTML();
-            int index = ChapterUtil.findFirstPageOfChapter(currentChapterNum);
-            String url = htmlFiles.get(position + index);
-
-            WebSettings settings = webView.getSettings();
-            javascriptSetting(webView, settings);
-            webView.loadUrl(url);
-
-            return rootView;
-        }
-        private void javascriptSetting(WebView webView, WebSettings settings){
+        private void webviewClientSettings(WebView webView, WebSettings settings){
             settings.setAllowFileAccessFromFileURLs(true);
             settings.setAllowUniversalAccessFromFileURLs(true);
             settings.setMediaPlaybackRequiresUserGesture(false);
@@ -211,6 +202,19 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
 
             // this is how we call quiz activity from javascript
             webView.setWebViewClient(new WebViewClient(){
+
+                @Override
+                public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                    super.onPageStarted(view, url, favicon);
+                    webviewProgressBar.setVisibility(View.VISIBLE);
+                }
+
+                @Override
+                public void onPageFinished(WebView view, String url) {
+                    super.onPageFinished(view, url);
+                    webviewProgressBar.setVisibility(View.GONE);
+                }
+
                 @Override
                 public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                     String url = request.getUrl().toString();
@@ -224,6 +228,7 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
                     return true;
                 }
             });
+            webView.setBackgroundColor(383838);
 
             settings.setJavaScriptEnabled(true);
             settings.setBuiltInZoomControls(true);
@@ -235,21 +240,17 @@ public class ChapterWebview extends AppCompatActivity implements ParentRequestIn
         public void setViewPager(boolean b) {
             parentActivity.setViewPagerStatus(b);
         }
-        public void setActivity(ChapterWebview activity) {
-            this.activity = activity;
-        }
-        public void setPager(CustomViewPager viewpager) {
-            this.viewpager = viewpager;
-        }
+        public void setActivity(ChapterWebviewActivity activity) { }
+        public void setPager(CustomViewPager viewpager) { }
         public PlaceholderFragment() { }
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         private CustomViewPager viewPager;
-        private ChapterWebview activity;
+        private ChapterWebviewActivity activity;
 
-        public SectionsPagerAdapter(FragmentManager fm, CustomViewPager viewPager, ChapterWebview activity) {
+        public SectionsPagerAdapter(FragmentManager fm, CustomViewPager viewPager, ChapterWebviewActivity activity) {
             super(fm);
             this.viewPager=viewPager;
             this.activity=activity;

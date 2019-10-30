@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/darkTheme</item>
         <item name="colorPrimaryDark">@color/darkTheme</item>
         <item name="colorAccent">@color/darkThemeHighlight</item>
+        <item name="android:windowDisablePreview">true</item>
     </style>
 
     <style name="AppTheme2.NoActionBar">
@@ -15,5 +16,10 @@
     <style name="AppTheme2.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme2.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="noWhitePreview" parent="AppTheme2">
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowBackground">@color/darkTheme</item>
+    </style>
 
 </resources>
