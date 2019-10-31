@@ -13,10 +13,10 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.facebook.Profile;
 import com.facebook.login.widget.ProfilePictureView;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.hangul.serokorean.R;
 
-import koreanlearning.hangul.serokorean.bottomNavigation.user.User;
 import koreanlearning.hangul.serokorean.login.LoginActivity;
 import koreanlearning.hangul.serokorean.search.Search;
 
@@ -63,18 +63,23 @@ public class More extends Fragment{
         // Facebook current user checker. if user signed in already, then change name and profile picture
         if(Profile.getCurrentProfile() != null){
             more_username.setText(Profile.getCurrentProfile().getFirstName() + " " + Profile.getCurrentProfile().getLastName());
-            imageView.setVisibility(View.GONE);
+            more_userPhoto.setBackground(null);
+
             ProfilePictureView profilePictureView = view.findViewById(R.id.facebook_profile_picture);
             profilePictureView.setProfileId(Profile.getCurrentProfile().getId());
             profilePictureView.setVisibility(View.VISIBLE);
         }
 
-
-
-        if(User.getUser().getGoogleSignInAccount() != null){
-            GoogleSignInAccount googleSignInAccount = User.getUser().getGoogleSignInAccount();
+        // Google sign in account check
+        if(GoogleSignIn.getLastSignedInAccount(getActivity()) != null){
+            GoogleSignInAccount googleSignInAccount = GoogleSignIn.getLastSignedInAccount(getActivity());
             more_username.setText(googleSignInAccount.getDisplayName());
-            Glide.with(this).load(googleSignInAccount.getPhotoUrl()).into(more_userPhoto);
+
+            // background has to be reset because profile photo will be cover this
+            if(googleSignInAccount.getPhotoUrl() != null){
+                more_userPhoto.setBackground(null);
+                Glide.with(this).load(googleSignInAccount.getPhotoUrl()).into(more_userPhoto);
+            }
         }
 
         return view;

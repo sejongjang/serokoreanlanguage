@@ -1,10 +1,7 @@
 package koreanlearning.hangul.serokorean.login;
 
 import android.app.Activity;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,10 +11,8 @@ import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
-import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
 import com.facebook.Profile;
-import com.facebook.login.LoginManager;
+import com.facebook.ProfileTracker;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -31,8 +26,6 @@ import com.hangul.serokorean.R;
 
 import org.json.JSONObject;
 
-import java.util.Arrays;
-
 import koreanlearning.hangul.serokorean.bottomNavigation.user.User;
 
 public class LoginActivity extends AppCompatActivity {
@@ -40,6 +33,7 @@ public class LoginActivity extends AppCompatActivity {
     private int RC_SIGN_IN = 0;
     private SignInButton google_signInButton;
     private LoginButton facebook_signInButton;
+    private ProfileTracker profileTracker;
     private CallbackManager callbackManager;
     private GoogleSignInClient googleSignInClient;
 
@@ -59,6 +53,7 @@ public class LoginActivity extends AppCompatActivity {
         facebookSignInFlow();
     }
 
+    // google login flow
     private void googleSignInFlow() {
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         // configure sign in to request the user's id, email and basics
@@ -67,16 +62,6 @@ public class LoginActivity extends AppCompatActivity {
 
         // build a GoogleSignInClient with the options specified by gso
         googleSignInClient = GoogleSignIn.getClient(this, gso);
-
-        if(account != null ){
-            setupGoogleUser(account);
-            Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
-            setResult(Activity.RESULT_OK);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            finish();
-        }
 
         // initializing view
         google_signInButton = findViewById(R.id.google_sign_in_button);
@@ -88,6 +73,15 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        // skip login activity when user already logged in
+        if(account != null ){
+            Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
+            setResult(Activity.RESULT_OK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            finish();
+        }
     }
 
     private void setupGoogleUser(GoogleSignInAccount account){
@@ -103,15 +97,52 @@ public class LoginActivity extends AppCompatActivity {
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask){
         try{
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-            User.getUser().setGoogleSignInAccount(account);
+            Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
             setResult(Activity.RESULT_OK);
-            startActivity(new Intent(LoginActivity.this, ProfileActivity.class));
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            finish();
         } catch (ApiException e) {
             e.printStackTrace();
         }
     }
 
     // facebook login flow
+    private void facebookSignInFlow() {
+        callbackManager = CallbackManager.Factory.create();
+        facebook_signInButton = findViewById(R.id.facebook_sign_in_button);
+        facebook_signInButton.setReadPermissions("email");
+        facebook_signInButton.measure(50, 50);
+        facebook_signInButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                // Facebook loads the profile information asynchronously, so even after you get your result from the login callback,
+                // Profile.getCurrentProfile() will return null.
+                profileTracker = new ProfileTracker() {
+                    @Override
+                    protected void onCurrentProfileChanged(Profile oldProfile, Profile currentProfile) {
+                        profileTracker.stopTracking();
+                        Profile.setCurrentProfile(currentProfile);
+                        Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
+                        setResult(Activity.RESULT_OK);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                        finish();
+                    }
+                };
+                profileTracker.startTracking();
+            }
+
+            @Override
+            public void onCancel() { }
+
+            @Override
+            public void onError(FacebookException error) { }
+        });
+    }
+
     private void setupFacebookUser(JSONObject object){
         User.getUser().setProfile(Profile.getCurrentProfile());
         Profile facebookProfile= Profile.getCurrentProfile();
@@ -125,38 +156,6 @@ public class LoginActivity extends AppCompatActivity {
         else if(object != null){
 
         }
-    }
-
-    private void facebookSignInFlow() {
-        callbackManager = CallbackManager.Factory.create();
-        facebook_signInButton = findViewById(R.id.facebook_sign_in_button);
-        facebook_signInButton.setReadPermissions("email");
-        facebook_signInButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                GraphRequest graphRequest = GraphRequest.newMeRequest(loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback() {
-                    @Override
-                    public void onCompleted(JSONObject object, GraphResponse response) {
-                        if(response != null){
-                            setupFacebookUser(object);
-                            Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
-                            setResult(Activity.RESULT_OK);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                            startActivity(intent);
-                            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                            finish();
-                        }
-                    }
-                });
-                graphRequest.executeAsync();
-            }
-
-            @Override
-            public void onCancel() { }
-
-            @Override
-            public void onError(FacebookException error) { }
-        });
     }
 
     public void getFacebookMe() {
