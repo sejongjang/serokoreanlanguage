@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <title>L1 - Chapter 1 - Page 1</title>
 
     <!-- Link to Stylesheet -->
@@ -13,27 +13,51 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 
+    <!-- Link to Javascript -->
+    <script src="../js/main.js" type="text/javascript"></script>
+
 </head>
 
 <body>
     <div class="mtextcon">
-            <div class="stextcon">
-        <div class="mstandardpara">
-            <p>Rather than dividing the program into beginner, intermediate, and advanced levels, Sero Language is
-                divided into numbered levels. This approach gives us the flexibility to continue to add valuable
-                content at a reasonable pace. Each level countains 30 chapters, and the chapters are not long. In fact,
-                each chapter is designed to be completed within twenty to thirty minutes. This enables anyone to find
-                time to do at least one chapter per day and complete an entire level in just one month</p>
-            <p>Level one totals in at over 50,000 words, with 300+ examples sentences (including native-speaker
-                recordings), 500+ vocabulary words, and much more. You should never feel
-                like you’re drowning, since we’ve worked hard to strike the right balance between pushing forward
-                quickly and taking enough time to understand a concept thoroughly.</p>
-            <p>Difficult sections also feature popouts which remind you of concepts covered earlier or provide more
-                in-depth explanations. If you have some experience with Korean or you are fast at grasping new
-                concepts, feel free to skip over these pop-outs as <b>they contain no new information.</b> If you feel like
-                you aren’t keeping up, go ahead and open the pop-outs by tapping on the words in green boxes like this.</p>
+        <div class="stextcon">
+            <div class="mstandardpara">
+                <p>Rather than dividing the program into beginner, intermediate, and advanced levels, Sero Korean is
+                    divided into numbered levels. This approach gives us the flexibility to continue to add valuable
+                    content at a reasonable pace. Each level countains 30 chapters, and the chapters are not long. In
+                    fact,
+                    each chapter is designed to be completed within 20-30 minutes. This enables anyone to find
+                    time to do at least one chapter per day and complete an entire level in just one month.</p>
+                <p>Level one totals in at over 50,000 words, with 300+ examples sentences (including native-speaker
+                    recordings), 500+ vocabulary words, and much more. You should never feel
+                    like you’re drowning, since we’ve worked hard to strike the right balance between pushing forward
+                    quickly and taking enough time to understand concepts thoroughly.</p>
+                <p>Now is also a good time to mention that there are quizzes at the end of most chapters. (There are a
+                    few culture chapters where we just want to give you a break). Some chapters will have grammar
+                    quizzes, some will have vocabulary quizzes, and some will have both. Don't sweat these too much
+                    because you can always retake them. Additionally, once you take the quiz on a vocabulary word it
+                    will be added to your 'In-progress' list, which you can find in the 'Vocab' section of the app.</p>
+                <span id="opener" onclick="openNav()">
+                    <div class="authorcard">
+                        <div class="authorarrow" id="myArrowBox"><img src="../img/leftarrow.png" alt="left"
+                                id="myArrow"></div>
+                    </div>
+                </span>
+                <p>Some sections also feature popouts which contain notes from the authors. If you are just trying to
+                    finish as fast as you can feel free to skip over these pop-outs as <u>they contain no vital
+                        information.</u> Tap on the arrow here to see what they look like.</p>
+                <!-- Author Note-->
+                <div id="myAuthornote" class="authornote" onclick="closeNav()">
+                    <p><b><i><u>Author's Note</u></i></b><br>Come here for entertaining insight, random facts, life
+                        stories,
+                        and much more. Of course it is all related to the subject at hand, but for things that are...
+                        less than textbook-worthy we've decided to put them here. Upcoming author's notes will
+                        feature the author's name (someone from the Sero Language team) and likely many personal
+                        anecdotes. Look forward to it &#128578.</p>
+                </div>
+
+            </div>
         </div>
-    </div>
     </div>
 </body>
 

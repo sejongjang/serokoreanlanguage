@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <title>L1 - Chapter 1 - Page 1</title>
 
     <!-- Link to Stylesheet -->
@@ -13,21 +13,121 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 
+    <!-- Link to Javascript -->
+    <script src="../js/main.js" type="text/javascript"></script>
+
 </head>
 
 <body>
     <div class="mtextcon">
-            <div class="stextcon">
-        <div class="mstandardpara">
-            <p>Korean, like English, has a lot of subtle sounds that your ear will have to grow accustomed to. These
-                sounds are arranged in a way that can seem almost alien to westerners. Developing an ability to listen
-                to Korean will be one of the main hurdles we deal with in Sero Korean Level 1. Fortunately, since you
-                speak English you already use most of the sounds found in Korean during regular everyday speech.</p>
-            <p>Another thing to consider is that Korean is a lot more consistent than English is when it comes to
-                representing the sounds of the language in writing. It’s going to be easier to learn to read Korean
-                using Korean letters, than it is trying to learn Korean using English letters.</p>
+        <div class="stextcon">
+            <div class="mstandardpara">
+                <p>If you feel like you aren’t keeping up, don't sweat it. We have two characters who will be helping
+                    you throughout your journey through level 1. The first character's name is Ashley, and she studied
+                    Korean very hard before finally getting a chance to go on an exchange program to Korea. She loves
+                    K-pop and Korean dramas and is so excited to start using her Korean. Say "hi" to Ashley.</p>
+                <!-- Non-expandable image -->
+                <div class="boxshadow">
+                    <audio src="../audio/hiimashley.mp3" autostart="false"></audio><a onclick="PlaySound(this)">
+                        <img src="../img/miniashley.jpg" alt="Ashley"></a>
+                </div>
+                <p>Our other character is Jaeyoung. He's a Korean university student who is interested in foreign
+                    languages. He was excited when he happened to sit next to Ashley on his first day back at school.
+                    She asked him a question in Korean and Jaeyoung was so suprised by how good she sounded. He told her
+                    that he could help her learn Korean and she agreed to help him learn English.
+                </p>
+                <!-- Non-expandable image -->
+                <div class="boxshadow">
+                    <audio src="../audio/bangapseumnidajaeyoung.mp3" autostart="false"></audio><a
+                        onclick="PlaySound(this)">
+                        <img src="../img/minijaeyoung.jpg" alt="Jaeyoung"></a>
+                </div>
+                <p>Every dialogue sentence we present will also have a breakdown available. To view the breakdown click
+                    on either Ashley or Jaeyoung's little picture and they will help you. Try it out below!
+                </p>
+
+
+                <!-- Example Sentence Grid (w/ Characters)-->
+                <div class="sentence-container">
+                    <div class="sentence-main-item">
+                        <h4><audio src="../audio/jaeyoungssiyeyo.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">재영씨예요?</a></h4>
+                    </div>
+                    <div>
+                        <a href="#openModal1">
+                            <img src="../img/miniashley.jpg" alt="ashley" class="sentence-picture-item"></a>
+                    </div>
+                    <div class="sentence-translated-item" onclick="replace()">
+                        <h4 id="replace1">(tap for translation)</h4>
+                    </div>
+                    <script>
+                        function replace() {
+                            var str = document.getElementById("replace1").innerHTML;
+                            var res = str.replace("(tap for translation)", "Is this (Mr.) Jaeyoung?");
+                            document.getElementById("replace1").innerHTML = res;
+                        }
+                    </script>
+                </div>
+                <br>
+                <!-- Example Sentence Breakdown -->
+                <a href="#close" title="Close" class="close">
+                    <div id="openModal1" class="modal-grammar-dialog">
+                        
+                        <!--Grammar Grid-->
+                        <div class="grammar-grid-container">
+                            <div class="grammar-top-item">
+                                <i>Word</i>
+                            </div>
+                            <div class="grammar-top-item">
+                                <i>Meaning</i>
+                            </div>
+                            <div class="grammar-item">
+                                <h3>이다</h3>
+                            </div>
+                            <div class="grammar-item">
+                                <h3>to be</h3>
+                            </div>
+                            <div class="grammar-item">
+                                <h3>아니다</h3>
+                            </div>
+                            <div class="grammar-item">
+                                <h3>to not be</h3>
+                            </div>
+                            <div class="grammar-item">
+                                <h3>신발</h3>
+                            </div>
+                            <div class="grammar-item">
+                                <h3>shoes</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Example Sentence Grid 2 (w/ Characters) -->
+                <div class="sentence-container">
+                    <div class="sentence-main-item">
+                        <h4><audio src="../audio/nejeoyeyo.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">네,
+                                저예요.</a></h4>
+                    </div>
+                    <div>
+                        <img src="../img/minijaeyoung.jpg" alt="jaeyoung" class="sentence-picture-item">
+                    </div>
+                    <div class="sentence-translated-item" onclick="replace2()">
+                        <h4 id="replace2">(tap for translation)</h4>
+                    </div>
+                    <script>
+                        function replace2() {
+                            var str = document.getElementById("replace2").innerHTML;
+                            var res = str.replace("(tap for translation)", "Yes, I am.");
+                            document.getElementById("replace2").innerHTML = res;
+                        }
+                    </script>
+                </div>
+                <br>
+                <p>So what do you think? Pretty fancy right?</p>
+            </div>
         </div>
-    </div>
     </div>
 </body>
 
