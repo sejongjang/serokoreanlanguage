@@ -7,7 +7,7 @@ android {
 
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 5
+        versionCode 6
         versionName "Alpha v6"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.debug

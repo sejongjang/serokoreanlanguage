@@ -9,27 +9,32 @@
 
     <Toolbar
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp">
 
         <ImageView
+            android:id="@+id/moresearch"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginRight="20dp"
             android:layout_gravity="right"
-            android:id="@+id/moresearch"
-            android:tint="@color/white"
+            android:layout_marginRight="20dp"
             android:clickable="true"
-            android:src="@drawable/ic_search_black_24dp"/>
+            android:src="@drawable/ic_search_black_24dp"
+            android:tint="@color/white" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
-            android:text="More"
+            android:text="@string/search"
             android:textColor="@color/white"
             android:textSize="22dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
+
     </Toolbar>
+
+
 
     <LinearLayout
         android:layout_marginTop="70dp"
@@ -67,13 +72,13 @@
 
             <TextView
                 android:id="@+id/more_username"
-                android:layout_centerInParent="true"
-                android:layout_toRightOf="@+id/more_userimage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@+id/more_userimage"
+                android:text="Guest"
                 android:textColor="@color/white"
-                android:textSize="14dp"
-                android:text="guest"/>
+                android:textSize="14dp" />
 
             <!--<TextView-->
             <!--android:id="@+id/email"-->
@@ -117,12 +122,12 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_gravity="left|center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="left|center"
+                    android:text="Bookmarks"
                     android:textColor="@color/white"
-                    android:text="Book Mark"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
 
                 <LinearLayout
                     android:layoutDirection="rtl"
@@ -278,22 +283,30 @@
                         android:layout_margin="10dp"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/ic_facebook_foreground" />
+                        android:src="@drawable/iconfinder_facebook"
+                        android:tag="https://www.facebook.com/serolanguage/"
+                        android:onClick="openBrowser"/>
                     <ImageView
                         android:layout_margin="10dp"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/ic_insta_foreground" />
+                        android:src="@drawable/iconfinder_instagram"
+                        android:tag="https://www.instagram.com/serolanguage/"
+                        android:onClick="openBrowser"/>
                     <ImageView
                         android:layout_margin="10dp"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/ic_twit_foreground" />
+                        android:src="@drawable/iconfinder_twitter"
+                        android:tag="https://twitter.com/serolanguage/"
+                        android:onClick="openBrowser"/>
                     <ImageView
                         android:layout_margin="10dp"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/ic_youtube_foreground" />
+                        android:src="@drawable/iconfinder_youtube"
+                        android:tag="https://www.youtube.com/channel/UC9pDefGtUWlNGuUfbXYsY4w/"
+                        android:onClick="openBrowser"/>
                 </LinearLayout>
 
             </LinearLayout>

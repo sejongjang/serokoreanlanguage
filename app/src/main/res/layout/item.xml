@@ -27,27 +27,26 @@
 
             <TextView
                 android:id="@+id/title"
-                android:textColor="#262626"
-                android:layout_below="@id/image"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="16dp"
-                android:text="Beginner"
-                android:textSize="14sp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:text="Beginner"
+                android:textColor="#262626"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/desc"
-                android:layout_below="@id/title"
-                android:layout_marginTop="3dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:maxLines="3"
-                android:drawablePadding="10dp"
-                android:ellipsize="end"
-                android:text="Description"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="16dp"
+                android:ellipsize="end"
+                android:maxLines="6"
+                android:text="Description" />
         </RelativeLayout>
 
 
