@@ -7,14 +7,21 @@
     android:background="@color/darkTheme"
     tools:context="koreanlearning.hangul.serokorean.login.LoginActivity">
 
+    <LinearLayout
+        android:id="@+id/filler"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:orientation="horizontal" />
+
     <com.google.android.gms.common.SignInButton
+        android:id="@+id/google_sign_in_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:id="@+id/google_sign_in_button"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_below="@id/filler"
+        android:layout_marginTop="30dp"
         />
 
     <com.facebook.login.widget.LoginButton
@@ -28,5 +35,6 @@
         android:layout_centerVertical="true"
         android:layout_marginTop="10dp"
         />
+
 
 </RelativeLayout>

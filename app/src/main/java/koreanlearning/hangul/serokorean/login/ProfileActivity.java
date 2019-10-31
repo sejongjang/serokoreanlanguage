@@ -32,7 +32,7 @@ public class ProfileActivity extends AppCompatActivity {
         Button sign_out = findViewById(R.id.sign_out);
         TextView name = findViewById(R.id.name);
         TextView email = findViewById(R.id.email);
-        TextView userId = findViewById(R.id.userId);
+//        TextView userId = findViewById(R.id.userId);
         ImageView photo = findViewById(R.id.photo);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN).requestEmail().build();
@@ -42,7 +42,7 @@ public class ProfileActivity extends AppCompatActivity {
         if(Profile.getCurrentProfile() != null){
             Profile facebookProfile = Profile.getCurrentProfile();
             name.setText(facebookProfile.getFirstName() + " " + facebookProfile.getLastName());
-            userId.setText(facebookProfile.getId());
+//            userId.setText(facebookProfile.getId());
             photo.setVisibility(View.GONE);
             email.setVisibility(View.GONE);
             ProfilePictureView profilePictureView = findViewById(R.id.facebook_profile_activity_image);
@@ -58,9 +58,9 @@ public class ProfileActivity extends AppCompatActivity {
         }
         else if(googleSignInAccount != null){
             Uri personPhoto = googleSignInAccount.getPhotoUrl();
-            name.setText("Name: " + googleSignInAccount.getDisplayName());
-            email.setText("Email: " + googleSignInAccount.getEmail());
-            userId.setText("UserID: " + googleSignInAccount.getId());
+            name.setText(googleSignInAccount.getDisplayName());
+            email.setText(googleSignInAccount.getEmail());
+//            userId.setText(googleSignInAccount.getId());
             Glide.with(this).load(personPhoto).into(photo);
             sign_out.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -72,7 +72,7 @@ public class ProfileActivity extends AppCompatActivity {
         else{
             name.setText("cannot find user");
             email.setVisibility(View.GONE);
-            userId.setVisibility(View.GONE);
+//            userId.setVisibility(View.GONE);
             sign_out.setVisibility(View.GONE);
         }
     }

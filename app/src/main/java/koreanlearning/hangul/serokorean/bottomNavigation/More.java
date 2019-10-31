@@ -63,7 +63,7 @@ public class More extends Fragment{
         // Facebook current user checker. if user signed in already, then change name and profile picture
         if(Profile.getCurrentProfile() != null){
             more_username.setText(Profile.getCurrentProfile().getFirstName() + " " + Profile.getCurrentProfile().getLastName());
-            imageView.setVisibility(View.GONE);
+            more_userPhoto.setBackground(null);
 
             ProfilePictureView profilePictureView = view.findViewById(R.id.facebook_profile_picture);
             profilePictureView.setProfileId(Profile.getCurrentProfile().getId());

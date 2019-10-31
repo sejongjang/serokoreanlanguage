@@ -17,9 +17,11 @@
         <ImageView
             android:id="@+id/photo"
             android:background="@drawable/ic_person_white"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"/>
+
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_gravity="center"
+            />
 
         <com.facebook.login.widget.ProfilePictureView
             android:id="@+id/facebook_profile_activity_image"
@@ -49,7 +51,7 @@
 
         <TextView
             android:id="@+id/userId"
-            android:text="userID here"
+
             android:textSize="18sp"
             android:textColor="@color/white"
             android:layout_width="wrap_content"
@@ -63,8 +65,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Log Out"
-        android:textColor="@color/white"
-        android:background="@color/darkThemeLight2"
+        android:textColor="@color/darkTheme"
+        android:background="@drawable/logoutbutton"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="50dp"
