@@ -50,9 +50,9 @@
             <ImageView
                 android:layout_margin="20dp"
                 android:id="@+id/more_userimage"
-                android:src="@drawable/ic_user"
-                android:tint="@color/white"
-                android:layout_width="60dp"
+                android:background="@drawable/ic_user"
+                android:backgroundTint="@color/white"
+                android:layout_width="45dp"
                 android:layout_height="60dp"
                 android:visibility="visible"
                 />

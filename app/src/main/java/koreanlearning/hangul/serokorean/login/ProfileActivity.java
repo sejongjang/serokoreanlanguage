@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.facebook.Profile;
-import com.facebook.ProfileTracker;
 import com.facebook.login.LoginManager;
 import com.facebook.login.widget.ProfilePictureView;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -19,8 +18,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.hangul.serokorean.R;
-
-import koreanlearning.hangul.serokorean.bottomNavigation.user.User;
 
 public class ProfileActivity extends AppCompatActivity {
 

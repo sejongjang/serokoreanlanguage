@@ -1,8 +1,6 @@
 package koreanlearning.hangul.serokorean.bottomNavigation;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -19,14 +17,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.hangul.serokorean.R;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import koreanlearning.hangul.serokorean.bottomNavigation.user.User;
 import koreanlearning.hangul.serokorean.login.LoginActivity;
-import koreanlearning.hangul.serokorean.login.ProfileActivity;
 import koreanlearning.hangul.serokorean.search.Search;
 
 public class More extends Fragment{
@@ -73,6 +64,7 @@ public class More extends Fragment{
         if(Profile.getCurrentProfile() != null){
             more_username.setText(Profile.getCurrentProfile().getFirstName() + " " + Profile.getCurrentProfile().getLastName());
             imageView.setVisibility(View.GONE);
+
             ProfilePictureView profilePictureView = view.findViewById(R.id.facebook_profile_picture);
             profilePictureView.setProfileId(Profile.getCurrentProfile().getId());
             profilePictureView.setVisibility(View.VISIBLE);
@@ -82,8 +74,12 @@ public class More extends Fragment{
         if(GoogleSignIn.getLastSignedInAccount(getActivity()) != null){
             GoogleSignInAccount googleSignInAccount = GoogleSignIn.getLastSignedInAccount(getActivity());
             more_username.setText(googleSignInAccount.getDisplayName());
-            Glide.with(this).load(googleSignInAccount.getPhotoUrl()).into(more_userPhoto);
 
+            // background has to be reset because profile photo will be cover this
+            if(googleSignInAccount.getPhotoUrl() != null){
+                more_userPhoto.setBackground(null);
+                Glide.with(this).load(googleSignInAccount.getPhotoUrl()).into(more_userPhoto);
+            }
         }
 
         return view;

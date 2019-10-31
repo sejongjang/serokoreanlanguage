@@ -1,10 +1,7 @@
 package koreanlearning.hangul.serokorean.login;
 
 import android.app.Activity;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,11 +11,8 @@ import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
-import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
 import com.facebook.Profile;
 import com.facebook.ProfileTracker;
-import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -31,8 +25,6 @@ import com.google.android.gms.tasks.Task;
 import com.hangul.serokorean.R;
 
 import org.json.JSONObject;
-
-import java.util.Arrays;
 
 import koreanlearning.hangul.serokorean.bottomNavigation.user.User;
 
