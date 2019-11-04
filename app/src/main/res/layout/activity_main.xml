@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context="koreanlearning.hangul.serokorean.main.LevelSelectionActivity">
 
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:foregroundGravity="center"
@@ -16,6 +16,6 @@
         android:overScrollMode="never"
         android:clipToPadding="false">
 
-    </android.support.v4.view.ViewPager>
+    </androidx.viewpager.widget.ViewPager>
 
 </RelativeLayout>

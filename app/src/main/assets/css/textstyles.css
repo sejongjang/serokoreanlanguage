@@ -151,6 +151,7 @@ div.mtextcon p {
   color: #e2e2e2;
   font-family: 'Painting With Chocolate', sans-serif;
   text-align: center;
+  padding-top: 10px;
 }
 
 @media (min-width: 768px) {
@@ -966,6 +967,8 @@ div.cardtext {
   transform: translate(-50%, -50%);
   max-width: 80vw;
   max-height: 80vh;
+  height: auto!important;
+  width: auto!important;
   grid-gap: 0px;
 }
 

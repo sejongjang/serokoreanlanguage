@@ -1,19 +1,17 @@
 package koreanlearning.hangul.serokorean.beginnerone.quiz;
 
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import com.google.android.material.tabs.TabLayout;
+import androidx.viewpager.widget.ViewPager;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.view.MenuItem;
-import android.support.design.widget.NavigationView;
+import com.google.android.material.navigation.NavigationView;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
-import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.DialogAction;

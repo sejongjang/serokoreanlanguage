@@ -22,7 +22,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="20dp"
-                android:text="FAQ"
+                android:text="Videos"
                 android:textColor="@color/white"
                 android:textSize="22dp"
                 android:textStyle="bold" />
@@ -35,13 +35,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:clickable="true"
                 android:id="@+id/youtube_recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft">
-            </android.support.v7.widget.RecyclerView>
+            </androidx.recyclerview.widget.RecyclerView>
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

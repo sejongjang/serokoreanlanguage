@@ -2,7 +2,7 @@ package koreanlearning.hangul.serokorean.utility;
 
 public class ChapterUtil {
     private static int NUM_OF_CHAPTERS = 30;
-    private static int CHAPTER_INTRO_NUM_OF_PAGE = 5;
+    private static int CHAPTER_INTRO_NUM_OF_PAGE = 6;
     private static int CHAPTER_ONE_NUM_OF_PAGE = 17;
     private static int CHAPTER_TWO_NUM_OF_PAGE = 9;
     private static int CHAPTER_THREE_NUM_OF_PAGE = 7;

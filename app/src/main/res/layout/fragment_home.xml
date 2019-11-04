@@ -25,7 +25,7 @@
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp">
 
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:id="@+id/intro"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_text_size" />
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
             </RelativeLayout>
 
@@ -79,7 +79,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginBottom="50dp">
 
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:id="@+id/chapter1"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/chapter_card_height"
@@ -134,9 +134,9 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="@dimen/chapter_card_height"
                     android:layout_rowWeight="1"
@@ -190,9 +190,9 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
                     </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="@dimen/chapter_card_height"
                     android:layout_rowWeight="1"
@@ -246,9 +246,9 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
                     </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="@dimen/chapter_card_height"
                     android:layout_rowWeight="1"
@@ -303,9 +303,9 @@
 
                     </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="@dimen/chapter_card_height"
                     android:layout_rowWeight="1"
@@ -360,9 +360,9 @@
 
                     </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="@dimen/chapter_card_height"
                     android:layout_rowWeight="1"
@@ -417,9 +417,9 @@
 
                     </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="@dimen/chapter_card_height"
                     android:layout_rowWeight="1"
@@ -474,9 +474,9 @@
 
                     </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="@dimen/chapter_card_height"
                     android:layout_rowWeight="1"
@@ -531,9 +531,9 @@
 
                     </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
                     android:layout_height="@dimen/chapter_card_height"
                     android:layout_rowWeight="1"
@@ -588,8 +588,8 @@
 
                     </LinearLayout>
 
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_gravity="fill"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -643,8 +643,8 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_gravity="fill"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -698,8 +698,8 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_gravity="fill"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -753,8 +753,8 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_gravity="fill"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -808,8 +808,8 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_gravity="fill"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -863,8 +863,8 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_gravity="fill"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -918,8 +918,8 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_gravity="fill"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -973,8 +973,8 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_gravity="fill"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -1028,8 +1028,8 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_gravity="fill"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -1083,8 +1083,8 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_gravity="fill"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -1138,8 +1138,8 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_gravity="fill"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -1193,8 +1193,8 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_gravity="fill"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -1247,8 +1247,8 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_gravity="fill"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -1302,8 +1302,8 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_gravity="fill"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -1357,8 +1357,8 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_gravity="fill"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -1412,8 +1412,8 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_gravity="fill"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -1467,8 +1467,8 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_gravity="fill"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -1522,8 +1522,8 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_gravity="fill"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -1577,8 +1577,8 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_gravity="fill"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -1632,8 +1632,8 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_gravity="fill"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -1687,8 +1687,8 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
                     android:layout_gravity="fill"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
@@ -1742,7 +1742,7 @@
                             android:textSize="@dimen/chapter_card_subtext_size" />
 
                     </LinearLayout>
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
             </GridLayout>
 
         </LinearLayout>
