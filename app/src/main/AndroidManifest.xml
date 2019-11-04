@@ -20,18 +20,29 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme2"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="koreanlearning.hangul.serokorean.bottomNavigation.YoutubePlayActivity"></activity>
 
-        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
-        <activity android:name="com.facebook.FacebookActivity" android:configChanges= "keyboard|keyboardHidden|screenLayout|screenSize|orientation" android:label="@string/app_name" />
-        <activity android:name="com.facebook.CustomTabActivity" android:exported="true">
-            <intent-filter> <action android:name="android.intent.action.VIEW" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-
-        <activity android:name="koreanlearning.hangul.serokorean.login.ProfileActivity"/>
+        <activity android:name="koreanlearning.hangul.serokorean.login.ProfileActivity" />
         <activity android:name="koreanlearning.hangul.serokorean.login.LoginActivity" />
         <activity
             android:name="koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity"
@@ -52,7 +63,9 @@
             </intent-filter>
         </activity>
 
-        <uses-library android:name="org.apache.http.legacy" android:required="false" />
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
     </application>
 
 </manifest>

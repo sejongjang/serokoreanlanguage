@@ -10,11 +10,12 @@ public class YoutubeVideoModel {
     public YoutubeVideoModel() {
     }
 
-    public YoutubeVideoModel(String title, String description, String thumbnail, String date) {
+    public YoutubeVideoModel(String title, String description, String thumbnail, String date, String videoId) {
         this.title = title;
         this.description = description;
         this.thumbnail = thumbnail;
         this.date = date;
+        this.videoId = videoId;
     }
 
     public String getVideoId() {

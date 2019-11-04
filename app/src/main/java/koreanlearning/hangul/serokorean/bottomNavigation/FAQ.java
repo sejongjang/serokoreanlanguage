@@ -38,14 +38,10 @@ import static com.facebook.FacebookSdk.getApplicationContext;
 
 public class FAQ extends Fragment {
 
+    //AIzaSyD2KmLaL7RJOr0DKiKvvMP1TEddjoL0sBY
     private static final String YOUTUBE_API_KEY = "AIzaSyD2KmLaL7RJOr0DKiKvvMP1TEddjoL0sBY";
     private static final String CHANNEL_ID = "UC4Oqg2xJLbOkGnTpn68pErA";
     private static final String CHANNEL_GET_URL = "https://www.googleapis.com/youtube/v3/search?key=" + YOUTUBE_API_KEY + "&channelId=" + CHANNEL_ID + "&part=snippet,id&order=date&maxResults=20";
-
-    //"https://www.googleapis.com/youtube/v3/search?part=snippet&channelid="+ CHANNEL_ID + "&key=" + YOUTUBE_API_KEY;
-
-    //https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=UC4Oqg2xJLbOkGnTpn68pErA&key=
-    //https://www.googleapis.com/youtube/v3/search?key={your_key_here}&channelId={channel_id_here}&part=snippet,id&order=date&maxResults=20
 
     private RecyclerView videoRecyclerview;
     private VideoPostAdapter adapter;
@@ -134,6 +130,7 @@ public class FAQ extends Fragment {
                         if(jsonID.has("kind")){
                             if(jsonID.getString("kind").equals("youtube#video")){
                                 // get data from snippet
+                                String videoId = jsonID.getString("videoId");
 
                                 JSONObject snippet = json.getJSONObject("snippet");
                                 String title = snippet.getString("title");
@@ -141,7 +138,7 @@ public class FAQ extends Fragment {
                                 String date = snippet.getString("publishedAt");
                                 String thumbnailURL = snippet.getJSONObject("thumbnails").getJSONObject("high").getString("url");
 
-                                YoutubeVideoModel youtubeVideoModel = new YoutubeVideoModel(title, description, thumbnailURL, date);
+                                YoutubeVideoModel youtubeVideoModel = new YoutubeVideoModel(title, description, thumbnailURL, date, videoId);
                                 youtubeList.add(youtubeVideoModel);
                             }
                         }

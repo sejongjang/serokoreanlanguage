@@ -1,12 +1,14 @@
 package koreanlearning.hangul.serokorean.bottomNavigation;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -40,6 +42,7 @@ public class VideoPostAdapter extends RecyclerView.Adapter<VideoPostAdapter.Yout
         TextView textViewDes = holder.textViewDes;
         TextView textViewDate = holder.textViewDate;
         ImageView imageThumbnail = holder.ImageThumb;
+        RelativeLayout youtubePreview = holder.youtubePreview;
 
         YoutubeVideoModel object = youtubeList.get(i);
         textviewTitle.setText(object.getTitle());
@@ -49,6 +52,16 @@ public class VideoPostAdapter extends RecyclerView.Adapter<VideoPostAdapter.Yout
         // image will be downloaded from url
         Glide.with(holder.itemView.getContext()).load(object.getThumbnail()).into(holder.ImageThumb);
         String thumbnail = object.getThumbnail();
+
+        youtubePreview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, YoutubePlayActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("videoId", youtubeList.get(i).getVideoId());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -61,6 +74,7 @@ public class VideoPostAdapter extends RecyclerView.Adapter<VideoPostAdapter.Yout
         private TextView textViewDes;
         private TextView textViewDate;
         private ImageView ImageThumb;
+        private RelativeLayout youtubePreview;
 
 
         public YoutubePostHolder(@NonNull View itemView) {
@@ -69,6 +83,7 @@ public class VideoPostAdapter extends RecyclerView.Adapter<VideoPostAdapter.Yout
             this.textViewDes = itemView.findViewById(R.id.video_des);
             this.textViewDate = itemView.findViewById(R.id.vieo_date);
             this.ImageThumb = itemView.findViewById(R.id.youtube_image);
+            this.youtubePreview = itemView.findViewById(R.id.youtube_preview);
         }
     }
 }

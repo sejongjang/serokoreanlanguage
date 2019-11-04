@@ -7,14 +7,18 @@
     >
 
     <RelativeLayout
+        android:id="@+id/youtube_preview"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="270dp"
+        android:clickable="true"
+        android:paddingTop="10dp"
         >
 
         <ImageView
             android:id="@+id/youtube_image"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/darkThemeLight2"
             android:scaleType="centerCrop"/>
 
         <TextView
@@ -28,6 +32,7 @@
             android:text="video published at" />
 
         <LinearLayout
+            android:layout_below="@+id/youtube_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -39,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="video title"
-                android:textSize="22dp"
+                android:textSize="15dp"
                 android:textColor="@color/white" />
 
             <TextView
@@ -50,5 +55,6 @@
                 android:textColor="@color/white"
                 android:text="video published at" />
         </LinearLayout>
+
     </RelativeLayout>
 </LinearLayout>
