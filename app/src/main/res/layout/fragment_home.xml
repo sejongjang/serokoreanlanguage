@@ -271,7 +271,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@mipmap/lv1_chp4" />
+                            android:src="@mipmap/chp4" />
 
                         <TextView
                             android:id="@+id/ch4"
@@ -328,7 +328,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@mipmap/lv1_chp5" />
+                            android:src="@mipmap/chp5" />
 
                         <TextView
                             android:id="@+id/ch5"
@@ -385,7 +385,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@mipmap/lv1_chp6" />
+                            android:src="@mipmap/chp6" />
 
                         <TextView
                             android:id="@+id/ch6"
@@ -499,7 +499,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@mipmap/lv1_chp8" />
+                            android:src="@mipmap/chp8" />
 
                         <TextView
                             android:id="@+id/ch8"
@@ -556,7 +556,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@mipmap/lv1_chp9" />
+                            android:src="@mipmap/chp9" />
 
                         <TextView
                             android:id="@+id/ch9"
@@ -664,7 +664,7 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:src="@mipmap/lv1_chp11"
+                            android:src="@mipmap/chp11"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -719,7 +719,7 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:src="@mipmap/lv1_chp12"
+                            android:src="@mipmap/chp12"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -939,7 +939,7 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:src="@mipmap/lv1_chp16"
+                            android:src="@mipmap/chp16"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -1159,7 +1159,7 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:src="@mipmap/lv1_chp20"
+                            android:src="@mipmap/chp20"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
