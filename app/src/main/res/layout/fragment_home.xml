@@ -1077,7 +1077,7 @@
                             android:layout_height="match_parent"
                             android:gravity="center"
                             android:layout_marginTop="15px"
-                            android:text="@string/chapterEightSubtext"
+                            android:text="@string/chapterEighteenSubtext"
                             android:textAlignment="center"
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/chapter_card_subtext_size" />

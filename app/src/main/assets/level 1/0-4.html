@@ -30,10 +30,9 @@
                     using Korean letters, than it is trying to learn Korean using English letters.</p>
                 <p>A lot of apps/textbooks try and make you use romanization to learn, which is a crutch and is
                     completely unnecessary in Korean. In fact pronunciation of Korean words is actually so hard to
-                    represent in English that it would do more harm than good to teach it. Just to prove how bad English
-                    is look at this chart containing the two most well recognized systems of romanization. (In Korean
-                    the
-                    revised system is used on signs to help foreigners get around.)
+                    represent in English that it would do more harm than good to teach it. Just to prove how bad it is
+                    to write Korean in English
+                    look at this chart containing the three most well recognized systems of romanization.
                 </p>
                 <!--Vocab Introduction Grid-->
                 <div class="vocab-container">
@@ -59,13 +58,49 @@
                         <h4>Yale Romanization</h4>
                     </div>
                     <div class="vocab-item">
-                        <h5>ttekpokkinun ssallo mantulko ccang masissta</h5>
+                        <h5>ttekpokkinun ssallo mantulko ccang masissta.</h5>
                     </div>
                 </div>
                 <p>Go ahead and try reading one of these romanizations. You almost certainly won't be able to come up
                     with a sentence that could be understood by Koreans. None of these systems are good because English
                     letters are just incompatible with Korean sound patterns. Now listen to the real pronunciation of
                     the sentence.</p>
+
+                <!-- Example Sentence Grid -->
+                <div class="sentence-container">
+                    <div class="sentence-main-item">
+                        <h4><audio src="../audio/tteokbokkineunssallomandeulgojjangmasitda.mp3"
+                                autostart="false"></audio><a onclick="PlaySound(this)">떡볶이는 쌀로 만들고 짱 맛있다.</a></h4>
+                    </div>
+                    <div class="sentence-translated-item" onclick="replace()">
+                        <h4 id="replace1">(tap for translation)</h4>
+                    </div>
+                    <script>
+                        function replace() {
+                            var str = document.getElementById("replace1").innerHTML;
+                            var res = str.replace("(tap for translation)",
+                                "Tteokbokki is made from rice and is super delicious.");
+                            document.getElementById("replace1").innerHTML = res;
+                        }
+                    </script>
+                </div>
+                <p>In case you are wondering, they use the revised system in Korea. Almost every sign nowadays will have
+                    English listed under the Korean (since Korea has become such a hot tourist spot). You can see what
+                    we mean below.</p>
+
+                <!-- Modal Image 1-->
+                <a href="#openModal1"><img src="../img/streetsign.jpg" alt="Lee Sun Shin" class="modalimg"></a>
+                <div id="openModal1" class="modalDialog">
+                    <a href="#close" title="Close" class="close">
+                        <div>
+                            <p>As you can see they also occasionally put Chinese characters on Korean road signs as
+                                well. <br><i style="font-size: 0.4em">Image courtesy of Wolfgang Reindl from Pixabay.</i></p>
+                            <img src="https://korean.serolanguage.com/files/images/korea-239102_1920.jpg"
+                                alt="Unable to display full sized image without web connection.">
+                        </div>
+                    </a>
+                </div>
+                <br>
             </div>
         </div>
     </div>
