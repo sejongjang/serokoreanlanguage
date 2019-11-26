@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -164,6 +163,7 @@ public class ChapterWebviewActivity extends AppCompatActivity implements ParentR
 
             return rootView;
         }
+
         private ArrayList<String> loadAllHTML(){
             ArrayList<String> htmlPaths = new ArrayList<>();
 
@@ -182,6 +182,7 @@ public class ChapterWebviewActivity extends AppCompatActivity implements ParentR
             }
             return htmlPaths;
         }
+
         private void webviewClientSettings(WebView webView, WebSettings settings){
             settings.setAllowFileAccessFromFileURLs(true);
             settings.setAllowUniversalAccessFromFileURLs(true);
@@ -226,6 +227,19 @@ public class ChapterWebviewActivity extends AppCompatActivity implements ParentR
                         startActivity(intent);
                     }
                     return true;
+                }
+
+                @Override
+                public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+                    super.onReceivedError(view, errorCode, description, failingUrl);
+                    if(failingUrl.contains("chapter")){
+                        view.stopLoading();
+                        Intent intent = new Intent(getActivity(), QuestionActivity.class); //ChapterOneQuiz.class
+                        intent.putExtra("level", Integer.parseInt(failingUrl.substring(12,13)));
+                        intent.putExtra("chapter", Integer.parseInt(failingUrl.substring(20,21)));
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                    }
                 }
             });
             webView.setBackgroundColor(383838);

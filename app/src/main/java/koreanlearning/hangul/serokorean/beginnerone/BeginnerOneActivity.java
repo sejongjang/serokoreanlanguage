@@ -1,12 +1,8 @@
 package koreanlearning.hangul.serokorean.beginnerone;
 
-import android.content.Intent;
 import android.graphics.Color;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;

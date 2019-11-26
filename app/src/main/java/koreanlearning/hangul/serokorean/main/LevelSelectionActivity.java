@@ -27,24 +27,10 @@ public class LevelSelectionActivity extends AppCompatActivity {
     private Integer[] colors = null;
     private ArgbEvaluator argbEvaluator = new ArgbEvaluator();
 
-//    private FirebaseAuth firebaseAuth;
-
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
-//        if(currentUser == null){
-//            Intent loginActivity = new Intent(this, LoginActivity.class);
-//            startActivity(loginActivity);
-//        }
-//    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         FullScreenCall.fullScreen(this);
         super.onCreate(savedInstanceState);
-
-//        firebaseAuth = FirebaseAuth.getInstance();
 
         //change top status bar and bottom naviation bar color change
         getWindow().setStatusBarColor(Color.parseColor("#1e1e1e"));
