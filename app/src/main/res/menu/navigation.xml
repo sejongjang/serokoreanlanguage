@@ -12,9 +12,9 @@
         android:title="@string/vocab" />
 
     <item
-        android:id="@+id/FAQ"
+        android:id="@+id/Videos"
         android:icon="@drawable/ic_question_mark"
-        android:title="@string/FAQ" />
+        android:title="@string/Videos" />
 
     <item
         android:id="@+id/more"

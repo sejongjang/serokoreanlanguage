@@ -24,6 +24,7 @@ public class BeginnerOneActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private MenuItem prevMenuItem;
     private BeginnerOneViewPagerAdapter viewPagerAdapter;
+    private int currentItem = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,12 @@ public class BeginnerOneActivity extends AppCompatActivity {
         getWindow().setStatusBarColor(Color.parseColor("#1e1e1e"));
         getWindow().setNavigationBarColor(Color.parseColor("#383838"));
         setContentView(R.layout.activity_beginner_one);
+
+        // getting extra from the profile activity, because once user sign out name and picture should be updated as default
+        Bundle extras = getIntent().getExtras();
+        if(extras != null){
+            currentItem = extras.getInt("sign out");
+        }
 
         bottomNavigationView = (BottomNavigationView)findViewById(R.id.bottom_navigation);
 //        bottomNavigationView.setOnNavigationItemSelectedListener(this);
@@ -46,7 +53,7 @@ public class BeginnerOneActivity extends AppCompatActivity {
                     case R.id.vocab:
                         viewPager.setCurrentItem(1);
                         break;
-                    case R.id.FAQ:
+                    case R.id.Videos:
                         viewPager.setCurrentItem(2);
                         break;
                     case R.id.more:
@@ -100,15 +107,16 @@ public class BeginnerOneActivity extends AppCompatActivity {
         viewPagerAdapter.addFragment(faq);
         viewPagerAdapter.addFragment(more);
         viewPager.setAdapter(viewPagerAdapter);
+        viewPager.setCurrentItem(currentItem);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 10001){
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            Fragment moreFragment = viewPagerAdapter.getItem(3);
-            fragmentTransaction.detach(moreFragment).attach(moreFragment).commit();
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if(requestCode == 10001){
+//            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+//            Fragment moreFragment = viewPagerAdapter.getItem(3);
+//            fragmentTransaction.detach(moreFragment).attach(moreFragment).commit();
+//        }
+//    }
 }

@@ -9,7 +9,7 @@
     <string name="title_activity_main2">Main2Activity</string>
     <string name="settings">Settings</string>
     <string name="search">Search</string>
-    <string name="FAQ">FAQ</string>
+    <string name="Videos">Videos</string>
     <string name="home">Home</string>
     <string name="bookmark">Bookmarks</string>
     <string name="vocab">Vocab</string>
@@ -99,5 +99,6 @@
     <string name="title_activity_question">QuestionActivity</string>
     <string name="facebook_app_id">2368837743379278</string>
     <string name="fb_login_protocol_scheme">fb2368837743379278</string>
+    <string name="facebook_application_id">2368837743379278</string>
 
 </resources>

@@ -11,65 +11,44 @@ import com.hangul.serokorean.R;
 public class YoutubePlayActivity extends YouTubeBaseActivity {
 
     private static final String GOOGLE_API_KEY = "AIzaSyD2KmLaL7RJOr0DKiKvvMP1TEddjoL0sBY";
+
     private String VIDEO_ID = "";
     private YouTubePlayerView youTubePlayerView = null;
     private YouTubePlayer.PlayerStateChangeListener playerStateChangeListener = new YouTubePlayer.PlayerStateChangeListener() {
         @Override
-        public void onLoading() {
-
-        }
+        public void onLoading() { }
 
         @Override
-        public void onLoaded(String s) {
-
-        }
+        public void onLoaded(String s) { }
 
         @Override
-        public void onAdStarted() {
-
-        }
+        public void onAdStarted() { }
 
         @Override
-        public void onVideoStarted() {
-
-        }
+        public void onVideoStarted() { }
 
         @Override
-        public void onVideoEnded() {
-
-        }
+        public void onVideoEnded() { }
 
         @Override
-        public void onError(YouTubePlayer.ErrorReason errorReason) {
-
-        }
+        public void onError(YouTubePlayer.ErrorReason errorReason) { }
     };
     private YouTubePlayer.PlaybackEventListener playbackEventListener = new YouTubePlayer.PlaybackEventListener(){
 
         @Override
-        public void onPlaying() {
-
-        }
+        public void onPlaying() { }
 
         @Override
-        public void onPaused() {
-
-        }
+        public void onPaused() { }
 
         @Override
-        public void onStopped() {
-
-        }
+        public void onStopped() { }
 
         @Override
-        public void onBuffering(boolean b) {
-
-        }
+        public void onBuffering(boolean b) { }
 
         @Override
-        public void onSeekTo(int i) {
-
-        }
+        public void onSeekTo(int i) { }
     };
 
     @Override

@@ -1,6 +1,7 @@
 package koreanlearning.hangul.serokorean.main;
 
 import android.animation.ArgbEvaluator;
+import android.content.Intent;
 import android.graphics.Color;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,23 +11,40 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.hangul.serokorean.R;
 
+import koreanlearning.hangul.serokorean.login.LoginActivity;
 import koreanlearning.hangul.serokorean.utility.FullScreenCall;
 
 public class LevelSelectionActivity extends AppCompatActivity {
 
     //viewPager for the horizontal scroll
-    ViewPager viewPager;
-    LevelCardsAdapter levelCardsViewPagerAdapter;
-    List<LevelCardModel> levelCards;
-    Integer[] colors = null;
-    ArgbEvaluator argbEvaluator = new ArgbEvaluator();
+    private ViewPager viewPager;
+    private LevelCardsAdapter levelCardsViewPagerAdapter;
+    private List<LevelCardModel> levelCards;
+    private Integer[] colors = null;
+    private ArgbEvaluator argbEvaluator = new ArgbEvaluator();
+
+//    private FirebaseAuth firebaseAuth;
+
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+//        if(currentUser == null){
+//            Intent loginActivity = new Intent(this, LoginActivity.class);
+//            startActivity(loginActivity);
+//        }
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         FullScreenCall.fullScreen(this);
         super.onCreate(savedInstanceState);
+
+//        firebaseAuth = FirebaseAuth.getInstance();
 
         //change top status bar and bottom naviation bar color change
         getWindow().setStatusBarColor(Color.parseColor("#1e1e1e"));
