@@ -60,7 +60,7 @@ public class LevelSelectionActivity extends AppCompatActivity {
 //        viewPager.setPageMargin(marginPx);
 
         Integer[] colors_temp = {
-                getResources().getColor(R.color.test1),
+                getResources().getColor(R.color.beginnerone),
                 getResources().getColor(R.color.aqua),
                 getResources().getColor(R.color.darkTheme),
                 getResources().getColor(R.color.darkThemeHighlight),
