@@ -1165,13 +1165,26 @@ div.cardtext {
 }
 
 .quiz {
-  background-color: #1c87c9;
-  border: none;
-  color: white;
+  color: black;
+  background-color: white;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  font-size: calc(15px + 2vmin);
+  border-style: solid;
+  border-width: 2px;
+  border-color: #f19f4d;
+  border-radius: 3px;
   padding: 20px 34px;
+  min-width: 250px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  text-indent: 0px;
+  display: inline-grid;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 20px;
   margin: 4px 2px;
   cursor: pointer;

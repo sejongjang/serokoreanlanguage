@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <title>Lv1_Ch9_Pg7</title>
 
     <!-- Link to Stylesheet -->
@@ -20,174 +20,222 @@
 
 <body>
     <div class="mtextcon">
-            <div class="stextcon">
-        <div class="mstandardpara">
-            <p>Great job on this chapter! I know technical things and numbers like this can be a little heady. Before
-                the quiz here’s a helpful review chart. </p>
+        <div class="stextcon">
+            <div class="mstandardpara">
+                <p>Great job on this chapter! I know technical things and numbers like this can be a little heady.
+                    Before
+                    the quiz here’s a helpful review chart. </p>
 
-            <button class="switcher" onclick="columnOne()"><i>Normal</i></button>
-            <button class="switcher" onclick="columnTwo()"><i>Ordinal</i></button>
-            <button class="switcher" onclick="columnThree()"><i>Cardinal</i></button>
-            <br>
-            <!--Comparison Grid-->
-            <div class="comparison-container">
-                <div class="comparison-top-item" id="topOne">
-                    <i>Normal</i>
-                </div>
-                <div class="comparison-top-item" id="topTwo">
-                    <i>Ordinal</i>
-                </div>
-                <div class="comparison-top-item" id="topThree">
-                    <i>Cardinal</i>
-                </div>
-                <div class="comparison-item">
-                    <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">하나</a></h3>
-                </div>
-                <div class="comparison-item-two">
-                    <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">첫째</a></h3>
-                </div>
-                <div class="comparison-item-three">
-                    <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">한개</a></h3>
-                </div>
-                <div class="comparison-item">
-                    <h3><audio src="../audio/hallyu.mp3" autostart="false"></audio><a onclick="PlaySound(this)">둘</a></h3>
-                </div>
-                <div class="comparison-item-two">
-                    <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">둘째</a></h3>
-                </div>
-                <div class="comparison-item-three">
-                    <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">두개</a></h3>
-                </div>
-                <div class="comparison-item">
-                    <h3><audio src="../audio/seoul.mp3" autostart="false"></audio><a onclick="PlaySound(this)">셋</a></h3>
-                </div>
-                <div class="comparison-item-two">
-                    <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">셋째</a></h3>
-                </div>
-                <div class="comparison-item-three">
-                    <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">세개</a></h3>
-                </div>
-                <div class="comparison-item">
-                    <h3><audio src="../audio/deurama.mp3" autostart="false"></audio><a onclick="PlaySound(this)">넷</a></h3>
-                </div>
-                <div class="comparison-item-two">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">넷째</a></h3>
+                <button class="switcher" onclick="columnOne()"><i>Normal</i></button>
+                <button class="switcher" onclick="columnTwo()"><i>Ordinal</i></button>
+                <button class="switcher" onclick="columnThree()"><i>Cardinal</i></button>
+                <br>
+                <!--Comparison Grid-->
+                <div class="comparison-container">
+                    <div class="comparison-top-item" id="topOne">
+                        <i>Normal</i>
+                    </div>
+                    <div class="comparison-top-item" id="topTwo">
+                        <i>Ordinal</i>
+                    </div>
+                    <div class="comparison-top-item" id="topThree">
+                        <i>Cardinal</i>
+                    </div>
+                    <div class="comparison-item">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">하나</a></h3>
+                    </div>
+                    <div class="comparison-item-two">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">첫째</a></h3>
                     </div>
                     <div class="comparison-item-three">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">네개</a></h3>
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">한개</a></h3>
                     </div>
-                <div class="comparison-item">
-                    <h3><audio src="../audio/norae.mp3" autostart="false"></audio><a onclick="PlaySound(this)">다섯</a></h3>
-                </div>
-                <div class="comparison-item-two">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">다섯째</a></h3>
+                    <div class="comparison-item">
+                        <h3><audio src="../audio/hallyu.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">둘</a></h3>
                     </div>
-                    <div class="comparison-item-three">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">다섯개</a></h3>
-                    </div>
-                <div class="comparison-item">
-                    <h3><audio src="../audio/norae.mp3" autostart="false"></audio><a onclick="PlaySound(this)">여섯</a></h3>
-                </div>
-                <div class="comparison-item-two">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">여섯째</a></h3>
+                    <div class="comparison-item-two">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">둘째</a></h3>
                     </div>
                     <div class="comparison-item-three">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">여섯개</a></h3>
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">두개</a></h3>
                     </div>
-                <div class="comparison-item">
-                    <h3><audio src="../audio/norae.mp3" autostart="false"></audio><a onclick="PlaySound(this)">일곱</a></h3>
-                </div>
-                <div class="comparison-item-two">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">일곱째</a></h3>
+                    <div class="comparison-item">
+                        <h3><audio src="../audio/seoul.mp3" autostart="false"></audio><a onclick="PlaySound(this)">셋</a>
+                        </h3>
                     </div>
-                    <div class="comparison-item-three">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">일곱개</a></h3>
-                    </div>
-                <div class="comparison-item">
-                    <h3><audio src="../audio/norae.mp3" autostart="false"></audio><a onclick="PlaySound(this)">여덟</a></h3>
-                </div>
-                <div class="comparison-item-two">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">여덟째</a></h3>
+                    <div class="comparison-item-two">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">셋째</a></h3>
                     </div>
                     <div class="comparison-item-three">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">여덟개</a></h3>
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">세개</a></h3>
                     </div>
-                <div class="comparison-item">
-                    <h3><audio src="../audio/norae.mp3" autostart="false"></audio><a onclick="PlaySound(this)">아홉</a></h3>
-                </div>
-                <div class="comparison-item-two">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">아홉째</a></h3>
+                    <div class="comparison-item">
+                        <h3><audio src="../audio/deurama.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">넷</a></h3>
                     </div>
-                    <div class="comparison-item-three">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">아홉개</a></h3>
-                    </div>
-                <div class="comparison-item">
-                    <h3><audio src="../audio/norae.mp3" autostart="false"></audio><a onclick="PlaySound(this)">열</a></h3>
-                </div>
-                <div class="comparison-item-two">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">열째</a></h3>
+                    <div class="comparison-item-two">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">넷째</a></h3>
                     </div>
                     <div class="comparison-item-three">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">열개</a></h3>
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">네개</a></h3>
                     </div>
-                <div class="comparison-item">
-                    <h3><audio src="../audio/norae.mp3" autostart="false"></audio><a onclick="PlaySound(this)">스물</a></h3>
-                </div>
-                <div class="comparison-item-two">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">스무째</a></h3>
+                    <div class="comparison-item">
+                        <h3><audio src="../audio/norae.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">다섯</a></h3>
                     </div>
-                    <div class="comparison-item-three">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">스물개</a></h3>
-                    </div>
-                <div class="comparison-item">
-                    <h3><audio src="../audio/norae.mp3" autostart="false"></audio><a onclick="PlaySound(this)">서른</a></h3>
-                </div>
-                <div class="comparison-item-two">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">서른째</a></h3>
+                    <div class="comparison-item-two">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">다섯째</a></h3>
                     </div>
                     <div class="comparison-item-three">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">서른개</a></h3>
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">다섯개</a></h3>
                     </div>
-                <div class="comparison-item">
-                    <h3><audio src="../audio/norae.mp3" autostart="false"></audio><a onclick="PlaySound(this)">마흔</a></h3>
-                </div>
-                <div class="comparison-item-two">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">하흔째</a></h3>
+                    <div class="comparison-item">
+                        <h3><audio src="../audio/norae.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">여섯</a></h3>
                     </div>
-                    <div class="comparison-item-three">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">하흔개</a></h3>
-                    </div>
-                <div class="comparison-item">
-                    <h3><audio src="../audio/norae.mp3" autostart="false"></audio><a onclick="PlaySound(this)">쉰</a></h3>
-                </div>
-                <div class="comparison-item-two">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">쉰째</a></h3>
+                    <div class="comparison-item-two">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">여섯째</a></h3>
                     </div>
                     <div class="comparison-item-three">
-                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a onclick="PlaySound(this)">쉰개</a></h3>
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">여섯개</a></h3>
+                    </div>
+                    <div class="comparison-item">
+                        <h3><audio src="../audio/norae.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">일곱</a></h3>
+                    </div>
+                    <div class="comparison-item-two">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">일곱째</a></h3>
+                    </div>
+                    <div class="comparison-item-three">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">일곱개</a></h3>
+                    </div>
+                    <div class="comparison-item">
+                        <h3><audio src="../audio/norae.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">여덟</a></h3>
+                    </div>
+                    <div class="comparison-item-two">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">여덟째</a></h3>
+                    </div>
+                    <div class="comparison-item-three">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">여덟개</a></h3>
+                    </div>
+                    <div class="comparison-item">
+                        <h3><audio src="../audio/norae.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">아홉</a></h3>
+                    </div>
+                    <div class="comparison-item-two">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">아홉째</a></h3>
+                    </div>
+                    <div class="comparison-item-three">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">아홉개</a></h3>
+                    </div>
+                    <div class="comparison-item">
+                        <h3><audio src="../audio/norae.mp3" autostart="false"></audio><a onclick="PlaySound(this)">열</a>
+                        </h3>
+                    </div>
+                    <div class="comparison-item-two">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">열째</a></h3>
+                    </div>
+                    <div class="comparison-item-three">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">열개</a></h3>
+                    </div>
+                    <div class="comparison-item">
+                        <h3><audio src="../audio/norae.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">스물</a></h3>
+                    </div>
+                    <div class="comparison-item-two">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">스무째</a></h3>
+                    </div>
+                    <div class="comparison-item-three">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">스물개</a></h3>
+                    </div>
+                    <div class="comparison-item">
+                        <h3><audio src="../audio/norae.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">서른</a></h3>
+                    </div>
+                    <div class="comparison-item-two">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">서른째</a></h3>
+                    </div>
+                    <div class="comparison-item-three">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">서른개</a></h3>
+                    </div>
+                    <div class="comparison-item">
+                        <h3><audio src="../audio/norae.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">마흔</a></h3>
+                    </div>
+                    <div class="comparison-item-two">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">하흔째</a></h3>
+                    </div>
+                    <div class="comparison-item-three">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">하흔개</a></h3>
+                    </div>
+                    <div class="comparison-item">
+                        <h3><audio src="../audio/norae.mp3" autostart="false"></audio><a onclick="PlaySound(this)">쉰</a>
+                        </h3>
+                    </div>
+                    <div class="comparison-item-two">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">쉰째</a></h3>
+                    </div>
+                    <div class="comparison-item-three">
+                        <h3><audio src="../audio/hanguk.mp3" autostart="false"></audio><a
+                                onclick="PlaySound(this)">쉰개</a></h3>
                     </div>
 
-            </div>
+                </div>
 
-            <ul><b>
-                    <li>Use native-Korean numbers to count to 10 (or up to around 40). Go higher and you’re likely to
-                        hear people switch to the Chinese-based numbers.</li>
-                    <li>Ordinal numbers tell us what order things happened in. </li>
-                    <li>To make ordinal numbers add the postfix 째 onto the normal numbers (remembering 하나 become 첫).</li>
-                    <li>Cardinal numbers are used to count things. </li>
-                    <li>Say how old you are with cardinal numbers and the years-lived counter, 살.</li>
-                    <li>Say what hour it is with cardinal numbers and the hour counter, 시</li>
-                    <li>Count things in general with cardinal numbers and the counter for things, 개.</li>
-                </b></ul>
+                <ul><b>
+                        <li>Use native-Korean numbers to count to 10 (or up to around 40). Go higher and you’re likely
+                            to
+                            hear people switch to the Chinese-based numbers.</li>
+                        <li>Ordinal numbers tell us what order things happened in. </li>
+                        <li>To make ordinal numbers add the postfix 째 onto the normal numbers (remembering 하나 become 첫).
+                        </li>
+                        <li>Cardinal numbers are used to count things. </li>
+                        <li>Say how old you are with cardinal numbers and the years-lived counter, 살.</li>
+                        <li>Say what hour it is with cardinal numbers and the hour counter, 시</li>
+                        <li>Count things in general with cardinal numbers and the counter for things, 개.</li>
+                    </b></ul>
 
-            <!-- *ADD QUIZ* -->
-            <p>*QUIZ*</p>
-
-            <div class="flower">
-                <img src="../img/blueflowercartoon.png" alt="flower" height="100px">
+                <br>
+                <!-- Quiz -->
+                <a href="http://level1chapter9" class="quiz"><b>Numbers Review - Quiz 1</b></a>
+                <br>
+                <br>
+                <!-- Flower -->
+                <div class="flower">
+                    <img src="../img/blueflowercartoon.png" alt="flower" height="100px">
+                </div>
             </div>
         </div>
-    </div>
     </div>
 </body>
 
