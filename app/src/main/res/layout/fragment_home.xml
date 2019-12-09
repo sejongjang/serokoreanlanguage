@@ -47,7 +47,11 @@
                             android:layout_width="80dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@mipmap/lv1_intro" />
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/lv1_intro" />
 
                         <TextView
                             android:id="@+id/introduction"
@@ -103,7 +107,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@mipmap/lv1_chp1" />
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/lv1_chp1"/>
 
                         <TextView
                             android:id="@+id/ch1"
@@ -159,7 +167,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@mipmap/lv1_chp2" />
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/lv1_chp2" />
 
                         <TextView
                             android:id="@+id/ch2"
@@ -215,7 +227,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@mipmap/lv1_chp3" />
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/lv1_chp3" />
 
                         <TextView
                             android:id="@+id/ch3"
@@ -271,7 +287,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@mipmap/chp4" />
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/lv1_chp4" />
 
                         <TextView
                             android:id="@+id/ch4"
@@ -328,7 +348,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@mipmap/chp5" />
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/lv1_chp5" />
 
                         <TextView
                             android:id="@+id/ch5"
@@ -385,7 +409,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@mipmap/chp6" />
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/lv1_chp6" />
 
                         <TextView
                             android:id="@+id/ch6"
@@ -442,7 +470,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@mipmap/lv1_chp7" />
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/lv1_chp7" />
 
                         <TextView
                             android:id="@+id/ch7"
@@ -499,7 +531,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:src="@mipmap/chp8" />
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/lv1_chp8" />
 
                         <TextView
                             android:id="@+id/ch8"
@@ -556,6 +592,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             android:src="@mipmap/chp9" />
 
                         <TextView
@@ -609,7 +649,11 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:src="@mipmap/lv1_chp10"
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/lv1_chp10"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -664,7 +708,11 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:src="@mipmap/chp11"
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/lv1_chp11"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -719,7 +767,11 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:src="@mipmap/chp12"
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/lv1_chp12"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -774,7 +826,11 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:src="@mipmap/lv1_chp13"
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/lv1_chp13"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -829,6 +885,10 @@
                         android:layout_height="match_parent">
 
                         <ImageView
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             android:src="@mipmap/lv1_chp14"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
@@ -884,6 +944,10 @@
                         android:layout_height="match_parent">
 
                         <ImageView
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             android:src="@mipmap/lv1_chp15"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
@@ -939,7 +1003,11 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:src="@mipmap/chp16"
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/lv1_chp16"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -994,6 +1062,10 @@
                         android:layout_height="match_parent">
 
                         <ImageView
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             android:src="@mipmap/lv1_chp17"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
@@ -1049,6 +1121,10 @@
                         android:layout_height="match_parent">
 
                         <ImageView
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             android:src="@mipmap/lv1_chp18"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
@@ -1104,6 +1180,10 @@
                         android:layout_height="match_parent">
 
                         <ImageView
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             android:src="@mipmap/lv1_chp19"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
@@ -1159,7 +1239,11 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:src="@mipmap/chp20"
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/lv1_chp20"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -1214,6 +1298,10 @@
                         android:layout_height="match_parent">
 
                         <ImageView
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             android:src="@mipmap/lv1_chp21"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
@@ -1268,6 +1356,10 @@
                         android:layout_height="match_parent">
 
                         <ImageView
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             android:src="@mipmap/lv1_chp22"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
@@ -1323,6 +1415,10 @@
                         android:layout_height="match_parent">
 
                         <ImageView
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             android:src="@mipmap/lv1_chp23"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
@@ -1378,6 +1474,10 @@
                         android:layout_height="match_parent">
 
                         <ImageView
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             android:src="@mipmap/lv1_chp24"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
@@ -1433,6 +1533,10 @@
                         android:layout_height="match_parent">
 
                         <ImageView
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             android:src="@mipmap/lv1_chp25"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
@@ -1488,7 +1592,11 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:src="@mipmap/lv1_chp26"
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/lv1_chp26"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -1543,6 +1651,10 @@
                         android:layout_height="match_parent">
 
                         <ImageView
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             android:src="@mipmap/lv1_chp27"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
@@ -1598,6 +1710,10 @@
                         android:layout_height="match_parent">
 
                         <ImageView
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             android:src="@mipmap/lv1_chp28"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
@@ -1653,6 +1769,10 @@
                         android:layout_height="match_parent">
 
                         <ImageView
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             android:src="@mipmap/lv1_chp29"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
@@ -1708,6 +1828,10 @@
                         android:layout_height="match_parent">
 
                         <ImageView
+                            android:scaleType="centerInside"
+                            android:adjustViewBounds="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
                             android:src="@mipmap/lv1_chp30"
                             android:layout_gravity="center_horizontal"
                             android:layout_width="wrap_content"
