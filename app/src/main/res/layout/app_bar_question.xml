@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity">
+    tools:context="koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity2">
 
 <!--    <android.support.design.widget.AppBarLayout-->
 <!--        android:layout_width="match_parent"-->
@@ -24,7 +24,6 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
         app:popupTheme="@style/AppTheme.PopupOverLay" />
 
     <include layout="@layout/content_question" />

@@ -21,7 +21,7 @@ import android.widget.ProgressBar;
 import com.hangul.serokorean.R;
 import java.util.ArrayList;
 
-import koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity;
+import koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity2;
 import koreanlearning.hangul.serokorean.utility.ChapterUtil;
 import koreanlearning.hangul.serokorean.utility.FullScreenCall;
 
@@ -203,7 +203,6 @@ public class ChapterWebviewActivity extends AppCompatActivity implements ParentR
 
             // this is how we call quiz activity from javascript
             webView.setWebViewClient(new WebViewClient(){
-
                 @Override
                 public void onPageStarted(WebView view, String url, Bitmap favicon) {
                     super.onPageStarted(view, url, favicon);
@@ -220,7 +219,7 @@ public class ChapterWebviewActivity extends AppCompatActivity implements ParentR
                 public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                     String url = request.getUrl().toString();
                     if(url.contains("chapter")){
-                        Intent intent = new Intent(getActivity(), QuestionActivity.class); //ChapterOneQuiz.class
+                        Intent intent = new Intent(getActivity(), QuestionActivity2.class); //ChapterOneQuiz.class
                         intent.putExtra("level", Integer.parseInt(url.substring(12,13)));
                         intent.putExtra("chapter", Integer.parseInt(url.substring(20,21)));
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -229,12 +228,13 @@ public class ChapterWebviewActivity extends AppCompatActivity implements ParentR
                     return true;
                 }
 
+                // it takes care of url load fail (web page not found error)
                 @Override
                 public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
                     super.onReceivedError(view, errorCode, description, failingUrl);
                     if(failingUrl.contains("chapter")){
                         view.stopLoading();
-                        Intent intent = new Intent(getActivity(), QuestionActivity.class); //ChapterOneQuiz.class
+                        Intent intent = new Intent(getActivity(), QuestionActivity2.class); //ChapterOneQuiz.class
                         intent.putExtra("level", Integer.parseInt(failingUrl.substring(12,13)));
                         intent.putExtra("chapter", Integer.parseInt(failingUrl.substring(20,21)));
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);

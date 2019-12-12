@@ -6,6 +6,23 @@
     android:background="@color/darkTheme"
     tools:context="koreanlearning.hangul.serokorean.bottomNavigation.FAQ">
 
+    <ProgressBar
+        android:id="@+id/youtube_waiting_spinner"
+        android:indeterminateTint="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        />
+
+    <TextView
+        android:text="error message"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:id="@+id/youtube_api_error_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -44,4 +61,5 @@
             </androidx.recyclerview.widget.RecyclerView>
         </LinearLayout>
     </LinearLayout>
+
 </FrameLayout>

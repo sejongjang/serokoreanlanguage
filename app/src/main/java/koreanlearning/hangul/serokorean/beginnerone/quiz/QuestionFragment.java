@@ -4,6 +4,9 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,14 +28,14 @@ import koreanlearning.hangul.serokorean.beginnerone.quiz.quizInterface.IQuestion
 
 public class QuestionFragment extends Fragment implements IQuestion {
 
-    TextView txt_question_text;
-    CheckBox ckbA, ckbB, ckbC, ckbD;
-    FrameLayout layout_image;
-    ProgressBar progressBar;
-    Boolean isAlreadyVisited = false;
+    private TextView txt_question_text;
+    private CheckBox ckbA, ckbB, ckbC, ckbD;
+    private FrameLayout layout_image;
+    private ProgressBar progressBar;
+    private Boolean isAlreadyVisited = false;
 
-    Question question;
-    int questionIndex = -1;
+    private Question question;
+    private int questionIndex = -1;
 
 
     public QuestionFragment() {
@@ -97,6 +100,14 @@ public class QuestionFragment extends Fragment implements IQuestion {
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if(isChecked){
                         QuizCommon.selected_values.add(ckbA.getText().toString());
+                        if(question.getAnswerA().equals(question.getCorrectAnswer())){
+                            // show animation for the correct answer
+                            Toast.makeText(getContext(), "right answer", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            // show animation for the correct answer
+                            Toast.makeText(getContext(), "wrong answer", Toast.LENGTH_SHORT).show();
+                        }
                     }
                     else{
                         QuizCommon.selected_values.remove(ckbA.getText().toString());
@@ -111,6 +122,14 @@ public class QuestionFragment extends Fragment implements IQuestion {
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if(isChecked){
                         QuizCommon.selected_values.add(ckbB.getText().toString());
+                        if(question.getAnswerB().equals(question.getCorrectAnswer())){
+                            // show animation for the correct answer
+                            Toast.makeText(getContext(), "right answer", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            // show animation for the correct answer
+                            Toast.makeText(getContext(), "wrong answer", Toast.LENGTH_SHORT).show();
+                        }
                     }
                     else{
                         QuizCommon.selected_values.remove(ckbB.getText().toString());
@@ -125,6 +144,14 @@ public class QuestionFragment extends Fragment implements IQuestion {
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if(isChecked){
                         QuizCommon.selected_values.add(ckbC.getText().toString());
+                        if(question.getAnswerC().equals(question.getCorrectAnswer())){
+                            // show animation for the correct answer
+                            Toast.makeText(getContext(), "right answer", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            // show animation for the correct answer
+                            Toast.makeText(getContext(), "wrong answer", Toast.LENGTH_SHORT).show();
+                        }
                     }
                     else{
                         QuizCommon.selected_values.remove(ckbC.getText().toString());
@@ -139,6 +166,14 @@ public class QuestionFragment extends Fragment implements IQuestion {
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if(isChecked){
                         QuizCommon.selected_values.add(ckbD.getText().toString());
+                        if(question.getAnswerD().equals(question.getCorrectAnswer())){
+                            // show animation for the correct answer
+                            Toast.makeText(getContext(), "right answer", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            // show animation for the correct answer
+                            Toast.makeText(getContext(), "wrong answer", Toast.LENGTH_SHORT).show();
+                        }
                     }
                     else{
                         QuizCommon.selected_values.remove(ckbD.getText().toString());

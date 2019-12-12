@@ -14,7 +14,7 @@ import com.hangul.serokorean.R;
 import java.util.List;
 
 import koreanlearning.hangul.serokorean.beginnerone.quiz.Model.Category;
-import koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity;
+import koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity2;
 import koreanlearning.hangul.serokorean.beginnerone.quiz.QuizCategories;
 import koreanlearning.hangul.serokorean.beginnerone.quiz.common.QuizCommon;
 
@@ -58,7 +58,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
                 @Override
                 public void onClick(View v) {
                     QuizCommon.selectedCategory = categories.get(getAdapterPosition()); //assign current category position
-                    Intent selectedCategory = new Intent(context, QuestionActivity.class);
+                    Intent selectedCategory = new Intent(context, QuestionActivity2.class);
                     context.startActivity(selectedCategory);
                 }
             });
