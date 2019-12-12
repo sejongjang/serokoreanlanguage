@@ -27,22 +27,23 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import koreanlearning.hangul.serokorean.model.YoutubeSingleton;
 import koreanlearning.hangul.serokorean.model.YoutubeVideoModel;
 
 public class FAQ extends Fragment {
 
-    //AIzaSyD2KmLaL7RJOr0DKiKvvMP1TEddjoL0sBY
-    private static final String YOUTUBE_API_KEY = "AIzaSyD2KmLaL7RJOr0DKiKvvMP1TEddjoL0sBY";
+//    private static final String YOUTUBE_API_KEY = "AIzaSyD2KmLaL7RJOr0DKiKvvMP1TEddjoL0sBY"; //sero google developer console
+    private static final String YOUTUBE_API_KEY = "AIzaSyC3Hnr6eJ6ECXNFz4Gn9zXu3C5CcoxMNrc"; //temp google developer console
     private static final String CHANNEL_ID = "UC4Oqg2xJLbOkGnTpn68pErA";
     private static final String CHANNEL_GET_URL = "https://www.googleapis.com/youtube/v3/search?key=" + YOUTUBE_API_KEY + "&channelId=" + CHANNEL_ID + "&part=snippet,id&order=date&maxResults=20";
 
     private RecyclerView videoRecyclerview;
     private VideoPostAdapter adapter;
     private ArrayList<YoutubeVideoModel> youtubeList = new ArrayList<>();
-//    private String url = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelid="+ CHANNEL_ID + "&key=" + YOUTUBE_API_KEY;
 
     private ProgressBar waitingSpinner;
     private TextView youtube_api_error_message;
+    private YoutubeSingleton youtubeSingleton = YoutubeSingleton.getInstance();
 
     public FAQ() {
         // Required empty public constructor
@@ -56,16 +57,26 @@ public class FAQ extends Fragment {
         View view = inflater.inflate(R.layout.fragment_faq, container, false);
         videoRecyclerview = (RecyclerView) view.findViewById(R.id.youtube_recyclerview);
         videoRecyclerview.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-        adapter = new VideoPostAdapter(getActivity(), youtubeList);
-        videoRecyclerview.setAdapter(adapter);
-
         waitingSpinner = view.findViewById(R.id.youtube_waiting_spinner);
-        waitingSpinner.setVisibility(View.VISIBLE);
+
+        // check singleton class to see if it still store youtube api response, so it does not make other api call to get same result.
+        if(youtubeSingleton.getYoutubeList().size() != 0){
+            waitingSpinner.setVisibility(View.GONE);
+            adapter = new VideoPostAdapter(getActivity(), youtubeSingleton.getYoutubeList());
+        }
+        // if the singleton class does not contains response, then set up empty list.
+        else{
+            waitingSpinner.setVisibility(View.VISIBLE);
+            adapter = new VideoPostAdapter(getActivity(), youtubeList);
+        }
+
+        videoRecyclerview.setAdapter(adapter);
         youtube_api_error_message = view.findViewById(R.id.youtube_api_error_message);
 
-        new RequestYoutubeAPI().execute();
-//        displayVideos();
+        // request only if the list is empty, otherwise it will request every time user swipe on to the video fragment
+        if(youtubeSingleton.getYoutubeList().size() == 0){
+            new RequestYoutubeAPI().execute();
+        }
 
         return view;
     }
@@ -110,9 +121,9 @@ public class FAQ extends Fragment {
                     Log.e("resonse", jsonObject.toString());
                     System.out.println(jsonObject.toString());
 
-                    String parsedJson = doesResponseHasAnError(jsonObject);
-                    if(!parsedJson.equals("no error")){
-                        youtube_api_error_message.setText(parsedJson);
+                    String errorResponse = doesResponseHasAnError(jsonObject);
+                    if(!errorResponse.equals("no error")){
+                        youtube_api_error_message.setText(errorResponse);
                         youtube_api_error_message.setVisibility(View.VISIBLE);
                     }
 
@@ -121,9 +132,6 @@ public class FAQ extends Fragment {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
-
-
                 waitingSpinner.setVisibility(View.GONE);
             }
         }
@@ -178,6 +186,7 @@ public class FAQ extends Fragment {
 
                                 YoutubeVideoModel youtubeVideoModel = new YoutubeVideoModel(title, description, thumbnailURL, date, videoId);
                                 youtubeList.add(youtubeVideoModel);
+                                youtubeSingleton.getYoutubeList().add(youtubeVideoModel);
                             }
                         }
                     }

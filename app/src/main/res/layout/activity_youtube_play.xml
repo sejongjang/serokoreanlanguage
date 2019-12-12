@@ -10,13 +10,22 @@
     <LinearLayout
         android:background="@color/darkTheme"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <com.google.android.youtube.player.YouTubePlayerView
             android:id="@+id/youtube_player"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             />
+
+        <TextView
+            android:text="Video explanation\n\nDemo for the BYU CS 356. \n\nThis is youtube API. It provides whole channel information including playlist. So, once I change this to my channel it will give me the video I upload."
+            android:textColor="@color/white"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -97,6 +97,7 @@ public class QuestionActivity2 extends AppCompatActivity implements NavigationVi
                 public void onPageSelected(int i) {
                     QuestionFragment questionFragment;
                     int position = i;
+
                     if(i > 0){
                         if(isScrollingRight()){
                             // get previous when user scroll right
@@ -139,8 +140,6 @@ public class QuestionActivity2 extends AppCompatActivity implements NavigationVi
                         this.currentScrollDirection = SCROLLINNG_UNDETERMINDED;
                     }
                 }
-
-
             });
         }
     }

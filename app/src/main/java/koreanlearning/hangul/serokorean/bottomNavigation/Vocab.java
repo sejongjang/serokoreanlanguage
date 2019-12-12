@@ -43,16 +43,16 @@ public class Vocab extends Fragment {
     }
 
     private void fillOutVocabList() {
-        VocabModel v0 = new VocabModel("to eat", "먹다", "VERB to eat or consume entirely: often used as an exhortation to children", R.raw.v0);
-        VocabModel v1 = new VocabModel("to buy", "사다", "VERB If you buy something, you obtain it by paying money for it.", R.raw.v1);
-        VocabModel v2 = new VocabModel("sleep", "자다", "NOUN Sleep is the natural state of rest in which your eyes are closed, your body is inactive, and your mind does not think.", R.raw.v2);
-        VocabModel v3 = new VocabModel("help", "돕다", "VERB If you help someone, you make it easier for them to do something", R.raw.v3);
-        VocabModel v4 = new VocabModel("to cook", "요리하다", "VERB When you cook a meal, you prepare food for eating by heating it.", R.raw.v4);
-        VocabModel v5 = new VocabModel("bathroom", "화장실", "NOUN A bathroom is a room in a house that contains a bath or shower, a washbasin, and sometimes a toilet.", R.raw.v5);
-        VocabModel v6 = new VocabModel("to go", "가다", "VERB When you go somewhere, you move or travel there.", R.raw.v6);
-        VocabModel v7 = new VocabModel("wow", "와우", "EXCLAM feelings, INFORMAL You can say `wow' when you are very impressed, surprised, or pleased.", R.raw.v7);
-        VocabModel v8 = new VocabModel("to get", "얻다", "VERB If you get something that you want or need, you obtain it.", R.raw.v8);
-        VocabModel v9 = new VocabModel("to live", "살다", "VERB If someone lives in a particular place or with a particular person, their home is in that place or with that person.", R.raw.v9);
+        VocabModel v0 = new VocabModel("to eat", "먹다", "밥을 먹다 (to eat meal).", R.raw.v0);
+        VocabModel v1 = new VocabModel("to buy", "사다", "시계를 사다 (to buy watch).", R.raw.v1);
+        VocabModel v2 = new VocabModel("to sleep", "자다", "잠을 자다 (to sleep).", R.raw.v2);
+        VocabModel v3 = new VocabModel("to help", "돕다", "친구를 돕다 (to help friend).", R.raw.v3);
+        VocabModel v4 = new VocabModel("to cook", "만들다(요리하다)", "떡볶이를 만들다 (to make Tteokbokki).", R.raw.v4);
+        VocabModel v5 = new VocabModel("bathroom", "화장실", "화장실이 어디에요? (where is bathroom?).", R.raw.v5);
+        VocabModel v6 = new VocabModel("to go", "가다", "집에 가다 (to go home).", R.raw.v6);
+        VocabModel v7 = new VocabModel("wow", "와우", "와우 (wow).", R.raw.v7);
+        VocabModel v8 = new VocabModel("to get", "얻다", "정보를 얻다 (to get information).", R.raw.v8);
+        VocabModel v9 = new VocabModel("to live", "살다", "나는 미국에 산다 (I am living in the United States).", R.raw.v9);
 
         vocabList.add(v0);
         vocabList.add(v1);

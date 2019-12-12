@@ -42,11 +42,14 @@ public class LevelSelectionActivity extends AppCompatActivity {
 
         //save five different level cards in the User class
         levelCards = new ArrayList<>();
-        levelCards.add(new LevelCardModel(R.drawable.beginnerone, "Level 1 (Brand New Learner)", "A comprehensive introduction into the Korean language including: reading and writing, basic grammar particles, verb conjugation, directions, numbers, tons of vocabulary, and even basic cultural insights."));
+        levelCards.add(new LevelCardModel(R.drawable.castle, "Level 1 (Brand New Learner)", "A comprehensive introduction into the Korean language including: reading and writing, basic grammar particles, verb conjugation, directions, numbers, tons of vocabulary, and even basic cultural insights."));
         levelCards.add(new LevelCardModel(R.drawable.beginnertwo, "Level 2 (COMING SOON)", "Thirty more chapters headed your way soon. Topics include: high form and low form, giving commands, active vs. passive verbs, verbal nouns, and much more culture and vocabulary. Stayed tuned!"));
-/*      levelCards.add(new LevelCardModel(R.drawable.intermediateone, "Level 3 (Lower Intermediate)", "Time to start impressing the natives!"));
-        levelCards.add(new LevelCardModel(R.drawable.castle, "Level 4 (Upper Intermediate)", "Learn how to sound intelligent."));
-        levelCards.add(new LevelCardModel(R.drawable.southkorea, "Level 5 (Advanced)", "Become Korean."));*/
+        levelCards.add(new LevelCardModel(R.drawable.beginnertwo, "Level 3 (COMING SOON", "Time to start impressing the natives!"));
+        levelCards.add(new LevelCardModel(R.drawable.beginnertwo, "Level 4 (COMING SOON)", "Learn how to sound intelligent."));
+        levelCards.add(new LevelCardModel(R.drawable.beginnertwo, "Level 5 (COMING SOON)", "Become Korean."));
+//        levelCards.add(new LevelCardModel(R.drawable.intermediateone, "Level 3 (Lower Intermediate)", "Time to start impressing the natives!"));
+//        levelCards.add(new LevelCardModel(R.drawable.castle, "Level 4 (Upper Intermediate)", "Learn how to sound intelligent."));
+//        levelCards.add(new LevelCardModel(R.drawable.southkorea, "Level 5 (Advanced)", "Become Korean."));
 
         //view pager adapter holds the view for the view pager in main activity
         //pass levelCards model which contains 5 different level and this activities context
@@ -63,8 +66,8 @@ public class LevelSelectionActivity extends AppCompatActivity {
                 getResources().getColor(R.color.beginnerone),
                 getResources().getColor(R.color.aqua),
                 getResources().getColor(R.color.darkTheme),
-                getResources().getColor(R.color.darkThemeHighlight),
-                getResources().getColor(R.color.aqua),
+                getResources().getColor(R.color.colorPrimaryDark),
+                getResources().getColor(R.color.beginnertwo),
         };
 
         colors = colors_temp;

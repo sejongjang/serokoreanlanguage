@@ -102,11 +102,11 @@ public class QuestionFragment extends Fragment implements IQuestion {
                         QuizCommon.selected_values.add(ckbA.getText().toString());
                         if(question.getAnswerA().equals(question.getCorrectAnswer())){
                             // show animation for the correct answer
-                            Toast.makeText(getContext(), "right answer", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "correct", Toast.LENGTH_SHORT).show();
                         }
                         else{
                             // show animation for the correct answer
-                            Toast.makeText(getContext(), "wrong answer", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "wrong", Toast.LENGTH_SHORT).show();
                         }
                     }
                     else{
@@ -124,11 +124,11 @@ public class QuestionFragment extends Fragment implements IQuestion {
                         QuizCommon.selected_values.add(ckbB.getText().toString());
                         if(question.getAnswerB().equals(question.getCorrectAnswer())){
                             // show animation for the correct answer
-                            Toast.makeText(getContext(), "right answer", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "correct", Toast.LENGTH_SHORT).show();
                         }
                         else{
                             // show animation for the correct answer
-                            Toast.makeText(getContext(), "wrong answer", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "wrong", Toast.LENGTH_SHORT).show();
                         }
                     }
                     else{
@@ -146,11 +146,11 @@ public class QuestionFragment extends Fragment implements IQuestion {
                         QuizCommon.selected_values.add(ckbC.getText().toString());
                         if(question.getAnswerC().equals(question.getCorrectAnswer())){
                             // show animation for the correct answer
-                            Toast.makeText(getContext(), "right answer", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "correct", Toast.LENGTH_SHORT).show();
                         }
                         else{
                             // show animation for the correct answer
-                            Toast.makeText(getContext(), "wrong answer", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "wrong", Toast.LENGTH_SHORT).show();
                         }
                     }
                     else{
@@ -168,11 +168,11 @@ public class QuestionFragment extends Fragment implements IQuestion {
                         QuizCommon.selected_values.add(ckbD.getText().toString());
                         if(question.getAnswerD().equals(question.getCorrectAnswer())){
                             // show animation for the correct answer
-                            Toast.makeText(getContext(), "right answer", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "correct", Toast.LENGTH_SHORT).show();
                         }
                         else{
                             // show animation for the correct answer
-                            Toast.makeText(getContext(), "wrong answer", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "wrong", Toast.LENGTH_SHORT).show();
                         }
                     }
                     else{

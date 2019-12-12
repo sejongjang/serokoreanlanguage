@@ -31,6 +31,7 @@
         </FrameLayout>
 
         <TextView
+            android:textColor="@color/white"
             android:id="@+id/txt_question_text"
             android:text="Choose the right answer(s)"
             android:textStyle="bold"
@@ -39,30 +40,34 @@
             android:layout_height="wrap_content" />
 
         <CheckBox
+            android:textColor="@color/white"
+            android:buttonTint="@color/white"
             android:id="@+id/ckbA"
             android:text="A"
-            android:buttonTint="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <CheckBox
             android:id="@+id/ckbB"
             android:text="B"
-            android:buttonTint="@color/black"
+            android:textColor="@color/white"
+            android:buttonTint="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <CheckBox
             android:id="@+id/ckbC"
             android:text="C"
-            android:buttonTint="@color/black"
+            android:textColor="@color/white"
+            android:buttonTint="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <CheckBox
             android:id="@+id/ckbD"
             android:text="D"
-            android:buttonTint="@color/black"
+            android:textColor="@color/white"
+            android:buttonTint="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

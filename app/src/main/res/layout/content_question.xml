@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
     
 <!--    <RelativeLayout-->
 <!--        android:background="@color/darkTheme"-->
@@ -68,7 +69,7 @@
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/quizViewpager"
-            android:background="@android:color/white"
+            android:background="@color/darkTheme"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
