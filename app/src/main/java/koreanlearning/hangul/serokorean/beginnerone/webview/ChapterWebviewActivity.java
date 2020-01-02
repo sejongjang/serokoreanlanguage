@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -224,6 +226,10 @@ public class ChapterWebviewActivity extends AppCompatActivity implements ParentR
                         intent.putExtra("chapter", Integer.parseInt(url.substring(20,21)));
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
+                    }
+                    else if (url != null && (url.startsWith("http://") || url.startsWith("https://"))) {
+                        view.getContext().startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                        return true;
                     }
                     return true;
                 }
