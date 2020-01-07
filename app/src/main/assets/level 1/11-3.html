@@ -13,132 +13,168 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo|Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 
-    <!-- Link to Javascript -->
-    <script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
-
 </head>
 
 <body>
     <div class="mtextcon">
             <div class="stextcon">
-        <!--Vocab Introduction Grid-->
-        <div class="vocab-container">
-            <div class="vocab-top-item">
-                <i>Word</i>
-            </div>
-            <div class="vocab-top-item">
-                <i>Meaning</i>
-            </div>
-            <div class="vocab-item">
-                <h3><audio src="../audio/jeotgarak.mp3" autostart="false"></audio><a
-                        onclick="PlaySound(this)">젓가락</a></h3>
-            </div>
-            <div class="vocab-item">
-                <h3>chopsticks</h3>
-            </div>
-            <div class="vocab-item">
-                <h3><audio src="../audio/sutgarak.mp3" autostart="false"></audio><a onclick="PlaySound(this)">숫가락</a>
-                </h3>
-            </div>
-            <div class="vocab-item">
-                <h3>spoon</h3>
-            </div>
-            <div class="vocab-item">
-                <h3><audio src="../audio/naipeu.mp3" autostart="false"></audio><a onclick="PlaySound(this)">나이프</a>
-                </h3>
-            </div>
-            <div class="vocab-item">
-                <h3>table knife</h3>
-            </div>
-            <div class="vocab-item">
-                <h3><audio src="../audio/banchan.mp3" autostart="false"></audio><a onclick="PlaySound(this)">반찬</a>
-                </h3>
-            </div>
-            <div class="vocab-item">
-                <h3>side dishes</h3>
-            </div>
-            <div class="vocab-item">
-                <h3><audio src="../audio/hyuji.mp3" autostart="false"></audio><a onclick="PlaySound(this)">휴지</a>
-                </h3>
-            </div>
-            <div class="vocab-item">
-                <h3>tissue/toilet paper</h3>
-            </div>
-        </div>
-
-        <div class="mstandardpara">
-            <p>If you are lucky enough to be invited to sit on the ground and eat at a 상, it’s polite to cross your legs
-                tightly in front of you to make enough room for others sitting around the table as well. If you find
-                sitting
-                criss-cross painful don’t worry, you’re not the only Westerner to have had trouble. Koreans will
-                understand
-                if it’s difficult and try to make room for you to sit in a more comfortable position.
-            </p>
-            <p>Before the meal begins it’s polite to wait for everyone to be seated and for the person with the highest
-                social
-                position to begin eating first before you dig in (you should also wait a for everyone to get their food
-                at the
-                restaurant before eating). Before taking your first bite you should say “잘 먹겠습니다!” or “I will enjoy this
-                meal”.
-                This isn’t just a nice thing to say, it’s customary and used virtually every time someone makes or buys
-                you food.
-                Like saying “happy birthday”, it’s just what you do.
-            </p>
-            <p> In the case of being served Korean food you will almost certainly find 젓가락 (chopsticks), 숟가락 (spoon),
-                and a bowl of rice in front of yourself. If you don’t know how to use 젓가락 before going to Korea, you’ll
-                learn in no time (sort of a sink or swim type thing). Fair warning though, Korean chopsticks are
-                shorter,
-                slender, and are often made of slippery metal. If you can master these you can use any other chopsticks
-                in the world. You will use the chopsticks to dig into all the delicious 반찬 (side dishes). We’ll talk
-                more
-                about Korean food in Chapter 16, so look forward to it!</p>
-            <p>In the off chance you aren’t being served Korean food you’ll likely find a 포크 (fork) and 나이프 in front of
-                you as well.
-                While chopsticks are actually a superior instrument for eating things like noodles, Koreans like to
-                follow the
-                Western tradition of eating with forks and knives when eating western food like pasta or steak.</p>
-            <p>During the meal you’ll find that Koreans share food. And we don’t just mean they share food, we mean like
-                they SHARE food.
-                All kidding aside, Koreans all dish food out of the same trays/bowls using their own chopsticks. They
-                even drink soup
-                out of the same bowls with their own spoons. Of course, in a public place like a buffet-style restaurant
-                this is
-                forbidden and there are individual tongs or scoopers for each dish. Traditionally meal time is the way
-                Koreans bond,
-                and sharing the same dishes bonds you together.</p>
-            <p>For those germaphobes among you that are no doubt panicking right now, just hear me out. You’ve been
-                invited into your
-                friend’s home and you’ve used their bathroom. That means you’ve probably already been exposed to
-                whatever germs you were
-                going to be exposed to. Additionally, Korea has a very high life expectancy.</p>
-            <!-- Author Note-->
-            <div id="myAuthornote" class="authornote" onclick="closeNav()">
-                <p><b><i>매튜 선생</i></b><br>The first time I went to McDonalds in Korea with my Korean friends I
-                    thought I’d finally have the upper hand because surely my culture would reign supreme when it came
-                    to eating McDonalds. Boy was I wrong. After walking in and stumbling through my order everything
-                    seemed to be going normally. Soon our food came out and we headed over to a table. It was then that
-                    I watched in horror as the Koreans cleared off a tray in the middle of the table and all dumped
-                    their fries into one big pile in the middle. This despite the fact that some people got large and
-                    some people got regular-size combos. Wanting desperately to be Koreanized, and not wanting to look
-                    like some kind of American miser I too reluctantly dumped my fries in the middle. It was in that
-                    moment I realized why North Korea hasn’t yet collapsed. Just kidding, but really there’s nothing
-                    that highlights cultural differences like seeing your own countries traditions being… reinterpreted
-                    under the context of a different culture.</p>
-            </div>
-            <span onclick="openNav()">
-                <div class="authorcard">
-                    <div class="authorarrow" id="myArrowBox"><img src="../img/leftarrow.png" alt="left" id="myArrow"></div>
+        
+            <!--Vocab Introduction Grid-->
+            <div class="vocab-container">
+                <div class="vocab-top-item">
+                    <i>Word</i>
                 </div>
-            </span>
-            <p style="margin-right:15px">Now if you are really close to your Korean friends don’t be surprised if they drink out of your cup or
-                even feed you
-                things with their own chopsticks. It’s gross if you think about it wrong, but in another sense it’s
-                extremely endearing.
-                Indeed, certain kinds of things that are typically only reserved for partners/lovers in the West are
-                fair game among close friends in Korea.</p>
+                <div class="vocab-top-item">
+                    <i>Meaning</i>
+                </div>
+                <div class="vocab-item">
+                    <h3><audio src="../audio/hwajangshil.mp3" autostart="false"></audio><a
+                            onclick="PlaySound(this)">화장실</a></h3>
+                </div>
+                <div class="vocab-item">
+                    <h3>bathroom</h3>
+                </div>
+                <div class="vocab-item">
+                    <h3><audio src="../audio/seullipeo.mp3" autostart="false"></audio><a
+                            onclick="PlaySound(this)">슬리퍼</a>
+                    </h3>
+                </div>
+                <div class="vocab-item">
+                    <h3>flipflops/slippers</h3>
+                </div>
+                <div class="vocab-item">
+                    <h3><audio src="../audio/shyaweo.mp3" autostart="false"></audio><a
+                            onclick="PlaySound(this)">샤워</a>
+                    </h3>
+                </div>
+                <div class="vocab-item">
+                    <h3>shower</h3>
+                </div>
+                <div class="vocab-item">
+                    <h3><audio src="../audio/byeongi.mp3" autostart="false"></audio><a
+                            onclick="PlaySound(this)">변기</a>
+                    </h3>
+                </div>
+                <div class="vocab-item">
+                    <h3>toilet</h3>
+                </div>
+                <div class="vocab-item">
+                    <h3><audio src="../audio/hyuji.mp3" autostart="false"></audio><a onclick="PlaySound(this)">휴지</a>
+                    </h3>
+                </div>
+                <div class="vocab-item">
+                    <h3>tissue/toilet paper</h3>
+                </div>
+                <div class="vocab-item">
+                    <h3><audio src="../audio/hyujitong.mp3" autostart="false"></audio><a
+                            onclick="PlaySound(this)">휴지통</a></h3>
+                </div>
+                <div class="vocab-item">
+                    <h3>waste bin</h3>
+                </div>
+                <div class="vocab-item">
+                    <h3><audio src="../audio/seuregitong.mp3" autostart="false"></audio><a
+                            onclick="PlaySound(this)">쓰레기통</a></h3>
+                </div>
+                <div class="vocab-item">
+                    <h3>trash can</h3>
+                </div>
+                <div class="vocab-item">
+                    <h3><audio src="../audio/singkeudae.mp3" autostart="false"></audio><a
+                            onclick="PlaySound(this)">싱크대</a>
+                    </h3>
+                </div>
+                <div class="vocab-item">
+                    <h3>sink</h3>
+                </div>
+                <div class="vocab-item">
+                    <h3><audio src="../audio/Telebijeon/tibwi.mp3" autostart="false"></audio><a
+                            onclick="PlaySound(this)">텔레비전/티뷔</a>
+                    </h3>
+                </div>
+                <div class="vocab-item">
+                    <h3>Television/TV</h3>
+                </div>
+                <div class="vocab-item">
+                    <h3><audio src="../audio/remokon.mp3" autostart="false"></audio><a
+                            onclick="PlaySound(this)">리모콘</a>
+                    </h3>
+                </div>
+                <div class="vocab-item">
+                    <h3>remote controller</h3>
+                </div>
+                <div class="vocab-item">
+                    <h3><audio src="../audio/chek.mp3" autostart="false"></audio><a onclick="PlaySound(this)">책</a>
+                    </h3>
+                </div>
+                <div class="vocab-item">
+                    <h3>book</h3>
+                </div>
+                <div class="vocab-item">
+                    <h3><audio src="../audio/chekggoji.mp3" autostart="false"></audio><a
+                            onclick="PlaySound(this)">책꽂이</a>
+                    </h3>
+                </div>
+                <div class="vocab-item">
+                    <h3>bookshelf</h3>
+                </div>
+            </div>
+
+            <div class="mstandardpara">
+            <p>You may be wondering what the difference between a waste bin and a trash can is. A waste bin is usually a
+                smaller trash can used for waste items such as tissues, used floss, band-aids, etc. A trash can can be
+                used for regular trash and larger waste items.</p>
+
+            <p>Before eating dinner you can ask your friend if it’s alright to use the bathroom, “화장실 써도 될까요?”. Your
+                friend will kindly point you in the direction of the 화장실 (bathroom). Upon approaching you’ll realize
+                that
+                Korean bathrooms are a little bit different from what you may be used to.
+            </p>
+            <p>The typical Korean home bathroom has a floor which is a few inches lower than the rest of house.
+                There are two reasons for this. The first is that traditional Korean homes were often heated by
+                hot smoke underneath the floor in an astonishing system known as 온돌 (don’t worry you don’t have to
+                remember
+                this word). 온돌 worked by having a series of ducts to conduct air under the floor. Koreans came to love
+                having
+                heated floors and the tradition has persisted today but has been replaced by the much safer and more
+                effective
+                method of piping hot water under the floors. This is typically how Korean homes are heated but requires
+                the
+                floor to be raised to make room for the piping. To save money this piping is not used where people
+                aren’t
+                likely to sit, walk or lie, such as the entryway or bathrooms, where the floor is a few inches lower.</p>
+
+            <p>The other reason the floor is lower is to prevent water on the ground from escaping. Outside of the
+                bathroom door
+                you may find that there are 샌들 (flip-flops/sandals) there. This is to keep your feet from getting wet.
+                Slip them
+                on and step down into the bathroom. </p>
+
+            <p>Once inside, you’ll notice that there is probably no shower curtain. This is because in Korea the entire
+                bathroom
+                is designed to get wet. In some cases, there will be no tub either, just a showerhead. When using the 샤워
+                (shower)
+                in a Korean bathroom feel free to spray water everywhere as it will all drain down a single drain on the
+                bathroom
+                floor. Of course it may take time for the bathroom to dry completely, hence the 샌들.</p>
+
+            <p>If you use the 변기 (toilet) there’s a good chance it will have a 비데 (bidet). Feel free to use that
+                feature.
+                Unfortunately in some older-style Korean bathrooms there may be a 휴지통 (trash can) next to the toilet for
+                throwing
+                away used 휴지 (toilet paper). In the old days Korean buildings were not built with large, American-style
+                pipes and
+                plumbing. As a result, flushing toilet paper can result in clogs. If you encounter a bathroom like this
+                throw the
+                toilet paper in the trash, but more likely than not you’ll be just fine flushing everything down.
+            </p>
+            <p>After using the you 변기 wash your hands in the 싱크대 (sink). Replace the 샌들 where you found them and return 
+                to the 거실 (living room) where you were earlier. If the food is not ready, your host may invite you to watch 
+                some 텔레비전 (TV). You can control the TV with the 리모콘 (remote controller). You might also browse through the 
+                책 (books) on the 책꽂이 (bookshelf) in the living room.
+                </p>
 
         </div>
-
     </div>
     </div>
 </body>
