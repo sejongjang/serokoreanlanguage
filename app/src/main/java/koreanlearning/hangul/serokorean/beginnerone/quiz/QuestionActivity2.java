@@ -29,6 +29,8 @@ import koreanlearning.hangul.serokorean.beginnerone.quiz.adapter.QuestionFragmen
 import koreanlearning.hangul.serokorean.beginnerone.quiz.common.QuizCommon;
 import koreanlearning.hangul.serokorean.utility.FullScreenCall;
 
+import static koreanlearning.hangul.serokorean.beginnerone.quiz.common.QuizCommon.questionList;
+
 public class QuestionActivity2 extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private ViewPager viewPager;
@@ -47,7 +49,7 @@ public class QuestionActivity2 extends AppCompatActivity implements NavigationVi
         importQuestion(level, chapter);
 
         // only if there are questions
-        if(QuizCommon.questionList.size() > 0) {
+        if(questionList.size() > 0) {
             viewPager = findViewById(R.id.quizViewpager);
             tabLayout = findViewById(R.id.sliding_tabs);
             genQuestionFragmentList();
@@ -55,7 +57,7 @@ public class QuestionActivity2 extends AppCompatActivity implements NavigationVi
             // set up question list on viewPager for the swipe
             QuestionFragmentsAdapter questionFragmentsAdapter = new QuestionFragmentsAdapter(getSupportFragmentManager(), this, QuizCommon.fragmentsList);
             viewPager.setAdapter(questionFragmentsAdapter);
-            viewPager.setOffscreenPageLimit(QuizCommon.questionList.size()-1);
+            viewPager.setOffscreenPageLimit(questionList.size()-1);
             tabLayout.setupWithViewPager(viewPager);
 
             // detect the swipe between fragments
@@ -211,9 +213,22 @@ public class QuestionActivity2 extends AppCompatActivity implements NavigationVi
                     QuizCommon.answerSheetList.add(new CurrentQuestion(i, QuizCommon.ANSWER_TYPE.NO_ANSWER));
                 }
             }
+
+            QuizCommon.questionList = shuffleQuizDeck(QuizCommon.questionList);
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    private List<Question> shuffleQuizDeck(List<Question> questionList){
+        ArrayList<Question> shuffledDeck = new ArrayList<Question>();
+
+        while (questionList.size() > 0) {
+            int index = (int) (Math.random() * questionList.size());
+            shuffledDeck.add(questionList.remove(index));
+        }
+
+        return shuffledDeck;
     }
 
     // read json file
@@ -234,7 +249,7 @@ public class QuestionActivity2 extends AppCompatActivity implements NavigationVi
 
     // load each question as a fragment
     private void genQuestionFragmentList() {
-        for(int i = 0; i< QuizCommon.questionList.size(); ++i){
+        for(int i = 0; i< questionList.size(); ++i){
             Bundle bundle = new Bundle();
             bundle.putInt("index", i);
             QuestionFragment fragment = new QuestionFragment();
