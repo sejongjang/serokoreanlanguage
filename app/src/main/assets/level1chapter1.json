@@ -11,72 +11,102 @@
       "type": "mc",
       "category": "letter",
       "number": 1,
-      "question": "1. choose the right translation for \n    'Hello?(when answering the phone)'",
-      "answerA": "여보세요?",
-      "answerB": "아니에요?",
-      "answerC": "뭐에요?",
-      "answerD": "잘 지내세요?",
-      "correct_answer": "여보세요?"
+      "question": "Badchim are the letters in the \n of a block.",
+      "answerA": "Bottom",
+      "answerB": "Top",
+      "answerC": "Right Side",
+      "answerD": "Middle",
+      "correct_answer": "Bottom?"
     },
     {
       "id": 2,
       "number": 2,
-      "question": "2. choose the right translation for \n    'Long time no see'",
-      "answerA": "오랜만이에요",
-      "answerB": "혹시",
-      "answerC": "아니다",
-      "answerD": "신발",
-      "correct_answer": "오랜만이에요"
+      "question": "The shape of a block of letters in Hangul should be \n.",
+      "answerA": "Circular",
+      "answerB": "Rectangular",
+      "answerC": "Square",
+      "answerD": "Triangular",
+      "correct_answer": "Square"
     },
     {
       "id": 2,
       "number": 2,
-      "question": "3. choose the right translation for \n    'by chance'",
-      "answerA": "혹시",
-      "answerB": "신발",
-      "answerC": "여보세요",
-      "answerD": "개",
-      "correct_answer": "혹시"
+      "question": "Choose the correct t-stop badchim letters.",
+      "answerA": "ㄱ, ㄴ, ㅂ, ㅁ, ㅍ",
+      "answerB": "ㅋ, ㅌ, ㅊ, ㅍ, ㅎ",
+      "answerC": "ㅎ, ㄹ, ㅇ, ㄴ, ㅁ",
+      "answerD": "ㄷ, ㅅ, ㅈ, ㅊ, ㅌ",
+      "correct_answer": "ㄷ, ㅅ, ㅈ, ㅊ, ㅌ"
     },
     {
       "id": 2,
       "number": 2,
-      "question": "4. choose the right translation for \n    'How are you doing?'",
-      "answerA": "잘 지내세요?",
-      "answerB": "뭐 해요?",
-      "answerC": "여보세요?",
-      "answerD": "고마워요",
-      "correct_answer": "잘 지내세요?"
+      "question": "ㅎ is most similar to the English '\n' sound.",
+      "answerA": "H",
+      "answerB": "N",
+      "answerC": "Ng",
+      "answerD": "J",
+      "correct_answer": "H"
     },
     {
       "id": 2,
       "number": 2,
-      "question": "5. choose the right translation for \n    'Thank you(honorific)'",
-      "answerA": "감사합니다",
-      "answerB": "고마워요",
-      "answerC": "오랜만이에요",
-      "answerD": "잘 부탁드립니다",
-      "correct_answer": "감사합니다"
+      "question": "ㅍ is most similar to the English '\n' sound.",
+      "answerA": "J",
+      "answerB": "N",
+      "answerC": "K",
+      "answerD": "P",
+      "correct_answer": "P"
     },
     {
       "id": 2,
       "number": 2,
-      "question": "6. choose the right translation for \n    'I look forward working with you'",
-      "answerA": "잘 부탁드립니다",
-      "answerB": "안녕하세요",
-      "answerC": "감사합니다",
-      "answerD": "여보세요",
-      "correct_answer": "잘 부탁드립니다"
+      "question": "ㅁ is most similar to the English '\n' sound.",
+      "answerA": "P",
+      "answerB": "M",
+      "answerC": "N",
+      "answerD": "D",
+      "correct_answer": "M"
     },
     {
       "id": 2,
       "number": 2,
-      "question": "7. choose the right translation for \n    'Nice to meet you'",
-      "answerA": "만나서 반갑습니다",
-      "answerB": "안녕하세요",
-      "answerC": "잘 지내세요",
-      "answerD": "감사합니다",
-      "correct_answer": "만나서 반갑습니다"
+      "question": "ㅅ is most similar to the English '\n' sound.",
+      "answerA": "K",
+      "answerB": "J",
+      "answerC": "S",
+      "answerD": "T",
+      "correct_answer": "S"
+    },
+    {
+      "id": 2,
+      "number": 2,
+      "question": "ㅊ is most similar to the English '\n' sound.",
+      "answerA": "T",
+      "answerB": "Ch",
+      "answerC": "J",
+      "answerD": "B",
+      "correct_answer": "Ch"
+    },
+    {
+      "id": 2,
+      "number": 2,
+      "question": "ㅌ is most similar to the English '\n' sound.",
+      "answerA": "K",
+      "answerB": "D",
+      "answerC": "T",
+      "answerD": "Ch",
+      "correct_answer": "T"
+    },
+    {
+      "id": 2,
+      "number": 2,
+      "question": "ㅋ is most similar to the English '\n' sound.",
+      "answerA": "G",
+      "answerB": "K",
+      "answerC": "M",
+      "answerD": "N",
+      "correct_answer": "K"
     }
   ]
 }
