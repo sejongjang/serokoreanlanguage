@@ -33,6 +33,7 @@ public class QuestionFragment extends Fragment implements IQuestion {
     private FrameLayout layout_image;
     private ProgressBar progressBar;
     private Boolean isAlreadyVisited = false;
+    private int TEXT_SIZE = 20;
 
     private Question question;
     private int questionIndex = -1;
@@ -95,6 +96,7 @@ public class QuestionFragment extends Fragment implements IQuestion {
 
             ckbA = itemView.findViewById(R.id.ckbA);
             ckbA.setText(question.getAnswerA());
+            ckbA.setTextSize(TEXT_SIZE);
             ckbA.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -117,6 +119,7 @@ public class QuestionFragment extends Fragment implements IQuestion {
 
             ckbB = itemView.findViewById(R.id.ckbB);
             ckbB.setText(question.getAnswerB());
+            ckbB.setTextSize(TEXT_SIZE);
             ckbB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -139,6 +142,7 @@ public class QuestionFragment extends Fragment implements IQuestion {
 
             ckbC = itemView.findViewById(R.id.ckbC);
             ckbC.setText(question.getAnswerC());
+            ckbC.setTextSize(TEXT_SIZE);
             ckbC.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -161,6 +165,7 @@ public class QuestionFragment extends Fragment implements IQuestion {
 
             ckbD = itemView.findViewById(R.id.ckbD);
             ckbD.setText(question.getAnswerD());
+            ckbD.setTextSize(TEXT_SIZE);
             ckbD.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

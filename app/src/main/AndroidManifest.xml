@@ -19,6 +19,7 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme2"
+        android:hardwareAccelerated="true"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name="koreanlearning.hangul.serokorean.beginnerone.quiz.ResultActivity"></activity>
         <activity android:name="koreanlearning.hangul.serokorean.bottomNavigation.YoutubePlayActivity" />

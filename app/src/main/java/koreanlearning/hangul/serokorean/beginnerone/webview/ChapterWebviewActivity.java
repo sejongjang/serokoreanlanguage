@@ -251,6 +251,7 @@ public class ChapterWebviewActivity extends AppCompatActivity implements ParentR
             webView.setBackgroundColor(383838);
 
             settings.setJavaScriptEnabled(true);
+            settings.setAllowFileAccess(true);
             settings.setBuiltInZoomControls(true);
             settings.setSupportZoom(true);
             settings.setDisplayZoomControls(false);
