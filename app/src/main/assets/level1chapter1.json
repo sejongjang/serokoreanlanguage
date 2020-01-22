@@ -21,7 +21,7 @@
     {
       "id": 2,
       "number": 2,
-      "question": "The shape of a block of letters in Hangul should be \n.",
+      "question": "The shape of a block of letters in Hangul should be _____.",
       "answerA": "Circular",
       "answerB": "Rectangular",
       "answerC": "Square",
@@ -41,7 +41,7 @@
     {
       "id": 2,
       "number": 2,
-      "question": "ㅎ is most similar to the English '\n' sound.",
+      "question": "ㅎ is most similar to the English _____ sound.",
       "answerA": "H",
       "answerB": "N",
       "answerC": "Ng",
@@ -51,7 +51,7 @@
     {
       "id": 2,
       "number": 2,
-      "question": "ㅍ is most similar to the English '\n' sound.",
+      "question": "ㅍ is most similar to the English _____ sound.",
       "answerA": "J",
       "answerB": "N",
       "answerC": "K",
@@ -61,7 +61,7 @@
     {
       "id": 2,
       "number": 2,
-      "question": "ㅁ is most similar to the English '\n' sound.",
+      "question": "ㅁ is most similar to the English _____ sound.",
       "answerA": "P",
       "answerB": "M",
       "answerC": "N",
@@ -71,7 +71,7 @@
     {
       "id": 2,
       "number": 2,
-      "question": "ㅅ is most similar to the English '\n' sound.",
+      "question": "ㅅ is most similar to the English _____ sound.",
       "answerA": "K",
       "answerB": "J",
       "answerC": "S",
@@ -81,7 +81,7 @@
     {
       "id": 2,
       "number": 2,
-      "question": "ㅊ is most similar to the English '\n' sound.",
+      "question": "ㅊ is most similar to the English _____' sound.",
       "answerA": "T",
       "answerB": "Ch",
       "answerC": "J",
@@ -91,7 +91,7 @@
     {
       "id": 2,
       "number": 2,
-      "question": "ㅌ is most similar to the English '\n' sound.",
+      "question": "ㅌ is most similar to the English _____ sound.",
       "answerA": "K",
       "answerB": "D",
       "answerC": "T",
@@ -101,7 +101,7 @@
     {
       "id": 2,
       "number": 2,
-      "question": "ㅋ is most similar to the English '\n' sound.",
+      "question": "ㅋ is most similar to the English _____ sound.",
       "answerA": "G",
       "answerB": "K",
       "answerC": "M",
