@@ -100,5 +100,6 @@
     <string name="facebook_app_id">2368837743379278</string>
     <string name="fb_login_protocol_scheme">fb2368837743379278</string>
     <string name="facebook_application_id">2368837743379278</string>
+    <string name="done">Done</string>
 
 </resources>

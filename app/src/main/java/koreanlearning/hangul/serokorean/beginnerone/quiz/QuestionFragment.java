@@ -1,16 +1,17 @@
 package koreanlearning.hangul.serokorean.beginnerone.quiz;
 
+import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.FrameLayout;
@@ -38,6 +39,10 @@ public class QuestionFragment extends Fragment implements IQuestion {
     private Question question;
     private int questionIndex = -1;
 
+    private Dialog quizDoneDialog;
+    private Button quizDoneButton, quizSubmitButton;
+    private ImageView closePopup;
+    private TextView quiz_score;
 
     public QuestionFragment() {
         // Required empty public constructor
@@ -67,6 +72,54 @@ public class QuestionFragment extends Fragment implements IQuestion {
         }
     }
 
+    public void controlQuizSubmit(View itemView){
+        quizDoneDialog = new Dialog(getContext());
+        quizDoneButton = itemView.findViewById(R.id.quiz_done);
+        quizDoneButton.setVisibility(View.VISIBLE);
+
+        quizDoneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // open dialog and dialog shows how many user get correct
+                // there is button submit button in dialog, once user clicks it sends result to the backend
+                quizDoneDialog.setContentView(R.layout.quiz_done_popup);
+                closePopup = quizDoneDialog.findViewById(R.id.pop_up_close);
+                quizSubmitButton = quizDoneDialog.findViewById(R.id.pop_up_submit);
+                quiz_score = quizDoneDialog.findViewById(R.id.pop_up_score);
+
+                QuizCommon.right_answer_count = QuizCommon.wrong_answer_counnt = 0;
+                for(CurrentQuestion item : QuizCommon.answerSheetList){
+                    if(item.getType() == QuizCommon.ANSWER_TYPE.RIGHT_ANSWER){
+                        QuizCommon.right_answer_count++;
+                    }
+                    else if(item.getType() == QuizCommon.ANSWER_TYPE.WRONG_ANSWER){
+                        QuizCommon.wrong_answer_counnt++;
+                    }
+                }
+
+                quiz_score.setText("Score: " + QuizCommon.right_answer_count);
+
+                closePopup.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        quizDoneDialog.dismiss();
+                    }
+                });
+
+                quizDoneDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                quizDoneDialog.show();
+
+                quizSubmitButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        quizDoneDialog.dismiss();
+                        getActivity().finish();
+                    }
+                });
+            }
+        });
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -76,8 +129,12 @@ public class QuestionFragment extends Fragment implements IQuestion {
         questionIndex = getArguments().getInt("index", -1);
         question = QuizCommon.questionList.get(questionIndex);
 
-        if(question != null){
+        //show submit and done button at the last of the page
+        if(questionIndex == QuizCommon.questionList.size()-1){
+            controlQuizSubmit(itemView);
+        }
 
+        if(question != null){
             layout_image = itemView.findViewById(R.id.layout_image);
             progressBar = itemView.findViewById(R.id.progress_bar);
 

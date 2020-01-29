@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -22,6 +23,7 @@ import com.hangul.serokorean.R;
 import java.util.Arrays;
 import java.util.List;
 
+import koreanlearning.hangul.serokorean.bottomNavigation.acknowlegement.Acknowledgement;
 import koreanlearning.hangul.serokorean.login.ProfileActivity;
 import koreanlearning.hangul.serokorean.search.Search;
 
@@ -30,6 +32,7 @@ public class More extends Fragment{
     private int RC_SIGN_IN = 0;
     private ImageView searchIcon;
     private RelativeLayout loginView;
+    private LinearLayout acknowledgement;
     private ImageView more_userPhoto;
     private TextView more_username;
 
@@ -110,6 +113,16 @@ public class More extends Fragment{
 //                Glide.with(this).load(googleSignInAccount.getPhotoUrl()).into(more_userPhoto);
 //            }
 //        }
+
+        // on click event for acknowledgement activity
+        acknowledgement = view.findViewById(R.id.aknowledgementBox);
+        acknowledgement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent acknowledgement = new Intent(getActivity(), Acknowledgement.class);
+                startActivity(acknowledgement);
+            }
+        });
 
         return view;
     }

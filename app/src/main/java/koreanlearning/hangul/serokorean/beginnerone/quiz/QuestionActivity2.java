@@ -35,6 +35,7 @@ public class QuestionActivity2 extends AppCompatActivity implements NavigationVi
 
     private ViewPager viewPager;
     private TabLayout tabLayout;
+    private int currentPosition=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,8 @@ public class QuestionActivity2 extends AppCompatActivity implements NavigationVi
         Bundle bundle = getIntent().getExtras();
         int level = bundle.getInt("level");
         int chapter = bundle.getInt("chapter");
+
+        questionList.clear();
         importQuestion(level, chapter);
 
         // only if there are questions
@@ -98,6 +101,7 @@ public class QuestionActivity2 extends AppCompatActivity implements NavigationVi
                 @Override
                 public void onPageSelected(int i) {
                     QuestionFragment questionFragment;
+                    currentPosition = i;
                     int position = i;
 
                     if(i > 0){
@@ -144,6 +148,13 @@ public class QuestionActivity2 extends AppCompatActivity implements NavigationVi
                 }
             });
         }
+    }
+
+    private boolean isVisitedAll(){
+        for(QuestionFragment item : QuizCommon.fragmentsList){
+            if(!item.getAlreadyVisited()) return false;
+        }
+        return true;
     }
 
     private void countCorrectAnswer() {

@@ -22,4 +22,10 @@
         <item name="android:windowBackground">@color/darkTheme</item>
     </style>
 
+    <style name="QuizPopUp" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/aqua</item>
+        <item name="colorPrimaryDark">@color/darkThemeHighlight</item>
+        <item name="colorAccent">@color/beginnerone</item>
+    </style>
+
 </resources>
