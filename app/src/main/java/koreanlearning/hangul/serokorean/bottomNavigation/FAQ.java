@@ -34,7 +34,7 @@ public class FAQ extends Fragment {
 
 //    private static final String YOUTUBE_API_KEY = "AIzaSyD2KmLaL7RJOr0DKiKvvMP1TEddjoL0sBY"; //sero google developer console
     private static final String YOUTUBE_API_KEY = "AIzaSyC3Hnr6eJ6ECXNFz4Gn9zXu3C5CcoxMNrc"; //temp google developer console
-    private static final String CHANNEL_ID = "UC4Oqg2xJLbOkGnTpn68pErA";
+    private static final String CHANNEL_ID = "UCKIicR8VM3HczwmJM9UxtTw";
     private static final String CHANNEL_GET_URL = "https://www.googleapis.com/youtube/v3/search?key=" + YOUTUBE_API_KEY + "&channelId=" + CHANNEL_ID + "&part=snippet,id&order=date&maxResults=20";
 
     private RecyclerView videoRecyclerview;
