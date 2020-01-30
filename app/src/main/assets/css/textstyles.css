@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'Painting With Chocolate';
-  src: url('../fonts/Painting_With_Chocolate.ttf') format('truetype');
+  src: url('Painting_With_Chocolate.ttf') format('truetype');
 }
 
 html {
