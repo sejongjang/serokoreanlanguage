@@ -21,7 +21,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme2"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="koreanlearning.hangul.serokorean.bottomNavigation.acknowlegement.Acknowledgement"></activity>
+        <activity android:name="koreanlearning.hangul.serokorean.bottomNavigation.challenge.Challenge"></activity>
+        <activity android:name="koreanlearning.hangul.serokorean.bottomNavigation.acknowlegement.Acknowledgement" />
         <activity android:name="koreanlearning.hangul.serokorean.beginnerone.quiz.ResultActivity" />
         <activity android:name="koreanlearning.hangul.serokorean.bottomNavigation.YoutubePlayActivity" />
 

@@ -1,7 +1,6 @@
 package koreanlearning.hangul.serokorean.main;
 
 import android.animation.ArgbEvaluator;
-import android.content.Intent;
 import android.graphics.Color;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,11 +10,8 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.hangul.serokorean.R;
 
-import koreanlearning.hangul.serokorean.login.LoginActivity;
 import koreanlearning.hangul.serokorean.utility.FullScreenCall;
 
 public class LevelSelectionActivity extends AppCompatActivity {

@@ -1,15 +1,21 @@
 package koreanlearning.hangul.serokorean.bottomNavigation;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.cardview.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.hangul.serokorean.R;
 
@@ -19,6 +25,8 @@ import koreanlearning.hangul.serokorean.utility.ChapterUtil;
 public class Home extends Fragment {
 
     private final int CHAPTERS = 30;
+    private Dialog chapterLockDialog;
+    private ImageView closeUnlockButton;
 
     public Home() {
         // Required empty public constructor
@@ -62,18 +70,37 @@ public class Home extends Fragment {
             final CardView cardView = (CardView) mainGrid.getChildAt(i);
             final String chapter = Integer.toString(i+1);
 
+            int chapterIndex = i;
+
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(getActivity(), ChapterWebviewActivity.class);
 
-                    int numberOfPages = ChapterUtil.detectTheNumberOfPages(chapter);
-                    intent.putExtra("chapter", "chapter " + chapter);
-                    intent.putExtra("pages", numberOfPages);
-                    startActivity(intent);
+                    // TODO: need to change this logic later when database is set up
+                    if(chapterIndex > 6){
+                        chapterLockDialog = new Dialog(getContext());
+                        chapterLockDialog.setContentView(R.layout.chapter_lock_popup);
+                        closeUnlockButton = chapterLockDialog.findViewById(R.id.close_unlock_popup);
+
+                        closeUnlockButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                chapterLockDialog.dismiss();
+                            }
+                        });
+
+                        chapterLockDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                        chapterLockDialog.show();
+                    }
+                    else{
+                        Intent intent = new Intent(getActivity(), ChapterWebviewActivity.class);
+                        int numberOfPages = ChapterUtil.detectTheNumberOfPages(chapter);
+                        intent.putExtra("chapter", "chapter " + chapter);
+                        intent.putExtra("pages", numberOfPages);
+                        startActivity(intent);
+                    }
                 }
             });
-
         }
     }
 

@@ -24,7 +24,7 @@ public class ProfileActivity extends AppCompatActivity {
     private GoogleSignInClient googleSignInClient;
     private GoogleSignInAccount googleSignInAccount;
 
-    private FirebaseUser user;
+    private FirebaseUser firebaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,35 @@ public class ProfileActivity extends AppCompatActivity {
         TextView name = findViewById(R.id.name);
         TextView email = findViewById(R.id.email);
         ImageView photo = findViewById(R.id.photo);
+
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        if(firebaseUser != null){
+
+            if(firebaseUser.getDisplayName() != null){
+                name.setText(firebaseUser.getDisplayName());
+            }
+
+            if(firebaseUser.getEmail() != null){
+                email.setText(firebaseUser.getEmail());
+            }
+
+            if(firebaseUser.getPhotoUrl() != null){
+                Uri personPhoto = firebaseUser.getPhotoUrl();
+                Glide.with(this).load(personPhoto).into(photo);
+            }
+
+            sign_out.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    signOut();
+                }
+            });
+        }
+        else{
+            name.setText("profile error");
+            email.setVisibility(View.GONE);
+            sign_out.setVisibility(View.GONE);
+        }
 
         // profile view without firebase
 //        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN).requestEmail().build();
@@ -76,38 +105,10 @@ public class ProfileActivity extends AppCompatActivity {
 ////            userId.setVisibility(View.GONE);
 //            sign_out.setVisibility(View.GONE);
 //        }
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        if(user != null){
-
-            if(user.getDisplayName() != null){
-                name.setText(user.getDisplayName());
-            }
-
-            if(user.getEmail() != null){
-                email.setText(user.getEmail());
-            }
-
-            if(user.getPhotoUrl() != null){
-                Uri personPhoto = user.getPhotoUrl();
-                Glide.with(this).load(personPhoto).into(photo);
-            }
-
-            sign_out.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    signOut();
-                }
-            });
-        }
-        else{
-            name.setText("profile error");
-            email.setVisibility(View.GONE);
-            sign_out.setVisibility(View.GONE);
-        }
     }
 
     private void signOut(){
-        if(user != null){
+        if(firebaseUser != null){
             FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(ProfileActivity.this, BeginnerOneActivity.class);
             intent.putExtra("sign out", 3);
