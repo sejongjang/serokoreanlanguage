@@ -6,7 +6,7 @@ public class ChapterUtil {
     private static int CHAPTER_ONE_NUM_OF_PAGE = 17;
     private static int CHAPTER_TWO_NUM_OF_PAGE = 9;
     private static int CHAPTER_THREE_NUM_OF_PAGE = 7;
-    private static int CHAPTER_FOUR_NUM_OF_PAGE = 4;
+    private static int CHAPTER_FOUR_NUM_OF_PAGE = 7;
     private static int CHAPTER_FIVE_NUM_OF_PAGE = 6;
     private static int CHAPTER_SIX_NUM_OF_PAGE = 11;
     private static int CHAPTER_SEVEN_NUM_OF_PAGE = 6;
