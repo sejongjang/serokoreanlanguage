@@ -51,7 +51,14 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"/>
 
-
+        <ImageView
+            android:id="@+id/add_vocab"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="20dp"
+            android:clickable="true"
+            android:layout_alignParentRight="true"
+            />
 
     </RelativeLayout>
 </LinearLayout>

@@ -1,13 +1,12 @@
 package koreanlearning.hangul.serokorean.beginnerone.quiz.Model;
 
 public class Question {
-    private int id;
-    private String questionText, questionImage, answerA, answerB, answerC, answerD, correctAnswer;
-    private boolean isImageQuestion;
-    private int categoryId;
+    public int id;
+    public String questionText, questionImage, answerA, answerB, answerC, answerD, correctAnswer;
+    public boolean isImageQuestion;
+    public int categoryId;
 
-    public Question() {
-    }
+    public Question() { }
 
     public Question(int id, String questionText, String answerA, String answerB, String answerC, String answerD, String correctAnswer) {
         this.id = id;

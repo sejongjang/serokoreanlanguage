@@ -13,7 +13,6 @@ import koreanlearning.hangul.serokorean.bottomNavigation.FAQ;
 import koreanlearning.hangul.serokorean.bottomNavigation.Home;
 import koreanlearning.hangul.serokorean.bottomNavigation.More;
 import koreanlearning.hangul.serokorean.bottomNavigation.Vocab;
-import koreanlearning.hangul.serokorean.model.YoutubeSingleton;
 
 public class BeginnerOneActivity extends AppCompatActivity {
 

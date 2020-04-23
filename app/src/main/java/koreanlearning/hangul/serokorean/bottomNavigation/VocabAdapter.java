@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -42,6 +43,7 @@ public class VocabAdapter extends RecyclerView.Adapter<VocabAdapter.VocabViewHol
         TextView vocab_english = holder.vocab_english;
         TextView vocab_description = holder.vocab_description;
         RelativeLayout vocab_row = holder.vocab_row;
+        ImageView add_vocab = holder.add_vocab;
 
         VocabModel myVocab = vocabList.get(position);
 
@@ -58,6 +60,13 @@ public class VocabAdapter extends RecyclerView.Adapter<VocabAdapter.VocabViewHol
                 mediaPlayer.start();
             }
         });
+
+        add_vocab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
     @Override
@@ -70,6 +79,7 @@ public class VocabAdapter extends RecyclerView.Adapter<VocabAdapter.VocabViewHol
         private TextView vocab_english;
         private TextView vocab_description;
         private RelativeLayout vocab_row;
+        private ImageView add_vocab;
 
         public VocabViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -77,6 +87,7 @@ public class VocabAdapter extends RecyclerView.Adapter<VocabAdapter.VocabViewHol
             this.vocab_english = itemView.findViewById(R.id.vocab_english);
             this.vocab_description = itemView.findViewById(R.id.vocab_description);
             this.vocab_row = itemView.findViewById(R.id.vocab_row);
+            this.add_vocab = itemView.findViewById(R.id.add_vocab);
         }
     }
 
