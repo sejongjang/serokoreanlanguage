@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#282828"
+    android:background="#000000"
     android:id="@+id/mainActivityLayout"
-    android:fitsSystemWindows="false"
     android:gravity="center"
+    android:fitsSystemWindows="false"
     android:orientation="vertical"
     tools:context="koreanlearning.hangul.serokorean.main.WelcomeActivity">
 
     <VideoView
+        android:background="@color/fui_transparent"
         android:id="@+id/welcom_video_view"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
 </LinearLayout>
