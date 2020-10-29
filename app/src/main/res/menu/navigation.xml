@@ -7,9 +7,9 @@
         android:title="@string/home" />
 
     <item
-        android:id="@+id/vocab"
+        android:id="@+id/vocabFragment"
         android:icon="@drawable/ic_vocab"
-        android:title="@string/vocab" />
+        android:title="@string/vocabFragment" />
 
     <item
         android:id="@+id/Videos"

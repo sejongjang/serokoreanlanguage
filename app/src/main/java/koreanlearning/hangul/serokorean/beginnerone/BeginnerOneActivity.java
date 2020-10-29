@@ -12,7 +12,7 @@ import com.hangul.serokorean.R;
 import koreanlearning.hangul.serokorean.bottomNavigation.FAQ;
 import koreanlearning.hangul.serokorean.bottomNavigation.Home;
 import koreanlearning.hangul.serokorean.bottomNavigation.More;
-import koreanlearning.hangul.serokorean.bottomNavigation.Vocab;
+import koreanlearning.hangul.serokorean.bottomNavigation.VocabFragment;
 
 public class BeginnerOneActivity extends AppCompatActivity {
 
@@ -46,7 +46,7 @@ public class BeginnerOneActivity extends AppCompatActivity {
                     case R.id.home:
                         viewPager.setCurrentItem(0);
                         break;
-                    case R.id.vocab:
+                    case R.id.vocabFragment:
                         viewPager.setCurrentItem(1);
                         break;
                     case R.id.Videos:
@@ -95,11 +95,11 @@ public class BeginnerOneActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         viewPagerAdapter = new BeginnerOneViewPagerAdapter(getSupportFragmentManager());
         Home home = new Home();
-        Vocab vocab = new Vocab();
+        VocabFragment vocabFragment = new VocabFragment();
         FAQ faq = new FAQ();
         More more = new More();
         viewPagerAdapter.addFragment(home);
-        viewPagerAdapter.addFragment(vocab);
+        viewPagerAdapter.addFragment(vocabFragment);
         viewPagerAdapter.addFragment(faq);
         viewPagerAdapter.addFragment(more);
         viewPager.setAdapter(viewPagerAdapter);

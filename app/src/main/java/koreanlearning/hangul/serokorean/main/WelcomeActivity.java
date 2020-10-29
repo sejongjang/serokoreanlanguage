@@ -7,15 +7,11 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.VideoView;
 
 import com.hangul.serokorean.R;
-
-import koreanlearning.hangul.serokorean.utility.FullScreenCall;
 
 public class WelcomeActivity extends AppCompatActivity {
     private TextView tv;
@@ -32,7 +28,7 @@ public class WelcomeActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.welcome_main);
 
-        videoView = findViewById(R.id.welcom_video_view);
+        videoView = findViewById(R.id.welcome_video_view);
         Uri video = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.welcome);
         videoView.setVideoURI(video);
 

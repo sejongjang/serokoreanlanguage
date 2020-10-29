@@ -1,4 +1,4 @@
-package koreanlearning.hangul.serokorean.service;
+package koreanlearning.hangul.serokorean.net.service;
 
 import koreanlearning.hangul.serokorean.model.User;
 

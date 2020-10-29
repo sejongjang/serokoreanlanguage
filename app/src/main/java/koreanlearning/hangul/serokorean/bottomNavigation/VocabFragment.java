@@ -26,9 +26,12 @@ import java.util.List;
 
 import koreanlearning.hangul.serokorean.bottomNavigation.vocab.CustomVocab;
 import koreanlearning.hangul.serokorean.model.VocabModel;
+import koreanlearning.hangul.serokorean.net.request.VocabRequest;
+import koreanlearning.hangul.serokorean.net.response.VocabResponse;
+import koreanlearning.hangul.serokorean.net.service.VocabService;
 
 
-public class Vocab extends Fragment {
+public class VocabFragment extends Fragment {
 
     private RecyclerView vocabRecyclerview;
     private RecyclerView.Adapter adapter;
@@ -37,7 +40,7 @@ public class Vocab extends Fragment {
 
     private ImageView vocab_custom;
 
-    public Vocab() {
+    public VocabFragment() {
         // Required empty public constructor
     }
 

@@ -48,7 +48,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import koreanlearning.hangul.serokorean.model.Vocab;
 import koreanlearning.hangul.serokorean.model.VocabModel;
+import koreanlearning.hangul.serokorean.net.request.VocabRequest;
+import koreanlearning.hangul.serokorean.net.response.VocabResponse;
+import koreanlearning.hangul.serokorean.net.service.VocabService;
 
 
 public class CustomVocab extends AppCompatActivity { //implements SwipeRefreshLayout.OnRefreshListener
@@ -240,20 +244,19 @@ public class CustomVocab extends AppCompatActivity { //implements SwipeRefreshLa
         // Create new post at /user-posts/$userid/$postid and at
         // /posts/$postid simultaneously
 
-        newVocab.setAdded(true);
+        // TODO: 452 delete after SQL test -------------------------
+        VocabService vocabService = new VocabService();
+        VocabRequest vocabRequest = new VocabRequest();
+        vocabRequest.setUserID(123);
+        vocabRequest.setVocab(new Vocab(123, 123, newVocab.korean, newVocab.description, newVocab.english, 0, 0, 0));
+        vocabService.postVocab(vocabRequest);
+        // TODO: ---------------------------------------------------
 
+
+        newVocab.setAdded(true);
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         mDatabase = FirebaseDatabase.getInstance().getReference();
         String id = relaceEmailDot(firebaseUser.getEmail());
-        // get email hash since email itself is not able be used as child
-//        String id = generateMD5(email);
-//        String email = firebaseUser.getEmail();
-//        String replaced = email;
-//        if(email.contains(".")){
-//            replaced = email.replace(".", "_dot_");
-//        }
-//        String id = replaced;
-
         String key = mDatabase.child("id").push().getKey();
         newVocab.setId(key);
         Map<String, Object> postValues = newVocab.toMap();
