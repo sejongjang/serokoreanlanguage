@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/darkTheme"
-    tools:context="koreanlearning.hangul.serokorean.bottomNavigation.More">
+    tools:context="koreanlearning.hangul.serokorean.view.main.bottomNavigation.MoreFragment">
 
     <Toolbar
         android:layout_width="match_parent"

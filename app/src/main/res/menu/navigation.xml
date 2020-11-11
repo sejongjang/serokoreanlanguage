@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/homeFragment"
         android:icon="@drawable/ic_home"
-        android:title="@string/home" />
+        android:title="@string/homeFragment" />
 
     <item
         android:id="@+id/vocabFragment"
@@ -17,9 +17,9 @@
         android:title="@string/Videos" />
 
     <item
-        android:id="@+id/more"
+        android:id="@+id/moreFragment"
         android:icon="@drawable/ic_more"
-        android:title="@string/more" />
+        android:title="@string/moreFragment" />
 
 
     <!--<item-->

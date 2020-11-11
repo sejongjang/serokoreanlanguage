@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -20,12 +21,13 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme2"
+        android:networkSecurityConfig="@xml/network_security_config"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="koreanlearning.hangul.serokorean.bottomNavigation.vocab.CustomVocab"></activity>
-        <activity android:name="koreanlearning.hangul.serokorean.bottomNavigation.challenge.Challenge" />
-        <activity android:name="koreanlearning.hangul.serokorean.bottomNavigation.acknowlegement.Acknowledgement" />
-        <activity android:name="koreanlearning.hangul.serokorean.beginnerone.quiz.ResultActivity" />
-        <activity android:name="koreanlearning.hangul.serokorean.bottomNavigation.YoutubePlayActivity" />
+        <activity android:name="koreanlearning.hangul.serokorean.view.main.bottomNavigation.customvocab.CustomVocabActivity"></activity>
+        <activity android:name="koreanlearning.hangul.serokorean.view.main.bottomNavigation.challenge.ChallengeActivity" />
+        <activity android:name="koreanlearning.hangul.serokorean.view.main.bottomNavigation.acknowlegement.AcknowledgementActivity" />
+        <activity android:name="koreanlearning.hangul.serokorean.view.main.quiz.QuizResultActivity" />
+        <activity android:name="koreanlearning.hangul.serokorean.view.main.youtube.YoutubePlayActivity" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -51,20 +53,20 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name="koreanlearning.hangul.serokorean.login.ProfileActivity" />
-        <activity android:name="koreanlearning.hangul.serokorean.login.LoginActivity" />
+        <activity android:name="koreanlearning.hangul.serokorean.view.main.profile.ProfileActivity" />
+        <activity android:name="koreanlearning.hangul.serokorean.view.main.login.LoginActivity" />
         <activity
-            android:name="koreanlearning.hangul.serokorean.beginnerone.quiz.QuestionActivity2"
+            android:name="koreanlearning.hangul.serokorean.view.main.quiz.QuestionActivity"
             android:label="@string/title_activity_question"
             android:theme="@style/AppTheme2.NoActionBar" />
-        <activity android:name="koreanlearning.hangul.serokorean.beginnerone.quiz.QuizCategories" />
-        <activity android:name="koreanlearning.hangul.serokorean.search.Search" />
+        <activity android:name="koreanlearning.hangul.serokorean.view.main.quiz.QuizCategoriesActivity" />
+        <activity android:name="koreanlearning.hangul.serokorean.view.main.search.SearchActivity" />
         <activity
-            android:name="koreanlearning.hangul.serokorean.beginnerone.webview.ChapterWebviewActivity"
+            android:name="koreanlearning.hangul.serokorean.view.main.webview.ChapterWebviewActivity"
             android:theme="@style/noWhitePreview" />
-        <activity android:name="koreanlearning.hangul.serokorean.beginnerone.BeginnerOneActivity" />
-        <activity android:name="koreanlearning.hangul.serokorean.main.LevelSelectionActivity" />
-        <activity android:name="koreanlearning.hangul.serokorean.main.WelcomeActivity">
+        <activity android:name="koreanlearning.hangul.serokorean.view.beginnerone.BeginnerOneActivity" />
+        <activity android:name="koreanlearning.hangul.serokorean.view.main.levelselection.LevelSelectionActivity" />
+        <activity android:name="koreanlearning.hangul.serokorean.view.main.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

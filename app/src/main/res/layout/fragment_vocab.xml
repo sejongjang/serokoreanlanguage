@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/darkTheme"
-    tools:context="koreanlearning.hangul.serokorean.bottomNavigation.VocabFragment">
+    tools:context="koreanlearning.hangul.serokorean.view.main.bottomNavigation.VocabFragment">
 
 
     <LinearLayout

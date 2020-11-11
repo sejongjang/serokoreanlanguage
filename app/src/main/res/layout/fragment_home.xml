@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="koreanlearning.hangul.serokorean.bottomNavigation.Home">
+    tools:context="koreanlearning.hangul.serokorean.view.main.bottomNavigation.HomeFragment">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/darkTheme"
-        tools:context="koreanlearning.hangul.serokorean.beginnerone.BeginnerOneActivity">
+        tools:context="koreanlearning.hangul.serokorean.view.beginnerone.BeginnerOneActivity">
 
         <LinearLayout
             android:orientation="vertical"

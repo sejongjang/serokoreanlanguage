@@ -1,6 +1,5 @@
 package koreanlearning.hangul.serokorean.net.service;
 
-import koreanlearning.hangul.serokorean.model.Vocab;
 import koreanlearning.hangul.serokorean.net.facade.ServerFacade;
 import koreanlearning.hangul.serokorean.net.request.VocabRequest;
 import koreanlearning.hangul.serokorean.net.response.VocabResponse;
@@ -22,7 +21,7 @@ public class VocabService {
 //    }
 
     public VocabResponse postVocab(VocabRequest vocabRequest){
-        return serverFacade.putVocab(vocabRequest);
+        return serverFacade.postVocab(vocabRequest);
     }
 
     public VocabResponse getVocabs(VocabRequest vocabRequest){

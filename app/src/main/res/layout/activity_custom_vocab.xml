@@ -8,7 +8,7 @@
     android:background="@color/darkTheme"
     android:orientation="vertical"
     android:id="@+id/swipe_refresh_layout_custom_vocab"
-    tools:context="koreanlearning.hangul.serokorean.bottomNavigation.vocabFragment.CustomVocab">
+    tools:context="koreanlearning.hangul.serokorean.view.main.bottomNavigation.vocabFragment.CustomVocab">
 
     <RelativeLayout
         android:orientation="horizontal"

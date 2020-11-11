@@ -10,10 +10,10 @@
     <string name="settings">Settings</string>
     <string name="search">Search</string>
     <string name="Videos">Videos</string>
-    <string name="home">Home</string>
+    <string name="homeFragment">Home</string>
     <string name="bookmark">Bookmarks</string>
     <string name="vocabFragment">Vocab</string>
-    <string name="more">More</string>
+    <string name="moreFragment">More</string>
     <string name="chapterOne">Chapter 1</string>
     <string name="chapterOneSubtext">Learn the Korean consonants</string>
     <string name="chapterTwo">Chapter 2</string>
@@ -35,7 +35,7 @@
     <string name="chapterTen">Chapter 10</string>
     <string name="chapterTenSubtext">Marking the topic</string>
     <string name="chapterEleven">Chapter 11</string>
-    <string name="chapterElevenSubtext">At home</string>
+    <string name="chapterElevenSubtext">At homeFragment</string>
     <string name="chapterTwelve">Chapter 12</string>
     <string name="chapterTwelveSubtext">Numbers part 2: Chinese numbers</string>
     <string name="chapterThirteen">Chapter 13</string>
