@@ -1,6 +1,4 @@
-#Sero
-
-Language learning application
+Sero Language Learning Application
 
 E-Book type language learning application, inspired by Google e-book service.
 
