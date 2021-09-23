@@ -1,63 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#000000"
-    android:id="@+id/mainActivityLayout"
-    android:gravity="center"
-    android:fitsSystemWindows="false"
-    android:orientation="vertical"
-    tools:context="koreanlearning.hangul.serokorean.view.main.WelcomeActivity">
 
-    <VideoView
-        android:background="@color/fui_transparent"
-        android:id="@+id/welcome_video_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-</LinearLayout>
-
-<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!-- new version -->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
 <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
 <!--    xmlns:tools="http://schemas.android.com/tools"-->
 <!--    android:layout_width="match_parent"-->
 <!--    android:layout_height="match_parent"-->
-<!--    android:background="#282828"-->
+<!--    android:background="#000000"-->
 <!--    android:id="@+id/mainActivityLayout"-->
+<!--    android:gravity="center"-->
 <!--    android:fitsSystemWindows="false"-->
-<!--    tools:context="koreanlearning.hangul.serokorean.main.WelcomeActivity">-->
+<!--    android:orientation="vertical"-->
+<!--    tools:context="koreanlearning.hangul.serokorean.view.main.WelcomeActivity">-->
 
-<!--    <LinearLayout-->
+<!--    <VideoView-->
+<!--        android:background="@color/fui_transparent"-->
+<!--        android:id="@+id/welcome_video_view"-->
 <!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:gravity="center"-->
-<!--        android:orientation="vertical">-->
+<!--        android:layout_height="wrap_content" />-->
 
-<!--        <ImageView-->
-<!--        android:id="@+id/iv"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:src="@drawable/sero_logo"-->
-<!--        />-->
+<!--</LinearLayout>-->
 
-<!--        <TextView-->
-<!--            android:id="@+id/tv"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="0dp"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:shadowColor="@android:color/black"-->
-<!--            android:shadowDx="-2"-->
-<!--            android:shadowDy="2"-->
-<!--            android:text=""-->
-<!--            android:shadowRadius="0.01"-->
-<!--            android:textAlignment="center"-->
-<!--            android:textColor="@android:color/white"-->
-<!--            android:textSize="50sp"-->
-<!--            android:textStyle="bold" />-->
 
-<!--    </LinearLayout>-->
+<!-- without video -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#282828"
+    android:id="@+id/mainActivityLayout"
+    android:fitsSystemWindows="false"
+    tools:context="koreanlearning.hangul.serokorean.view.main.WelcomeActivity">
 
-<!--</RelativeLayout>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+        android:id="@+id/iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/sero_logo"
+        />
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:shadowColor="@android:color/black"
+            android:shadowDx="-2"
+            android:shadowDy="2"
+            android:text=""
+            android:shadowRadius="0.01"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</RelativeLayout>

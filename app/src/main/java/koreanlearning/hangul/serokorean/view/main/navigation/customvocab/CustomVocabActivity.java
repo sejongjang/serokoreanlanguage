@@ -1,4 +1,4 @@
-package koreanlearning.hangul.serokorean.view.main.bottomNavigation.customvocab;
+package koreanlearning.hangul.serokorean.view.main.navigation.customvocab;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -44,6 +44,8 @@ import java.util.List;
 import java.util.Map;
 
 import koreanlearning.hangul.serokorean.model.VocabModel;
+
+import static koreanlearning.hangul.serokorean.utility.StringUtil.relaceEmailDot;
 
 public class CustomVocabActivity extends AppCompatActivity { //implements SwipeRefreshLayout.OnRefreshListener
 
@@ -167,7 +169,33 @@ public class CustomVocabActivity extends AppCompatActivity { //implements SwipeR
         return stringBuffer.toString();
     }
 
+    private void postNewVocab(VocabModel newVocab) {
+        newVocab.setAdded(true);
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        String id = relaceEmailDot(firebaseUser.getEmail());
+        String key = mDatabase.child("id").push().getKey();
+        newVocab.setId(key);
+        Map<String, Object> postValues = newVocab.toMap();
 
+        Map<String, Object> childUpdates = new HashMap<>();
+        childUpdates.put("/" + id + "/posts/" + key, postValues);
+
+        mDatabase.updateChildren(childUpdates).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                // Toast.makeText(CustomVocab.this, "successfully added " + newVocab.getEnglish(), Toast.LENGTH_LONG).show();
+                int index = 0;
+                privateVocabList.add(index, newVocab);
+                customVocabAdapter.notifyItemInserted(index);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(CustomVocabActivity.this, e.getMessage() + " " + id, Toast.LENGTH_LONG).show();
+            }
+        });
+    }
 
     private void readFromDB(){
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -177,7 +205,6 @@ public class CustomVocabActivity extends AppCompatActivity { //implements SwipeR
             replaced = email.replace(".", "_dot_");
         }
         String id = replaced;
-//        "/" + id + "/posts/"
         mDatabase = FirebaseDatabase.getInstance().getReference("/" + id + "/posts/");
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -199,14 +226,6 @@ public class CustomVocabActivity extends AppCompatActivity { //implements SwipeR
         });
     }
 
-    private String relaceEmailDot(String email){
-        String replaced = email;
-        if(email.contains(".")){
-            replaced = email.replace(".", "_dot_");
-        }
-       return replaced;
-    }
-
     private void incrementReviewCount(VocabModel vocab){
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -222,34 +241,6 @@ public class CustomVocabActivity extends AppCompatActivity { //implements SwipeR
             public void onSuccess(Void aVoid) {
                 // Toast.makeText(CustomVocab.this, "successfully updated " + vocab.getEnglish(), Toast.LENGTH_LONG).show();
                 customVocabAdapter.notifyDataSetChanged();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(CustomVocabActivity.this, e.getMessage() + " " + id, Toast.LENGTH_LONG).show();
-            }
-        });
-    }
-
-    private void postNewVocab(VocabModel newVocab) {
-        newVocab.setAdded(true);
-        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        String id = relaceEmailDot(firebaseUser.getEmail());
-        String key = mDatabase.child("id").push().getKey();
-        newVocab.setId(key);
-        Map<String, Object> postValues = newVocab.toMap();
-
-        Map<String, Object> childUpdates = new HashMap<>();
-        childUpdates.put("/" + id + "/posts/" + key, postValues);
-
-        mDatabase.updateChildren(childUpdates).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                // Toast.makeText(CustomVocab.this, "successfully added " + newVocab.getEnglish(), Toast.LENGTH_LONG).show();
-                int index = 0;
-                privateVocabList.add(index, newVocab);
-                customVocabAdapter.notifyItemInserted(index);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override

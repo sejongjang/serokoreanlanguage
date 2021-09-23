@@ -1,4 +1,4 @@
-package koreanlearning.hangul.serokorean.view.main.bottomNavigation;
+package koreanlearning.hangul.serokorean.view.main.navigation;
 
 import android.content.Context;
 import android.content.Intent;
@@ -24,9 +24,8 @@ import com.hangul.serokorean.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import koreanlearning.hangul.serokorean.view.main.bottomNavigation.customvocab.CustomVocabActivity;
+import koreanlearning.hangul.serokorean.view.main.navigation.customvocab.CustomVocabActivity;
 import koreanlearning.hangul.serokorean.model.VocabModel;
-
 
 public class VocabFragment extends Fragment {
 
@@ -61,11 +60,12 @@ public class VocabFragment extends Fragment {
             }
         });
 
-
         return view;
     }
 
     private void fillOutVocabList() {
+
+        // TODO: need to set up in-app database to provide vocabs
         VocabModel v0 = new VocabModel("to eat", "먹다", "밥을 먹다 (to eat meal).", R.raw.v0);
         VocabModel v1 = new VocabModel("to buy", "사다", "시계를 사다 (to buy watch).", R.raw.v1);
         VocabModel v2 = new VocabModel("to sleep", "자다", "잠을 자다 (to sleep).", R.raw.v2);

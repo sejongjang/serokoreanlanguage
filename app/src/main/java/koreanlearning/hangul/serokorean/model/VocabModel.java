@@ -11,7 +11,7 @@ import java.util.Map;
 public class VocabModel {
     public String id;
     public String english;
-    public String korean;
+    public String targetLang; // Korean, if target language is Korean
     public String description;
     public int audioSource;
 
@@ -23,16 +23,16 @@ public class VocabModel {
 
     public VocabModel() { }
 
-    public VocabModel(String english, String korean, String description, int audioSource) {
+    public VocabModel(String english, String targetLang, String description, int audioSource) {
         this.english = english;
-        this.korean = korean;
+        this.targetLang = targetLang;
         this.description = description;
         this.audioSource = audioSource;
     }
 
-    public VocabModel(String english, String korean, String description, long last_time_reivewed_time_stamp, int num_of_times_reviewd, boolean isAdded) {
+    public VocabModel(String english, String targetLang, String description, long last_time_reivewed_time_stamp, int num_of_times_reviewd, boolean isAdded) {
         this.english = english;
-        this.korean = korean;
+        this.targetLang = targetLang;
         this.description = description;
         this.last_time_reivewed_time_stamp = last_time_reivewed_time_stamp;
         this.num_of_times_reviewd = num_of_times_reviewd;
@@ -43,7 +43,7 @@ public class VocabModel {
     public Map<String, Object> toMap() {
         HashMap<String, Object> result = new HashMap<>();
         result.put("english", english);
-        result.put("korean", korean);
+        result.put("korean", targetLang);
         result.put("description", description);
         result.put("last_time_reivewed_time_stamp", last_time_reivewed_time_stamp);
         result.put("num_of_times_reviewd", num_of_times_reviewd);
@@ -68,12 +68,12 @@ public class VocabModel {
         this.english = english;
     }
 
-    public String getKorean() {
-        return korean;
+    public String getTargetLang() {
+        return targetLang;
     }
 
-    public void setKorean(String korean) {
-        this.korean = korean;
+    public void setTargetLang(String targetLang) {
+        this.targetLang = targetLang;
     }
 
     public String getDescription() {
